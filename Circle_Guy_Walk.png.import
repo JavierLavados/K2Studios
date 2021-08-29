@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tocho.png-4f3f4e9be05c66c0291cc6f11ab9fed7.stex"
+path="res://.import/Circle_Guy_Walk.png-62a2d332f887a188ecdf9abbae6f139d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tocho.png"
-dest_files=[ "res://.import/Tocho.png-4f3f4e9be05c66c0291cc6f11ab9fed7.stex" ]
+source_file="res://Circle_Guy_Walk.png"
+dest_files=[ "res://.import/Circle_Guy_Walk.png-62a2d332f887a188ecdf9abbae6f139d.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
