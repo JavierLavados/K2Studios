@@ -35,7 +35,7 @@ func _physics_process(delta):
 #		target_vel = lerp(target_vel, 0, jump_travel / max_jump_travel)
 	if abs(motion.y) > 200:
 		target_vel = 0
-		$Sprite.modulate = Color.blue
+#		$Sprite.modulate = Color.blue
 	else:
 		$Sprite.modulate = Color.white
 	
