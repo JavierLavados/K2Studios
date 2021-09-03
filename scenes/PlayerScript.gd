@@ -42,9 +42,9 @@ func _physics_process(delta):
 	motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED, 0), ACCELERATION).x
 	
 	if motion.x > 0:
-		sprite.flip_h = true
-	if motion.x < 0:
 		sprite.flip_h = false
+	if motion.x < 0:
+		sprite.flip_h = true
 	
 
 	if motion.x != 0:
