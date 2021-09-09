@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RoundGuyWalking.png-f2f8f76ba20ceeb839c50a500a2134d0.stex"
+path="res://.import/icon.png-b9450fb2459f5b277908511db3d050dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RoundGuyWalking.png"
-dest_files=[ "res://.import/RoundGuyWalking.png-f2f8f76ba20ceeb839c50a500a2134d0.stex" ]
+source_file="res://images/icon.png"
+dest_files=[ "res://.import/icon.png-b9450fb2459f5b277908511db3d050dd.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
