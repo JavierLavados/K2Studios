@@ -25,6 +25,11 @@ var jumping = false
 var was_on_floor = false
 var left = UP.rotated(deg2rad(90))
 
+func _ready():
+	var players = get_tree().get_nodes_in_group("Players")
+	for player in players:
+		add_collision_exception_with(player)
+
 func _physics_process(delta):
 	
 	var on_floor = is_on_floor()
