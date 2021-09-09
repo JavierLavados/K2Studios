@@ -3,15 +3,15 @@ extends KinematicBody2D
 const ACCELERATION = 140
 const MAX_SPEED = 200
 const JUMP_H = 1100
-const UP = Vector2(0, -1)
+const UP = Vector2(0, 1)
 const gravity = 120
-const forward = "right" #down
-const backward = "left" #up 
+const forward = "right" #right/down
+const backward = "left" #left/up 
 
 # Variables para debugging
 export var auto_jump = false
 export var see_controllable = false
-export var teleport = false
+export var teleport = true
 
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
@@ -19,6 +19,7 @@ onready var scl = sprite.scale.x
 
 var motion = Vector2()
 
+var awake = false
 var controllable = true
 var jumping = false
 var was_on_floor = false
@@ -68,13 +69,16 @@ func _physics_process(delta):
 		motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
 	else:
 		motion.y = Vector2(0, motion.y).move_toward(Vector2(0, target_vel * MAX_SPEED/scl), ACCELERATION/scl).y
-	motion = move_and_slide(motion, UP)
+	
+	if awake:
+		motion = move_and_slide(motion, UP)
+	else:
+		motion = Vector2.ZERO
 	
 	# Sprite
 	var side_motion = left.dot(motion)
 	
 	sprite.rotation_degrees = -rad2deg(UP.angle_to(Vector2(0,-1)))
-	print(sprite.rotation_degrees)
 	
 	if side_motion > 0:
 		sprite.flip_h = false
