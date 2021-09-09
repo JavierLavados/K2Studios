@@ -32,16 +32,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="World" type="Node2D"]
 
 [node name="Red" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90.2001, 55.4403 )
-scale = Vector2( 0.18, 0.18 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 160, 105 )
-current = true
-zoom = Vector2( 0.35, 0.35 )
+position = Vector2( 149.923, 97.1076 )
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( -1, 0 )
+scale = Vector2( 2, 2 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
