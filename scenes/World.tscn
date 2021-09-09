@@ -37,15 +37,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 script = ExtResource( 3 )
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
+position = Vector2( 144, 112 )
 
 [node name="PlayerRight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 451.188, 246.218 )
+position = Vector2( 432, 240 )
 
 [node name="PlayerDown" parent="." instance=ExtResource( 6 )]
-position = Vector2( 222.957, 202.094 )
+position = Vector2( 208, 176 )
 
 [node name="PlayerLeft" parent="." instance=ExtResource( 4 )]
-position = Vector2( 102.755, 310.123 )
+position = Vector2( 112, 304 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
