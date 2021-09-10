@@ -16,6 +16,8 @@ export var teleport = true
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 onready var scl = sprite.scale.x
+onready var playback = $AnimationTree.get("parameters/playback")
+onready var collision = $CollisionShape2D
 
 var motion = Vector2()
 
@@ -29,6 +31,9 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("Players")
 	for player in players:
 		add_collision_exception_with(player)
+	var rot = -rad2deg(UP.angle_to(Vector2(0,-1)))
+	sprite.rotation_degrees = rot
+	collision.rotation_degrees = rot
 
 func _physics_process(delta):
 	
@@ -62,6 +67,10 @@ func _physics_process(delta):
 	if motion.dot(UP) < -(JUMP_H/scl)+30 and jumping:
 		controllable = false
 		
+	# Incontrolable al despertar
+	if ((playback.get_current_node() == "Sleep") or (playback.get_current_node() == "WakeUp")):
+		controllable = false
+		
 	if not controllable:
 		if see_controllable:
 			$Sprite.modulate = Color.blue
@@ -83,17 +92,19 @@ func _physics_process(delta):
 	# Sprite
 	var side_motion = left.dot(motion)
 	
-	sprite.rotation_degrees = -rad2deg(UP.angle_to(Vector2(0,-1)))
+	if awake:
+		if Input.is_action_just_pressed(forward):
+			sprite.flip_h = false
+		if Input.is_action_just_pressed(backward):
+			sprite.flip_h = true
 	
-	if side_motion > 0:
-		sprite.flip_h = false
-	if side_motion < 0:
-		sprite.flip_h = true
-	
-	if side_motion != 0:
-		animationPlayer.play("Walk")
+	if not awake:
+		playback.travel("Sleeping")
 	else:
-		animationPlayer.play("Idle")
+		if side_motion != 0:
+			playback.travel("Walk")
+		else:
+			playback.travel("Idle")
 		
 	# Debugging	
 	if Input.is_action_just_pressed("teleport") and teleport:

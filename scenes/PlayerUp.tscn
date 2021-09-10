@@ -300,13 +300,13 @@ states/Idle/position = Vector2( 515.37, 249.292 )
 states/Sleep/node = SubResource( 32 )
 states/Sleep/position = Vector2( 850.009, 70.6257 )
 states/Sleeping/node = SubResource( 35 )
-states/Sleeping/position = Vector2( 849.685, 178.07 )
+states/Sleeping/position = Vector2( 850.117, 179.403 )
 states/WakeUp/node = SubResource( 38 )
 states/WakeUp/position = Vector2( 851.117, 287.959 )
 states/Walk/node = SubResource( 41 )
 states/Walk/position = Vector2( 515.799, 117.292 )
 transitions = [ "Idle", "Walk", SubResource( 42 ), "Walk", "Idle", SubResource( 43 ), "Walk", "Sleep", SubResource( 44 ), "Idle", "Sleep", SubResource( 45 ), "Sleep", "Sleeping", SubResource( 46 ), "Sleeping", "WakeUp", SubResource( 47 ), "WakeUp", "Walk", SubResource( 48 ), "WakeUp", "Idle", SubResource( 49 ) ]
-start_node = "Idle"
+start_node = "Sleeping"
 graph_offset = Vector2( 189.944, 27.6257 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=21]
@@ -321,12 +321,11 @@ teleport = false
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-hframes = 2
-frame = 1
+texture = ExtResource( 4 )
+hframes = 5
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0734802, 0 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
