@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://images/RoundGuyWalking.png" type="Texture" id=1]
+[ext_resource path="res://images/GuySprites/RightGuy/RightWalk.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerRight.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]

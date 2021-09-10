@@ -16,10 +16,12 @@ export var teleport = true
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 onready var scl = sprite.scale.x
+onready var playback = $AnimationTree.get("parameters/playback")
 
 var motion = Vector2()
 
 var awake = false
+var was_awake = false
 var controllable = true
 var jumping = false
 var was_on_floor = false
@@ -61,6 +63,9 @@ func _physics_process(delta):
 	# Caso saltar al vacio
 	if motion.dot(UP) < -(JUMP_H/scl)+30 and jumping:
 		controllable = false
+	
+	if ((playback.get_current_node() == "Sleep") or (playback.get_current_node() == "WakeUp")):
+		controllable = false
 		
 	if not controllable:
 		if see_controllable:
@@ -89,11 +94,15 @@ func _physics_process(delta):
 		sprite.flip_h = false
 	if side_motion < 0:
 		sprite.flip_h = true
-	
-	if side_motion != 0:
-		animationPlayer.play("Walk")
-	else:
-		animationPlayer.play("Idle")
+			
+	if was_awake and not awake:
+		playback.travel("Sleeping")
+	if awake:
+		if side_motion != 0:
+			playback.travel("Walk")
+		else:
+			playback.travel("Idle")
+	was_awake = awake
 		
 	# Debugging	
 	if Input.is_action_just_pressed("teleport") and teleport:
