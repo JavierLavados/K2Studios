@@ -6,7 +6,7 @@ const JUMP_H = 1100
 const UP = Vector2(0, -1)
 const gravity = 120
 const forward = "right" #right/down
-const backward = "left" #left/up 
+const backward = "left" #left/up
 
 # Variables para debugging
 export var auto_jump = false
@@ -18,6 +18,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var scl = sprite.scale.x
 onready var playback = $AnimationTree.get("parameters/playback")
 onready var collision = $CollisionShape2D
+onready var ladder_detector = $ladder_detector
 
 var motion = Vector2()
 
@@ -26,6 +27,7 @@ var controllable = true
 var jumping = false
 var was_on_floor = false
 var left = UP.rotated(deg2rad(90))
+var on_ladder = false
 
 func _ready():
 	var players = get_tree().get_nodes_in_group("Players")
@@ -34,6 +36,16 @@ func _ready():
 	var rot = -rad2deg(UP.angle_to(Vector2(0,-1)))
 	sprite.rotation_degrees = rot
 	collision.rotation_degrees = rot
+	
+func is_on_ladder():
+	var areas = ladder_detector.get_overlapping_areas()
+	if areas.size() > 0:
+		for area in areas:
+			if "ladder".to_upper() in area.name.to_upper():
+				on_ladder = area.get_parent().position
+	else:
+		on_ladder = false
+	return on_ladder
 
 func _physics_process(delta):
 	
@@ -47,6 +59,8 @@ func _physics_process(delta):
 	
 	# Movimiento horizontal
 	var target_vel = Input.get_action_strength(forward) - Input.get_action_strength(backward)
+	
+	var vertical_vel = Input.get_action_strength("up") - Input.get_action_strength("down")
 	
 	# Movimiento vertical
 	if on_floor:
@@ -83,20 +97,28 @@ func _physics_process(delta):
 		motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
 	else:
 		motion.y = Vector2(0, motion.y).move_toward(Vector2(0, target_vel * MAX_SPEED/scl), ACCELERATION/scl).y
-	
+		
+	# Interaccion con escaleras
+	is_on_ladder()
+	if on_ladder and Input.is_action_pressed("up"):
+		if position.x != on_ladder.x:
+			position = on_ladder
+		
 	if awake:
 		motion = move_and_slide(motion, UP)
 	else:
 		motion = Vector2.ZERO
-	
+		
 	# Sprite
 	var side_motion = left.dot(motion)
 	
 	if awake:
 		if Input.is_action_just_pressed(forward):
 			sprite.flip_h = false
+			ladder_detector.scale.x = 1
 		if Input.is_action_just_pressed(backward):
 			sprite.flip_h = true
+			ladder_detector.scale.x = -1
 			
 	if not awake:
 		playback.travel("Sleeping")

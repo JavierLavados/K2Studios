@@ -49,7 +49,7 @@ tracks/2/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Sleep"
 length = 5.0
 tracks/0/type = "value"
@@ -89,7 +89,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Sleeping"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -128,7 +128,7 @@ tracks/2/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "WakeUp"
 length = 5.0
 tracks/0/type = "value"
@@ -168,8 +168,7 @@ tracks/2/keys = {
 "values": [ 4, 3, 2, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walk"
+[sub_resource type="Animation" id=6]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -310,7 +309,6 @@ start_node = "Sleeping"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
 [node name="PlayerRight" type="KinematicBody2D"]
-position = Vector2( 245.78, 98.6291 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -330,10 +328,10 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 8.0
 anims/Idle = SubResource( 2 )
-anims/Sleep = SubResource( 4 )
-anims/Sleeping = SubResource( 5 )
-anims/WakeUp = SubResource( 6 )
-anims/Walk = SubResource( 3 )
+anims/Sleep = SubResource( 3 )
+anims/Sleeping = SubResource( 4 )
+anims/WakeUp = SubResource( 5 )
+anims/Walk = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 30 )
