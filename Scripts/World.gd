@@ -4,6 +4,7 @@ var playerU
 var playerD
 var playerL
 var playerR
+var interface
 
 var current
 var players
@@ -15,6 +16,7 @@ func _ready():
 	playerR = get_child(1)
 	playerD = get_child(2)
 	playerL = get_child(3)
+	interface = get_child(4)
 	
 	players = [playerU, playerR, playerD, playerL]
 	playerU.awake = true
@@ -42,3 +44,5 @@ func _physics_process(delta):
 		players[current].awake = false
 		current = 3
 		players[current].awake = true
+	
+	interface.active = current

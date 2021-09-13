@@ -49,7 +49,7 @@ tracks/2/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=3]
 resource_name = "Sleep"
 length = 5.0
 tracks/0/type = "value"
@@ -306,11 +306,11 @@ states/Walk/node = SubResource( 21 )
 states/Walk/position = Vector2( 515.799, 117.292 )
 transitions = [ "Idle", "Walk", SubResource( 22 ), "Walk", "Idle", SubResource( 23 ), "Walk", "Sleep", SubResource( 24 ), "Idle", "Sleep", SubResource( 25 ), "Sleep", "Sleeping", SubResource( 26 ), "Sleeping", "WakeUp", SubResource( 27 ), "WakeUp", "Walk", SubResource( 28 ), "WakeUp", "Idle", SubResource( 29 ) ]
 start_node = "Sleeping"
-graph_offset = Vector2( 189.944, 27.6257 )
+graph_offset = Vector2( 189.944, -130.836 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 2, 7.8 )
 
 [node name="PlayerUp" type="KinematicBody2D"]
@@ -333,7 +333,7 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 8.0
 anims/Idle = SubResource( 2 )
-anims/Sleep = SubResource( 32 )
+anims/Sleep = SubResource( 3 )
 anims/Sleeping = SubResource( 4 )
 anims/WakeUp = SubResource( 5 )
 anims/Walk = SubResource( 6 )
@@ -355,4 +355,4 @@ parameters/Walk/TimeScale/scale = 8.0
 modulate = Color( 0.768627, 0.188235, 0.188235, 1 )
 position = Vector2( -8, 0 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 33 )
+shape = SubResource( 32 )
