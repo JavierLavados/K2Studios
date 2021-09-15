@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/PlayerRight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Ladder.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://images/Background1.png" type="Texture" id=7]
 [ext_resource path="res://images/TilesetWorld1.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Interface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/PushBlock.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -498,7 +499,7 @@ script = ExtResource( 3 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 5 )]
-position = Vector2( 144, 112 )
+position = Vector2( 216, 112 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
@@ -537,3 +538,6 @@ centered = false
 
 [node name="Ladder" parent="." instance=ExtResource( 2 )]
 position = Vector2( 240, 112 )
+
+[node name="PushBlock" parent="." instance=ExtResource( 10 )]
+position = Vector2( 168, 176 )

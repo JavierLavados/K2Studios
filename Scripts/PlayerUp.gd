@@ -46,6 +46,11 @@ func is_on_ladder():
 	else:
 		on_ladder = false
 	return on_ladder
+	
+func check_block_collision(hspd):
+	var block : = get_slide_collision(0).collider as Block
+	if block:
+		block.push(hspd)
 
 func _physics_process(delta):
 	
@@ -108,7 +113,11 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, UP)
 	else:
 		motion = Vector2.ZERO
-		
+	
+	# Empujar cajas:
+	if get_slide_count() > 1:
+		check_block_collision(target_vel * MAX_SPEED/scl)
+	
 	# Sprite
 	var side_motion = left.dot(motion)
 	
