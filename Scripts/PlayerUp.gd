@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const ACCELERATION = 140
+const ACCELERATION = 200 # NO SE ESTA USANDO!
 const MAX_SPEED = 200
 const JUMP_H = 1100
 const UP = Vector2(0, -1)
@@ -47,10 +47,11 @@ func is_on_ladder():
 		on_ladder = false
 	return on_ladder
 	
-func check_block_collision(hspd):
-	var block : = get_slide_collision(0).collider as Block
-	if block:
-		block.push(hspd)
+func check_block_collision(hspd, collisions):
+	for i in collisions:
+		var block : = get_slide_collision(i).collider as Block
+		if block:
+			block.push(hspd)
 
 func _physics_process(delta):
 	
@@ -99,7 +100,9 @@ func _physics_process(delta):
 			$Sprite.modulate = Color.white
 	
 	if UP.x == 0:
-		motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
+		# Es necesario expresar el movimiento asi?
+		#motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
+		motion.x = target_vel * MAX_SPEED/scl
 	else:
 		motion.y = Vector2(0, motion.y).move_toward(Vector2(0, target_vel * MAX_SPEED/scl), ACCELERATION/scl).y
 		
@@ -108,16 +111,17 @@ func _physics_process(delta):
 	if on_ladder and Input.is_action_pressed("up"):
 		if position.x != on_ladder.x:
 			position = on_ladder
-		
+	
+	# Empujar cajas:
+	var count = get_slide_count()
+	if count > 1:
+		check_block_collision(motion.x, count)
+	
 	if awake:
 		motion = move_and_slide(motion, UP)
 	else:
 		motion = Vector2.ZERO
-	
-	# Empujar cajas:
-	if get_slide_count() > 1:
-		check_block_collision(target_vel * MAX_SPEED/scl)
-	
+		
 	# Sprite
 	var side_motion = left.dot(motion)
 	
