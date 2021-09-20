@@ -8,7 +8,6 @@ func push(hspd):
 	
 func _physics_process(delta):
 	motion += Vector2(0,60)
-	print(is_on_floor())
 	if not is_on_floor():
 		motion.x = 0
 	motion = move_and_slide(motion, Vector2(0,-1))
