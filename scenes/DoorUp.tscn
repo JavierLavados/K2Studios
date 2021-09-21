@@ -3,7 +3,7 @@
 [ext_resource path="res://images/TilesetWorld1.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 2, 8 )
 
 [node name="DoorUp" type="Area2D"]
 
