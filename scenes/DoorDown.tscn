@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/DoorDown.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 2, 8 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Move"
@@ -22,20 +22,29 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+<<<<<<< HEAD
 [node name="DoorDown" type="Area2D"]
 script = ExtResource( 2 )
 
+=======
+>>>>>>> c1ea96c5a9ec9dd9db66a3326c06d4428cfa502f
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 2
+<<<<<<< HEAD
 frame = 7
+=======
+>>>>>>> c1ea96c5a9ec9dd9db66a3326c06d4428cfa502f
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
+<<<<<<< HEAD
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
 anims/Move = SubResource( 2 )
+=======
+>>>>>>> c1ea96c5a9ec9dd9db66a3326c06d4428cfa502f
