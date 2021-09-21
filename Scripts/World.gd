@@ -9,6 +9,11 @@ var interface
 var current
 var players
 
+var readyUp
+var readyDown
+var readyLeft
+var readyRight
+
 func _ready():
 	
 	# Se obtienen los jugadores
@@ -21,6 +26,8 @@ func _ready():
 	players = [playerU, playerR, playerD, playerL]
 	playerU.awake = true
 	current = 0
+	
+	readyUp=false
 	
 	
 func _physics_process(delta):
@@ -46,3 +53,12 @@ func _physics_process(delta):
 		players[current].awake = true
 	
 	interface.active = current
+	
+	readyUp=get_node("DoorUp").readyUp
+	readyDown=get_node("DoorDown").readyDown
+	readyLeft=get_node("DoorLeft").readyLeft
+	readyRight=get_node("DoorRight").readyRight
+	if readyUp==true and readyDown==true and readyLeft==true and readyRight==true:
+		get_tree().change_scene("res://scenes/World2.tscn")
+		
+	
