@@ -1,10 +1,19 @@
 extends Area2D
 
+onready var sprite = $Sprite
+onready var animationPlayer = $AnimationPlayer
+
 var dentro = false
 var readyUp = false
 
 var playerUp
 var current
+
+func _ready():
+	sprite.rotation_degrees = 0
+
+func _process(delta):
+	animationPlayer.play("Move")
 
 func _physics_process(delta):
 	current = get_parent().current
