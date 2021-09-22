@@ -551,7 +551,7 @@ position = Vector2( 144, 176 )
 z_index = -1
 
 [node name="DoorLeft" parent="." instance=ExtResource( 14 )]
-position = Vector2( 624, 240 )
+position = Vector2( 625.498, 207.786 )
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -560,8 +560,8 @@ scale = Vector2( 0.6, 0.6 )
 current = true
 
 [connection signal="body_entered" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_entered"]
-[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
 [connection signal="body_exited" from="DoorUp" to="." method="_on_DoorUp_body_exited"]
+[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
 [connection signal="body_entered" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_entered"]
 [connection signal="body_exited" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_exited"]
 [connection signal="body_entered" from="DoorDown" to="DoorDown" method="_on_DoorDown_body_entered"]
