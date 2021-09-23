@@ -30,6 +30,10 @@ config/name="Gravity Guys"
 run/main_scene="res://scenes/World.tscn"
 config/icon="res://images/icon.png"
 
+[display]
+
+window/size/height=640
+
 [input]
 
 left={
