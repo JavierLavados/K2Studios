@@ -1,14 +1,13 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/PlayerRight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/DoorUp.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Level2.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Level1.gd" type="Script" id=3]
 [ext_resource path="res://scenes/PlayerLeft.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/PlayerDown.tscn" type="PackedScene" id=6]
 [ext_resource path="res://images/BGworld1.png" type="Texture" id=7]
 [ext_resource path="res://images/TilesetWorld1.png" type="Texture" id=8]
-[ext_resource path="res://scenes/Interface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/DoorDown.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/DoorLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/DoorRight.tscn" type="PackedScene" id=15]
@@ -501,31 +500,29 @@ script = ExtResource( 3 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 5 )]
-position = Vector2( 368, 272 )
+position = Vector2( 240, 200 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
 ] instance=ExtResource( 1 )]
-position = Vector2( 752, 496 )
+position = Vector2( 1136, 520 )
 
 [node name="PlayerDown" parent="." groups=[
 "Players",
 ] instance=ExtResource( 6 )]
-position = Vector2( 528, 112 )
+position = Vector2( 1168, 464 )
 
 [node name="PlayerLeft" parent="." groups=[
 "Players",
 ] instance=ExtResource( 4 )]
-position = Vector2( 240, 464 )
-
-[node name="Interface" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1200, 520 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65540, 5, 0, 65546, 18, 0, 65547, 19, 0, 65548, 9, 0, 65549, 15, 0, 65552, 4, 0, 65555, 10, 0, 65558, 3, 0, 65559, 9, 0, 131075, 16, 0, 131076, 8, 0, 131082, 6, 0, 131087, 13, 0, 131089, 13, 0, 131093, 14, 0, 131095, 14, 0, 131096, 3, 0, 196611, 5, 0, 196614, 9, 0, 196619, 15, 0, 262148, 16, 0, 262155, 15, 0, 262166, 19, 0, 327687, 9, 0, 327700, 18, 0, 327706, 16, 0, 393220, 13, 0, 393223, 2, 0, 393226, 20, 0, 393234, 19, 0, 393242, 5, 0, 458759, 3, 0, 458760, 1, 0, 458768, 17, 0, 458776, 5, 0, 458778, 7, 0, 458779, 10, 0, 524292, 19, 0, 524296, 2, 0, 524297, 10, 0, 524302, 19, 0, 524310, 4, 0, 524313, 5, 0, 589827, 19, 0, 589828, 18, 0, 589832, 14, 0, 589833, 3, 0, 589834, 14, 0, 589835, 14, 0, 589836, 14, 0, 589843, 19, 0, 589844, 20, 0, 589845, 13, 0, 655364, 19, 0, 655377, 10, 0, 655382, 8, 0, 655383, 13, 0, 720902, 15, 0, 720907, 8, 0, 720911, 9, 0, 720912, 8, 0, 720913, 2, 0, 720914, 19, 0, 720915, 17, 0, 720918, 9, 0, 720919, 7, 0, 720920, 4, 0, 786438, 6, 0, 786445, 7, 0, 786455, 7, 0, 851974, 9, 0, 851975, 6, 0, 851986, 5, 0, 851988, 1, 0, 917512, 1, 0, 917523, 16, 0, 917524, 2, 0, 917525, 7, 0, 917529, 18, 0, 983048, 6, 0, 983057, 19, 0, 983060, 5, 0, 983062, 10, 0, 1048584, 9, 0, 1048593, 20, 0, 1048597, 16, 0, 1048598, 8, 0, 1048600, 19, 0, 1114115, 13, 0, 1114116, 4, 0, 1114132, 5, 0, 1114134, 19, 0, 1179653, 9, 0, 1179667, 16, 0, 1179668, 10, 0, 1179669, 19, 0, 1179670, 17, 0, 1179671, 19, 0 )
+tile_data = PoolIntArray( 327684, 4, 0, 393219, 4, 0, 393226, 4, 0, 393238, 9, 0, 393239, 3, 0, 458754, 13, 0, 458756, 1, 0, 458757, 13, 0, 458758, 4, 0, 458759, 13, 0, 458760, 4, 0, 458761, 13, 0, 458763, 13, 0, 458764, 4, 0, 458765, 13, 0, 458767, 9, 0, 458768, 6, 0, 458772, 14, 0, 458773, 14, 0, 458774, 3, 0, 458776, 14, 0, 458777, 14, 0, 524292, 7, 0, 524293, 7, 0, 524295, 1, 0, 524299, 7, 0, 524304, 15, 0, 524315, 10, 0, 589830, 10, 0, 589853, 4, 0, 655386, 13, 0, 655387, 4, 0, 655388, 13, 0, 720906, 5, 0, 720908, 1, 0, 720909, 10, 0, 720920, 19, 0, 720923, 7, 0, 720924, 8, 0, 786440, 17, 0, 786443, 5, 0, 786454, 18, 0, 851974, 19, 0, 851983, 18, 0, 851984, 9, 0, 851985, 1, 0, 851986, 7, 0, 851987, 6, 0, 852002, 1, 0, 852003, 1, 0, 852004, 1, 0, 852005, 1, 0, 852006, 1, 0, 917507, 13, 0, 917508, 4, 0, 917521, 8, 0, 917522, 6, 0, 917538, 1, 0, 917542, 1, 0, 983042, 13, 0, 983043, 1, 0, 983045, 4, 0, 983046, 13, 0, 983047, 10, 0, 983048, 19, 0, 983049, 19, 0, 983053, 2, 0, 983054, 3, 0, 983055, 14, 0, 983058, 15, 0, 983074, 1, 0, 983078, 1, 0, 1048579, 7, 0, 1048580, 1, 0, 1048582, 7, 0, 1048583, 1, 0, 1048584, 10, 0, 1048585, 19, 0, 1048586, 19, 0, 1048587, 9, 0, 1048588, 2, 0, 1048589, 3, 0, 1048610, 1, 0, 1048614, 1, 0, 1114117, 7, 0, 1114118, 1, 0, 1114119, 8, 0, 1114124, 14, 0, 1114146, 1, 0, 1114147, 1, 0, 1114148, 1, 0, 1114149, 1, 0, 1114150, 1, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -537,19 +534,19 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="DoorUp" parent="." instance=ExtResource( 2 )]
-position = Vector2( 816, 208 )
+position = Vector2( 400, 336 )
 z_index = -1
 
 [node name="DoorRight" parent="." instance=ExtResource( 15 )]
-position = Vector2( 400, 80 )
+position = Vector2( 1096, 360 )
 z_index = -1
 
 [node name="DoorDown" parent="." instance=ExtResource( 11 )]
-position = Vector2( 688, 336 )
+position = Vector2( 1136, 392 )
 z_index = -1
 
 [node name="DoorLeft" parent="." instance=ExtResource( 14 )]
-position = Vector2( 528, 528 )
+position = Vector2( 1176, 376 )
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -557,8 +554,8 @@ position = Vector2( 512, 320 )
 current = true
 
 [connection signal="body_entered" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_entered"]
-[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
 [connection signal="body_exited" from="DoorUp" to="." method="_on_DoorUp_body_exited"]
+[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
 [connection signal="body_entered" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_entered"]
 [connection signal="body_exited" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_exited"]
 [connection signal="body_entered" from="DoorDown" to="DoorDown" method="_on_DoorDown_body_entered"]

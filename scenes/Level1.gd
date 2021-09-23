@@ -55,13 +55,11 @@ func _physics_process(delta):
 		current = 3
 		players[current].awake = true
 	
-	interface.active = current
-	
 	readyUp=get_node("DoorUp").readyUp
 	readyDown=get_node("DoorDown").readyDown
 	readyLeft=get_node("DoorLeft").readyLeft
 	readyRight=get_node("DoorRight").readyRight
-	if readyUp and readyDown and readyLeft and readyRight:
-		get_tree().change_scene("res://scenes/World2.tscn")
+	if readyUp:
+		get_tree().change_scene("res://scenes/Level2.tscn")
 		
 	
