@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://WIP/Block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WIP/PushBlock.gd" type="Script" id=2]
+
+[node name="PushBlock" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 1.2 )

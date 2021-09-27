@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Block",
 "language": "GDScript",
-"path": "res://scenes/Block.gd"
+"path": "res://WIP/Block.gd"
 }, {
 "base": "Block",
 "class": "PushBlock",
 "language": "GDScript",
-"path": "res://scenes/PushBlock.gd"
+"path": "res://WIP/PushBlock.gd"
 } ]
 _global_script_class_icons={
 "Block": "",
@@ -27,8 +27,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Gravity Guys"
-run/main_scene="res://scenes/Level1.tscn"
-config/icon="res://images/icon.png"
+run/main_scene="res://Levels/Level1.tscn"
+config/icon="res://Sprites/icon.png"
 
 [display]
 
