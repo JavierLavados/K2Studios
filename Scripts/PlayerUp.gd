@@ -2,13 +2,11 @@ extends KinematicBody2D
 
 const ACCELERATION = 200 # NO SE ESTA USANDO!
 const MAX_SPEED = 200
-const JUMP_H = 1100
+const JUMP_H = 700  # SALTO = GRAVEDAD * 16
 const UP = Vector2(0, -1)
-const gravity = 120
+const gravity = 50
 const forward = "right" #right/down
 const backward = "left" #left/up
-
-var jumps = 0
 
 # Variables para debugging
 export var auto_jump = false
@@ -30,6 +28,8 @@ var jumping = false
 var was_on_floor = false
 var left = UP.rotated(deg2rad(90))
 var on_ladder = false
+var air_jump = false
+var air_time = 0
 
 func _ready():
 	var players = get_tree().get_nodes_in_group("Players")
@@ -58,11 +58,17 @@ func check_block_collision(hspd, collisions):
 func _physics_process(delta):
 	
 	var on_floor = is_on_floor()
-
-	motion += -(gravity/scl) * UP
+	
+	if jumping:
+		if (air_time < MAX_SPEED):
+			air_time += 2
+	else:
+		air_time = 0
+	
+	if motion.y < JUMP_H/scl:
+		motion += -gravity/scl * UP
 		
 	if on_floor:
-		jumps = 0
 		jumping = false
 		controllable = true
 	
@@ -72,12 +78,32 @@ func _physics_process(delta):
 	var vertical_vel = Input.get_action_strength("up") - Input.get_action_strength("down")
 	
 	# Movimiento vertical (salto)
-	#if on_floor:
-	if Input.is_action_just_pressed("ui_accept") && jumps < 2:
-		motion = UP * JUMP_H/scl
-		jumps += 1
-		jumping = true
+	
+	if Input.is_action_just_pressed("ui_accept"):
 		
+		# Caso segundo salto
+		if jumping and not air_jump:
+			motion = UP * JUMP_H/scl
+			controllable = true
+			jumping = false
+		
+		# Caso romper caida libre
+		if not controllable and not jumping:
+			motion = UP * JUMP_H/scl
+			jumping = true
+			controllable = true
+			air_jump = true
+		
+		# Caso salto inicial
+		if on_floor:
+			motion = UP * JUMP_H/scl
+			jumping = true
+		
+	if on_floor:
+		air_jump = false
+		if Input.is_action_just_pressed("ui_accept"):
+			motion = UP * JUMP_H/scl
+			jumping = true
 	
 	if was_on_floor and not on_floor and auto_jump:
 		motion = UP * JUMP_H/scl
@@ -89,7 +115,7 @@ func _physics_process(delta):
 	was_on_floor = on_floor
 	
 	# Caso saltar al vacio
-	if motion.dot(UP) < -(JUMP_H/scl)+30 and jumping:
+	if motion.dot(UP) <= -JUMP_H/scl:
 		controllable = false
 	
 	# Incontrolable al despertar
@@ -107,7 +133,8 @@ func _physics_process(delta):
 	if UP.x == 0:
 		# Es necesario expresar el movimiento asi?
 		#motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
-		motion.x = target_vel * MAX_SPEED/scl
+		motion.x = target_vel * (MAX_SPEED/scl - air_time)
+			
 	else:
 		motion.y = Vector2(0, motion.y).move_toward(Vector2(0, target_vel * MAX_SPEED/scl), ACCELERATION/scl).y
 		
@@ -149,9 +176,7 @@ func _physics_process(delta):
 	# Debugging	
 	if Input.is_action_just_pressed("teleport") and teleport:
 		global_position = get_global_mouse_position()
-	
-	
-	
-	
+		
+	print(motion.x)
 	
 	

@@ -65,5 +65,3 @@ func _physics_process(delta):
 	readyRight=get_node("DoorRight").readyRight
 	if readyUp and readyDown and readyLeft and readyRight:
 		get_tree().change_scene("res://scenes/World2.tscn")
-		
-	print(lever)

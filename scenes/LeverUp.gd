@@ -12,12 +12,7 @@ func _ready():
 
 func _physics_process(delta):
 	current = get_parent().current
-		
-	dentro = false
-	for body in get_overlapping_bodies():
-		if body.name == "PlayerUp":
-			dentro = true
-	
+
 	if current == 0:
 		if (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down")) and dentro:
 			if on:
@@ -35,3 +30,9 @@ func _physics_process(delta):
 	else:
 		sprite.frame = 40
 
+func _on_LeverUp_body_entered(body):
+	if body.name == "PlayerUp":
+			dentro = true
+			
+func _on_LeverUp_body_exited(body):
+	dentro = false
