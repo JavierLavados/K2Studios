@@ -8,6 +8,8 @@ const gravity = 120
 const forward = "right" #right/down
 const backward = "left" #left/up
 
+var jumps = 0
+
 # Variables para debugging
 export var auto_jump = false
 export var see_controllable = false
@@ -60,6 +62,7 @@ func _physics_process(delta):
 	motion += -(gravity/scl) * UP
 		
 	if on_floor:
+		jumps = 0
 		jumping = false
 		controllable = true
 	
@@ -68,11 +71,13 @@ func _physics_process(delta):
 	
 	var vertical_vel = Input.get_action_strength("up") - Input.get_action_strength("down")
 	
-	# Movimiento vertical
-	if on_floor:
-		if Input.is_action_just_pressed("ui_accept"):
-			motion = UP * JUMP_H/scl
-			jumping = true
+	# Movimiento vertical (salto)
+	#if on_floor:
+	if Input.is_action_just_pressed("ui_accept") && jumps < 2:
+		motion = UP * JUMP_H/scl
+		jumps += 1
+		jumping = true
+		
 	
 	if was_on_floor and not on_floor and auto_jump:
 		motion = UP * JUMP_H/scl
