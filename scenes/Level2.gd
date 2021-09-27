@@ -54,6 +54,11 @@ func _physics_process(delta):
 		players[current].awake = false
 		current = 3
 		players[current].awake = true
+		
+	if Input.is_action_just_pressed("change_controls"):
+		for player in players:
+			player.cherry_controls = !player.cherry_controls
+		interface.cherry_controls = !interface.cherry_controls
 	
 	interface.active = current
 	

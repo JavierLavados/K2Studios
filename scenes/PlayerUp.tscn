@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://images/NewSprites/UpGuy/UpWalk.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/PlayerUp.gd" type="Script" id=2]
+[ext_resource path="res://scenes/PlayerUpNew.gd" type="Script" id=2]
 [ext_resource path="res://images/NewSprites/UpGuy/UpSleep.png" type="Texture" id=3]
 [ext_resource path="res://images/NewSprites/UpGuy/UpIdle.png" type="Texture" id=5]
 
@@ -378,8 +378,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-see_controllable = true
-teleport = false
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )

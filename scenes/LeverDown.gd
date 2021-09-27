@@ -7,17 +7,9 @@ var on = false
 
 var current
 
-func _ready():
-	sprite.rotation_degrees = 0
-
 func _physics_process(delta):
 	current = get_parent().current
-		
-	dentro = false
-	for body in get_overlapping_bodies():
-		if body.name == "PlayerDown":
-			dentro = true
-	
+
 	if current == 2:
 		if (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down")) and dentro:
 			if on:
@@ -35,6 +27,9 @@ func _physics_process(delta):
 	else:
 		sprite.frame = 48
 				
-		
-			
+func _on_LeverDown_body_entered(body):
+	if body.name == "PlayerDown":
+			dentro = true
 
+func _on_LeverDown_body_exited(body):
+	dentro = false

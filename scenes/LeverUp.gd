@@ -7,9 +7,6 @@ var on = false
 
 var current
 
-func _ready():
-	sprite.rotation_degrees = 0
-
 func _physics_process(delta):
 	current = get_parent().current
 

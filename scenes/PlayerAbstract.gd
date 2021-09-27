@@ -1,44 +1,75 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 90 #210
+# Constantes
+const MAX_SPEED = 90
 const AIR_SPEED = 72
 const AIR_SPEED_2 = 110
 const JUMP_H = 375
-const UP = Vector2(0, -1)
+const JUMP_H_2 = 325
 const gravity = 25
-const forward = "right" #right/down
-const backward = "left" #left/up
 
 # Variables para debugging
 export var auto_jump = false
 export var see_controllable = false
 export var teleport = true
 
+# Referencias a otros nodos
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 onready var playback = $AnimationTree.get("parameters/playback")
 onready var collision = $CollisionShape2D
 onready var ladder_detector = $ladder_detector
 
-var motion = Vector2()
-
+# Variables auxiliares
 var awake = false
 var controllable = true
 var jumping = false
 var was_on_floor = false
-var left = UP.rotated(deg2rad(90))
 var on_ladder = false
 var air_jump = false
 var air_time = 0
 
-func _ready():
+var motion = Vector2()
+
+func initialize(n):
 	var players = get_tree().get_nodes_in_group("Players")
 	for player in players:
 		add_collision_exception_with(player)
-	var rot = -rad2deg(UP.angle_to(Vector2(0,-1)))
+	var rot = -rad2deg(n.angle_to(Vector2(0,-1)))
 	sprite.rotation_degrees = rot
 	collision.rotation_degrees = rot
 	
+func modify_sprite(n, forward, backward):
+	var left = n.rotated(deg2rad(90))
+	var side_motion = left.dot(motion)
+	var flip = false
+	if n.x < 0 or n.y > 0:
+		flip = true
+	
+	if awake:
+		if Input.is_action_just_pressed(forward):
+			if flip:
+				sprite.flip_h = true
+			else:
+				sprite.flip_h = false
+			#ladder_detector.scale.x = 1
+		if Input.is_action_just_pressed(backward):
+			if flip:
+				sprite.flip_h = false
+			else:
+				sprite.flip_h = true
+			#ladder_detector.scale.x = -1
+			
+	if not awake:
+		playback.travel("Sleeping")
+	else:
+		if side_motion != 0:
+			playback.travel("Walk")
+		else:
+			playback.travel("Idle")
+	
+	
+# GENERALIZAR PARA TODOS
 func is_on_ladder():
 	var areas = ladder_detector.get_overlapping_areas()
 	if areas.size() > 0:
@@ -54,8 +85,8 @@ func check_block_collision(hspd, collisions):
 		var block : = get_slide_collision(i).collider as Block
 		if block:
 			block.push(hspd)
-
-func _physics_process(delta):
+			
+func calc_motion(n, forward, backward, top, btm):
 	
 	var on_floor = is_on_floor()
 	
@@ -64,10 +95,10 @@ func _physics_process(delta):
 			air_time += 1
 	else:
 		air_time = 0
-	
-	if motion.dot(UP) > -JUMP_H:
-		motion += -gravity * UP
 		
+	if motion.dot(n) > -JUMP_H:
+		motion += -gravity * n
+			
 	if on_floor:
 		jumping = false
 		controllable = true
@@ -75,7 +106,7 @@ func _physics_process(delta):
 	# Movimiento horizontal
 	var target_vel = Input.get_action_strength(forward) - Input.get_action_strength(backward)
 	
-	var vertical_vel = Input.get_action_strength("up") - Input.get_action_strength("down")
+	var vertical_vel = Input.get_action_strength(top) - Input.get_action_strength(btm)
 	
 	# Movimiento vertical (salto)
 	
@@ -86,22 +117,24 @@ func _physics_process(delta):
 		# Caso segundo salto
 		if not air_jump:
 			air_jump = true
-			motion = UP * JUMP_H
+			motion = n * JUMP_H_2
 			jumping = true
 			controllable = true
 
 		# Caso salto inicial
 		if on_floor:
-			motion = UP * JUMP_H
+			motion = n * JUMP_H
 			jumping = true
 		
 	if on_floor:
 		air_jump = false
-		
 	
+	# AUTO JUMP PARA DEBUGGING
 	if was_on_floor and not on_floor and auto_jump:
-		motion = UP * JUMP_H
+		motion = n * JUMP_H
 		jumping = true
+	
+	# Casos de incontrolabilidad
 	
 	# Caso lanzarse sin saltar
 	if was_on_floor and not on_floor and not jumping:
@@ -109,13 +142,14 @@ func _physics_process(delta):
 	was_on_floor = on_floor
 	
 	# Caso saltar al vacio
-	if motion.dot(UP) <= -JUMP_H:
+	if motion.dot(n) <= -JUMP_H:
 		controllable = false
-	
+		
 	# Incontrolable al despertar
 	if ((playback.get_current_node() == "Sleep") or (playback.get_current_node() == "WakeUp")):
 		controllable = false
 		
+	# CAMBIO COLOR PARA DEBUGGING			
 	if not controllable:
 		if see_controllable:
 			$Sprite.modulate = Color.blue
@@ -123,10 +157,9 @@ func _physics_process(delta):
 	else:
 		if see_controllable:
 			$Sprite.modulate = Color.white
-	
-	if UP.x == 0:
-		# Es necesario expresar el movimiento asi?
-		#motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
+			
+	# Calculo movimiento horizontal
+	if n.x == 0:
 		if on_floor:
 			motion.x = target_vel * MAX_SPEED
 		else:
@@ -134,47 +167,41 @@ func _physics_process(delta):
 				motion.x = target_vel * (AIR_SPEED_2 - air_time)
 			else:
 				motion.x = target_vel * (AIR_SPEED - air_time)
-
-		
-	# Interaccion con escaleras
-	is_on_ladder()
-	if on_ladder and Input.is_action_pressed("up"):
-		if position.x != on_ladder.x:
-			position = on_ladder
-	
-	# Empujar cajas:
-	var count = get_slide_count()
-	if count > 1:
-		check_block_collision(motion.x, count)
-		
-	if not awake:
-		motion.x = 0
-	
-	motion = move_and_slide(motion, UP)
-		
-	# Sprite
-	var side_motion = left.dot(motion)
-	
-	if awake:
-		if Input.is_action_just_pressed(forward):
-			sprite.flip_h = false
-			ladder_detector.scale.x = 1
-		if Input.is_action_just_pressed(backward):
-			sprite.flip_h = true
-			ladder_detector.scale.x = -1
-			
-	if not awake:
-		playback.travel("Sleeping")
+		if not awake:
+			motion.x = 0
 	else:
-		if side_motion != 0:
-			playback.travel("Walk")
+		if on_floor:
+			motion.y = target_vel * MAX_SPEED
 		else:
-			playback.travel("Idle")
+			if air_jump:
+				motion.y = target_vel * (AIR_SPEED_2 - air_time)
+			else:
+				motion.y = target_vel * (AIR_SPEED - air_time)
+		if not awake:
+			motion.y = 0
+				
+	if n == Vector2(0, -1):
+		# Interaccion con escaleras
+		is_on_ladder()
+		if on_ladder and Input.is_action_pressed(top):
+			if n.x == 0:
+				if position.x != on_ladder.x:
+					position.x = on_ladder.x
+			else:
+				if position.y != on_ladder.y:
+					position.y = on_ladder.y
 		
-	# Debugging	
-	if Input.is_action_just_pressed("teleport") and teleport:
+		# Empujar cajas:
+		var count = get_slide_count()
+		if count > 1:
+			if n.x == 0:
+				check_block_collision(motion.x, count)
+			else:
+				check_block_collision(motion.y, count)
+
+	# Movimiento final
+	motion = move_and_slide(motion, n)
+		
+	# TELETRANSPORTACION PARA DEBUGGING	
+	if Input.is_action_just_pressed("teleport") and teleport and awake:
 		global_position = get_global_mouse_position()
-		
-	print(air_time)
-	
-	

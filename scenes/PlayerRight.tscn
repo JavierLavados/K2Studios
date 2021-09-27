@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://images/NewSprites/RightGuy/RightSleep.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/PlayerRight.gd" type="Script" id=2]
+[ext_resource path="res://scenes/PlayerRightNew.gd" type="Script" id=2]
 [ext_resource path="res://images/NewSprites/RightGuy/RightWalk.png" type="Texture" id=3]
 [ext_resource path="res://images/NewSprites/RightGuy/RightIdle.png" type="Texture" id=5]
 
@@ -373,7 +373,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-teleport = false
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )

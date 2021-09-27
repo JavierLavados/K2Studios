@@ -501,6 +501,8 @@ script = ExtResource( 3 )
 "Players",
 ] instance=ExtResource( 5 )]
 position = Vector2( 239.528, 207.079 )
+auto_jump = false
+see_controllable = false
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
@@ -554,8 +556,8 @@ position = Vector2( 512, 320 )
 current = true
 
 [connection signal="body_entered" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_entered"]
-[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
 [connection signal="body_exited" from="DoorUp" to="." method="_on_DoorUp_body_exited"]
+[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
 [connection signal="body_entered" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_entered"]
 [connection signal="body_exited" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_exited"]
 [connection signal="body_entered" from="DoorDown" to="DoorDown" method="_on_DoorDown_body_entered"]
