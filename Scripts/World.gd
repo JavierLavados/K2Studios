@@ -8,6 +8,7 @@ var interface
 
 var current
 var players
+var lever
 
 var readyUp
 var readyDown
@@ -26,6 +27,7 @@ func _ready():
 	players = [playerU, playerR, playerD, playerL]
 	playerU.awake = true
 	current = 0
+	lever = 4
 	
 	readyUp=false
 	
@@ -64,4 +66,4 @@ func _physics_process(delta):
 	if readyUp and readyDown and readyLeft and readyRight:
 		get_tree().change_scene("res://scenes/World2.tscn")
 		
-	
+	print(lever)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/PlayerRight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/DoorUp.tscn" type="PackedScene" id=2]
@@ -9,9 +9,13 @@
 [ext_resource path="res://images/BGworld1.png" type="Texture" id=7]
 [ext_resource path="res://images/TilesetWorld1.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Interface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/LeverBlockUp.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/DoorDown.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/LeverUp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/LeverDown.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/DoorLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/DoorRight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/LeverBlockDown.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -527,7 +531,7 @@ scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 19, 0, 1, 19, 0, 2, 19, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 3, 0, 8, 14, 0, 9, 14, 0, 10, 10, 0, 11, 7, 0, 12, 8, 0, 13, 9, 0, 14, 14, 0, 15, 14, 0, 16, 14, 0, 17, 3, 0, 18, 14, 0, 19, 2, 0, 20, 1, 0, 65536, 19, 0, 65537, 18, 0, 65556, 2, 0, 131072, 19, 0, 131092, 8, 0, 196608, 17, 0, 196628, 9, 0, 262144, 8, 0, 262148, 19, 0, 262149, 20, 0, 262150, 19, 0, 262151, 9, 0, 262152, 8, 0, 262154, 8, 0, 262155, 10, 0, 262164, 19, 0, 327680, 1, 0, 327693, 1, 0, 327700, 19, 0, 393216, 2, 0, 393231, 1, 0, 393236, 18, 0, 458752, 6, 0, 458763, 1, 0, 458764, 1, 0, 458769, 1, 0, 458772, 19, 0, 524288, 15, 0, 524307, 3, 0, 524308, 10, 0, 589824, 15, 0, 589828, 18, 0, 589829, 19, 0, 589832, 19, 0, 589833, 19, 0, 589840, 14, 0, 589841, 14, 0, 589842, 14, 0, 589844, 2, 0, 655360, 20, 0, 655374, 1, 0, 655380, 2, 0, 720896, 19, 0, 720908, 4, 0, 720916, 1, 0, 786432, 19, 0, 786433, 18, 0, 786434, 13, 0, 786435, 4, 0, 786436, 13, 0, 786437, 13, 0, 786438, 4, 0, 786439, 13, 0, 786440, 9, 0, 786441, 7, 0, 786442, 10, 0, 786443, 13, 0, 786445, 13, 0, 786446, 13, 0, 786447, 4, 0, 786448, 13, 0, 786449, 13, 0, 786450, 4, 0, 786451, 2, 0, 786452, 7, 0, 851969, 19, 0, 851970, 7, 0, 851972, 7, 0, 851982, 7, 0, 851984, 7, 0, 851987, 7, 0 )
+tile_data = PoolIntArray( 0, 19, 0, 1, 19, 0, 2, 19, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 3, 0, 8, 14, 0, 9, 14, 0, 10, 10, 0, 11, 7, 0, 12, 8, 0, 13, 9, 0, 14, 14, 0, 15, 14, 0, 16, 14, 0, 17, 3, 0, 18, 14, 0, 19, 2, 0, 20, 1, 0, 65536, 19, 0, 65556, 2, 0, 131072, 19, 0, 131092, 8, 0, 196608, 17, 0, 196628, 9, 0, 262144, 8, 0, 262148, 19, 0, 262149, 20, 0, 262150, 19, 0, 262151, 9, 0, 262152, 8, 0, 262154, 8, 0, 262155, 10, 0, 262164, 19, 0, 327680, 1, 0, 327693, 1, 0, 327700, 19, 0, 393216, 2, 0, 393231, 1, 0, 393236, 18, 0, 458752, 6, 0, 458763, 1, 0, 458764, 1, 0, 458769, 1, 0, 458772, 19, 0, 524288, 15, 0, 524307, 3, 0, 524308, 10, 0, 589824, 15, 0, 589828, 18, 0, 589829, 19, 0, 589832, 19, 0, 589833, 19, 0, 589840, 14, 0, 589841, 14, 0, 589842, 14, 0, 589844, 2, 0, 655360, 20, 0, 655374, 1, 0, 655380, 2, 0, 720896, 19, 0, 720908, 4, 0, 720916, 1, 0, 786432, 19, 0, 786433, 18, 0, 786434, 13, 0, 786435, 4, 0, 786436, 13, 0, 786437, 13, 0, 786438, 4, 0, 786439, 13, 0, 786440, 9, 0, 786441, 7, 0, 786442, 10, 0, 786443, 13, 0, 786445, 13, 0, 786446, 13, 0, 786447, 4, 0, 786448, 13, 0, 786449, 13, 0, 786450, 4, 0, 786451, 2, 0, 786452, 7, 0, 851969, 19, 0, 851970, 7, 0, 851972, 7, 0, 851982, 7, 0, 851984, 7, 0, 851987, 7, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -558,6 +562,24 @@ z_index = -1
 position = Vector2( 495.211, 295.171 )
 scale = Vector2( 0.6, 0.6 )
 current = true
+
+[node name="LeverBlockUp" parent="." instance=ExtResource( 10 )]
+position = Vector2( 400, 112 )
+
+[node name="LeverBlock" parent="LeverBlockUp" instance=ExtResource( 10 )]
+position = Vector2( 32, -32 )
+
+[node name="LeverBlock" parent="LeverBlockUp/LeverBlock" instance=ExtResource( 10 )]
+position = Vector2( 32, -32 )
+
+[node name="LeverUp" parent="." instance=ExtResource( 12 )]
+position = Vector2( 272, 112 )
+
+[node name="LeverDown" parent="." instance=ExtResource( 13 )]
+position = Vector2( 336, 176 )
+
+[node name="LeverBlock" parent="." instance=ExtResource( 16 )]
+position = Vector2( 112, 144 )
 
 [connection signal="body_entered" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_entered"]
 [connection signal="body_exited" from="DoorUp" to="." method="_on_DoorUp_body_exited"]
