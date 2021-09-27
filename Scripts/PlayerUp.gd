@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 const ACCELERATION = 200 # NO SE ESTA USANDO!
-const MAX_SPEED = 210 #210
+const MAX_SPEED = 180 #210
 const AIR_SPEED = 145
+const AIR_SPEED_2 = 220
 const JUMP_H = 730  # SALTO = GRAVEDAD * 16
 const UP = Vector2(0, -1)
 const gravity = 50
@@ -82,19 +83,15 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		
-		# Caso segundo salto
-		if jumping and not air_jump:
-			motion = UP * JUMP_H/scl
-			controllable = true
-			jumping = false
+		air_time = 0
 		
-		# Caso romper caida libre
-		if not controllable and not jumping:
+		# Caso segundo salto
+		if not air_jump:
+			air_jump = true
 			motion = UP * JUMP_H/scl
 			jumping = true
 			controllable = true
-			air_jump = true
-		
+
 		# Caso salto inicial
 		if on_floor:
 			motion = UP * JUMP_H/scl
@@ -137,7 +134,10 @@ func _physics_process(delta):
 		if on_floor:
 			motion.x = target_vel * MAX_SPEED/scl
 		else:
-			motion.x = target_vel * (AIR_SPEED/scl - air_time)
+			if air_jump:
+				motion.x = target_vel * (AIR_SPEED_2/scl - air_time)
+			else:
+				motion.x = target_vel * (AIR_SPEED/scl - air_time)
 			
 	else:
 		motion.y = Vector2(0, motion.y).move_toward(Vector2(0, target_vel * MAX_SPEED/scl), ACCELERATION/scl).y
@@ -181,6 +181,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("teleport") and teleport:
 		global_position = get_global_mouse_position()
 		
-	print(motion.x)
+	print(air_time)
 	
 	

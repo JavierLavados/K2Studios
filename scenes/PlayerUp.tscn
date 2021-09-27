@@ -378,7 +378,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-auto_jump = true
+see_controllable = true
 teleport = false
 
 [node name="Sprite" type="Sprite" parent="."]
