@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 const ACCELERATION = 200 # NO SE ESTA USANDO!
-const MAX_SPEED = 200
-const JUMP_H = 700  # SALTO = GRAVEDAD * 16
+const MAX_SPEED = 210 #210
+const AIR_SPEED = 145
+const JUMP_H = 730  # SALTO = GRAVEDAD * 16
 const UP = Vector2(0, -1)
 const gravity = 50
 const forward = "right" #right/down
@@ -60,8 +61,8 @@ func _physics_process(delta):
 	var on_floor = is_on_floor()
 	
 	if jumping:
-		if (air_time < MAX_SPEED):
-			air_time += 2
+		if (air_time < AIR_SPEED):
+			air_time += 1
 	else:
 		air_time = 0
 	
@@ -133,7 +134,10 @@ func _physics_process(delta):
 	if UP.x == 0:
 		# Es necesario expresar el movimiento asi?
 		#motion.x = Vector2(motion.x, 0).move_toward(Vector2(target_vel * MAX_SPEED/scl, 0), ACCELERATION/scl).x
-		motion.x = target_vel * (MAX_SPEED/scl - air_time)
+		if on_floor:
+			motion.x = target_vel * MAX_SPEED/scl
+		else:
+			motion.x = target_vel * (AIR_SPEED/scl - air_time)
 			
 	else:
 		motion.y = Vector2(0, motion.y).move_toward(Vector2(0, target_vel * MAX_SPEED/scl), ACCELERATION/scl).y
