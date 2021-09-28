@@ -509,22 +509,22 @@ script = ExtResource( 14 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 12 )]
-position = Vector2( 144, 240 )
+position = Vector2( 144, 144 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
 ] instance=ExtResource( 13 )]
-position = Vector2( 880, 304 )
+position = Vector2( 496, 240 )
 
 [node name="PlayerDown" parent="." groups=[
 "Players",
 ] instance=ExtResource( 10 )]
-position = Vector2( 536, 304 )
+position = Vector2( 624, 336 )
 
 [node name="PlayerLeft" parent="." groups=[
 "Players",
 ] instance=ExtResource( 11 )]
-position = Vector2( 816, 304 )
+position = Vector2( 752, 104 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
 
@@ -537,7 +537,7 @@ scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 65536, 1, 0, 65567, 1, 0, 131072, 1, 0, 131103, 1, 0, 196608, 1, 0, 196639, 1, 0, 262144, 1, 0, 262175, 1, 0, 327680, 1, 0, 327711, 1, 0, 393216, 1, 0, 393247, 1, 0, 458752, 1, 0, 458778, 1, 0, 458783, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524314, 1, 0, 524319, 1, 0, 589824, 1, 0, 589850, 1, 0, 589855, 1, 0, 655360, 1, 0, 655386, 1, 0, 655391, 1, 0, 720896, 1, 0, 720922, 1, 0, 720927, 1, 0, 786432, 1, 0, 786463, 1, 0, 851968, 1, 0, 851999, 1, 0, 917504, 1, 0, 917535, 1, 0, 983040, 1, 0, 983071, 1, 0, 1048576, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114143, 1, 0, 1179648, 1, 0, 1179679, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 65536, 1, 0, 65550, 1, 0, 65567, 1, 0, 131072, 1, 0, 131086, 1, 0, 131096, 1, 0, 131103, 1, 0, 196608, 1, 0, 196622, 1, 0, 196632, 1, 0, 196639, 1, 0, 262144, 1, 0, 262158, 1, 0, 262168, 1, 0, 262175, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327711, 1, 0, 393216, 1, 0, 393230, 1, 0, 393234, 1, 0, 393247, 1, 0, 458752, 1, 0, 458766, 1, 0, 458770, 1, 0, 458783, 1, 0, 524288, 1, 0, 524302, 1, 0, 524306, 1, 0, 524312, 1, 0, 524319, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589848, 1, 0, 589855, 1, 0, 655360, 1, 0, 655384, 1, 0, 655391, 1, 0, 720896, 1, 0, 720920, 1, 0, 720927, 1, 0, 786432, 1, 0, 786456, 1, 0, 786463, 1, 0, 851968, 1, 0, 851999, 1, 0, 917504, 1, 0, 917535, 1, 0, 983040, 1, 0, 983071, 1, 0, 1048576, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114143, 1, 0, 1179648, 1, 0, 1179679, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -549,49 +549,49 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="LeverUp" parent="." instance=ExtResource( 7 )]
-position = Vector2( 112, 240 )
+position = Vector2( 112, 272 )
 
 [node name="LeverDown" parent="." instance=ExtResource( 9 )]
-position = Vector2( 400, 304 )
-
-[node name="LeverBlockUp" parent="." instance=ExtResource( 1 )]
-position = Vector2( 496, 208 )
-
-[node name="LeverBlockDown" parent="." instance=ExtResource( 2 )]
-position = Vector2( 464, 304 )
+position = Vector2( 432, 336 )
 
 [node name="LeverBlockUp2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 496, 240 )
+position = Vector2( 784, 208 )
 
-[node name="LeverBlockDown2" parent="." instance=ExtResource( 2 )]
+[node name="LeverBlockUp3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 176 )
+
+[node name="LeverBlockDown" parent="." instance=ExtResource( 2 )]
 position = Vector2( 272, 240 )
 
+[node name="LeverBlockDown2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 304, 208 )
+
 [node name="LeverBlockDown3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 272, 208 )
+position = Vector2( 240, 272 )
 
 [node name="LeverRight" parent="." instance=ExtResource( 17 )]
-position = Vector2( 880, 368 )
+position = Vector2( 496, 80 )
+
+[node name="LeverRight2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 624, 208 )
 
 [node name="LeverLeft" parent="." instance=ExtResource( 18 )]
-position = Vector2( 816, 240 )
+position = Vector2( 752, 368 )
 
 [node name="LeverBlockLeft" parent="." instance=ExtResource( 19 )]
-position = Vector2( 336, 304 )
+position = Vector2( 528, 336 )
 
 [node name="LeverBlockRight" parent="." instance=ExtResource( 20 )]
-position = Vector2( 336, 240 )
+position = Vector2( 528, 304 )
 
 [node name="PortalDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 592, 304 )
+position = Vector2( 80, 336 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 3 )]
-position = Vector2( 208, 240 )
+position = Vector2( 400, 144 )
 
 [node name="PortalLeft" parent="." instance=ExtResource( 5 )]
-position = Vector2( 816, 368 )
+position = Vector2( 752, 304 )
 
 [node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 880, 240 )
-
-[node name="LeverUp2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 592, 240 )
+position = Vector2( 624, 272 )
