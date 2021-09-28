@@ -1,15 +1,11 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Portals/DoorUp.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Portals/DoorRight.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Portals/DoorLeft.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Portals/DoorDown.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/Scripts/Level2.gd" type="Script" id=10]
+[ext_resource path="res://Levels/Scripts/Level3.gd" type="Script" id=10]
 [ext_resource path="res://Sprites/BGworld1.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=12]
 
@@ -520,6 +516,10 @@ position = Vector2( 232, 344 )
 
 [node name="Interface" parent="." instance=ExtResource( 4 )]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 320 )
+current = true
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
@@ -535,33 +535,3 @@ tile_data = PoolIntArray( 131080, 13, 0, 131081, 4, 0, 131082, 13, 0, 131083, 13
 scale = Vector2( 2, 2 )
 texture = ExtResource( 11 )
 centered = false
-
-[node name="DoorUp" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1208, 408 )
-z_index = -1
-
-[node name="DoorRight" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1104, 288 )
-z_index = -1
-
-[node name="DoorDown" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1160, 280 )
-z_index = -1
-
-[node name="DoorLeft" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1080, 344 )
-z_index = -1
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 320 )
-current = true
-
-[connection signal="body_entered" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_entered"]
-[connection signal="body_exited" from="DoorUp" to="DoorUp" method="_on_DoorUp_body_exited"]
-[connection signal="body_exited" from="DoorUp" to="." method="_on_DoorUp_body_exited"]
-[connection signal="body_entered" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_entered"]
-[connection signal="body_exited" from="DoorRight" to="DoorRight" method="_on_DoorRight_body_exited"]
-[connection signal="body_entered" from="DoorDown" to="DoorDown" method="_on_DoorDown_body_entered"]
-[connection signal="body_exited" from="DoorDown" to="DoorDown" method="_on_DoorDown_body_exited"]
-[connection signal="body_entered" from="DoorLeft" to="DoorLeft" method="_on_DoorLeft_body_entered"]
-[connection signal="body_exited" from="DoorLeft" to="DoorLeft" method="_on_DoorLeft_body_exited"]

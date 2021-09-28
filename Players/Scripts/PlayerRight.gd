@@ -2,6 +2,7 @@ extends "res://Players/Scripts/PlayerAbstract.gd"
 
 const NORMAL = Vector2(1,0)
 var cherry_controls = false
+var id = 1
 
 func _ready():
 	initialize(NORMAL)

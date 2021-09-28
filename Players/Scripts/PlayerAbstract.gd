@@ -80,11 +80,11 @@ func is_on_ladder():
 		on_ladder = false
 	return on_ladder
 	
-func check_block_collision(hspd, collisions):
-	for i in collisions:
-		var block : = get_slide_collision(i).collider as Block
-		if block:
-			block.push(hspd)
+#func check_block_collision(hspd, collisions):
+#	for i in collisions:
+#		var block : = get_slide_collision(i).collider as Block
+#		if block:
+#			block.push(hspd)
 			
 func calc_motion(n, forward, backward, top, btm):
 	
@@ -192,12 +192,12 @@ func calc_motion(n, forward, backward, top, btm):
 					position.y = on_ladder.y
 		
 		# Empujar cajas:
-		var count = get_slide_count()
-		if count > 1:
-			if n.x == 0:
-				check_block_collision(motion.x, count)
-			else:
-				check_block_collision(motion.y, count)
+		#var count = get_slide_count()
+		#if count > 1:
+		#	if n.x == 0:
+		#		check_block_collision(motion.x, count)
+		#	else:
+		#		check_block_collision(motion.y, count)
 
 	# Movimiento final
 	motion = move_and_slide(motion, n)
