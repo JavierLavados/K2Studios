@@ -89,6 +89,12 @@ func is_on_ladder():
 			
 func calc_motion(n, forward, backward, top, btm):
 	
+	for i in get_slide_count():
+		var coll = get_slide_collision(i)
+		if coll.collider.is_in_group("Spikes"):
+			if coll.collider.NORMAL == coll.normal:
+				get_tree().reload_current_scene()
+
 	var on_floor = is_on_floor()
 	
 	if jumping:
