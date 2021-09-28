@@ -9,8 +9,8 @@ var interface
 var current
 var players = []
 var ids = []
-var lever
-
+var lever = 4
+var lever_restriction = [0,0,0,0]
 var ready = 0
 
 func setUp(n_players):
@@ -21,11 +21,8 @@ func setUp(n_players):
 	
 	players[0].awake = true
 	current = ids[0]
-	lever = 4
 
 func level(n_players, next_level):
-	
-	print(ready)
 
 	if Input.is_action_pressed("reset"):
 		get_tree().reload_current_scene()

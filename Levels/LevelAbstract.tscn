@@ -504,7 +504,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 20/z_index = 0
 
 [node name="World" type="Node2D"]
-visible = false
 script = ExtResource( 14 )
 
 [node name="PlayerUp" parent="." groups=[

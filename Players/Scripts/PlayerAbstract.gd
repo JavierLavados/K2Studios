@@ -11,7 +11,7 @@ const gravity = 25
 # Variables para debugging
 export var auto_jump = false
 export var see_controllable = false
-export var teleport = true
+export var teleport = false
 
 # Referencias a otros nodos
 onready var sprite = $Sprite

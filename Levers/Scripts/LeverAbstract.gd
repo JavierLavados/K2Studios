@@ -10,7 +10,7 @@ var current
 func lever(switch1, switch2, number, active_frame, sleeping_frame):
 	current = get_parent().current
 
-	if current == number:
+	if current == number and get_parent().lever_restriction[number] == 0:
 		if (Input.is_action_just_pressed(switch1) or Input.is_action_just_pressed(switch2)) and inside:
 			if activated:
 				activated = false
@@ -19,7 +19,9 @@ func lever(switch1, switch2, number, active_frame, sleeping_frame):
 				activated = true
 				get_parent().lever = current
 		
-	if get_parent().lever != number:
+	if get_parent().lever == number:
+		activated = true
+	else:
 		activated = false
 		
 	if activated:
