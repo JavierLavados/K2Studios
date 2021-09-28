@@ -28,6 +28,7 @@ var was_on_floor = false
 var on_ladder = false
 var air_jump = false
 var air_time = 0
+var doubleJump = false
 
 var motion = Vector2()
 
@@ -115,7 +116,7 @@ func calc_motion(n, forward, backward, top, btm):
 		air_time = 0
 		
 		# Caso segundo salto
-		if not air_jump:
+		if not air_jump && doubleJump:
 			air_jump = true
 			motion = n * JUMP_H_2
 			jumping = true
