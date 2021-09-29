@@ -23,7 +23,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=2]
 radius = 85.0282
 
-[node name="Area2D" type="Area2D"]
+[node name="DoubleJump" type="Area2D"]
 scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 2 )
 
