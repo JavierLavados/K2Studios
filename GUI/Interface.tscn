@@ -581,10 +581,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 944, 80 )
+z_index = 1
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 17
-frame = 64
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 5.0
