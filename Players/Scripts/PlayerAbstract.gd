@@ -15,7 +15,8 @@ export var teleport = false
 
 # Referencias a otros nodos
 onready var sprite = $Sprite
-onready var animationPlayer = $AnimationPlayer
+onready var animationPlayer = $Default
+onready var animationTree = $AnimationTree
 onready var playback = $AnimationTree.get("parameters/playback")
 onready var collision = $CollisionShape2D
 onready var ladder_detector = $ladder_detector
@@ -46,6 +47,11 @@ func modify_sprite(n, forward, backward):
 	var flip = false
 	if n.x < 0 or n.y > 0:
 		flip = true
+	
+	if doubleJump:
+		$AnimationTree.anim_player = "../Boots"
+	else:
+		$AnimationTree.anim_player = "../Default"
 	
 	if awake:
 		if Input.is_action_just_pressed(forward):

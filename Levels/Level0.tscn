@@ -549,8 +549,8 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="Area2D" parent="." instance=ExtResource( 21 )]
-position = Vector2( 504, 240 )
+[node name="DoubleJump" parent="." instance=ExtResource( 21 )]
+position = Vector2( 496, 240 )
 
 [node name="LeverUp" parent="." instance=ExtResource( 7 )]
 position = Vector2( 112, 272 )
