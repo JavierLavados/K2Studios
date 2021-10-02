@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 # Constantes
-const MAX_SPEED = 90
-const AIR_SPEED = 110
+const MAX_SPEED = 128
+const AIR_SPEED = 128
 const AIR_SPEED_2 = 140
 const JUMP_H = 375
 const JUMP_H_2 = 325
@@ -34,6 +34,10 @@ var air_jump_used = false
 var air_time = 0
 var doubleJump = false
 var jump_pos = 0
+var last_dir = 0
+var jump_key_pressed = false
+var freefall = false
+var pending_jump = false
 
 var invisiWallL
 var invisiWallR
@@ -61,13 +65,13 @@ func modify_sprite(n, forward, backward):
 		$AnimationTree.anim_player = "../Default"
 	
 	if awake:
-		if Input.is_action_just_pressed(forward):
+		if side_motion > 0:
 			if flip:
 				sprite.flip_h = true
 			else:
 				sprite.flip_h = false
 			#ladder_detector.scale.x = 1
-		if Input.is_action_just_pressed(backward):
+		if side_motion < 0:
 			if flip:
 				sprite.flip_h = false
 			else:
@@ -102,10 +106,12 @@ func is_on_ladder():
 			
 func calc_motion(n, forward, backward, top, btm):
 	
-	var relative_pos = int(global_position.x-15)%32
+	#var relative_pos = int(global_position.x-15)%32
+	
+	var relative_pos = int(global_position.x)%32-15
 
-	left_pos.global_position.x = int(global_position.x - 63 - relative_pos)
-	right_pos.global_position.x = int(global_position.x + 96 - relative_pos)
+	#left_pos.global_position.x = int(global_position.x - 63 - relative_pos)
+	#right_pos.global_position.x = int(global_position.x + 96 - relative_pos)
 	
 	for i in get_slide_count():
 		var coll = get_slide_collision(i)
@@ -136,12 +142,20 @@ func calc_motion(n, forward, backward, top, btm):
 
 	# Movimiento vertical (salto)
 		
-	if Input.is_action_just_pressed("ui_accept") and awake:
+	if (Input.is_action_just_pressed("ui_accept") and awake) or pending_jump:
 		
-		print(relative_pos)
+		if Input.is_action_pressed(forward):
+			last_dir = 1
+			jump_key_pressed = true
+		elif Input.is_action_pressed(backward):
+			last_dir = -1
+			jump_key_pressed = true
+		else:
+			last_dir = 0
+			jump_key_pressed = false
 		
 		air_time = 0
-		
+
 		# Caso segundo salto
 		if not air_jump_used && doubleJump and not on_floor:
 
@@ -150,40 +164,24 @@ func calc_motion(n, forward, backward, top, btm):
 			jumping = true
 			controllable = true
 			
-			if not is_instance_valid(invisiWallL):
-				invisiWallL = InvisiWall.instance()
-				invisiWallR = InvisiWall.instance()
-				get_parent().add_child(invisiWallL) 
-				get_parent().add_child(invisiWallR) 
-
-			invisiWallL.global_position = left_pos.global_position
-			invisiWallR.global_position = right_pos.global_position
-
 		# Caso salto inicial
 		if on_floor:
 			motion = n * JUMP_H
 			jumping = true
-			
-			# Creacion paredes invisibles
-			invisiWallL = InvisiWall.instance()
-			invisiWallR = InvisiWall.instance()
-			get_parent().add_child(invisiWallL) 
-			get_parent().add_child(invisiWallR) 
-			invisiWallL.global_position = left_pos.global_position
-			invisiWallR.global_position = right_pos.global_position
+
 		
 	# Se eliminan paredes invisibles al tocar el piso
 	if on_floor:
-		if is_instance_valid(invisiWallL) and not jumping:
-			invisiWallL.queue_free()
-			invisiWallR.queue_free()
+		#if is_instance_valid(invisiWallL) and not jumping:
+		#	invisiWallL.queue_free()
+		#	invisiWallR.queue_free()
 		air_jump_used = false
+		freefall = false
 	
 	# AUTO JUMP PARA DEBUGGING
 	if was_on_floor and not on_floor and auto_jump:
 		motion = n * JUMP_H
 		jumping = true
-		print(int(position.x+16)%32)
 	
 	# Casos de incontrolabilidad
 	
@@ -209,17 +207,49 @@ func calc_motion(n, forward, backward, top, btm):
 		if see_controllable:
 			$Sprite.modulate = Color.white
 			
+
+	if !Input.is_action_pressed(forward) and last_dir == 1:
+		jump_key_pressed = false
+	
+	if !Input.is_action_pressed(backward) and last_dir == -1:
+		jump_key_pressed = false
+		
+	print(jump_key_pressed)
+			
 	# Calculo movimiento horizontal
 	if n.x == 0:
 		if on_floor:
-			motion.x = target_vel * MAX_SPEED
-		else:
-			if air_jump_used:
-				motion.x = target_vel * (AIR_SPEED_2 - air_time)
+			if target_vel != 0:
+				motion.x = target_vel * MAX_SPEED
 			else:
-				motion.x = target_vel * (AIR_SPEED - air_time)
+				if relative_pos != 0:
+					if relative_pos > 0:
+						motion.x = -1 * 64
+					else:
+						motion.x = 1 * 64
+				else:
+					motion.x = 0
+		else:
+			if motion.y < 0:
+					motion.x = target_vel * (AIR_SPEED - air_time)
+			if motion.y == 0:
+				if !jump_key_pressed:
+					motion.x = 0
+					freefall = true
+			if motion.y > 0 :
+				if freefall:
+					motion.x = 0
+				else:
+					motion.x = last_dir * (AIR_SPEED - air_time)
+				
+			#if air_jump_used:
+			#	motion.x = target_vel * (AIR_SPEED_2 - air_time)
+			#else:
+			#	motion.x = target_vel * (AIR_SPEED - air_time)
 		if not awake:
 			motion.x = 0
+			
+	# CASO QUE NO IMPORTA		
 	else:
 		if on_floor:
 			motion.y = target_vel * MAX_SPEED
