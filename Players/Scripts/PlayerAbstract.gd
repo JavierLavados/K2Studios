@@ -22,6 +22,7 @@ onready var collision = $CollisionShape2D
 onready var ladder_detector = $ladder_detector
 onready var left_pos = $Left
 onready var right_pos = $Right
+onready var ray = $RayCast2D
 
 # Variables auxiliares
 var InvisiWall = preload("res://WIP/InvisiWall.tscn")
@@ -105,9 +106,7 @@ func is_on_ladder():
 #			block.push(hspd)
 			
 func calc_motion(n, forward, backward, top, btm):
-	
-	#var relative_pos = int(global_position.x-15)%32
-	
+
 	var relative_pos = int(global_position.x)%32-15
 
 	#left_pos.global_position.x = int(global_position.x - 63 - relative_pos)
@@ -120,7 +119,9 @@ func calc_motion(n, forward, backward, top, btm):
 				if coll.collider.NORMAL == coll.normal:
 					get_tree().reload_current_scene()
 
-	var on_floor = is_on_floor()
+	var on_floor = is_on_floor() and ray.is_colliding()
+	print(on_floor)
+	
 	
 	if jumping:
 		if (air_time < AIR_SPEED):
@@ -214,8 +215,6 @@ func calc_motion(n, forward, backward, top, btm):
 	if !Input.is_action_pressed(backward) and last_dir == -1:
 		jump_key_pressed = false
 		
-	print(jump_key_pressed)
-			
 	# Calculo movimiento horizontal
 	if n.x == 0:
 		if on_floor:
@@ -240,7 +239,10 @@ func calc_motion(n, forward, backward, top, btm):
 				if freefall:
 					motion.x = 0
 				else:
-					motion.x = last_dir * (AIR_SPEED - air_time)
+					if controllable:
+						motion.x = last_dir * (AIR_SPEED - air_time)
+					else:
+						motion.x = 0
 				
 			#if air_jump_used:
 			#	motion.x = target_vel * (AIR_SPEED_2 - air_time)

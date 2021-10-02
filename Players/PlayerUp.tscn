@@ -271,7 +271,7 @@ tracks/3/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=7]
 resource_name = "Idle"
 length = 6.0
 loop = true
@@ -324,7 +324,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=8]
 resource_name = "Sleep"
 length = 5.0
 tracks/0/type = "value"
@@ -376,7 +376,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=9]
 resource_name = "Sleeping"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -427,7 +427,7 @@ tracks/3/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=10]
 resource_name = "WakeUp"
 length = 5.0
 tracks/0/type = "value"
@@ -479,7 +479,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=11]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -662,11 +662,11 @@ anims/Walk = SubResource( 6 )
 
 [node name="Boots" type="AnimationPlayer" parent="."]
 playback_speed = 8.0
-anims/Idle = SubResource( 38 )
-anims/Sleep = SubResource( 39 )
-anims/Sleeping = SubResource( 40 )
-anims/WakeUp = SubResource( 41 )
-anims/Walk = SubResource( 42 )
+anims/Idle = SubResource( 7 )
+anims/Sleep = SubResource( 8 )
+anims/Sleeping = SubResource( 9 )
+anims/WakeUp = SubResource( 10 )
+anims/Walk = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 35 )
@@ -690,3 +690,7 @@ shape = SubResource( 37 )
 [node name="Left" type="Position2D" parent="."]
 
 [node name="Right" type="Position2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 32 )
