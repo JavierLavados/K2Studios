@@ -550,7 +550,7 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="DoubleJump" parent="." instance=ExtResource( 21 )]
-position = Vector2( 496, 240 )
+position = Vector2( 720, 144 )
 
 [node name="LeverUp" parent="." instance=ExtResource( 7 )]
 position = Vector2( 112, 272 )
