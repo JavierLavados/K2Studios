@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 # Constantes
 const MAX_SPEED = 90
-const AIR_SPEED = 72
-const AIR_SPEED_2 = 90
+const AIR_SPEED = 110
+const AIR_SPEED_2 = 140
 const JUMP_H = 375
 const JUMP_H_2 = 325
 const gravity = 25
@@ -20,16 +20,23 @@ onready var animationTree = $AnimationTree
 onready var playback = $AnimationTree.get("parameters/playback")
 onready var collision = $CollisionShape2D
 onready var ladder_detector = $ladder_detector
+onready var left_pos = $Left
+onready var right_pos = $Right
 
 # Variables auxiliares
+var InvisiWall = preload("res://WIP/InvisiWall.tscn")
 var awake = false
 var controllable = true
 var jumping = false
 var was_on_floor = false
 var on_ladder = false
-var air_jump = false
+var air_jump_used = false
 var air_time = 0
 var doubleJump = false
+var jump_pos = 0
+
+var invisiWallL
+var invisiWallR
 
 var motion = Vector2()
 
@@ -95,11 +102,17 @@ func is_on_ladder():
 			
 func calc_motion(n, forward, backward, top, btm):
 	
+	var relative_pos = int(global_position.x-15)%32
+
+	left_pos.global_position.x = int(global_position.x - 63 - relative_pos)
+	right_pos.global_position.x = int(global_position.x + 96 - relative_pos)
+	
 	for i in get_slide_count():
 		var coll = get_slide_collision(i)
-		if coll.collider.is_in_group("Spikes"):
-			if coll.collider.NORMAL == coll.normal:
-				get_tree().reload_current_scene()
+		if is_instance_valid(coll.collider):
+			if coll.collider.is_in_group("Spikes"): 
+				if coll.collider.NORMAL == coll.normal:
+					get_tree().reload_current_scene()
 
 	var on_floor = is_on_floor()
 	
@@ -115,37 +128,62 @@ func calc_motion(n, forward, backward, top, btm):
 	if on_floor:
 		jumping = false
 		controllable = true
-	
+		
 	# Movimiento horizontal
 	var target_vel = Input.get_action_strength(forward) - Input.get_action_strength(backward)
 	
 	var vertical_vel = Input.get_action_strength(top) - Input.get_action_strength(btm)
-	
+
 	# Movimiento vertical (salto)
-	
+		
 	if Input.is_action_just_pressed("ui_accept") and awake:
+		
+		print(relative_pos)
 		
 		air_time = 0
 		
 		# Caso segundo salto
-		if not air_jump && doubleJump:
-			air_jump = true
+		if not air_jump_used && doubleJump and not on_floor:
+
+			air_jump_used = true
 			motion = n * JUMP_H_2
 			jumping = true
 			controllable = true
+			
+			if not is_instance_valid(invisiWallL):
+				invisiWallL = InvisiWall.instance()
+				invisiWallR = InvisiWall.instance()
+				get_parent().add_child(invisiWallL) 
+				get_parent().add_child(invisiWallR) 
+
+			invisiWallL.global_position = left_pos.global_position
+			invisiWallR.global_position = right_pos.global_position
 
 		# Caso salto inicial
 		if on_floor:
 			motion = n * JUMP_H
 			jumping = true
+			
+			# Creacion paredes invisibles
+			invisiWallL = InvisiWall.instance()
+			invisiWallR = InvisiWall.instance()
+			get_parent().add_child(invisiWallL) 
+			get_parent().add_child(invisiWallR) 
+			invisiWallL.global_position = left_pos.global_position
+			invisiWallR.global_position = right_pos.global_position
 		
+	# Se eliminan paredes invisibles al tocar el piso
 	if on_floor:
-		air_jump = false
+		if is_instance_valid(invisiWallL) and not jumping:
+			invisiWallL.queue_free()
+			invisiWallR.queue_free()
+		air_jump_used = false
 	
 	# AUTO JUMP PARA DEBUGGING
 	if was_on_floor and not on_floor and auto_jump:
 		motion = n * JUMP_H
 		jumping = true
+		print(int(position.x+16)%32)
 	
 	# Casos de incontrolabilidad
 	
@@ -176,7 +214,7 @@ func calc_motion(n, forward, backward, top, btm):
 		if on_floor:
 			motion.x = target_vel * MAX_SPEED
 		else:
-			if air_jump:
+			if air_jump_used:
 				motion.x = target_vel * (AIR_SPEED_2 - air_time)
 			else:
 				motion.x = target_vel * (AIR_SPEED - air_time)
@@ -186,7 +224,7 @@ func calc_motion(n, forward, backward, top, btm):
 		if on_floor:
 			motion.y = target_vel * MAX_SPEED
 		else:
-			if air_jump:
+			if air_jump_used:
 				motion.y = target_vel * (AIR_SPEED_2 - air_time)
 			else:
 				motion.y = target_vel * (AIR_SPEED - air_time)
@@ -214,7 +252,7 @@ func calc_motion(n, forward, backward, top, btm):
 
 	# Movimiento final
 	motion = move_and_slide(motion, n)
-		
+	
 	# TELETRANSPORTACION PARA DEBUGGING	
 	if Input.is_action_just_pressed("teleport") and teleport and awake:
 		global_position = get_global_mouse_position()

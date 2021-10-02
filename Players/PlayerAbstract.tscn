@@ -415,3 +415,7 @@ modulate = Color( 0.768627, 0.188235, 0.188235, 1 )
 position = Vector2( -8, 0 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 32 )
+
+[node name="Left" type="Position2D" parent="."]
+
+[node name="Right" type="Position2D" parent="."]
