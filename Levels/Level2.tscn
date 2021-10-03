@@ -6,7 +6,7 @@
 [ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/BGworld1.png" type="Texture" id=7]
+[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=8]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=11]
@@ -520,6 +520,8 @@ position = Vector2( 240, 464 )
 
 [node name="Interface" parent="." instance=ExtResource( 9 )]
 
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
@@ -530,15 +532,6 @@ tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 65540, 5, 0, 65546, 18, 0, 65547, 19, 0, 65548, 9, 0, 65549, 15, 0, 65552, 4, 0, 65553, 17, 0, 65554, 19, 0, 65556, 14, 0, 65557, 2, 0, 65558, 3, 0, 65559, 9, 0, 131075, 16, 0, 131076, 8, 0, 131082, 6, 0, 131087, 13, 0, 131093, 14, 0, 131095, 14, 0, 131096, 3, 0, 196611, 5, 0, 196614, 9, 0, 196619, 15, 0, 262147, 16, 0, 262155, 15, 0, 262166, 19, 0, 327687, 9, 0, 327699, 9, 0, 327700, 8, 0, 327706, 16, 0, 393219, 19, 0, 393223, 2, 0, 393226, 20, 0, 393234, 8, 0, 393235, 7, 0, 393242, 5, 0, 458755, 19, 0, 458759, 3, 0, 458760, 1, 0, 458768, 17, 0, 458776, 5, 0, 458778, 7, 0, 458779, 10, 0, 524291, 17, 0, 524292, 19, 0, 524296, 2, 0, 524297, 10, 0, 524302, 19, 0, 524310, 4, 0, 524313, 5, 0, 589827, 19, 0, 589828, 18, 0, 589832, 14, 0, 589833, 3, 0, 589834, 14, 0, 589835, 14, 0, 589836, 14, 0, 589843, 19, 0, 589844, 20, 0, 589845, 13, 0, 655364, 19, 0, 655377, 10, 0, 655378, 7, 0, 655379, 19, 0, 655380, 19, 0, 655381, 8, 0, 655382, 8, 0, 655383, 13, 0, 720902, 15, 0, 720907, 8, 0, 720911, 9, 0, 720912, 8, 0, 720913, 2, 0, 720914, 19, 0, 720915, 17, 0, 720918, 9, 0, 720919, 7, 0, 720920, 4, 0, 786438, 6, 0, 786445, 7, 0, 786455, 7, 0, 851974, 9, 0, 851975, 6, 0, 851986, 5, 0, 851988, 1, 0, 917512, 1, 0, 917523, 16, 0, 917524, 2, 0, 917525, 7, 0, 917529, 18, 0, 983048, 6, 0, 983057, 19, 0, 983060, 5, 0, 983062, 10, 0, 1048584, 9, 0, 1048593, 20, 0, 1048597, 16, 0, 1048598, 8, 0, 1048600, 19, 0, 1114115, 13, 0, 1114116, 4, 0, 1114132, 5, 0, 1114134, 19, 0, 1179653, 9, 0, 1179667, 16, 0, 1179668, 10, 0, 1179669, 19, 0, 1179670, 17, 0, 1179671, 19, 0 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Background1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
-centered = false
 
 [node name="PortalUp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 816, 208 )

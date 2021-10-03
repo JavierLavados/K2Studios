@@ -33,9 +33,8 @@ var was_on_floor = false
 var on_ladder = false
 var air_jump_used = false
 var doubleJump = false
-var jump_pos = 0
-var rot
 
+var rot
 var invisiWallL
 var invisiWallR
 
@@ -114,12 +113,9 @@ func calc_motion(n, forward, backward, top, btm):
 				if coll.collider.NORMAL == coll.normal:
 					get_tree().reload_current_scene()
 					
-	# Variables relativas a posicion actual
-	var on_floor = is_on_floor()
-	var on_edge = !ray.is_colliding() and on_floor
-	var relative_pos = Vector2(int(global_position.x)%32-15,int(global_position.y)%32-15)
-	
 	# Reseteo de variables al estar en el piso
+	var on_floor = is_on_floor()
+	
 	if on_floor:
 		jumping = false
 		controllable = true
@@ -140,6 +136,9 @@ func calc_motion(n, forward, backward, top, btm):
 	if Input.is_action_just_pressed("ui_accept") and awake:
 		
 		# Posicionamiento de paredes invisibles
+		var relative_pos = Vector2(int(global_position.x)%32-15,int(global_position.y)%32-15)
+		var on_edge = !ray.is_colliding() and on_floor
+		
 		var l_val = 95
 		var r_val = 97
 		
@@ -154,7 +153,6 @@ func calc_motion(n, forward, backward, top, btm):
 					l_val = 63
 				else:
 					r_val = 65
-				
 		
 		if n.x == 0:
 			left_pos.global_position.x = int(global_position.x - l_val - relative_pos.x)
@@ -170,7 +168,7 @@ func calc_motion(n, forward, backward, top, btm):
 			jumping = true
 			air_jump_used = true
 			controllable = true
-			
+
 			# Creacion paredes invisibles
 			if not is_instance_valid(invisiWallL):
 				invisiWallL = InvisiWall.instance()
@@ -181,7 +179,6 @@ func calc_motion(n, forward, backward, top, btm):
 			invisiWallR.rotation_degrees = rot 
 			invisiWallL.global_position = left_pos.global_position
 			invisiWallR.global_position = right_pos.global_position	
-			
 
 		# Caso salto inicial
 		if on_floor:
@@ -204,7 +201,7 @@ func calc_motion(n, forward, backward, top, btm):
 		jumping = true
 		print(int(position.x+16)%32)
 	
-	# Casos de incontrolabilidad
+	# CASOS DE INCONTROLABILIDAD
 	
 	# Caso lanzarse sin saltar
 	if was_on_floor and not on_floor and not jumping:
@@ -229,6 +226,7 @@ func calc_motion(n, forward, backward, top, btm):
 			$Sprite.modulate = Color.white
 			
 	# Calculo movimiento horizontal
+	
 	if n.x == 0:
 		if on_floor:
 			motion.x = target_vel * MAX_SPEED
