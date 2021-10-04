@@ -19,7 +19,6 @@ func _process(delta):
 	if counter % 2 == 0:
 		for l in layer4:
 			l.position.x += 1
-			print(l.position.x)
 	counter = (counter+1)%8
 	for l in layers:
 		if l.position.x >= view_w:

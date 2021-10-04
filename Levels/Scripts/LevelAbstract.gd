@@ -10,12 +10,14 @@ var background
 var current
 var players = []
 var ids = []
-var lever = 4
+var lever
 var lever_restriction = [0,0,0,0]
 var ready = 0
 var alt_select = false
 
-func setUp(n_players):
+func setUp(n_players, init_lever=4):
+	
+	lever = init_lever
 	for i in range(n_players):
 		players.append(get_child(i))
 		ids.append(get_child(i).id)
