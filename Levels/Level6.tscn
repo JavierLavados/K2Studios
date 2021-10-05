@@ -1,7 +1,7 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://WIP/Rotator.tscn" type="PackedScene" id=1]
-[ext_resource path="res://WIP/RotatorBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Rotators/Rotator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Rotators/RotatorBlockUp.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
@@ -18,10 +18,13 @@
 [ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=16]
 [ext_resource path="res://Levers/LeverRight.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levers/LeverLeft.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Rotators/RotatorBlockDown.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Rotators/RotatorBlockLeft.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Spikes/SpikeUp.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Spikes/SpikeLeft.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Spikes/SpikeRight.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Rotators/RotatorBlockRight.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -511,22 +514,22 @@ script = ExtResource( 14 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 12 )]
-position = Vector2( 272, 112 )
+position = Vector2( 368, 176 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
 ] instance=ExtResource( 13 )]
-position = Vector2( 560, 144 )
+position = Vector2( 656, 208 )
 
 [node name="PlayerDown" parent="." groups=[
 "Players",
 ] instance=ExtResource( 10 )]
-position = Vector2( 528, 368 )
+position = Vector2( 624, 432 )
 
 [node name="PlayerLeft" parent="." groups=[
 "Players",
 ] instance=ExtResource( 11 )]
-position = Vector2( 176, 176 )
+position = Vector2( 272, 272 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
 
@@ -541,73 +544,79 @@ scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65547, 1, 0, 65548, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 131078, 1, 0, 131088, 1, 0, 131100, 1, 0, 196614, 1, 0, 196624, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262159, 1, 0, 262160, 1, 0, 262164, 1, 0, 327686, 1, 0, 327695, 1, 0, 327696, 1, 0, 327700, 1, 0, 393222, 1, 0, 458759, 1, 0, 458763, 1, 0, 458764, 1, 0, 458767, 1, 0, 458772, 1, 0, 524299, 1, 0, 524300, 1, 0, 524308, 1, 0, 589831, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655380, 1, 0, 720904, 1, 0, 720905, 1, 0, 720916, 1, 0, 786437, 1, 0, 786438, 1, 0, 786440, 1, 0, 786441, 1, 0, 786444, 1, 0, 851976, 1, 0, 851977, 1, 0, 851982, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 1, 0, 917518, 1, 0 )
+tile_data = PoolIntArray( 131086, 1, 0, 131087, 1, 0, 131100, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 262153, 1, 0, 262163, 1, 0, 327689, 1, 0, 327699, 1, 0, 327704, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393234, 1, 0, 393235, 1, 0, 393240, 1, 0, 458761, 1, 0, 458770, 1, 0, 458771, 1, 0, 458776, 1, 0, 524297, 1, 0, 589834, 1, 0, 589838, 1, 0, 589839, 1, 0, 589842, 1, 0, 589849, 1, 0, 655374, 1, 0, 655375, 1, 0, 655385, 1, 0, 720906, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786458, 1, 0, 851979, 1, 0, 851980, 1, 0, 851991, 1, 0, 851994, 1, 0, 917512, 1, 0, 917513, 1, 0, 917515, 1, 0, 917516, 1, 0, 917519, 1, 0, 917527, 1, 0, 917530, 1, 0, 983051, 1, 0, 983052, 1, 0, 983057, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048593, 1, 0 )
 
 [node name="LeverUp" parent="." instance=ExtResource( 7 )]
-position = Vector2( 528, 304 )
-
-[node name="LeverDown" parent="." instance=ExtResource( 9 )]
-position = Vector2( 240, 176 )
-
-[node name="LeverRight" parent="." instance=ExtResource( 17 )]
-position = Vector2( 560, 80 )
-
-[node name="LeverLeft" parent="." instance=ExtResource( 18 )]
-position = Vector2( 176, 112 )
-
-[node name="LeverLeft2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 624, 368 )
 
-[node name="PortalDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 496, 80 )
-
-[node name="PortalUp" parent="." instance=ExtResource( 3 )]
-position = Vector2( 144, 432 )
-
-[node name="PortalLeft" parent="." instance=ExtResource( 5 )]
-position = Vector2( 624, 176 )
-
-[node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 336, 432 )
-
-[node name="Rotator" parent="." instance=ExtResource( 1 )]
-position = Vector2( 384, 256 )
-
-[node name="RotatorBlock" parent="Rotator" instance=ExtResource( 2 )]
-position = Vector2( -80, 48 )
-
-[node name="RotatorBlock2" parent="Rotator" instance=ExtResource( 2 )]
-position = Vector2( 16, 80 )
-
-[node name="RotatorBlock3" parent="Rotator" instance=ExtResource( 2 )]
-position = Vector2( 16, -80 )
-
-[node name="RotatorBlock4" parent="Rotator" instance=ExtResource( 2 )]
-position = Vector2( 80, 16 )
-
-[node name="RotatorBlock5" parent="Rotator" instance=ExtResource( 2 )]
-position = Vector2( 80, -16 )
-
-[node name="RotatorBlock6" parent="Rotator" instance=ExtResource( 2 )]
-position = Vector2( -80, 80 )
-
-[node name="SpikeRight" parent="." instance=ExtResource( 24 )]
-position = Vector2( 240, 208 )
-
-[node name="SpikeRight2" parent="." instance=ExtResource( 24 )]
-position = Vector2( 272, 304 )
-
-[node name="SpikeUp" parent="." instance=ExtResource( 21 )]
-position = Vector2( 176, 368 )
-
-[node name="SpikeLeft" parent="." instance=ExtResource( 22 )]
-position = Vector2( 336, 272 )
-
-[node name="SpikeLeft2" parent="." instance=ExtResource( 22 )]
+[node name="LeverDown" parent="." instance=ExtResource( 9 )]
 position = Vector2( 336, 240 )
 
+[node name="LeverRight" parent="." instance=ExtResource( 17 )]
+position = Vector2( 656, 144 )
+
+[node name="LeverLeft" parent="." instance=ExtResource( 18 )]
+position = Vector2( 272, 208 )
+
+[node name="LeverLeft2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 816, 440 )
+
+[node name="PortalDown" parent="." instance=ExtResource( 4 )]
+position = Vector2( 592, 144 )
+
+[node name="PortalUp" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 496 )
+
+[node name="PortalLeft" parent="." instance=ExtResource( 5 )]
+position = Vector2( 752, 208 )
+
+[node name="PortalRight" parent="." instance=ExtResource( 8 )]
+position = Vector2( 432, 496 )
+
+[node name="Rotator" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 320 )
+
+[node name="RotatorBlockDown" parent="Rotator" instance=ExtResource( 19 )]
+position = Vector2( 16, 80 )
+
+[node name="RotatorBlockLeft" parent="Rotator" instance=ExtResource( 20 )]
+position = Vector2( -80, 48 )
+
+[node name="RotatorBlockLeft2" parent="Rotator" instance=ExtResource( 20 )]
+position = Vector2( -80, 80 )
+
+[node name="RotatorBlockRight" parent="Rotator" instance=ExtResource( 25 )]
+position = Vector2( 80, -16 )
+
+[node name="RotatorBlockUp" parent="Rotator" instance=ExtResource( 2 )]
+position = Vector2( 16, -80 )
+
+[node name="RotatorBlockRight2" parent="Rotator" instance=ExtResource( 25 )]
+position = Vector2( 80, 16 )
+
+[node name="SpikeRight" parent="." instance=ExtResource( 24 )]
+position = Vector2( 336, 272 )
+
+[node name="SpikeRight2" parent="." instance=ExtResource( 24 )]
+position = Vector2( 368, 368 )
+
+[node name="SpikeUp" parent="." instance=ExtResource( 21 )]
+position = Vector2( 272, 432 )
+
+[node name="SpikeLeft" parent="." instance=ExtResource( 22 )]
+position = Vector2( 432, 336 )
+
+[node name="SpikeLeft2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 432, 304 )
+
+[node name="SpikeLeft3" parent="." instance=ExtResource( 22 )]
+position = Vector2( 720, 432 )
+
+[node name="SpikeLeft4" parent="." instance=ExtResource( 22 )]
+position = Vector2( 720, 464 )
+
 [node name="SpikeDown" parent="." instance=ExtResource( 23 )]
-position = Vector2( 304, 176 )
+position = Vector2( 400, 240 )
 
 [node name="SpikeUp2" parent="." instance=ExtResource( 21 )]
-position = Vector2( 208, 368 )
+position = Vector2( 304, 432 )

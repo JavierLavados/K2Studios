@@ -1,15 +1,10 @@
-extends RigidBody2D
+extends "res://Rotators/Scripts/RotatorBlockAbs.gd"
 
-onready var coll = $CollisionShape2D
-onready var sprite = $Sprite
+var on = 24
+var off = 32
 
 func _physics_process(delta):
-	if get_parent().moving == true:
-		coll.disabled = true
-		sprite.frame = 32
-	else:
-		coll.disabled = false
-		sprite.frame = 24
+	rotatorBlock(on, off)
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Players"):

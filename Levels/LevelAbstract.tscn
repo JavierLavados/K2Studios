@@ -511,25 +511,21 @@ script = ExtResource( 14 )
 ] instance=ExtResource( 12 )]
 position = Vector2( 152, 240 )
 auto_jump = true
-teleport = false
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
 ] instance=ExtResource( 13 )]
 position = Vector2( 880, 304 )
-teleport = false
 
 [node name="PlayerDown" parent="." groups=[
 "Players",
 ] instance=ExtResource( 10 )]
 position = Vector2( 536, 304 )
-teleport = false
 
 [node name="PlayerLeft" parent="." groups=[
 "Players",
 ] instance=ExtResource( 11 )]
 position = Vector2( 816, 304 )
-teleport = false
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
 
