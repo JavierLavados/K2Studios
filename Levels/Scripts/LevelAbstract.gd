@@ -13,6 +13,7 @@ var ids = []
 var lever
 var diff_lever = false
 var lever_restriction = [0,0,0,0]
+var buttons = [0,0,0,0]
 var ready = 0
 var alt_select = false
 
