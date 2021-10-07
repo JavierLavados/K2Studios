@@ -25,7 +25,7 @@ onready var right_pos = $Right
 onready var ray = $RayCast2D
 
 # Variables auxiliares
-var InvisiWall = preload("res://WIP/InvisiWall.tscn")
+var InvisiWall
 var awake = false
 var controllable = true
 var jumping = false
@@ -40,13 +40,14 @@ var invisiWallR
 
 var motion = Vector2()
 
-func initialize(n):
+func initialize(n, wall):
 	var players = get_tree().get_nodes_in_group("Players")
 	for player in players:
 		add_collision_exception_with(player)
 	rot = -rad2deg(n.angle_to(Vector2(0,-1)))
 	sprite.rotation_degrees = rot
 	collision.rotation_degrees = rot
+	InvisiWall = wall
 	
 func modify_sprite(n, forward, backward):
 	var left = n.rotated(deg2rad(90))
@@ -175,8 +176,6 @@ func calc_motion(n, forward, backward, top, btm):
 				invisiWallR = InvisiWall.instance()
 				get_parent().add_child(invisiWallL) 
 				get_parent().add_child(invisiWallR)
-			invisiWallL.rotation_degrees = rot
-			invisiWallR.rotation_degrees = rot 
 			invisiWallL.global_position = left_pos.global_position
 			invisiWallR.global_position = right_pos.global_position	
 
@@ -190,8 +189,6 @@ func calc_motion(n, forward, backward, top, btm):
 			invisiWallR = InvisiWall.instance()
 			get_parent().add_child(invisiWallL) 
 			get_parent().add_child(invisiWallR) 
-			invisiWallL.rotation_degrees = rot
-			invisiWallR.rotation_degrees = rot 
 			invisiWallL.global_position = left_pos.global_position
 			invisiWallR.global_position = right_pos.global_position
 			
