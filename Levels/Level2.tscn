@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=8]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=10]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=15]
@@ -521,6 +522,12 @@ position = Vector2( 240, 464 )
 [node name="Interface" parent="." instance=ExtResource( 9 )]
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 512, 320 )
+scale = Vector2( 2, 2 )
+z_index = -20
+texture = ExtResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
