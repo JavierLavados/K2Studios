@@ -6,6 +6,7 @@ const AIR_SPEED = 112
 const AIR_SPEED_2 = 144
 const JUMP_H = 375
 const JUMP_H_2 = 325
+const CLIMB_SPEED = 96
 const gravity = 25
 
 # Variables para debugging
@@ -30,7 +31,11 @@ var awake = false
 var controllable = true
 var jumping = false
 var was_on_floor = false
-var on_ladder = false
+var on_ladder = 0
+var on_detector = false
+var ladder_pos
+var ladder_aligned = false
+var climbing = false
 var air_jump_used = false
 var doubleJump = false
 
@@ -82,26 +87,7 @@ func modify_sprite(n, forward, backward):
 			playback.travel("Walk")
 		else:
 			playback.travel("Idle")
-	
-# GENERALIZAR PARA TODOS
-func is_on_ladder():
-	var areas = ladder_detector.get_overlapping_areas()
-	if areas.size() > 0:
-		for area in areas:
-			if "ladder".to_upper() in area.name.to_upper():
-				on_ladder = area.get_parent().position
-	else:
-		on_ladder = false
-	return on_ladder
-	
-#func check_block_collision(hspd, collisions):
-#	for i in collisions:
-#		var block : = get_slide_collision(i).collider as Block
-#		if block:
-#			block.push(hspd)
-			
-			
-			
+				
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
 
@@ -126,15 +112,15 @@ func calc_motion(n, forward, backward, top, btm):
 			invisiWallR.queue_free()
 	
 	# Aceleracion de gravedad hasta cierto punto
-	if motion.dot(n) > -JUMP_H:
+	if motion.dot(n) > -JUMP_H and not climbing:
 		motion += -gravity * n
 		
 	# Inputs del teclado
 	var target_vel = Input.get_action_strength(forward) - Input.get_action_strength(backward)
-	var vertical_vel = Input.get_action_strength(top) - Input.get_action_strength(btm)
+	var vertical_vel = Input.get_action_strength(btm) - Input.get_action_strength(top)
 
 	# Movimiento vertical (salto)
-	if Input.is_action_just_pressed("ui_accept") and awake:
+	if Input.is_action_just_pressed("ui_accept") and awake and not climbing:
 		
 		# Posicionamiento de paredes invisibles
 		var relative_pos = Vector2(int(global_position.x)%32-15,int(global_position.y)%32-15)
@@ -222,8 +208,37 @@ func calc_motion(n, forward, backward, top, btm):
 		if see_controllable:
 			$Sprite.modulate = Color.white
 			
+	# Calculo variables de escalera
+	if n == Vector2(0, -1):
+		
+		if on_floor or on_ladder == 0:
+			climbing = false
+
+		# Si estoy en una posicion potencial de escalera
+		# y presiono una tecla
+		# y mi posicion no esta centrada
+		if ladder_pos and vertical_vel != 0 and int(position.x-16)%32:
+			if (ladder_pos[1] and vertical_vel < 0) or (!ladder_pos[1] and vertical_vel > 0):
+				position.x = ladder_pos[0]
+				ladder_aligned =  true
+						
+		if ladder_pos:
+			if position.x != ladder_pos[0]:
+				ladder_aligned = false
+		
+		if ladder_aligned and ladder_pos:
+			if ladder_pos[1] and Input.is_action_pressed(top):
+				climbing = true
+			if !ladder_pos[1] and Input.is_action_pressed(btm):
+				climbing = true
+		
+		if climbing:
+			motion.y = vertical_vel * CLIMB_SPEED
+
+		if not on_detector:
+			ladder_pos = null
+		
 	# Calculo movimiento horizontal
-	
 	if n.x == 0:
 		if on_floor:
 			motion.x = target_vel * MAX_SPEED
@@ -244,26 +259,7 @@ func calc_motion(n, forward, backward, top, btm):
 				motion.y = target_vel * AIR_SPEED
 		if not awake:
 			motion.y = 0
-				
-	if n == Vector2(0, -1):
-		# Interaccion con escaleras
-		is_on_ladder()
-		if on_ladder and Input.is_action_pressed(top):
-			if n.x == 0:
-				if position.x != on_ladder.x:
-					position.x = on_ladder.x
-			else:
-				if position.y != on_ladder.y:
-					position.y = on_ladder.y
-		
-		# Empujar cajas:
-		#var count = get_slide_count()
-		#if count > 1:
-		#	if n.x == 0:
-		#		check_block_collision(motion.x, count)
-		#	else:
-		#		check_block_collision(motion.y, count)
-
+								
 	# Movimiento final
 	motion = move_and_slide(motion, n)
 	

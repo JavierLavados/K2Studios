@@ -19,7 +19,7 @@
 [ext_resource path="res://Levers/LeverRight.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levers/LeverLeft.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Buttons/ButtonUp.tscn" type="PackedScene" id=19]
-[ext_resource path="res://WIP/PushBlockNew.tscn" type="PackedScene" id=20]
+[ext_resource path="res://WIP/PushBlock.tscn" type="PackedScene" id=20]
 [ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]

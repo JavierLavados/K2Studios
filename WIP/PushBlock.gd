@@ -14,9 +14,7 @@ var target_pos = 0
 var id = 0
 
 func _physics_process(delta):
-	
-	print(on_left)
-	
+
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL
 
