@@ -8,22 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "Block",
-"language": "GDScript",
-"path": "res://WIP/Block.gd"
-}, {
-"base": "Block",
-"class": "PushBlock",
-"language": "GDScript",
-"path": "res://WIP/PushBlock.gd"
-} ]
-_global_script_class_icons={
-"Block": "",
-"PushBlock": ""
-}
-
 [application]
 
 config/name="Gravity Guys"

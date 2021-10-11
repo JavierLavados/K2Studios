@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 32 )
 
-[node name="InvisiWallUp" type="StaticBody2D"]
+[node name="InvisiWallUp" type="StaticBody2D" groups=[
+"InvisiWalls",
+]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -16,6 +16,25 @@ var lever_restriction = [0,0,0,0]
 var buttons = [0,0,0,0]
 var ready = 0
 var alt_select = false
+var blocks
+	
+func activateBlocks(id):
+	for block in blocks:
+		if block.id != current:
+			# Rectifica la posicion del bloque
+			block.position.x = int(block.position.x)
+			block.set_physics_process(false)
+		else:
+			block.set_physics_process(true)
+
+func wakeUp(id):
+	players[current].awake = false
+	current = id
+	players[current].awake = true
+	activateBlocks(current)
+	
+func gameOver():
+	get_tree().reload_current_scene()
 
 func setUp(n_players, init_lever=4):
 	
@@ -30,17 +49,23 @@ func setUp(n_players, init_lever=4):
 	
 	players[0].awake = true
 	current = ids[0]
+	
+	blocks = get_tree().get_nodes_in_group("Blocks")
+	for block in blocks:
+		if block.id != current:
+			block.set_physics_process(false)
 
 func level(n_players, next_level):
 
 	if Input.is_action_pressed("reset"):
-		get_tree().reload_current_scene()
+		gameOver()
 	
 	if alt_select:
 		if Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and 1 in ids:
 			players[current].awake = false
 			current = (current + 1)%4
 			players[current].awake = true
+			activateBlocks(current)
 		
 		if Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and 3 in ids:
 			players[current].awake = false
@@ -49,27 +74,20 @@ func level(n_players, next_level):
 			else:
 				current -= 1
 			players[current].awake = true
+			activateBlocks(current)
 	
 	else:
 		if Input.is_action_just_pressed("ui_up") and players[current].is_on_floor() and 0 in ids:
-			players[current].awake = false
-			current = 0
-			players[current].awake = true
+			wakeUp(0)
 
 		if Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and 1 in ids:
-			players[current].awake = false
-			current = 1
-			players[current].awake = true
+			wakeUp(1)
 			
 		if Input.is_action_just_pressed("ui_down") and players[current].is_on_floor() and 2 in ids:
-			players[current].awake = false
-			current = 2
-			players[current].awake = true
+			wakeUp(2)
 			
 		if Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and 3 in ids:
-			players[current].awake = false
-			current = 3
-			players[current].awake = true
+			wakeUp(3)
 	
 	interface.active = current
 			

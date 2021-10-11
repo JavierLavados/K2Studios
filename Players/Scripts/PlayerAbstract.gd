@@ -104,7 +104,7 @@ func is_on_ladder():
 			
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
-	
+
 	# Calculo para colision con puas 
 	# (generalizar para otros elementos peligrosos)
 	for i in get_slide_count():
@@ -112,7 +112,7 @@ func calc_motion(n, forward, backward, top, btm):
 		if is_instance_valid(coll.collider):
 			if coll.collider.is_in_group("Spikes"): 
 				if coll.collider.NORMAL == coll.normal:
-					get_tree().reload_current_scene()
+					get_parent().gameOver()
 					
 	# Reseteo de variables al estar en el piso
 	var on_floor = is_on_floor()
@@ -124,7 +124,7 @@ func calc_motion(n, forward, backward, top, btm):
 		if is_instance_valid(invisiWallL):
 			invisiWallL.queue_free()
 			invisiWallR.queue_free()
-		
+	
 	# Aceleracion de gravedad hasta cierto punto
 	if motion.dot(n) > -JUMP_H:
 		motion += -gravity * n
