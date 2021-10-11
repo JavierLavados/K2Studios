@@ -589,4 +589,7 @@ position = Vector2( -64, 0 )
 position = Vector2( 176, 272 )
 
 [node name="Node2D" parent="." instance=ExtResource( 20 )]
-position = Vector2( 368, 400 )
+position = Vector2( 267.994, 586.52 )
+
+[node name="PushBlock" parent="." instance=ExtResource( 20 )]
+position = Vector2( 356.814, 392.503 )
