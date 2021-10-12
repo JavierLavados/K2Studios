@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Sprites/GuySprites/RightGuy/RightSleep.png" type="Texture" id=1]
 [ext_resource path="res://Players/Scripts/PlayerRight.gd" type="Script" id=2]
@@ -271,7 +271,7 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=7]
 resource_name = "Idle"
 length = 6.0
 loop = true
@@ -324,7 +324,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=8]
 resource_name = "Sleep"
 length = 5.0
 tracks/0/type = "value"
@@ -376,7 +376,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=9]
 resource_name = "Sleeping"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -427,7 +427,7 @@ tracks/3/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=10]
 resource_name = "WakeUp"
 length = 5.0
 tracks/0/type = "value"
@@ -479,7 +479,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=11]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -531,105 +531,108 @@ tracks/3/keys = {
 "values": [ ExtResource( 7 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeTimeScale" id=8]
+[sub_resource type="AnimationNodeTimeScale" id=13]
 
-[sub_resource type="AnimationNodeBlendTree" id=9]
-nodes/Animation/node = SubResource( 7 )
+[sub_resource type="AnimationNodeBlendTree" id=14]
+nodes/Animation/node = SubResource( 12 )
 nodes/Animation/position = Vector2( 80, 133.333 )
-nodes/TimeScale/node = SubResource( 8 )
+nodes/TimeScale/node = SubResource( 13 )
 nodes/TimeScale/position = Vector2( 266.667, 133.333 )
 nodes/output/position = Vector2( 453.333, 160 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Sleep"
 
-[sub_resource type="AnimationNodeTimeScale" id=11]
+[sub_resource type="AnimationNodeTimeScale" id=16]
 
-[sub_resource type="AnimationNodeBlendTree" id=12]
-nodes/Animation/node = SubResource( 10 )
+[sub_resource type="AnimationNodeBlendTree" id=17]
+nodes/Animation/node = SubResource( 15 )
 nodes/Animation/position = Vector2( 106.667, 133.333 )
-nodes/TimeScale/node = SubResource( 11 )
+nodes/TimeScale/node = SubResource( 16 )
 nodes/TimeScale/position = Vector2( 280.333, 117.667 )
 nodes/output/position = Vector2( 533.333, 133.333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "Sleeping"
 
-[sub_resource type="AnimationNodeTimeScale" id=14]
+[sub_resource type="AnimationNodeTimeScale" id=19]
 
-[sub_resource type="AnimationNodeBlendTree" id=15]
-nodes/Animation/node = SubResource( 13 )
+[sub_resource type="AnimationNodeBlendTree" id=20]
+nodes/Animation/node = SubResource( 18 )
 nodes/Animation/position = Vector2( 80, 133.333 )
-nodes/TimeScale/node = SubResource( 14 )
+nodes/TimeScale/node = SubResource( 19 )
 nodes/TimeScale/position = Vector2( 320, 133.333 )
 nodes/output/position = Vector2( 560, 160 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=21]
 animation = "WakeUp"
 
-[sub_resource type="AnimationNodeTimeScale" id=17]
+[sub_resource type="AnimationNodeTimeScale" id=22]
 
-[sub_resource type="AnimationNodeBlendTree" id=18]
-nodes/Animation/node = SubResource( 16 )
+[sub_resource type="AnimationNodeBlendTree" id=23]
+nodes/Animation/node = SubResource( 21 )
 nodes/Animation/position = Vector2( 80, 106.667 )
-nodes/TimeScale/node = SubResource( 17 )
+nodes/TimeScale/node = SubResource( 22 )
 nodes/TimeScale/position = Vector2( 266.667, 106.667 )
 nodes/output/position = Vector2( 453.333, 133.333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=24]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeTimeScale" id=20]
+[sub_resource type="AnimationNodeTimeScale" id=25]
 
-[sub_resource type="AnimationNodeBlendTree" id=21]
-nodes/Animation/node = SubResource( 19 )
+[sub_resource type="AnimationNodeBlendTree" id=26]
+nodes/Animation/node = SubResource( 24 )
 nodes/Animation/position = Vector2( 106.667, 133.333 )
-nodes/TimeScale/node = SubResource( 20 )
+nodes/TimeScale/node = SubResource( 25 )
 nodes/TimeScale/position = Vector2( 320, 160 )
 nodes/output/position = Vector2( 506.667, 160 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=30]
-states/Idle/node = SubResource( 9 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=35]
+states/Idle/node = SubResource( 14 )
 states/Idle/position = Vector2( 516.481, 213.222 )
-states/Sleep/node = SubResource( 12 )
+states/Sleep/node = SubResource( 17 )
 states/Sleep/position = Vector2( 762.956, 64.3333 )
-states/Sleeping/node = SubResource( 15 )
+states/Sleeping/node = SubResource( 20 )
 states/Sleeping/position = Vector2( 764.333, 160.333 )
-states/WakeUp/node = SubResource( 18 )
+states/WakeUp/node = SubResource( 23 )
 states/WakeUp/position = Vector2( 763.988, 257.667 )
-states/Walk/node = SubResource( 21 )
+states/Walk/node = SubResource( 26 )
 states/Walk/position = Vector2( 516.333, 128.333 )
-transitions = [ "Idle", "Walk", SubResource( 22 ), "Walk", "Idle", SubResource( 23 ), "Walk", "Sleep", SubResource( 24 ), "Sleep", "Sleeping", SubResource( 25 ), "Idle", "Sleep", SubResource( 26 ), "Sleeping", "WakeUp", SubResource( 27 ), "WakeUp", "Idle", SubResource( 28 ), "WakeUp", "Walk", SubResource( 29 ) ]
+transitions = [ "Idle", "Walk", SubResource( 27 ), "Walk", "Idle", SubResource( 28 ), "Walk", "Sleep", SubResource( 29 ), "Sleep", "Sleeping", SubResource( 30 ), "Idle", "Sleep", SubResource( 31 ), "Sleeping", "WakeUp", SubResource( 32 ), "WakeUp", "Idle", SubResource( 33 ), "WakeUp", "Walk", SubResource( 34 ) ]
 start_node = "Sleeping"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=31]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=36]
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 16, 14 )
 
 [node name="PlayerRight" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -657,17 +660,17 @@ anims/Walk = SubResource( 6 )
 
 [node name="Boots" type="AnimationPlayer" parent="."]
 playback_speed = 8.0
-anims/Idle = SubResource( 32 )
-anims/Sleep = SubResource( 33 )
-anims/Sleeping = SubResource( 34 )
-anims/WakeUp = SubResource( 35 )
-anims/Walk = SubResource( 36 )
+anims/Idle = SubResource( 7 )
+anims/Sleep = SubResource( 8 )
+anims/Sleeping = SubResource( 9 )
+anims/WakeUp = SubResource( 10 )
+anims/Walk = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 30 )
+tree_root = SubResource( 35 )
 anim_player = NodePath("../Default")
 active = true
-parameters/playback = SubResource( 31 )
+parameters/playback = SubResource( 36 )
 parameters/Idle/TimeScale/scale = 8.0
 parameters/Sleep/TimeScale/scale = 8.0
 parameters/Sleeping/TimeScale/scale = 8.0
@@ -681,3 +684,9 @@ parameters/Walk/TimeScale/scale = 8.0
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -32, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -32, 0 )
+shape = SubResource( 37 )

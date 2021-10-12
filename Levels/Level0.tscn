@@ -511,17 +511,17 @@ script = ExtResource( 14 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 12 )]
-position = Vector2( 152, 272 )
+position = Vector2( 176, 272 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
 ] instance=ExtResource( 13 )]
-position = Vector2( 432, 480 )
+position = Vector2( 432, 464 )
 
 [node name="PlayerDown" parent="." groups=[
 "Players",
 ] instance=ExtResource( 10 )]
-position = Vector2( 365.639, 338.673 )
+position = Vector2( 368, 336 )
 
 [node name="PlayerLeft" parent="." groups=[
 "Players",
@@ -587,13 +587,13 @@ position = Vector2( -32, 0 )
 position = Vector2( -64, 0 )
 
 [node name="ButtonUp" parent="." instance=ExtResource( 19 )]
-position = Vector2( 96, 272 )
+position = Vector2( 112, 272 )
 
 [node name="Node2D" parent="." instance=ExtResource( 20 )]
-position = Vector2( 267.994, 586.52 )
+position = Vector2( 272, 592 )
 
 [node name="PushBlock" parent="." instance=ExtResource( 20 )]
-position = Vector2( 112, 584 )
+position = Vector2( 144, 592 )
 
 [node name="CloudUp" parent="." instance=ExtResource( 22 )]
 position = Vector2( 304, 304 )

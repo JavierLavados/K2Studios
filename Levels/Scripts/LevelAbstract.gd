@@ -17,6 +17,7 @@ var buttons = [0,0,0,0]
 var ready = 0
 var alt_select = false
 var blocks
+var clouds
 var switch_restriction = 0
 	
 func activateBlocks(prev, new):
@@ -33,6 +34,8 @@ func wakeUp(prev, new):
 	players[current].awake = false
 	current = new
 	players[current].awake = true
+	for cloud in clouds:
+		cloud.disabled = false
 	activateBlocks(prev, new)
 	
 func gameOver():
@@ -56,10 +59,10 @@ func setUp(n_players, init_lever=4):
 	for block in blocks:
 		if block.id != current:
 			block.set_physics_process(false)
+			
+	clouds = get_tree().get_nodes_in_group("Clouds")
 
 func level(n_players, next_level):
-	
-	print(switch_restriction)
 
 	if Input.is_action_pressed("reset"):
 		gameOver()
