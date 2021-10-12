@@ -90,7 +90,14 @@ func modify_sprite(n, forward, backward):
 				
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
-
+	
+	
+	if ray.is_colliding():
+		if ray.get_collider().is_in_group("Clouds"):
+			if n != Vector2(0,-1):
+				ray.get_collider().coll.set_deferred("disabled",true)
+				ray.get_collider().sprite.visible = false
+		
 	# Calculo para colision con puas 
 	# (generalizar para otros elementos peligrosos)
 	for i in get_slide_count():
