@@ -13,10 +13,16 @@ var motion = Vector2(0,0)
 var target_pos = 0
 var id = 0
 var counter = 0
+var can_switch = true
+
+func _process(delta):
+	if counter > 0:
+		set_physics_process(false)
+	else:
+		set_physics_process(true)
 
 
 func _physics_process(delta):
-	
 
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL
@@ -25,23 +31,31 @@ func _physics_process(delta):
 		target_pos = 1
 	if on_right and Input.get_action_strength("left") == 1 and ray.is_colliding():
 		target_pos = -1
+		
+	var prev_switch = can_switch
 	
 	if target_pos != 0:
-		get_parent().can_switch = false
+		can_switch = false
 		motion.x = target_pos * 48
 		coll.shape.extents.y = 15
 		coll.position.y = 1
 	else:
-		get_parent().can_switch = true
 		motion.x = 0
 		coll.shape.extents.y = 16
 		coll.position.y = 0
-	
-	if !ray.is_colliding() and target_pos == 0:
-		coll.shape.extents.x = 14
-	else:
-		coll.shape.extents.x = 16
-
+		if !ray.is_colliding():
+			can_switch = false
+			coll.shape.extents.x = 14
+		else:
+			can_switch = true
+			coll.shape.extents.x = 16
+			
+	if prev_switch != can_switch:
+		if can_switch:
+			get_parent().switch_restriction -= 1
+		else:
+			get_parent().switch_restriction += 1
+		
 	move_and_slide(motion)
 	
 	if int(position.x)%32 == 16:
