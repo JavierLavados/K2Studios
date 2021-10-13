@@ -15,6 +15,8 @@ var id = 0
 var counter = 0
 var can_switch = true
 
+var pusher
+
 func _process(delta):
 	if counter > 0:
 		set_physics_process(false)
@@ -31,6 +33,12 @@ func _physics_process(delta):
 		target_pos = 1
 	if on_right and Input.get_action_strength("left") == 1 and ray.is_colliding():
 		target_pos = -1
+		
+	if pusher:
+		if (on_left and Input.get_action_strength("right") == 1) or (on_right and Input.get_action_strength("left") == 1):
+			pusher.pushing = true
+		else:
+			pusher.pushing = false
 		
 	var prev_switch = can_switch
 	
@@ -63,6 +71,7 @@ func _physics_process(delta):
 
 func _on_AreaLeft_body_entered(body):
 	if body.name == "PlayerUp":
+		pusher = body
 		on_left = true
 	else:
 		if body.is_in_group("Players"):
@@ -77,6 +86,7 @@ func _on_AreaLeft_body_exited(body):
 
 func _on_AreaRight_body_entered(body):
 	if body.name == "PlayerUp":
+		pusher = body
 		on_right = true
 	else:
 		if body.is_in_group("Players"):

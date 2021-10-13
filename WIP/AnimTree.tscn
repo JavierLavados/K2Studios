@@ -1,0 +1,114 @@
+[gd_scene load_steps=26 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeTimeScale" id=13]
+
+[sub_resource type="AnimationNodeBlendTree" id=14]
+graph_offset = Vector2( 0, -156.942 )
+nodes/Animation/node = SubResource( 12 )
+nodes/Animation/position = Vector2( 133.333, -80 )
+nodes/TimeScale/node = SubResource( 13 )
+nodes/TimeScale/position = Vector2( 346.667, 0 )
+nodes/output/position = Vector2( 560, -53.3333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Sleep"
+
+[sub_resource type="AnimationNodeTimeScale" id=16]
+
+[sub_resource type="AnimationNodeBlendTree" id=17]
+nodes/Animation/node = SubResource( 15 )
+nodes/Animation/position = Vector2( 106.667, 106.667 )
+nodes/TimeScale/node = SubResource( 16 )
+nodes/TimeScale/position = Vector2( 320, 133.333 )
+nodes/output/position = Vector2( 560, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Sleeping"
+
+[sub_resource type="AnimationNodeTimeScale" id=19]
+
+[sub_resource type="AnimationNodeBlendTree" id=20]
+nodes/Animation/node = SubResource( 18 )
+nodes/Animation/position = Vector2( 80, 106.667 )
+nodes/TimeScale/node = SubResource( 19 )
+nodes/TimeScale/position = Vector2( 293.333, 106.667 )
+nodes/output/position = Vector2( 506.667, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "WakeUp"
+
+[sub_resource type="AnimationNodeTimeScale" id=22]
+
+[sub_resource type="AnimationNodeBlendTree" id=23]
+nodes/Animation/node = SubResource( 21 )
+nodes/Animation/position = Vector2( 106.667, 106.667 )
+nodes/TimeScale/node = SubResource( 22 )
+nodes/TimeScale/position = Vector2( 320, 106.667 )
+nodes/output/position = Vector2( 506.667, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeTimeScale" id=25]
+
+[sub_resource type="AnimationNodeBlendTree" id=26]
+nodes/Animation/node = SubResource( 24 )
+nodes/Animation/position = Vector2( 133.333, 106.667 )
+nodes/TimeScale/node = SubResource( 25 )
+nodes/TimeScale/position = Vector2( 320, 106.667 )
+nodes/output/position = Vector2( 506.667, 106.667 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=35]
+states/Idle/node = SubResource( 14 )
+states/Idle/position = Vector2( 515.37, 249.292 )
+states/Sleep/node = SubResource( 17 )
+states/Sleep/position = Vector2( 850.009, 70.6257 )
+states/Sleeping/node = SubResource( 20 )
+states/Sleeping/position = Vector2( 850.117, 179.403 )
+states/WakeUp/node = SubResource( 23 )
+states/WakeUp/position = Vector2( 851.117, 287.959 )
+states/Walk/node = SubResource( 26 )
+states/Walk/position = Vector2( 515.799, 117.292 )
+transitions = [ "Idle", "Walk", SubResource( 27 ), "Walk", "Idle", SubResource( 28 ), "Walk", "Sleep", SubResource( 29 ), "Idle", "Sleep", SubResource( 30 ), "Sleep", "Sleeping", SubResource( 31 ), "Sleeping", "WakeUp", SubResource( 32 ), "WakeUp", "Walk", SubResource( 33 ), "WakeUp", "Idle", SubResource( 34 ) ]
+start_node = "Sleeping"
+graph_offset = Vector2( 189.944, 28.2501 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=36]
+
+[node name="AnimTree" type="AnimationTree"]
+tree_root = SubResource( 35 )
+anim_player = NodePath("../Animations")
+active = true
+parameters/playback = SubResource( 36 )
+parameters/Idle/TimeScale/scale = 2.0
+parameters/Sleep/TimeScale/scale = 8.0
+parameters/Sleeping/TimeScale/scale = 8.0
+parameters/WakeUp/TimeScale/scale = 8.0
+parameters/Walk/TimeScale/scale = 8.0

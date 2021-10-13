@@ -5,8 +5,11 @@ var cherry_controls = false
 var id = 3
 var wall = preload("res://InvisiWalls/InvisiWallLeft.tscn")
 
+var text1 = "res://Sprites/GuySprites/UpGuy/LeftAll.png"
+var text2 = "res://Sprites/GuySprites/UpGuy/LeftBoots.png"
+
 func _ready():
-	initialize(NORMAL, wall)
+	initialize(NORMAL, wall, text1, text2)
 	
 func _physics_process(delta):
 	if cherry_controls:

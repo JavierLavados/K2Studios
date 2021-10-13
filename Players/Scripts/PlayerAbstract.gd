@@ -16,9 +16,9 @@ export var teleport = false
 
 # Referencias a otros nodos
 onready var sprite = $Sprite
-onready var animationPlayer = $Default
-onready var animationTree = $AnimationTree
-onready var playback = $AnimationTree.get("parameters/playback")
+onready var animationPlayer = $Animations
+onready var animTree = $AnimTree
+onready var playback = $AnimTree.get("parameters/playback")
 onready var collision = $CollisionShape2D
 onready var ladder_detector = $ladder_detector
 onready var left_pos = $Left
@@ -39,14 +39,18 @@ var ladder_aligned = false
 var climbing = false
 var air_jump_used = false
 var doubleJump = false
+var pushing = false
 
 var rot
 var invisiWallL
 var invisiWallR
 
+var default_texture
+var boots_texture
+
 var motion = Vector2()
 
-func initialize(n, wall):
+func initialize(n, wall, texture1, texture2):
 	var players = get_tree().get_nodes_in_group("Players")
 	for player in players:
 		add_collision_exception_with(player)
@@ -54,6 +58,9 @@ func initialize(n, wall):
 	sprite.rotation_degrees = rot
 	collision.rotation_degrees = rot
 	InvisiWall = wall
+	
+	default_texture = texture1
+	boots_texture = texture2
 	
 func modify_sprite(n, forward, backward):
 	var left = n.rotated(deg2rad(90))
@@ -63,9 +70,9 @@ func modify_sprite(n, forward, backward):
 		flip = true
 	
 	if doubleJump:
-		$AnimationTree.anim_player = "../Boots"
+		sprite.texture = load(boots_texture)
 	else:
-		$AnimationTree.anim_player = "../Default"
+		sprite.texture = load(default_texture)
 	
 	if awake:
 		if Input.is_action_just_pressed(forward):
@@ -73,13 +80,11 @@ func modify_sprite(n, forward, backward):
 				sprite.flip_h = true
 			else:
 				sprite.flip_h = false
-			#ladder_detector.scale.x = 1
 		if Input.is_action_just_pressed(backward):
 			if flip:
 				sprite.flip_h = false
 			else:
 				sprite.flip_h = true
-			#ladder_detector.scale.x = -1
 			
 	if not awake:
 		playback.travel("Sleeping")
@@ -88,10 +93,18 @@ func modify_sprite(n, forward, backward):
 			playback.travel("Walk")
 		else:
 			playback.travel("Idle")
-				
+		
+	#if pushing:
+	#	playback.travel("Push")
+		
+	#if climbing:
+	#		playback.travel("Climb")
+			
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
 	
+	print(playback.get_current_node())
+
 	for i in area.get_overlapping_bodies():
 		if i.is_in_group("Clouds"):
 			if n != Vector2(0,-1):

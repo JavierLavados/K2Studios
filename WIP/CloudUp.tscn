@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Idle"
 loop = true
 tracks/0/type = "value"
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=3]
 resource_name = "Spawn"
 length = 4.0
 tracks/0/type = "value"
@@ -63,8 +63,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Vanish"
+[sub_resource type="Animation" id=4]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -91,18 +90,18 @@ tracks/1/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Spawn"
 
-[sub_resource type="AnimationNodeTimeScale" id=16]
+[sub_resource type="AnimationNodeTimeScale" id=7]
 
-[sub_resource type="AnimationNodeBlendTree" id=17]
-nodes/Animation/node = SubResource( 15 )
+[sub_resource type="AnimationNodeBlendTree" id=8]
+nodes/Animation/node = SubResource( 6 )
 nodes/Animation/position = Vector2( 26.6667, 80 )
-nodes/TimeScale/node = SubResource( 16 )
+nodes/TimeScale/node = SubResource( 7 )
 nodes/TimeScale/position = Vector2( 240, 80 )
 nodes/output/position = Vector2( 400, 106.667 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
@@ -120,25 +119,25 @@ nodes/TimeScale/position = Vector2( 240, 106.667 )
 nodes/output/position = Vector2( 400, 133.333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=7]
-states/Idle/node = SubResource( 12 )
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Idle/node = SubResource( 5 )
 states/Idle/position = Vector2( 336.333, 113.255 )
-states/Spawn/node = SubResource( 17 )
+states/Spawn/node = SubResource( 8 )
 states/Spawn/position = Vector2( 474.132, 25.6667 )
 states/Vanish/node = SubResource( 11 )
 states/Vanish/position = Vector2( 587, 112.333 )
-transitions = [ "Idle", "Vanish", SubResource( 13 ), "Vanish", "Spawn", SubResource( 18 ), "Spawn", "Idle", SubResource( 19 ) ]
+transitions = [ "Idle", "Vanish", SubResource( 12 ), "Vanish", "Spawn", SubResource( 13 ), "Spawn", "Idle", SubResource( 14 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -42.2009, 0 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="CloudUp" type="RigidBody2D" groups=[
 "Clouds",
@@ -157,14 +156,14 @@ vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
-anims/Idle = SubResource( 3 )
-anims/Spawn = SubResource( 14 )
-anims/Vanish = SubResource( 2 )
+anims/Idle = SubResource( 2 )
+anims/Spawn = SubResource( 3 )
+anims/Vanish = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 7 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 8 )
+parameters/playback = SubResource( 16 )
 parameters/Spawn/TimeScale/scale = 6.0
 parameters/Vanish/TimeScale/scale = 6.0
