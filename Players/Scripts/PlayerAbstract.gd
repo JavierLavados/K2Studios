@@ -16,11 +16,8 @@ export var teleport = false
 
 # Referencias a otros nodos
 onready var sprite = $Sprite
-onready var animationPlayer = $Animations
-onready var animTree = $AnimTree
-onready var playback = $AnimTree.get("parameters/playback")
 onready var collision = $CollisionShape2D
-onready var ladder_detector = $ladder_detector
+onready var playback = $AnimTree.get("parameters/playback")
 onready var left_pos = $Left
 onready var right_pos = $Right
 onready var ray = $RayCast2D
@@ -73,7 +70,7 @@ func modify_sprite(n, forward, backward):
 		sprite.texture = load(boots_texture)
 	else:
 		sprite.texture = load(default_texture)
-	
+
 	if awake:
 		if Input.is_action_just_pressed(forward):
 			if flip:
@@ -85,7 +82,7 @@ func modify_sprite(n, forward, backward):
 				sprite.flip_h = false
 			else:
 				sprite.flip_h = true
-			
+
 	if not awake:
 		playback.travel("Sleeping")
 	else:
@@ -93,28 +90,21 @@ func modify_sprite(n, forward, backward):
 			playback.travel("Walk")
 		else:
 			playback.travel("Idle")
-		
-	#if pushing:
-	#	playback.travel("Push")
-		
-	#if climbing:
-	#		playback.travel("Climb")
+
+		if pushing:
+			playback.travel("Push")
+
+	if climbing:
+		playback.travel("Climb")
 			
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
-	
-	print(playback.get_current_node())
 
 	for i in area.get_overlapping_bodies():
 		if i.is_in_group("Clouds"):
 			if n != Vector2(0,-1):
 				i.disabled = true
-		
-	#if ray.get_overlapping_areas().is_in_group("Clouds"):
-	#	if n != Vector2(0,-1):
-	#		ray.get_collider().coll.set_deferred("disabled",true)
-	#		ray.get_collider().sprite.visible = false
-		
+
 	# Calculo para colision con puas 
 	# (generalizar para otros elementos peligrosos)
 	for i in get_slide_count():
@@ -290,3 +280,5 @@ func calc_motion(n, forward, backward, top, btm):
 	# TELETRANSPORTACION PARA DEBUGGING	
 	if Input.is_action_just_pressed("teleport") and teleport and awake:
 		global_position = get_global_mouse_position()
+	
+	modify_sprite(n, forward, backward)

@@ -2,7 +2,7 @@ extends RigidBody2D
 
 onready var coll = $CollisionShape2D
 onready var sprite = $Sprite
-onready var playback = $AnimationTree.get("parameters/playback")
+onready var playback = $CloudTree.get("parameters/playback")
 
 var disabled = false
 

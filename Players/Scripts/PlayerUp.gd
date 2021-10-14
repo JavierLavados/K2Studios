@@ -12,5 +12,5 @@ func _ready():
 	initialize(NORMAL, wall, text1, text2)
 	
 func _physics_process(delta):
+
 	calc_motion(NORMAL, "right", "left", "up", "down")
-	modify_sprite(NORMAL, "right", "left")

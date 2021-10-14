@@ -1,0 +1,57 @@
+[gd_scene load_steps=13 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Spawn"
+
+[sub_resource type="AnimationNodeTimeScale" id=3]
+
+[sub_resource type="AnimationNodeBlendTree" id=4]
+nodes/Animation/node = SubResource( 2 )
+nodes/Animation/position = Vector2( 26.6667, 80 )
+nodes/TimeScale/node = SubResource( 3 )
+nodes/TimeScale/position = Vector2( 240, 80 )
+nodes/output/position = Vector2( 400, 106.667 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Vanish"
+
+[sub_resource type="AnimationNodeTimeScale" id=6]
+
+[sub_resource type="AnimationNodeBlendTree" id=7]
+nodes/Animation/node = SubResource( 5 )
+nodes/Animation/position = Vector2( 53.3333, 106.667 )
+nodes/TimeScale/node = SubResource( 6 )
+nodes/TimeScale/position = Vector2( 240, 106.667 )
+nodes/output/position = Vector2( 400, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Idle/node = SubResource( 1 )
+states/Idle/position = Vector2( 336.333, 113.255 )
+states/Spawn/node = SubResource( 4 )
+states/Spawn/position = Vector2( 474.132, 25.6667 )
+states/Vanish/node = SubResource( 7 )
+states/Vanish/position = Vector2( 587, 112.333 )
+transitions = [ "Idle", "Vanish", SubResource( 8 ), "Vanish", "Spawn", SubResource( 9 ), "Spawn", "Idle", SubResource( 10 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -42.2009, -69.1521 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+
+[node name="CloudTree" type="AnimationTree"]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 12 )
+parameters/Spawn/TimeScale/scale = 6.0
+parameters/Vanish/TimeScale/scale = 6.0
