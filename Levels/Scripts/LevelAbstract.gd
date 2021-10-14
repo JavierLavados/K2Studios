@@ -1,9 +1,5 @@
 extends Node2D
 
-var playerU
-var playerD
-var playerL
-var playerR
 var interface
 var background
 
@@ -35,7 +31,8 @@ func wakeUp(prev, new):
 	current = new
 	players[current].awake = true
 	for cloud in clouds:
-		cloud.disabled = false
+		if cloud.respawn:
+			cloud.disabled = false
 	activateBlocks(prev, new)
 	
 func gameOver():
@@ -88,16 +85,16 @@ func level(n_players, next_level):
 				activateBlocks(prev, current)
 		
 		else:
-			if Input.is_action_just_pressed("ui_up") and players[current].is_on_floor() and 0 in ids:
+			if current != 0 and Input.is_action_just_pressed("ui_up") and players[current].is_on_floor() and 0 in ids:
 				wakeUp(current,0)
 
-			if Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and 1 in ids:
+			if current != 1 and  Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and 1 in ids:
 				wakeUp(current,1)
 				
-			if Input.is_action_just_pressed("ui_down") and players[current].is_on_floor() and 2 in ids:
+			if current != 2 and  Input.is_action_just_pressed("ui_down") and players[current].is_on_floor() and 2 in ids:
 				wakeUp(current,2)
 				
-			if Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and 3 in ids:
+			if current != 3 and Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and 3 in ids:
 				wakeUp(current,3)
 	
 	interface.active = current

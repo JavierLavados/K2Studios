@@ -14,3 +14,16 @@ func _ready():
 func _physics_process(delta):
 
 	calc_motion(NORMAL, "right", "left", "up", "down")
+
+func _on_Area2D_area_entered(area):
+	if area.name == "CloudArea":
+		var cloud = area.get_parent()
+		if NORMAL != cloud.id:
+			cloud.disabled = true
+			cloud.respawn = false
+
+func _on_Area2D_area_exited(area):
+	if area.name == "CloudArea":
+		var cloud = area.get_parent()
+		if NORMAL != cloud.id:
+			cloud.respawn = true

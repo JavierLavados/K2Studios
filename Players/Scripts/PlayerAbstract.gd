@@ -100,11 +100,6 @@ func modify_sprite(n, forward, backward):
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
 
-	for i in area.get_overlapping_bodies():
-		if i.is_in_group("Clouds"):
-			if n != Vector2(0,-1):
-				i.disabled = true
-
 	# Calculo para colision con puas 
 	# (generalizar para otros elementos peligrosos)
 	for i in get_slide_count():
