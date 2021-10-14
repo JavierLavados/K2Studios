@@ -1,9 +1,15 @@
 extends Control
 
 onready var playback = $AnimationTree.get("parameters/playback")
+onready var sprite = $Sprite
 
 var active = 0
 var cherry_controls = false
+
+var w1 = "res://Sprites/SelectorTransparent.png"
+var w2 = "res://Sprites/SelectorWorld2.png"
+var w3 = "res://Sprites/SelectorHell.png"
+var textures = [w1, w2, w3]
 
 func _physics_process(delta):
 	match active:

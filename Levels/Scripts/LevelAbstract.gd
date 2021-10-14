@@ -38,7 +38,7 @@ func wakeUp(prev, new):
 func gameOver():
 	get_tree().reload_current_scene()
 
-func setUp(n_players, init_lever=4):
+func setUp(n_players, world = 0, init_lever=4):
 	
 	lever = init_lever
 	if lever != 4:
@@ -48,6 +48,12 @@ func setUp(n_players, init_lever=4):
 		ids.append(get_child(i).id)
 	interface = get_child(n_players)
 	background = get_child(n_players+1)
+	
+	for p in players:
+		p.default_texture = p.textures[world]
+		p.boots_texture = p.textures[len(p.textures)-1]
+		
+	interface.sprite.texture = load(interface.textures[world])
 	
 	players[0].awake = true
 	current = ids[0]

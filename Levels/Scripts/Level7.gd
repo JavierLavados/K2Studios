@@ -1,10 +1,10 @@
 extends "res://Levels/Scripts/LevelAbstract.gd"
 
 var n_players = 4
-var next = "res://Levels/Level3.tscn"
+var next = "res://Levels/Level1.tscn"
 
 func _ready():
-	setUp(n_players,0,3)
+	setUp(n_players,1)
 	
 func _physics_process(delta):
 	level(n_players, next)

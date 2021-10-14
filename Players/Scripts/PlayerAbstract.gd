@@ -47,7 +47,7 @@ var boots_texture
 
 var motion = Vector2()
 
-func initialize(n, wall, texture1, texture2):
+func initialize(n, wall):
 	var players = get_tree().get_nodes_in_group("Players")
 	for player in players:
 		add_collision_exception_with(player)
@@ -55,9 +55,6 @@ func initialize(n, wall, texture1, texture2):
 	sprite.rotation_degrees = rot
 	collision.rotation_degrees = rot
 	InvisiWall = wall
-	
-	default_texture = texture1
-	boots_texture = texture2
 	
 func modify_sprite(n, forward, backward):
 	var left = n.rotated(deg2rad(90))

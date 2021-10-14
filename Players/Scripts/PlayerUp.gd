@@ -5,14 +5,16 @@ var cherry_controls = false
 var id = 0
 var wall = preload("res://InvisiWalls/InvisiWallUp.tscn")
 
-var text1 = "res://Sprites/GuySprites/UpGuy/UpAll.png"
-var text2 = "res://Sprites/GuySprites/UpGuy/UpBoots.png"
+var w1 = "res://Sprites/GuySprites/UpGuy/UpAll.png"
+var w2 = "res://Sprites/GuySprites/UpGuy/UpWorld2.png"
+var w3 = "res://Sprites/GuySprites/UpGuy/UpHell.png"
+var boots = "res://Sprites/GuySprites/UpGuy/UpBoots.png"
+var textures = [w1, w2, w3, boots]
 
 func _ready():
-	initialize(NORMAL, wall, text1, text2)
+	initialize(NORMAL, wall)
 	
 func _physics_process(delta):
-
 	calc_motion(NORMAL, "right", "left", "up", "down")
 
 func _on_Area2D_area_entered(area):

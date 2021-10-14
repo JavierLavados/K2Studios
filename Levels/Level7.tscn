@@ -1,6 +1,7 @@
 [gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/BgWorld5.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Scripts/Level7.gd" type="Script" id=2]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
@@ -10,7 +11,6 @@
 [ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/Scripts/Level0.gd" type="Script" id=14]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sprites/TilesetWorld5.png" type="Texture" id=16]
 [ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
@@ -594,7 +594,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 23/z_index = 0
 
 [node name="World" type="Node2D"]
-script = ExtResource( 14 )
+script = ExtResource( 2 )
 
 [node name="PlayerUp" parent="." groups=[
 "Players",
@@ -641,13 +641,13 @@ tile_data = PoolIntArray( 65551, 11, 0, 65552, 18, 0, 65553, 15, 0, 131077, 22, 
 position = Vector2( 368, 208 )
 
 [node name="PortalDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 336, 496 )
+position = Vector2( 360, 672 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 3 )]
-position = Vector2( 656, 432 )
+position = Vector2( 424, 680 )
 
 [node name="PortalLeft" parent="." instance=ExtResource( 5 )]
-position = Vector2( 624, 144 )
+position = Vector2( 512, 688 )
 
 [node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 432, 272 )
+position = Vector2( 472, 672 )
