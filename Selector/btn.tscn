@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Selector/Screenshot_1.png" type="Texture" id=1]
+[ext_resource path="res://Selector/Screenshot_2.png" type="Texture" id=2]
+
+[node name="btn" type="TextureButton"]
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 157.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0.952637, 0.063261, 0.063261, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

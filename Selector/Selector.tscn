@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Selector/btn.gd" type="Script" id=1]
+[ext_resource path="res://Selector/btn.tscn" type="PackedScene" id=2]
+
+[node name="Selector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/vseparation = 15
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn" parent="GridContainer" instance=ExtResource( 2 )]
+margin_right = 157.0
+margin_bottom = 161.0
+script = ExtResource( 1 )
+level_proyect_dir = "res://Selector/Level1.tscn"
+
+[node name="btn2" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 161.0
+script = ExtResource( 1 )
+level_int = 2
+level_proyect_dir = "res://Selector/Level2.tscn"
+
+[node name="btn3" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 322.0
+margin_right = 479.0
+margin_bottom = 161.0
+script = ExtResource( 1 )
+level_int = 3
+level_proyect_dir = "res://Selector/Level3.tscn"
+
+[node name="btn4" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 483.0
+margin_right = 640.0
+margin_bottom = 161.0
+script = ExtResource( 1 )
+level_int = 4
+level_proyect_dir = "res://Selector/Level4.tscn"
+
+[node name="btn5" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 644.0
+margin_right = 801.0
+margin_bottom = 161.0
+script = ExtResource( 1 )
+level_int = 5
+level_proyect_dir = "res://Selector/Level5.tscn"
+
+[connection signal="pressed" from="GridContainer/btn" to="GridContainer/btn" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn2" to="GridContainer/btn2" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn3" to="GridContainer/btn3" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn4" to="GridContainer/btn4" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn5" to="GridContainer/btn5" method="_on_btn_pressed"]
