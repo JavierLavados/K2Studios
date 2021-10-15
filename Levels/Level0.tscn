@@ -559,10 +559,10 @@ position = Vector2( 464, 464 )
 position = Vector2( 304, 488 )
 
 [node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 528, 400 )
+position = Vector2( 144, 176 )
 
 [node name="PushBlock" parent="." instance=ExtResource( 20 )]
-position = Vector2( 112, 592 )
+position = Vector2( 80, 592 )
 
 [node name="CloudUp" parent="." instance=ExtResource( 22 )]
 position = Vector2( 240, 272 )

@@ -1,78 +1,58 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=44 format=2]
 
-[sub_resource type="AnimationNodeAnimation" id=36]
+[sub_resource type="AnimationNodeAnimation" id=1]
 animation = "Climb"
 
-[sub_resource type="AnimationNodeTimeScale" id=37]
+[sub_resource type="AnimationNodeTimeScale" id=2]
 
-[sub_resource type="AnimationNodeBlendTree" id=38]
+[sub_resource type="AnimationNodeBlendTree" id=3]
 resource_local_to_scene = true
-nodes/Animation/node = SubResource( 36 )
+nodes/Animation/node = SubResource( 1 )
 nodes/Animation/position = Vector2( 26.6667, 106.667 )
-nodes/TimeScale/node = SubResource( 37 )
+nodes/TimeScale/node = SubResource( 2 )
 nodes/TimeScale/position = Vector2( 240, 106.667 )
 nodes/output/position = Vector2( 426.667, 133.333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=53]
+[sub_resource type="AnimationNodeAnimation" id=4]
+
+[sub_resource type="AnimationNodeBlendTree" id=5]
+nodes/Animation/node = SubResource( 4 )
+nodes/Animation/position = Vector2( 53.3333, 53.3333 )
+nodes/output/position = Vector2( 320, 106.667 )
+node_connections = [ "output", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeTimeScale" id=54]
+[sub_resource type="AnimationNodeTimeScale" id=7]
 
-[sub_resource type="AnimationNodeBlendTree" id=55]
+[sub_resource type="AnimationNodeBlendTree" id=8]
 resource_local_to_scene = true
 graph_offset = Vector2( 0, -156.942 )
-nodes/Animation/node = SubResource( 53 )
+nodes/Animation/node = SubResource( 6 )
 nodes/Animation/position = Vector2( 133.333, -80 )
-nodes/TimeScale/node = SubResource( 54 )
+nodes/TimeScale/node = SubResource( 7 )
 nodes/TimeScale/position = Vector2( 346.667, 0 )
 nodes/output/position = Vector2( 560, -53.3333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeAnimation" id=39]
-animation = "Push"
-
-[sub_resource type="AnimationNodeTimeScale" id=40]
-
-[sub_resource type="AnimationNodeBlendTree" id=41]
-resource_local_to_scene = true
-nodes/Animation/node = SubResource( 39 )
-nodes/Animation/position = Vector2( 53.3333, 106.667 )
-nodes/TimeScale/node = SubResource( 40 )
-nodes/TimeScale/position = Vector2( 213.333, 106.667 )
-nodes/output/position = Vector2( 373.333, 133.333 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
-
-[sub_resource type="AnimationNodeAnimation" id=56]
-animation = "Sleep"
-
-[sub_resource type="AnimationNodeTimeScale" id=57]
-
-[sub_resource type="AnimationNodeBlendTree" id=8]
-resource_local_to_scene = true
-nodes/Animation/node = SubResource( 56 )
-nodes/Animation/position = Vector2( 106.667, 106.667 )
-nodes/TimeScale/node = SubResource( 57 )
-nodes/TimeScale/position = Vector2( 320, 133.333 )
-nodes/output/position = Vector2( 560, 133.333 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
-
 [sub_resource type="AnimationNodeAnimation" id=9]
-animation = "Sleeping"
+animation = "Push"
 
 [sub_resource type="AnimationNodeTimeScale" id=10]
 
 [sub_resource type="AnimationNodeBlendTree" id=11]
 resource_local_to_scene = true
 nodes/Animation/node = SubResource( 9 )
-nodes/Animation/position = Vector2( 80, 106.667 )
+nodes/Animation/position = Vector2( 53.3333, 106.667 )
 nodes/TimeScale/node = SubResource( 10 )
-nodes/TimeScale/position = Vector2( 293.333, 106.667 )
-nodes/output/position = Vector2( 506.667, 133.333 )
+nodes/TimeScale/position = Vector2( 213.333, 106.667 )
+nodes/output/position = Vector2( 373.333, 133.333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
 [sub_resource type="AnimationNodeAnimation" id=12]
-animation = "WakeUp"
+animation = "Sleep"
 
 [sub_resource type="AnimationNodeTimeScale" id=13]
 
@@ -81,84 +61,118 @@ resource_local_to_scene = true
 nodes/Animation/node = SubResource( 12 )
 nodes/Animation/position = Vector2( 106.667, 106.667 )
 nodes/TimeScale/node = SubResource( 13 )
-nodes/TimeScale/position = Vector2( 320, 106.667 )
-nodes/output/position = Vector2( 506.667, 133.333 )
+nodes/TimeScale/position = Vector2( 320, 133.333 )
+nodes/output/position = Vector2( 560, 133.333 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
 [sub_resource type="AnimationNodeAnimation" id=15]
-animation = "Walk"
+animation = "Sleeping"
 
 [sub_resource type="AnimationNodeTimeScale" id=16]
 
 [sub_resource type="AnimationNodeBlendTree" id=17]
 resource_local_to_scene = true
 nodes/Animation/node = SubResource( 15 )
-nodes/Animation/position = Vector2( 133.333, 106.667 )
+nodes/Animation/position = Vector2( 80, 106.667 )
 nodes/TimeScale/node = SubResource( 16 )
+nodes/TimeScale/position = Vector2( 293.333, 106.667 )
+nodes/output/position = Vector2( 506.667, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "WakeUp"
+
+[sub_resource type="AnimationNodeTimeScale" id=19]
+
+[sub_resource type="AnimationNodeBlendTree" id=20]
+resource_local_to_scene = true
+nodes/Animation/node = SubResource( 18 )
+nodes/Animation/position = Vector2( 106.667, 106.667 )
+nodes/TimeScale/node = SubResource( 19 )
+nodes/TimeScale/position = Vector2( 320, 106.667 )
+nodes/output/position = Vector2( 506.667, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeTimeScale" id=22]
+
+[sub_resource type="AnimationNodeBlendTree" id=23]
+resource_local_to_scene = true
+nodes/Animation/node = SubResource( 21 )
+nodes/Animation/position = Vector2( 133.333, 106.667 )
+nodes/TimeScale/node = SubResource( 22 )
 nodes/TimeScale/position = Vector2( 320, 106.667 )
 nodes/output/position = Vector2( 506.667, 106.667 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
-[sub_resource type="AnimationNodeStateMachine" id=34]
-states/Climb/node = SubResource( 38 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachine" id=42]
+states/Climb/node = SubResource( 3 )
 states/Climb/position = Vector2( 297.734, 116.973 )
-states/Idle/node = SubResource( 55 )
+states/ClimbIdle/node = SubResource( 5 )
+states/ClimbIdle/position = Vector2( 155.292, 178.629 )
+states/Idle/node = SubResource( 8 )
 states/Idle/position = Vector2( 515.37, 249.292 )
-states/Push/node = SubResource( 41 )
+states/Push/node = SubResource( 11 )
 states/Push/position = Vector2( 297.833, 249.417 )
-states/Sleep/node = SubResource( 8 )
+states/Sleep/node = SubResource( 14 )
 states/Sleep/position = Vector2( 850.009, 70.6257 )
-states/Sleeping/node = SubResource( 11 )
+states/Sleeping/node = SubResource( 17 )
 states/Sleeping/position = Vector2( 850.117, 179.403 )
-states/WakeUp/node = SubResource( 14 )
+states/WakeUp/node = SubResource( 20 )
 states/WakeUp/position = Vector2( 851.117, 287.959 )
-states/Walk/node = SubResource( 17 )
+states/Walk/node = SubResource( 23 )
 states/Walk/position = Vector2( 515.799, 117.292 )
-transitions = [ "Idle", "Walk", SubResource( 18 ), "Walk", "Idle", SubResource( 19 ), "Walk", "Sleep", SubResource( 20 ), "Idle", "Sleep", SubResource( 21 ), "Sleep", "Sleeping", SubResource( 22 ), "Sleeping", "WakeUp", SubResource( 23 ), "WakeUp", "Walk", SubResource( 24 ), "WakeUp", "Idle", SubResource( 25 ), "Climb", "Idle", SubResource( 42 ), "Idle", "Climb", SubResource( 43 ), "Climb", "Walk", SubResource( 44 ), "Walk", "Climb", SubResource( 45 ), "Push", "Walk", SubResource( 46 ), "Walk", "Push", SubResource( 47 ), "Idle", "Push", SubResource( 48 ), "Push", "Idle", SubResource( 49 ) ]
+transitions = [ "Idle", "Walk", SubResource( 24 ), "Walk", "Idle", SubResource( 25 ), "Walk", "Sleep", SubResource( 26 ), "Idle", "Sleep", SubResource( 27 ), "Sleep", "Sleeping", SubResource( 28 ), "Sleeping", "WakeUp", SubResource( 29 ), "WakeUp", "Walk", SubResource( 30 ), "WakeUp", "Idle", SubResource( 31 ), "Climb", "Idle", SubResource( 32 ), "Idle", "Climb", SubResource( 33 ), "Climb", "Walk", SubResource( 34 ), "Walk", "Climb", SubResource( 35 ), "Push", "Walk", SubResource( 36 ), "Walk", "Push", SubResource( 37 ), "Idle", "Push", SubResource( 38 ), "Push", "Idle", SubResource( 39 ), "Climb", "ClimbIdle", SubResource( 40 ), "ClimbIdle", "Climb", SubResource( 41 ) ]
 start_node = "Sleeping"
-graph_offset = Vector2( 49.6258, -11.3699 )
+graph_offset = Vector2( 49.6258, 86.7252 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
 [node name="AnimTree" type="AnimationTree"]
-tree_root = SubResource( 34 )
+tree_root = SubResource( 42 )
 anim_player = NodePath("../Animations")
-parameters/playback = SubResource( 35 )
+parameters/playback = SubResource( 43 )
 parameters/Climb/TimeScale/scale = 6.0
 parameters/Idle/TimeScale/scale = 2.0
 parameters/Push/TimeScale/scale = 4.0

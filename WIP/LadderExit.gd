@@ -1,37 +1,41 @@
 extends StaticBody2D
 
 onready var coll = $CollisionShape2D
-onready var area2 = $Area2D2
+onready var detector = $Detector
+onready var climbArea = $ClimbArea/CollisionShape2D
 
-var player_inside = false
+var on_detector = false
+var on_stairs = false
 
 func _process(delta):
-	if player_inside:
-		for body in area2.get_overlapping_bodies():
-			if body.name == "PlayerUp":
-				if body.climbing:
-					coll.set_deferred("disabled",true)
-				else:
-					coll.set_deferred("disabled",false)
-	
-func _on_Area2D_body_entered(body):
+	if on_detector:
+		if on_detector.climbing == -1:
+			coll.set_deferred("disabled",true)
+			on_detector.on_ladder += 1
+			on_detector.climbing = 1
+			on_stairs = true
+		else:
+			if on_stairs:
+				on_detector.on_ladder -= 2
+				on_stairs = false
+
+
+func _on_ClimbArea_body_entered(body):
 	if body.name == "PlayerUp":
 		body.on_ladder += 1
-		body.ladder_pos = [int(global_position.x),true]
 		coll.set_deferred("disabled",true)
 
-func _on_Area2D_body_exited(body):
+func _on_ClimbArea_body_exited(body):
 	if body.name == "PlayerUp":
 		body.on_ladder -= 1
 		coll.set_deferred("disabled",false)
-		
-func _on_Area2D2_body_entered(body):
-	if body.name == "PlayerUp":
-		body.ladder_pos = [int(global_position.x),false]
-		player_inside = true
-		body.on_detector = true
 
-func _on_Area2D2_body_exited(body):
+func _on_Detector_body_entered(body):
 	if body.name == "PlayerUp":
-		player_inside = false
-		body.on_detector = false
+		body.detector_pos = [int(global_position.x),-1]
+		on_detector = body
+
+func _on_Detector_body_exited(body):
+	if body.name == "PlayerUp":
+		body.detector_pos = null
+		on_detector = false

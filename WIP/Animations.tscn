@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Climb"
@@ -18,7 +18,22 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "Idle"
+resource_name = "ClimbIdle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -34,8 +49,7 @@ tracks/0/keys = {
 "values": [ 0, 2 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Push"
+[sub_resource type="Animation" id=4]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -51,8 +65,7 @@ tracks/0/keys = {
 "values": [ 17, 19, 21, 23, 25, 27, 29, 31 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Sleep"
+[sub_resource type="Animation" id=5]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -67,8 +80,7 @@ tracks/0/keys = {
 "values": [ 20, 22, 24, 26, 28 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Sleeping"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -82,8 +94,7 @@ tracks/0/keys = {
 "values": [ 28 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "WakeUp"
+[sub_resource type="Animation" id=7]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -98,8 +109,7 @@ tracks/0/keys = {
 "values": [ 28, 26, 24, 22, 20 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "Walk"
+[sub_resource type="Animation" id=8]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -117,9 +127,10 @@ tracks/0/keys = {
 
 [node name="Animations" type="AnimationPlayer"]
 anims/Climb = SubResource( 1 )
-anims/Idle = SubResource( 2 )
-anims/Push = SubResource( 3 )
-anims/Sleep = SubResource( 4 )
-anims/Sleeping = SubResource( 5 )
-anims/WakeUp = SubResource( 6 )
-anims/Walk = SubResource( 7 )
+anims/ClimbIdle = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/Push = SubResource( 4 )
+anims/Sleep = SubResource( 5 )
+anims/Sleeping = SubResource( 6 )
+anims/WakeUp = SubResource( 7 )
+anims/Walk = SubResource( 8 )
