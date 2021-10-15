@@ -57,6 +57,7 @@ func _physics_process(delta):
 		else:
 			can_switch = true
 			coll.shape.extents.x = 16
+		position.x = int(position.x)
 			
 	if prev_switch != can_switch:
 		if can_switch:
@@ -98,7 +99,6 @@ func _on_AreaRight_body_exited(body):
 	else:
 		if body.is_in_group("Players"):
 			counter -= 1
-
 
 func _on_AreaDown_body_entered(body):
 	if body.is_in_group("Players"):

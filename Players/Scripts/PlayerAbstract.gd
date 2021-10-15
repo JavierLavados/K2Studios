@@ -191,7 +191,6 @@ func calc_motion(n, forward, backward, top, btm):
 	if was_on_floor and not on_floor and auto_jump:
 		motion = n * JUMP_H
 		jumping = true
-		print(int(position.x+16)%32)
 	
 	# CASOS DE INCONTROLABILIDAD
 	
@@ -220,7 +219,7 @@ func calc_motion(n, forward, backward, top, btm):
 	# Calculo variables de escalera
 	if n == Vector2(0, -1):
 		
-		print(align)
+		#print(on_ladder)
 
 		if on_ladder <= 0 or on_floor:
 			climbing = 0
