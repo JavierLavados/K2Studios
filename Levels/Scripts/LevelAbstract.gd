@@ -15,7 +15,16 @@ var alt_select = false
 var blocks
 var clouds
 var switch_restriction = 0
-	
+
+# para el selector	
+export var level_int = 1 
+
+func _ready():
+	if level_int >= Globals.current_level:
+		Globals.current_level+=1
+##################
+
+
 func activateBlocks(prev, new):
 	for block in blocks:
 		if block.id != current:

@@ -11,11 +11,14 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 91.3967
+margin_top = 128.854
+margin_right = 892.397
+margin_bottom = 289.854
 custom_constants/vseparation = 15
 columns = 5
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -23,7 +26,7 @@ __meta__ = {
 margin_right = 157.0
 margin_bottom = 161.0
 script = ExtResource( 1 )
-level_proyect_dir = "res://Selector/Level1.tscn"
+level_proyect_dir = "res://Levels/Level0.tscn"
 
 [node name="btn2" parent="GridContainer" instance=ExtResource( 2 )]
 margin_left = 161.0
@@ -31,7 +34,7 @@ margin_right = 318.0
 margin_bottom = 161.0
 script = ExtResource( 1 )
 level_int = 2
-level_proyect_dir = "res://Selector/Level2.tscn"
+level_proyect_dir = "res://Levels/Level1.tscn"
 
 [node name="btn3" parent="GridContainer" instance=ExtResource( 2 )]
 margin_left = 322.0
@@ -39,7 +42,7 @@ margin_right = 479.0
 margin_bottom = 161.0
 script = ExtResource( 1 )
 level_int = 3
-level_proyect_dir = "res://Selector/Level3.tscn"
+level_proyect_dir = "res://Levels/Level2.tscn"
 
 [node name="btn4" parent="GridContainer" instance=ExtResource( 2 )]
 margin_left = 483.0
@@ -47,7 +50,7 @@ margin_right = 640.0
 margin_bottom = 161.0
 script = ExtResource( 1 )
 level_int = 4
-level_proyect_dir = "res://Selector/Level4.tscn"
+level_proyect_dir = "res://Levels/Level3.tscn"
 
 [node name="btn5" parent="GridContainer" instance=ExtResource( 2 )]
 margin_left = 644.0
@@ -55,10 +58,59 @@ margin_right = 801.0
 margin_bottom = 161.0
 script = ExtResource( 1 )
 level_int = 5
-level_proyect_dir = "res://Selector/Level5.tscn"
+level_proyect_dir = "res://Levels/Level4.tscn"
+
+[node name="btn6" parent="GridContainer" instance=ExtResource( 2 )]
+margin_top = 176.0
+margin_right = 157.0
+margin_bottom = 337.0
+script = ExtResource( 1 )
+level_int = 6
+level_proyect_dir = "res://Levels/Level5.tscn"
+
+[node name="btn7" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 161.0
+margin_top = 176.0
+margin_right = 318.0
+margin_bottom = 337.0
+script = ExtResource( 1 )
+level_int = 7
+level_proyect_dir = "res://Levels/Level6.tscn"
+
+[node name="btn8" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 322.0
+margin_top = 176.0
+margin_right = 479.0
+margin_bottom = 337.0
+script = ExtResource( 1 )
+level_int = 8
+level_proyect_dir = "res://Levels/Level7.tscn"
+
+[node name="btn9" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 483.0
+margin_top = 176.0
+margin_right = 640.0
+margin_bottom = 337.0
+script = ExtResource( 1 )
+level_int = 9
+level_proyect_dir = "res://Levels/Level8.tscn"
+
+[node name="btn10" parent="GridContainer" instance=ExtResource( 2 )]
+margin_left = 644.0
+margin_top = 176.0
+margin_right = 801.0
+margin_bottom = 337.0
+script = ExtResource( 1 )
+level_int = 10
+level_proyect_dir = "res://Levels/Level9.tscn"
 
 [connection signal="pressed" from="GridContainer/btn" to="GridContainer/btn" method="_on_btn_pressed"]
 [connection signal="pressed" from="GridContainer/btn2" to="GridContainer/btn2" method="_on_btn_pressed"]
 [connection signal="pressed" from="GridContainer/btn3" to="GridContainer/btn3" method="_on_btn_pressed"]
 [connection signal="pressed" from="GridContainer/btn4" to="GridContainer/btn4" method="_on_btn_pressed"]
 [connection signal="pressed" from="GridContainer/btn5" to="GridContainer/btn5" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn6" to="GridContainer/btn6" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn7" to="GridContainer/btn7" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn8" to="GridContainer/btn8" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn9" to="GridContainer/btn9" method="_on_btn_pressed"]
+[connection signal="pressed" from="GridContainer/btn10" to="GridContainer/btn10" method="_on_btn_pressed"]

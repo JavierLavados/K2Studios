@@ -7,7 +7,7 @@ func _ready():
 	if level_int<= Globals.current_level:
 		disabled = false
 		$Label.visible = true
-		$Label.text =str(level_int)
+		#$Label.text =str(level_int)
 	else:
 		disabled = true
 		$Label.visible = false
