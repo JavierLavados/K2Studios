@@ -8,7 +8,7 @@ var lever
 
 func leverBlock(number, solid, transparent):
 	
-	lever = get_tree().root.get_child(0).lever
+	lever = get_tree().root.get_child(1).lever
 		
 	if lever == number:
 		sprite.frame = solid

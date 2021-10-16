@@ -22,10 +22,9 @@ func _on_Area2D_area_entered(area):
 		var cloud = area.get_parent()
 		if NORMAL != cloud.id:
 			cloud.disabled = true
-			cloud.respawn = false
+		cloud.respawn_restriction += 1
 
 func _on_Area2D_area_exited(area):
 	if area.name == "CloudArea":
 		var cloud = area.get_parent()
-		if NORMAL != cloud.id:
-			cloud.respawn = true
+		cloud.respawn_restriction -= 1

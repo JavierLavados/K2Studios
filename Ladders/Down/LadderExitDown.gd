@@ -5,20 +5,18 @@ onready var coll = $CollisionShape2D
 onready var detector = $Detector
 onready var climbArea = $ClimbArea/CollisionShape2D
 
-var id = 0
+var id = 2
+var player_name = "PlayerDown"
 
 var on_detector = false
 var on_stairs = false
 var increase = 0
 
 func _process(delta):
-	
-	if increase != 0:
-		print(increase)
-	
+
 	if on_detector:
 		if on_detector.climbing == -1:
-			coll.set_deferred("disabled",true)
+			add_collision_exception_with(on_detector)
 			on_detector.on_ladder += 1
 			on_detector.climbing = 1
 			increase += 1
@@ -31,21 +29,21 @@ func _process(delta):
 
 
 func _on_ClimbArea_body_entered(body):
-	if body.name == "PlayerUp":
+	if body.name == player_name:
 		body.on_ladder += 1
-		coll.set_deferred("disabled",true)
+		add_collision_exception_with(body)
 
 func _on_ClimbArea_body_exited(body):
-	if body.name == "PlayerUp":
+	if body.name == player_name:
 		body.on_ladder -= 1
-		coll.set_deferred("disabled",false)
+		remove_collision_exception_with(body)
 
 func _on_Detector_body_entered(body):
-	if body.name == "PlayerUp":
-		body.detector_pos = [int(global_position.x),-1]
+	if body.name == player_name:
+		body.detector_pos = [int(global_position.x),-1,false]
 		on_detector = body
 
 func _on_Detector_body_exited(body):
-	if body.name == "PlayerUp":
+	if body.name == player_name:
 		body.detector_pos = null
 		on_detector = false

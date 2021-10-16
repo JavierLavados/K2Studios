@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=1]
+[ext_resource path="res://Ladders/Left/LadderExitLeft.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 8 )
+
+[node name="LadderExitLeft" type="StaticBody2D" groups=[
+"Ladders",
+]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -1
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 7
+frame = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ClimbArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
+position = Vector2( 8, 0 )
+shape = SubResource( 2 )
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+position = Vector2( -32, 0 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="ClimbArea" to="." method="_on_ClimbArea_body_entered"]
+[connection signal="body_exited" from="ClimbArea" to="." method="_on_ClimbArea_body_exited"]
+[connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
