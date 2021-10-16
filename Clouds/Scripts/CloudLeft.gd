@@ -6,7 +6,7 @@ onready var playback = $CloudTree.get("parameters/playback")
 
 var id = Vector2(-1,0)
 var disabled = false
-var respawn = true
+var respawn_restriction = 0
 
 func _process(delta):
 

@@ -58,7 +58,7 @@ func initialize(n, wall):
 func modify_sprite(n, forward, backward):
 	var left = n.rotated(deg2rad(90))
 	var side_motion = int(left.dot(motion))
-	var climb_motion = motion.y
+	var climb_motion = int(n.dot(motion))
 	var flip = false
 	if n.x < 0 or n.y > 0:
 		flip = true
@@ -217,33 +217,50 @@ func calc_motion(n, forward, backward, top, btm):
 			$Sprite.modulate = Color.white
 
 	# Calculo variables de escalera
-	if n == Vector2(0, -1):
+	if awake:
 		
-		#print(on_ladder)
+		var tile_pos
+		if n.x == 0:
+			tile_pos = int(position.x-16)%32
+		else:
+			tile_pos = int(position.y-16)%32
 
 		if on_ladder <= 0 or on_floor:
 			climbing = 0
 			
-		if align != 0 and int(position.x-16)%32 == 0:
+		if align != 0 and tile_pos == 0:
 			align = 0
 		
 		if on_floor and detector_pos and vertical_vel != 0:
-			if int(position.x-16)%32 != 0:
+			if tile_pos != 0:
 				if align == 0:
-					if position.x < detector_pos[0]:
-						align = 1
+					if n.x == 0:
+						if position.x < detector_pos[0]:
+							align = 1
+						else:
+							align = -1
 					else:
-						align = -1
+						if position.y < detector_pos[0]:
+							align = 1
+						else:
+							align = -1
+						
 			else:
-				if (vertical_vel < 0 and detector_pos[1] > 0):
-					motion.y = vertical_vel * CLIMB_SPEED
-					climbing = 1
-				if (vertical_vel > 0 and detector_pos[1] < 0):
-					motion.y = vertical_vel * CLIMB_SPEED
-					climbing = -1
+				if vertical_vel == detector_pos[1]:
+					if n.x == 0:
+						motion.y = vertical_vel * CLIMB_SPEED
+					else:
+						motion.x = vertical_vel * CLIMB_SPEED
+					if detector_pos[2]:
+						climbing = 1
+					else:
+						climbing = -1
 		
 		if climbing == 1:
-			motion.y = vertical_vel * CLIMB_SPEED
+			if n.x == 0:
+				motion.y = vertical_vel * CLIMB_SPEED
+			else:
+				motion.x = vertical_vel * CLIMB_SPEED
 
 	# Calculo movimiento horizontal
 	if n.x == 0:
@@ -258,7 +275,6 @@ func calc_motion(n, forward, backward, top, btm):
 			motion.x = 0
 		if align != 0:
 			motion.x = align * 32
-							
 	else:
 		if on_floor:
 			motion.y = target_vel * MAX_SPEED
@@ -269,6 +285,8 @@ func calc_motion(n, forward, backward, top, btm):
 				motion.y = target_vel * AIR_SPEED
 		if not awake:
 			motion.y = 0
+		if align != 0:
+			motion.y = align * 32
 								
 	# Movimiento final
 	motion = move_and_slide(motion, n)
