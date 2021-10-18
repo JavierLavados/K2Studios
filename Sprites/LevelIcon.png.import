@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex"
+path="res://.import/LevelIcon.png-8d8eae355b8c6df2e78c6b7214f8c301.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Backgrounds/BGWorld1.png"
-dest_files=[ "res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex" ]
+source_file="res://Sprites/LevelIcon.png"
+dest_files=[ "res://.import/LevelIcon.png-8d8eae355b8c6df2e78c6b7214f8c301.stex" ]
 
 [params]
 
