@@ -19,9 +19,9 @@ var switch_restriction = 0
 # para el selector	
 export var level_int = 1 
 
-func _ready():
-	if level_int >= Globals.current_level:
-		Globals.current_level+=1
+#func _ready():
+	#if level_int >= Globals.current_level:
+	#	Globals.current_level+=1
 ##################
 
 
@@ -123,4 +123,6 @@ func level(n_players, next_level):
 		alt_select = !alt_select
 	
 	if ready == n_players:
+		if level_int >= Globals.current_level:
+			Globals.current_level+=1
 		get_tree().change_scene(next_level)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Selector/Pausa.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Backgrounds/BGWorld4.png" type="Texture" id=2]
+
+[node name="Pausa" type="Control"]
+pause_mode = 2
+margin_right = 1032.0
+margin_bottom = 640.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.192157 )
+position = Vector2( 518.727, 320 )
+scale = Vector2( 2, 2 )
+z_index = 10
+texture = ExtResource( 2 )

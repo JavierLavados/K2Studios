@@ -39,61 +39,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 344.0
-margin_top = 152.0
-margin_right = 568.0
-margin_bottom = 168.0
-rect_pivot_offset = Vector2( 16, 4 )
-color = Color( 0.0196078, 0.392157, 0.968627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-margin_left = 344.0
-margin_top = 152.0
-margin_right = 360.0
-margin_bottom = 424.0
-rect_pivot_offset = Vector2( 16, 4 )
-color = Color( 0.0196078, 0.392157, 0.968627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect5" type="ColorRect" parent="."]
-margin_left = 728.0
-margin_top = 152.0
-margin_right = 744.0
-margin_bottom = 424.0
-rect_pivot_offset = Vector2( 16, 4 )
-color = Color( 0.0196078, 0.392157, 0.968627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 168.0
-margin_top = 280.0
-margin_right = 928.0
-margin_bottom = 296.0
-rect_pivot_offset = Vector2( 16, 4 )
-color = Color( 0.0196078, 0.392157, 0.968627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-margin_left = 344.0
-margin_top = 408.0
-margin_right = 568.0
-margin_bottom = 424.0
-rect_pivot_offset = Vector2( 16, 4 )
-color = Color( 0.0196078, 0.392157, 0.968627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="btn" parent="." instance=ExtResource( 3 )]
 margin_left = 128.0
 margin_top = 256.0
@@ -112,81 +57,81 @@ level_int = 2
 level_proyect_dir = "res://Levels/Level1.tscn"
 
 [node name="btn3" parent="." instance=ExtResource( 3 )]
-margin_left = 384.0
+margin_left = 256.0
 margin_top = 128.0
-margin_right = 541.0
+margin_right = 413.0
 margin_bottom = 289.0
 script = ExtResource( 4 )
 level_int = 3
 level_proyect_dir = "res://Levels/Level2.tscn"
 
 [node name="btn4" parent="." instance=ExtResource( 3 )]
-margin_left = 512.0
+margin_left = 384.0
 margin_top = 128.0
-margin_right = 669.0
+margin_right = 541.0
 margin_bottom = 289.0
 script = ExtResource( 4 )
 level_int = 4
 level_proyect_dir = "res://Levels/Level3.tscn"
 
 [node name="btn5" parent="." instance=ExtResource( 3 )]
-margin_left = 704.0
+margin_left = 504.0
 margin_top = 128.0
-margin_right = 861.0
+margin_right = 661.0
 margin_bottom = 289.0
 script = ExtResource( 4 )
 level_int = 5
 level_proyect_dir = "res://Levels/Level4.tscn"
 
 [node name="btn6" parent="." instance=ExtResource( 3 )]
-margin_left = 632.0
+margin_left = 504.0
 margin_top = 256.0
-margin_right = 789.0
+margin_right = 661.0
 margin_bottom = 417.0
 script = ExtResource( 4 )
 level_int = 6
 level_proyect_dir = "res://Levels/Level5.tscn"
 
 [node name="btn7" parent="." instance=ExtResource( 3 )]
-margin_left = 512.0
+margin_left = 384.0
 margin_top = 256.0
-margin_right = 669.0
+margin_right = 541.0
 margin_bottom = 417.0
 script = ExtResource( 4 )
 level_int = 4
 level_proyect_dir = "res://Levels/Level6.tscn"
 
 [node name="btn8" parent="." instance=ExtResource( 3 )]
-margin_left = 384.0
+margin_left = 256.0
 margin_top = 384.0
-margin_right = 541.0
+margin_right = 413.0
 margin_bottom = 545.0
 script = ExtResource( 4 )
 level_int = 3
 level_proyect_dir = "res://Levels/Level7.tscn"
 
 [node name="btn9" parent="." instance=ExtResource( 3 )]
-margin_left = 704.0
-margin_top = 384.0
-margin_right = 861.0
-margin_bottom = 545.0
+margin_left = 504.0
+margin_top = 376.0
+margin_right = 661.0
+margin_bottom = 537.0
 script = ExtResource( 4 )
 level_int = 9
 level_proyect_dir = "res://Levels/Level8.tscn"
 
 [node name="btn10" parent="." instance=ExtResource( 3 )]
-margin_left = 512.0
-margin_top = 384.0
-margin_right = 669.0
-margin_bottom = 545.0
+margin_left = 376.0
+margin_top = 376.0
+margin_right = 533.0
+margin_bottom = 537.0
 script = ExtResource( 4 )
 level_int = 10
 level_proyect_dir = "res://Levels/Level9.tscn"
 
 [node name="btn11" parent="." instance=ExtResource( 3 )]
-margin_left = 872.0
+margin_left = 640.0
 margin_top = 256.0
-margin_right = 1029.0
+margin_right = 797.0
 margin_bottom = 417.0
 script = ExtResource( 4 )
 level_int = 11
