@@ -4,20 +4,10 @@
 [ext_resource path="res://Selector/Screenshot_2.png" type="Texture" id=2]
 
 [node name="btn" type="TextureButton"]
+rect_scale = Vector2( 0.4, 0.4 )
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="."]
-margin_right = 157.0
-margin_bottom = 160.0
-custom_colors/font_color = Color( 0.952637, 0.063261, 0.063261, 1 )
-text = "
-"
-align = 1
-valign = 1
-__meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
