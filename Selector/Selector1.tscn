@@ -45,7 +45,7 @@ margin_top = 256.0
 margin_right = 285.0
 margin_bottom = 417.0
 script = ExtResource( 4 )
-level_proyect_dir = "res://Levels/Level0.tscn"
+level_proyect_dir = "res://Levels/Level1.tscn"
 
 [node name="btn2" parent="." instance=ExtResource( 3 )]
 margin_left = 256.0

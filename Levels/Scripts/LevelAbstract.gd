@@ -1,7 +1,7 @@
 extends Node2D
 
-var interface
-var background
+onready var interface = $Interface
+onready var background =$Background
 
 var current
 var players = []
@@ -55,8 +55,8 @@ func setUp(n_players, world = 0, init_lever=4):
 	for i in range(n_players):
 		players.append(get_child(i))
 		ids.append(get_child(i).id)
-	interface = get_child(n_players)
-	background = get_child(n_players+1)
+	#interface = get_child(n_players)
+	#background = get_child(n_players+1)
 	
 	for p in players:
 		p.default_texture = p.textures[world]

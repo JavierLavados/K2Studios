@@ -2,6 +2,9 @@ extends Node
 
 # cuando current_level cambia llama a current_level_changed
 var current_level = 1 setget current_level_changed
+var current_world = 1
+
+
 
 # Json del juego
 var data_game = {

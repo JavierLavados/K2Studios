@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Selector/Pausa.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Backgrounds/BGWorld4.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Backgrounds/BGWorld6.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.470588, 0.0431373, 0.823529, 1 )
 
 [node name="Pausa" type="Control"]
 pause_mode = 2
@@ -13,8 +16,75 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.192157 )
-position = Vector2( 518.727, 320 )
-scale = Vector2( 2, 2 )
+position = Vector2( 512, 320 )
+scale = Vector2( 1.98438, 1.98438 )
+z_index = 10
+
+[node name="Continue" type="Button" parent="Sprite"]
+margin_left = -76.5984
+margin_top = -88.6929
+margin_right = 81.4016
+margin_bottom = -68.6929
+rect_pivot_offset = Vector2( 156, 8 )
+custom_styles/normal = SubResource( 1 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="Sprite"]
+margin_left = -80.6299
+margin_top = -56.4409
+margin_right = 81.3701
+margin_bottom = -36.4409
+rect_pivot_offset = Vector2( 156, 8 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="Button" parent="Sprite"]
+margin_left = -76.5984
+margin_top = -19.6535
+margin_right = 85.4016
+margin_bottom = 0.346451
+text = "Map"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Button" parent="Sprite"]
+margin_left = -77.0
+margin_top = 8.0
+margin_right = 84.0
+margin_bottom = 32.0
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Salir" type="Button" parent="Sprite"]
+margin_left = -81.0
+margin_top = 44.0
+margin_right = 84.0
+margin_bottom = 64.0
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 512, 576 )
+scale = Vector2( 2.00781, 0.36875 )
 z_index = 10
 texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 514, 56.0001 )
+scale = Vector2( 2.00781, 0.36875 )
+z_index = 10
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="Sprite/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Sprite/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="Sprite/Map" to="." method="_on_Map_pressed"]

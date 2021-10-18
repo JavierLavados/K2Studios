@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 160
+const MAX_SPEED = 240
 
 onready var sprite = $Sprite
 
