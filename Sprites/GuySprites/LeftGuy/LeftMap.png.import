@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UpMap.png-06167eca4546f8657cb085f4f7e6b3df.stex"
+path="res://.import/LeftMap.png-fc10ec17c1ea54579a1e3d6b65e2be25.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UpMap.png"
-dest_files=[ "res://.import/UpMap.png-06167eca4546f8657cb085f4f7e6b3df.stex" ]
+source_file="res://Sprites/GuySprites/LeftGuy/LeftMap.png"
+dest_files=[ "res://.import/LeftMap.png-fc10ec17c1ea54579a1e3d6b65e2be25.stex" ]
 
 [params]
 
