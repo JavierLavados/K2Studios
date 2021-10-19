@@ -28,8 +28,14 @@ func _on_Restart_pressed():
 
 func _on_Map_pressed():
 	if get_tree().paused == true:	
-		var format_dir = "res://Selector/Selector%s.tscn"
+		get_tree().paused = false
+		var format_dir = "res://Menus/MapWorld%s.tscn"
 		var actual_dir = format_dir % str(Globals.current_world)
 		get_tree().change_scene(actual_dir)
 		
 
+func _on_Salir_pressed():
+	if get_tree().paused == true:	
+		get_tree().paused = false
+		var actual_dir = "res://Menus/Initial.tscn"
+		get_tree().change_scene(actual_dir)

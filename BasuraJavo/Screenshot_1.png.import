@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flecha.png-f55d7534bfa124f7de9abaef0791cce4.stex"
+path="res://.import/Screenshot_1.png-8e19fc6d321557b115f0c88506865cd2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Selector/flecha.png"
-dest_files=[ "res://.import/flecha.png-f55d7534bfa124f7de9abaef0791cce4.stex" ]
+source_file="res://BasuraJavo/Screenshot_1.png"
+dest_files=[ "res://.import/Screenshot_1.png-8e19fc6d321557b115f0c88506865cd2.stex" ]
 
 [params]
 

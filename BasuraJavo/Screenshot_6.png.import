@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Screenshot_2.png-5e4f6f645966647cb6bb9fcd0dffd982.stex"
+path="res://.import/Screenshot_6.png-0bb3b43dbcb41700cfd0974db7050d4c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Selector/Screenshot_2.png"
-dest_files=[ "res://.import/Screenshot_2.png-5e4f6f645966647cb6bb9fcd0dffd982.stex" ]
+source_file="res://BasuraJavo/Screenshot_6.png"
+dest_files=[ "res://.import/Screenshot_6.png-0bb3b43dbcb41700cfd0974db7050d4c.stex" ]
 
 [params]
 
