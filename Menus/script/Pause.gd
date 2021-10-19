@@ -67,7 +67,7 @@ func _input(event):
 		style2.set_bg_color(color2)
 		opcions[current_botton].set("custom_styles/normal", style2)
 	
-	print(current_botton)
+	#print(current_botton)
 	
 	
 			

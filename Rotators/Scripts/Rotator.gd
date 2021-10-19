@@ -24,6 +24,9 @@ func _process(delta):
 	if rotation_degrees >= 360:
 		rotation_degrees = int(rotation_degrees)%360
 		
+			
+	var mov = delta * 120
+		
 	match get_parent().lever:
 		0:	
 			if rotation_degrees > 358 or (rotation_degrees > -2 and rotation_degrees < 2):
@@ -34,9 +37,9 @@ func _process(delta):
 				moving = true
 			if moving:
 				if int(rotation_degrees)%360 <= 90:
-					rotation_degrees -= 2
+					rotation_degrees -= mov
 				else:
-					rotation_degrees += 2
+					rotation_degrees += mov
 		1:
 			if rotation_degrees > 268 and rotation_degrees < 272 :
 				if moving:
@@ -46,9 +49,9 @@ func _process(delta):
 				moving = true
 			if moving:
 				if int(rotation_degrees)%360 > 270 or int(rotation_degrees)%360 < 45:
-					rotation_degrees -= 2
+					rotation_degrees -= mov
 				else:
-					rotation_degrees += 2
+					rotation_degrees += mov
 			
 		2:
 			if rotation_degrees > 178 and rotation_degrees < 182 :
@@ -59,9 +62,9 @@ func _process(delta):
 				moving = true
 			if moving:
 				if int(rotation_degrees)%360 <= 270 and int(rotation_degrees)%360 > 180:
-					rotation_degrees -= 2
+					rotation_degrees -= mov
 				else:
-					rotation_degrees += 2
+					rotation_degrees += mov
 
 		3:
 			if rotation_degrees > 88 and rotation_degrees < 92 :
@@ -72,9 +75,9 @@ func _process(delta):
 				moving = true
 			if moving:
 				if int(rotation_degrees)%360 <= 180 and int(rotation_degrees)%360 > 90:
-					rotation_degrees -= 2
+					rotation_degrees -= mov
 				else:
-					rotation_degrees += 2
+					rotation_degrees += mov
 						
 	if moving or collisions > 0:
 		restriction = [1,1,1,1]
