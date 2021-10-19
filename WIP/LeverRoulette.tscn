@@ -1,0 +1,587 @@
+[gd_scene load_steps=89 format=2]
+
+[ext_resource path="res://Sprites/Rotator.png" type="Texture" id=1]
+[ext_resource path="res://WIP/LeverRoulette.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Down"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "DtoL"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 6, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "DtoR"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "DtoU"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "LtoD"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "LtoR"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "LtoU"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 2, 1 ]
+}
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "RtoD"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 10, 9 ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "RtoL"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "UtoD"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 14, 13 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Down"
+
+[sub_resource type="AnimationNodeBlendTree" id=14]
+nodes/Animation/node = SubResource( 13 )
+nodes/Animation/position = Vector2( 53.3333, 133.333 )
+node_connections = [ "output", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "DtoL"
+
+[sub_resource type="AnimationNodeTimeScale" id=16]
+
+[sub_resource type="AnimationNodeBlendTree" id=17]
+nodes/Animation/node = SubResource( 15 )
+nodes/Animation/position = Vector2( 80, 160 )
+nodes/TimeScale/node = SubResource( 16 )
+nodes/TimeScale/position = Vector2( 293.333, 160 )
+nodes/output/position = Vector2( 480, 160 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "DtoR"
+
+[sub_resource type="AnimationNodeTimeScale" id=19]
+
+[sub_resource type="AnimationNodeBlendTree" id=20]
+nodes/Animation/node = SubResource( 18 )
+nodes/Animation/position = Vector2( 113.667, 183 )
+nodes/TimeScale/node = SubResource( 19 )
+nodes/TimeScale/position = Vector2( 293.333, 160 )
+nodes/output/position = Vector2( 453.333, 160 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=81]
+animation = "DtoU"
+
+[sub_resource type="AnimationNodeTimeScale" id=82]
+
+[sub_resource type="AnimationNodeBlendTree" id=67]
+nodes/Animation/node = SubResource( 81 )
+nodes/Animation/position = Vector2( 145.667, 156.333 )
+nodes/TimeScale/node = SubResource( 82 )
+nodes/TimeScale/position = Vector2( 320, 160 )
+nodes/output/position = Vector2( 506.667, 186.667 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Left"
+
+[sub_resource type="AnimationNodeBlendTree" id=22]
+nodes/Animation/node = SubResource( 21 )
+nodes/Animation/position = Vector2( 80, 133.333 )
+node_connections = [ "output", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "LtoD"
+
+[sub_resource type="AnimationNodeTimeScale" id=24]
+
+[sub_resource type="AnimationNodeBlendTree" id=25]
+nodes/Animation/node = SubResource( 23 )
+nodes/Animation/position = Vector2( 140.333, 152.333 )
+nodes/TimeScale/node = SubResource( 24 )
+nodes/TimeScale/position = Vector2( 293.333, 160 )
+nodes/output/position = Vector2( 453.333, 160 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=83]
+animation = "LtoR"
+
+[sub_resource type="AnimationNodeTimeScale" id=84]
+
+[sub_resource type="AnimationNodeBlendTree" id=68]
+nodes/Animation/node = SubResource( 83 )
+nodes/Animation/position = Vector2( 80, 160 )
+nodes/TimeScale/node = SubResource( 84 )
+nodes/TimeScale/position = Vector2( 266.667, 160 )
+nodes/output/position = Vector2( 453.333, 213.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "LtoU"
+
+[sub_resource type="AnimationNodeTimeScale" id=27]
+
+[sub_resource type="AnimationNodeBlendTree" id=28]
+nodes/Animation/node = SubResource( 26 )
+nodes/Animation/position = Vector2( 80, 133.333 )
+nodes/TimeScale/node = SubResource( 27 )
+nodes/TimeScale/position = Vector2( 266.667, 133.333 )
+nodes/output/position = Vector2( 426.667, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Right"
+
+[sub_resource type="AnimationNodeBlendTree" id=30]
+nodes/Animation/node = SubResource( 29 )
+nodes/Animation/position = Vector2( 147, 120.333 )
+nodes/output/position = Vector2( 320, 133.333 )
+node_connections = [ "output", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "RtoD"
+
+[sub_resource type="AnimationNodeTimeScale" id=32]
+
+[sub_resource type="AnimationNodeBlendTree" id=33]
+nodes/Animation/node = SubResource( 31 )
+nodes/Animation/position = Vector2( 117.667, 173.667 )
+nodes/TimeScale/node = SubResource( 32 )
+nodes/TimeScale/position = Vector2( 346.667, 160 )
+nodes/output/position = Vector2( 533.333, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=85]
+animation = "RtoL"
+
+[sub_resource type="AnimationNodeTimeScale" id=86]
+
+[sub_resource type="AnimationNodeBlendTree" id=69]
+nodes/Animation/node = SubResource( 85 )
+nodes/Animation/position = Vector2( 80, 160 )
+nodes/TimeScale/node = SubResource( 86 )
+nodes/TimeScale/position = Vector2( 293.333, 160 )
+nodes/output/position = Vector2( 480, 160 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "RtoU"
+
+[sub_resource type="AnimationNodeTimeScale" id=35]
+
+[sub_resource type="AnimationNodeBlendTree" id=36]
+nodes/Animation/node = SubResource( 34 )
+nodes/Animation/position = Vector2( 104.333, 132.333 )
+nodes/TimeScale/node = SubResource( 35 )
+nodes/TimeScale/position = Vector2( 293.333, 133.333 )
+nodes/output/position = Vector2( 453.333, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "Up"
+
+[sub_resource type="AnimationNodeBlendTree" id=38]
+nodes/Animation/node = SubResource( 37 )
+nodes/Animation/position = Vector2( 80, 106.667 )
+nodes/output/position = Vector2( 400, 133.333 )
+node_connections = [ "output", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=79]
+animation = "UtoD"
+
+[sub_resource type="AnimationNodeTimeScale" id=80]
+
+[sub_resource type="AnimationNodeBlendTree" id=70]
+nodes/Animation/node = SubResource( 79 )
+nodes/Animation/position = Vector2( 83, 168.333 )
+nodes/TimeScale/node = SubResource( 80 )
+nodes/TimeScale/position = Vector2( 293.333, 160 )
+nodes/output/position = Vector2( 453.333, 186.667 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "UtoL"
+
+[sub_resource type="AnimationNodeTimeScale" id=40]
+
+[sub_resource type="AnimationNodeBlendTree" id=41]
+nodes/Animation/node = SubResource( 39 )
+nodes/Animation/position = Vector2( 89.6667, 163 )
+nodes/TimeScale/node = SubResource( 40 )
+nodes/TimeScale/position = Vector2( 266.667, 160 )
+nodes/output/position = Vector2( 480, 160 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "UtoR"
+
+[sub_resource type="AnimationNodeTimeScale" id=43]
+
+[sub_resource type="AnimationNodeBlendTree" id=44]
+nodes/Animation/node = SubResource( 42 )
+nodes/Animation/position = Vector2( 112.333, 153.667 )
+nodes/TimeScale/node = SubResource( 43 )
+nodes/TimeScale/position = Vector2( 320, 133.333 )
+nodes/output/position = Vector2( 506.667, 133.333 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=59]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=74]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=76]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=61]
+states/Down/node = SubResource( 14 )
+states/Down/position = Vector2( 520.185, 308.333 )
+states/DtoL/node = SubResource( 17 )
+states/DtoL/position = Vector2( 353.815, 255 )
+states/DtoR/node = SubResource( 20 )
+states/DtoR/position = Vector2( 796.333, 308.778 )
+states/DtoU/node = SubResource( 67 )
+states/DtoU/position = Vector2( 544.333, 232.094 )
+states/Left/node = SubResource( 22 )
+states/Left/position = Vector2( 250.851, 174.155 )
+states/LtoD/node = SubResource( 25 )
+states/LtoD/position = Vector2( 248.333, 317.667 )
+states/LtoR/node = SubResource( 68 )
+states/LtoR/position = Vector2( 427, 216.094 )
+states/LtoU/node = SubResource( 28 )
+states/LtoU/position = Vector2( 355.197, 117.963 )
+states/Right/node = SubResource( 30 )
+states/Right/position = Vector2( 801.667, 174.111 )
+states/RtoD/node = SubResource( 33 )
+states/RtoD/position = Vector2( 692.333, 242.111 )
+states/RtoL/node = SubResource( 69 )
+states/RtoL/position = Vector2( 620.333, 163.777 )
+states/RtoU/node = SubResource( 36 )
+states/RtoU/position = Vector2( 796.778, 67.4445 )
+states/Up/node = SubResource( 38 )
+states/Up/position = Vector2( 519.247, 68.0371 )
+states/UtoD/node = SubResource( 70 )
+states/UtoD/position = Vector2( 457.667, 141.427 )
+states/UtoL/node = SubResource( 41 )
+states/UtoL/position = Vector2( 247.444, 67.8889 )
+states/UtoR/node = SubResource( 44 )
+states/UtoR/position = Vector2( 692.777, 118.556 )
+transitions = [ "Up", "UtoL", SubResource( 45 ), "UtoL", "Left", SubResource( 46 ), "Left", "LtoD", SubResource( 47 ), "LtoD", "Down", SubResource( 48 ), "Down", "DtoR", SubResource( 49 ), "DtoR", "Right", SubResource( 50 ), "Right", "RtoU", SubResource( 51 ), "RtoU", "Up", SubResource( 52 ), "LtoU", "Up", SubResource( 53 ), "Up", "UtoR", SubResource( 54 ), "UtoR", "Right", SubResource( 55 ), "Right", "RtoD", SubResource( 56 ), "RtoD", "Down", SubResource( 57 ), "Down", "DtoL", SubResource( 58 ), "DtoL", "Left", SubResource( 59 ), "Left", "LtoU", SubResource( 60 ), "Left", "LtoR", SubResource( 71 ), "LtoR", "Right", SubResource( 72 ), "Right", "RtoL", SubResource( 73 ), "RtoL", "Left", SubResource( 74 ), "UtoD", "Down", SubResource( 75 ), "Down", "DtoU", SubResource( 76 ), "Up", "UtoD", SubResource( 77 ), "DtoU", "Up", SubResource( 78 ) ]
+start_node = "Up"
+graph_offset = Vector2( 0, -1.57259 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=62]
+
+[node name="LeverRoulette" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 3
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Down = SubResource( 1 )
+anims/DtoL = SubResource( 2 )
+anims/DtoR = SubResource( 3 )
+anims/DtoU = SubResource( 63 )
+anims/Left = SubResource( 4 )
+anims/LtoD = SubResource( 5 )
+anims/LtoR = SubResource( 65 )
+anims/LtoU = SubResource( 6 )
+anims/Right = SubResource( 7 )
+anims/RtoD = SubResource( 8 )
+anims/RtoL = SubResource( 66 )
+anims/RtoU = SubResource( 9 )
+anims/Up = SubResource( 10 )
+anims/UtoD = SubResource( 64 )
+anims/UtoL = SubResource( 11 )
+anims/UtoR = SubResource( 12 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 61 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 62 )
+parameters/DtoL/TimeScale/scale = 6.0
+parameters/DtoR/TimeScale/scale = 6.0
+parameters/DtoU/TimeScale/scale = 6.0
+parameters/LtoD/TimeScale/scale = 6.0
+parameters/LtoR/TimeScale/scale = 6.0
+parameters/LtoU/TimeScale/scale = 6.0
+parameters/RtoD/TimeScale/scale = 6.0
+parameters/RtoL/TimeScale/scale = 6.0
+parameters/RtoU/TimeScale/scale = 6.0
+parameters/UtoD/TimeScale/scale = 6.0
+parameters/UtoL/TimeScale/scale = 6.0
+parameters/UtoR/TimeScale/scale = 6.0

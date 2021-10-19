@@ -568,7 +568,7 @@ states/UtoR/node = SubResource( 64 )
 states/UtoR/position = Vector2( 726.852, 146.111 )
 transitions = [ "Left", "LtoU", SubResource( 65 ), "LtoU", "Up", SubResource( 66 ), "Up", "UtoR", SubResource( 67 ), "UtoR", "Right", SubResource( 68 ), "Right", "RtoD", SubResource( 69 ), "RtoD", "Down", SubResource( 70 ), "Down", "DtoL", SubResource( 71 ), "DtoL", "Left", SubResource( 72 ), "Up", "UtoL", SubResource( 73 ), "UtoL", "Left", SubResource( 74 ), "Left", "LtoD", SubResource( 75 ), "LtoD", "Down", SubResource( 76 ), "Down", "DtoR", SubResource( 77 ), "DtoR", "Right", SubResource( 78 ), "Right", "RtoU", SubResource( 79 ), "RtoU", "Up", SubResource( 80 ), "Left", "LtoR", SubResource( 81 ), "LtoR", "Right", SubResource( 82 ), "Right", "RtoL", SubResource( 83 ), "RtoL", "Left", SubResource( 84 ), "Down", "DtoU", SubResource( 85 ), "DtoU", "Up", SubResource( 86 ), "Up", "UtoD", SubResource( 87 ), "UtoD", "Down", SubResource( 88 ) ]
 start_node = "Up"
-graph_offset = Vector2( 0, 253.204 )
+graph_offset = Vector2( 0, -22.5848 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=90]
 
@@ -587,7 +587,6 @@ z_index = 1
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 17
-frame = 64
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 5.0
