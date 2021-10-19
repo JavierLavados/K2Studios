@@ -5,9 +5,7 @@ var restriction = [0,0,0,0]
 var collisions = 0
 
 func _process(delta):
-	
-	print(rotation_degrees)
-	
+
 	if get_parent().diff_lever:
 		match get_parent().lever:
 			0:

@@ -7,7 +7,7 @@ var inside = false
 var player_check = false
 var player
 var current
-	
+
 func get_player(id):
 	var id_list = get_parent().ids
 	if id in id_list:
@@ -24,17 +24,15 @@ func portal(id, key1, key2):
 	animationPlayer.play("Move")
 	
 	if player:
-		
+
 		current = get_parent().current
 		
 		if current == id:
 			if (Input.is_action_just_pressed(key1) or Input.is_action_just_pressed(key2)):
-				if player.visible:
+				if !player.exit:
 					if inside:
-						player.visible = false
-						player.set_physics_process(false)
+						player.exit = true
 						get_parent().ready += 1
 				else:
-					player.visible = true
-					player.set_physics_process(true)
+					player.exit = false
 					get_parent().ready -= 1
