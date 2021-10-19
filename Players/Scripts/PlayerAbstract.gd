@@ -293,7 +293,12 @@ func calc_motion(n, forward, backward, top, btm):
 			motion.y = align * 32
 								
 	if exit or playback.get_current_node() == "Return":
-		motion = Vector2(0,0)
+		if n.x == 0:
+			motion.x = 0
+			motion.y = -n.y
+		else:
+			motion.x = -n.x
+			motion.y = 0
 		
 	# Movimiento final
 	motion = move_and_slide(motion, n)
