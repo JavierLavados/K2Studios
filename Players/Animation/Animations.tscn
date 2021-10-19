@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Climb"
@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 3, 5, 7, 9, 11, 13, 15 ]
+"values": [ 1, 4, 7, 10, 13, 16, 19, 22 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -34,6 +34,22 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
+resource_name = "Exit"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41 ]
+}
+
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -46,10 +62,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 2 ]
+"values": [ 0, 3 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -62,25 +78,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 17, 19, 21, 23, 25, 27, 29, 31 ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 20, 22, 24, 26, 28 ]
+"values": [ 25, 28, 31, 34, 37, 40, 43, 46 ]
 }
 
 [sub_resource type="Animation" id=6]
+resource_name = "Return"
+length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -88,10 +91,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 28 ]
+"values": [ 41, 38, 35, 32, 29, 26, 23, 20, 17, 14, 11, 8, 5, 2 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -106,10 +109,39 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 28, 26, 24, 22, 20 ]
+"values": [ 30, 33, 36, 39, 42 ]
 }
 
 [sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 42 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 42, 39, 36, 33, 30 ]
+}
+
+[sub_resource type="Animation" id=10]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -122,15 +154,17 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 4, 6, 8, 10, 12, 14, 16, 18 ]
+"values": [ 6, 9, 12, 15, 18, 21, 24, 27 ]
 }
 
 [node name="Animations" type="AnimationPlayer"]
 anims/Climb = SubResource( 1 )
 anims/ClimbIdle = SubResource( 2 )
-anims/Idle = SubResource( 3 )
-anims/Push = SubResource( 4 )
-anims/Sleep = SubResource( 5 )
-anims/Sleeping = SubResource( 6 )
-anims/WakeUp = SubResource( 7 )
-anims/Walk = SubResource( 8 )
+anims/Exit = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Push = SubResource( 5 )
+anims/Return = SubResource( 6 )
+anims/Sleep = SubResource( 7 )
+anims/Sleeping = SubResource( 8 )
+anims/WakeUp = SubResource( 9 )
+anims/Walk = SubResource( 10 )

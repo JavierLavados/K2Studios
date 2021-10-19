@@ -36,6 +36,7 @@ var air_jump_used = false
 var doubleJump = false
 var pushing = false
 var align = 0
+var exit = false
 
 var rot
 var invisiWallL
@@ -79,17 +80,20 @@ func modify_sprite(n, forward, backward):
 				sprite.flip_h = false
 			else:
 				sprite.flip_h = true
-
-	if not awake:
-		playback.travel("Sleeping")
+				
+	if exit:
+		playback.travel("Exit")
 	else:
-		if side_motion != 0:
-			playback.travel("Walk")
+		if not awake:
+			playback.travel("Sleeping")
 		else:
-			playback.travel("Idle")
+			if side_motion != 0:
+				playback.travel("Walk")
+			else:
+				playback.travel("Idle")
 
-		if pushing:
-			playback.travel("Push")
+			if pushing:
+				playback.travel("Push")
 
 	if climbing == 1:
 		if climb_motion != 0:
@@ -288,6 +292,9 @@ func calc_motion(n, forward, backward, top, btm):
 		if align != 0:
 			motion.y = align * 32
 								
+	if exit or playback.get_current_node() == "Return":
+		motion = Vector2(0,0)
+		
 	# Movimiento final
 	motion = move_and_slide(motion, n)
 	
