@@ -521,22 +521,22 @@ script = ExtResource( 14 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 12 )]
-position = Vector2( 848, 400 )
+position = Vector2( 152, 232 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
 ] instance=ExtResource( 13 )]
-position = Vector2( 48, 336 )
+position = Vector2( 56, 352 )
 
 [node name="PlayerDown" parent="." groups=[
 "Players",
 ] instance=ExtResource( 10 )]
-position = Vector2( 560, 336 )
+position = Vector2( 456, 304 )
 
 [node name="PlayerLeft" parent="." groups=[
 "Players",
 ] instance=ExtResource( 11 )]
-position = Vector2( 720, 256 )
+position = Vector2( 72, 232 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
 

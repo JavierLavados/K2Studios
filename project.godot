@@ -21,6 +21,7 @@ Globals="*res://Globals.gd"
 [display]
 
 window/size/height=640
+window/size/resizable=false
 
 [input]
 
