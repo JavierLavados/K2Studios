@@ -8,14 +8,22 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Sprite/VBoxContainer/Play.grab_focus()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
-func _on_Jugar_pressed():
-	var actual_dir = "res://Menus/MapWorld1.tscn"
-	get_tree().change_scene(actual_dir)
+func _on_Play_pressed():
+		var actual_dir = "res://Menus/MapWorld1.tscn"
+		get_tree().change_scene(actual_dir)
+		
+#func _on_Opcions_pressed():
+#	var actual_dir = "res://Menus/Options.tscn"
+#	get_tree().change_scene(actual_dir)
+	
+func _on_Play_mouse_entered():
+	$Sprite/VBoxContainer/Play.grab_focus()
+	
+	
+#func _on_Opcions_mouse_entered():
+	#$Sprite/VBoxContainer/Opcions.grab_focus()

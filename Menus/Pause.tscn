@@ -2,16 +2,13 @@
 
 [ext_resource path="res://Menus/script/Pause.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Backgrounds/BGWorld6.png" type="Texture" id=2]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.960784, 0.521569, 0.0509804, 1 )
+[ext_resource path="res://Menus/button.tscn" type="PackedScene" id=3]
 
 [node name="Pausa" type="Control"]
 pause_mode = 2
-margin_left = 1.68176
-margin_top = -1.68179
-margin_right = 1033.68
-margin_bottom = 638.318
+margin_left = -8.0
+margin_right = 1024.0
+margin_bottom = 640.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -22,76 +19,64 @@ position = Vector2( 512, 320 )
 scale = Vector2( 1.98438, 1.98438 )
 z_index = 10
 
-[node name="Continue" type="Button" parent="Sprite"]
-margin_left = -76.5984
-margin_top = -89.5404
-margin_right = 81.4016
-margin_bottom = -69.5404
-rect_pivot_offset = Vector2( 156, 8 )
-custom_styles/pressed = SubResource( 1 )
-text = "Continue"
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite"]
+margin_left = -84.6612
+margin_top = -52.4093
+margin_right = 115.339
+margin_bottom = 33.5907
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Restart" type="Button" parent="Sprite"]
-margin_left = -80.6299
-margin_top = -55.5934
-margin_right = 81.3701
-margin_bottom = -35.5934
-rect_pivot_offset = Vector2( 156, 8 )
-custom_styles/pressed = SubResource( 1 )
-text = "Restart"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Continue" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 200.0
+focus_neighbour_top = NodePath("../Salir")
 
-[node name="Map" type="Button" parent="Sprite"]
-margin_left = -77.4459
-margin_top = -25.5861
-margin_right = 84.5541
-margin_bottom = -5.5861
-custom_styles/pressed = SubResource( 1 )
-text = "Map"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Controls" type="Button" parent="Sprite"]
-margin_left = -77.0
-margin_top = 8.0
-margin_right = 84.0
+[node name="Restart" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 18.0
+margin_right = 200.0
 margin_bottom = 32.0
-custom_styles/pressed = SubResource( 1 )
-text = "Controls"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Restart"
 
-[node name="Salir" type="Button" parent="Sprite"]
-margin_left = -81.0
-margin_top = 44.0
-margin_right = 84.0
-margin_bottom = 64.0
-custom_styles/pressed = SubResource( 1 )
+[node name="Map" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 36.0
+margin_right = 200.0
+margin_bottom = 50.0
+text = "Map"
+
+[node name="Opcions" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 54.0
+margin_right = 200.0
+margin_bottom = 68.0
+text = "Opcions"
+
+[node name="Salir" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 72.0
+margin_right = 200.0
+margin_bottom = 86.0
+focus_neighbour_bottom = NodePath("../Continue")
 text = "Salir"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 512, 584 )
+position = Vector2( 520, 584 )
 scale = Vector2( 2.00781, 0.36875 )
 z_index = 10
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 514, 56.0001 )
+position = Vector2( 520, 56 )
 scale = Vector2( 2.00781, 0.36875 )
 z_index = 10
 texture = ExtResource( 2 )
 
-[connection signal="pressed" from="Sprite/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="Sprite/Restart" to="." method="_on_Restart_pressed"]
-[connection signal="pressed" from="Sprite/Map" to="." method="_on_Map_pressed"]
-[connection signal="pressed" from="Sprite/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Continue" to="." method="_on_Continue_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Restart" to="." method="_on_Restart_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Map" to="." method="_on_Map_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Map" to="." method="_on_Map_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Opcions" to="." method="_on_Opcions_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Opcions" to="." method="_on_Opcions_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Salir" to="." method="_on_Salir_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
