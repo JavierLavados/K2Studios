@@ -123,6 +123,7 @@ func level(n_players, next_level):
 		alt_select = !alt_select
 	
 	if ready == n_players:
+		yield(get_tree().create_timer(3.0), "timeout")
 		if level_int >= Globals.current_level:
 			Globals.current_level+=1
 		get_tree().change_scene(next_level)
