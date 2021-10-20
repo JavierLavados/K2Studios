@@ -10,16 +10,13 @@ var view_w = 1024
 var counter = 0
 
 func _process(delta):
-	if counter%8 == 0:
-		for l in layer2:
-			l.position.x += 1
-	if counter%4 == 0:
-		for l in layer3:
-			l.position.x += 1
-	if counter % 2 == 0:
-		for l in layer4:
-			l.position.x += 1
-	counter = (counter+1)%8
+	var mov = delta*8
+	for l in layer2:
+		l.position.x += mov
+	for l in layer3:
+		l.position.x += mov*2
+	for l in layer4:
+		l.position.x += mov*4
 	for l in layers:
 		if l.position.x >= view_w:
 			l.position.x = -view_w

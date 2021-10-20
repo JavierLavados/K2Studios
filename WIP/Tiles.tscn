@@ -1,37 +1,6 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Clouds/CloudRight.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=2]
-[ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Clouds/CloudDown.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Clouds/CloudLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/Scripts/Level0.gd" type="Script" id=14]
-[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=16]
-[ext_resource path="res://Ladders/Up/LadderUp.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Ladders/Up/LadderExitUp.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Ladders/Up/LadderEnterUp.tscn" type="PackedScene" id=19]
-[ext_resource path="res://WIP/PushBlock.tscn" type="PackedScene" id=20]
-[ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Ladders/Down/LadderEnterDown.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Ladders/Down/LadderExitDown.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Ladders/Down/LadderDown.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Ladders/Right/LadderRight.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Ladders/Right/LadderExitRight.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Ladders/Right/LadderEnterRight.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Ladders/Left/LadderExitLeft.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Ladders/Left/LadderLeft.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Ladders/Left/LadderEnterLeft.tscn" type="PackedScene" id=31]
-[ext_resource path="res://WIP/PushBlockRight.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -95,7 +64,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=21]
 1/name = "TilesetWorld1.png 1"
-1/texture = ExtResource( 16 )
+1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 64, 0, 16, 16 )
@@ -116,7 +85,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 1/z_index = 0
 2/name = "TilesetWorld1.png 2"
-2/texture = ExtResource( 16 )
+2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 80, 0, 16, 16 )
@@ -137,7 +106,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 2/z_index = 0
 3/name = "TilesetWorld1.png 3"
-3/texture = ExtResource( 16 )
+3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 64, 32, 16, 32 )
@@ -158,7 +127,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 3/z_index = 0
 4/name = "TilesetWorld1.png 4"
-4/texture = ExtResource( 16 )
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 80, 32, 16, 32 )
@@ -179,7 +148,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 4/z_index = 0
 5/name = "TilesetWorld1.png 5"
-5/texture = ExtResource( 16 )
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 96, 32, 32, 16 )
@@ -200,7 +169,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 5/z_index = 0
 6/name = "TilesetWorld1.png 6"
-6/texture = ExtResource( 16 )
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 96, 48, 32, 16 )
@@ -221,7 +190,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 6/z_index = 0
 7/name = "TilesetWorld1.png 7"
-7/texture = ExtResource( 16 )
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 64, 16, 16, 16 )
@@ -242,7 +211,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 7/z_index = 0
 8/name = "TilesetWorld1.png 8"
-8/texture = ExtResource( 16 )
+8/texture = ExtResource( 1 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 80, 16, 16, 16 )
@@ -263,7 +232,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 8/z_index = 0
 9/name = "TilesetWorld1.png 9"
-9/texture = ExtResource( 16 )
+9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 96, 0, 16, 16 )
@@ -284,7 +253,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 9/z_index = 0
 10/name = "TilesetWorld1.png 10"
-10/texture = ExtResource( 16 )
+10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 96, 16, 16, 16 )
@@ -305,7 +274,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 10/z_index = 0
 11/name = "TilesetWorld1.png 11"
-11/texture = ExtResource( 16 )
+11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 112, 0, 16, 16 )
@@ -326,7 +295,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 11/z_index = 0
 12/name = "TilesetWorld1.png 12"
-12/texture = ExtResource( 16 )
+12/texture = ExtResource( 1 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 112, 16, 16, 16 )
@@ -347,7 +316,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 12/z_index = 0
 13/name = "TilesetWorld1.png 13"
-13/texture = ExtResource( 16 )
+13/texture = ExtResource( 1 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 64, 64, 16, 16 )
@@ -368,7 +337,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 13/z_index = 0
 14/name = "TilesetWorld1.png 14"
-14/texture = ExtResource( 16 )
+14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 64, 80, 16, 16 )
@@ -389,7 +358,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 14/z_index = 0
 15/name = "TilesetWorld1.png 15"
-15/texture = ExtResource( 16 )
+15/texture = ExtResource( 1 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 80, 64, 16, 16 )
@@ -410,7 +379,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 15/z_index = 0
 16/name = "TilesetWorld1.png 16"
-16/texture = ExtResource( 16 )
+16/texture = ExtResource( 1 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 80, 80, 16, 16 )
@@ -431,7 +400,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 16/z_index = 0
 17/name = "TilesetWorld1.png 17"
-17/texture = ExtResource( 16 )
+17/texture = ExtResource( 1 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 96, 64, 16, 16 )
@@ -452,7 +421,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 17/z_index = 0
 18/name = "TilesetWorld1.png 18"
-18/texture = ExtResource( 16 )
+18/texture = ExtResource( 1 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 96, 80, 16, 16 )
@@ -473,7 +442,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 18/z_index = 0
 19/name = "TilesetWorld1.png 19"
-19/texture = ExtResource( 16 )
+19/texture = ExtResource( 1 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 112, 64, 16, 16 )
@@ -494,7 +463,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 19/z_index = 0
 20/name = "TilesetWorld1.png 20"
-20/texture = ExtResource( 16 )
+20/texture = ExtResource( 1 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 112, 80, 16, 16 )
@@ -515,152 +484,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 20/z_index = 0
 
-[node name="World" type="Node2D"]
-script = ExtResource( 14 )
-
-[node name="PlayerUp" parent="." groups=[
-"Players",
-] instance=ExtResource( 12 )]
-position = Vector2( 848, 400 )
-
-[node name="PlayerRight" parent="." groups=[
-"Players",
-] instance=ExtResource( 13 )]
-position = Vector2( 48, 336 )
-
-[node name="PlayerDown" parent="." groups=[
-"Players",
-] instance=ExtResource( 10 )]
-position = Vector2( 560, 336 )
-
-[node name="PlayerLeft" parent="." groups=[
-"Players",
-] instance=ExtResource( 11 )]
-position = Vector2( 720, 256 )
-
-[node name="Interface" parent="." instance=ExtResource( 6 )]
-
-[node name="Background" parent="." instance=ExtResource( 15 )]
-visible = false
-
-[node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 512, 320 )
-scale = Vector2( 2, 2 )
-z_index = -20
-texture = ExtResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 320 )
-current = true
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap"]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 65536, 1, 0, 65551, 1, 0, 65555, 1, 0, 65559, 1, 0, 65567, 1, 0, 131072, 1, 0, 131087, 1, 0, 131091, 1, 0, 131095, 1, 0, 131103, 1, 0, 196608, 1, 0, 196623, 1, 0, 196631, 1, 0, 196639, 1, 0, 262144, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262163, 1, 0, 262167, 1, 0, 262175, 1, 0, 327680, 1, 0, 327683, 1, 0, 327695, 1, 0, 327699, 1, 0, 327703, 1, 0, 327711, 1, 0, 393216, 1, 0, 393219, 1, 0, 393231, 1, 0, 393239, 1, 0, 393247, 1, 0, 458752, 1, 0, 458755, 1, 0, 458767, 1, 0, 458771, 1, 0, 458775, 1, 0, 458783, 1, 0, 524288, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524307, 1, 0, 524311, 1, 0, 524319, 1, 0, 589824, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589855, 1, 0, 655360, 1, 0, 655375, 1, 0, 655387, 1, 0, 655391, 1, 0, 720896, 1, 0, 720911, 1, 0, 720923, 1, 0, 720927, 1, 0, 786432, 1, 0, 786442, 1, 0, 786447, 1, 0, 786459, 1, 0, 786463, 1, 0, 851968, 1, 0, 851978, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851993, 1, 0, 851994, 1, 0, 851995, 1, 0, 851999, 1, 0, 917504, 1, 0, 917514, 1, 0, 917519, 1, 0, 917535, 1, 0, 983040, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983071, 1, 0, 1048576, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114143, 1, 0, 1179648, 1, 0, 1179679, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0 )
-
-[node name="DoubleJump" parent="." instance=ExtResource( 21 )]
-position = Vector2( 816, 240 )
-
-[node name="PortalDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 304 )
-
-[node name="PortalUp" parent="." instance=ExtResource( 3 )]
-position = Vector2( 464, 464 )
-
-[node name="PortalLeft" parent="." instance=ExtResource( 5 )]
-position = Vector2( 304, 488 )
-
-[node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 144, 176 )
-
-[node name="PushBlock" parent="." instance=ExtResource( 20 )]
-position = Vector2( 80, 592 )
-
-[node name="CloudUp" parent="." instance=ExtResource( 22 )]
-position = Vector2( 240, 272 )
-
-[node name="CloudUp2" parent="CloudUp" instance=ExtResource( 22 )]
-position = Vector2( 32, 0 )
-
-[node name="CloudUp3" parent="CloudUp" instance=ExtResource( 22 )]
-position = Vector2( -32, 0 )
-
-[node name="CloudDown" parent="." instance=ExtResource( 7 )]
-position = Vector2( 240, 208 )
-
-[node name="CloudDown" parent="CloudDown" instance=ExtResource( 7 )]
-position = Vector2( 32, -32 )
-
-[node name="CloudDown2" parent="CloudDown" instance=ExtResource( 7 )]
-position = Vector2( -32, 32 )
-
-[node name="CloudRight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368, 208 )
-
-[node name="CloudRight2" parent="CloudRight" instance=ExtResource( 1 )]
-position = Vector2( 0, -32 )
-
-[node name="CloudRight3" parent="CloudRight" instance=ExtResource( 1 )]
-position = Vector2( 0, 32 )
-
-[node name="CloudLeft" parent="." instance=ExtResource( 9 )]
-position = Vector2( 336, 336 )
-
-[node name="CloudLeft" parent="CloudLeft" instance=ExtResource( 9 )]
-position = Vector2( 0, -32 )
-
-[node name="CloudLeft2" parent="CloudLeft" instance=ExtResource( 9 )]
-position = Vector2( 0, 32 )
-
-[node name="LadderEnterUp" parent="." instance=ExtResource( 19 )]
-position = Vector2( 656, 400 )
-
-[node name="LadderUp" parent="." instance=ExtResource( 17 )]
-position = Vector2( 656, 368 )
-
-[node name="LadderUp2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 656, 336 )
-
-[node name="LadderExitUp" parent="." instance=ExtResource( 18 )]
-position = Vector2( 656, 304 )
-
-[node name="LadderExitDown" parent="." instance=ExtResource( 24 )]
-position = Vector2( 784, 432 )
-
-[node name="LadderDown" parent="." instance=ExtResource( 25 )]
-position = Vector2( 784, 400 )
-
-[node name="LadderDown2" parent="." instance=ExtResource( 25 )]
-position = Vector2( 784, 368 )
-
-[node name="LadderEnterDown" parent="." instance=ExtResource( 23 )]
-position = Vector2( 784, 336 )
-
-[node name="LadderEnterRight" parent="." instance=ExtResource( 28 )]
-position = Vector2( 528, 208 )
-
-[node name="LadderRight" parent="." instance=ExtResource( 26 )]
-position = Vector2( 592, 208 )
-
-[node name="LadderRight2" parent="." instance=ExtResource( 26 )]
-position = Vector2( 560, 208 )
-
-[node name="LadderExitRight" parent="." instance=ExtResource( 27 )]
-position = Vector2( 624, 208 )
-
-[node name="LadderEnterLeft" parent="." instance=ExtResource( 31 )]
-position = Vector2( 720, 112 )
-
-[node name="LadderExitLeft" parent="." instance=ExtResource( 29 )]
-position = Vector2( 624, 112 )
-
-[node name="LadderLeft" parent="." instance=ExtResource( 30 )]
-position = Vector2( 688, 112 )
-
-[node name="LadderLeft2" parent="." instance=ExtResource( 30 )]
-position = Vector2( 656, 112 )
-
-[node name="PushBlockRight" parent="." instance=ExtResource( 32 )]
-position = Vector2( 48, 400 )
+tile_data = PoolIntArray( 196620, 1, 0, 262157, 1, 0, 327694, 1, 0, 327699, 1, 0, 327700, 1, 0, 393218, 1, 0, 393238, 9, 0, 393239, 3, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458759, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 9, 0, 458768, 6, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 14, 0, 458774, 3, 0, 458776, 14, 0, 458777, 14, 0, 524304, 1, 0, 524315, 10, 0, 589853, 4, 0, 655386, 13, 0, 655387, 4, 0, 655388, 13, 0, 720906, 5, 0, 720908, 1, 0, 720909, 10, 0, 720920, 19, 0, 720923, 7, 0, 720924, 8, 0, 786440, 17, 0, 786443, 5, 0, 786454, 18, 0, 851974, 19, 0, 851983, 18, 0, 851984, 9, 0, 851985, 1, 0, 851986, 7, 0, 851987, 6, 0, 852002, 1, 0, 852003, 1, 0, 852004, 1, 0, 852005, 1, 0, 852006, 1, 0, 917507, 13, 0, 917508, 4, 0, 917521, 8, 0, 917522, 6, 0, 917538, 1, 0, 917542, 1, 0, 983042, 13, 0, 983043, 1, 0, 983045, 4, 0, 983046, 13, 0, 983047, 10, 0, 983048, 19, 0, 983049, 19, 0, 983053, 2, 0, 983054, 3, 0, 983055, 14, 0, 983058, 15, 0, 983074, 1, 0, 983078, 1, 0, 1048579, 7, 0, 1048580, 1, 0, 1048582, 7, 0, 1048583, 1, 0, 1048584, 10, 0, 1048585, 19, 0, 1048586, 19, 0, 1048587, 9, 0, 1048588, 2, 0, 1048589, 3, 0, 1048610, 1, 0, 1048614, 1, 0, 1114117, 7, 0, 1114118, 1, 0, 1114119, 8, 0, 1114124, 14, 0, 1114146, 1, 0, 1114147, 1, 0, 1114148, 1, 0, 1114149, 1, 0, 1114150, 1, 0 )

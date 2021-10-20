@@ -6,7 +6,6 @@
 
 [node name="Pausa" type="Control"]
 pause_mode = 2
-margin_left = -8.0
 margin_right = 1024.0
 margin_bottom = 640.0
 script = ExtResource( 1 )
@@ -59,13 +58,13 @@ focus_neighbour_bottom = NodePath("../Continue")
 text = "Salir"
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 520, 584 )
+position = Vector2( 512, 584 )
 scale = Vector2( 2.00781, 0.36875 )
 z_index = 10
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 520, 56 )
+position = Vector2( 512, 56 )
 scale = Vector2( 2.00781, 0.36875 )
 z_index = 10
 texture = ExtResource( 2 )

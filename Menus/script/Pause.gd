@@ -10,6 +10,7 @@ func _input(event):
 		get_tree().paused = new_paused_state
 		visible = new_paused_state
 
+
 func _on_Continue_pressed():
 	if get_tree().paused == true:
 		get_tree().paused = false

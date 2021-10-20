@@ -8,10 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Sprite/VBoxContainer/Play.grab_focus()
-
-
-
+	$VBoxContainer/Play.grab_focus()
 
 func _on_Play_pressed():
 		var actual_dir = "res://Menus/MapWorld1.tscn"
@@ -22,7 +19,7 @@ func _on_Play_pressed():
 #	get_tree().change_scene(actual_dir)
 	
 func _on_Play_mouse_entered():
-	$Sprite/VBoxContainer/Play.grab_focus()
+	$VBoxContainer/Play.grab_focus()
 	
 	
 #func _on_Opcions_mouse_entered():
