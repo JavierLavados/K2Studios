@@ -17,11 +17,11 @@ var clouds
 var switch_restriction = 0
 
 # para el selector	
-export var level_int = 1 
+export var required = 1 
 
 #func _ready():
-	#if level_int >= Globals.current_level:
-	#	Globals.current_level+=1
+	#if required >= Globals.current_point:
+	#	Globals.current_point+=1
 ##################
 
 
@@ -124,6 +124,6 @@ func level(n_players, next_level):
 	
 	if ready == n_players:
 		yield(get_tree().create_timer(3.0), "timeout")
-		if level_int >= Globals.current_level:
-			Globals.current_level+=1
+		if required >= Globals.current_points:
+			Globals.current_points+=1
 		get_tree().change_scene(next_level)

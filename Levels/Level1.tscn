@@ -20,7 +20,6 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
-level_int = 2
 
 [node name="PlayerUp" parent="." groups=[
 "Players",

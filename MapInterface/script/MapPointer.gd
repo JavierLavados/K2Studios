@@ -14,7 +14,7 @@ var waiting = false
 
 func _physics_process(delta):
 	
-	print(waiting)
+	#print(waiting)
 	
 	if len(positions) == (gap*3)+1:
 		if positions[0] == positions[gap*3]:

@@ -16,7 +16,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.18921, 0 )
+position = Vector2( 1.1892, 1.04904e-05 )
 scale = Vector2( 2, 2 )
 z_index = -10
 texture = ExtResource( 1 )
@@ -45,6 +45,17 @@ __meta__ = {
 
 [node name="Play" parent="VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 100.0
+focus_neighbour_top = NodePath("../Salir")
 text = "Play"
 
+[node name="Salir" parent="VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 32.0
+focus_neighbour_bottom = NodePath("../Play")
+text = "Salir"
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Salir" to="." method="_on_Salir_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
