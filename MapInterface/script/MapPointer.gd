@@ -37,23 +37,34 @@ func _physics_process(delta):
 				order = [0,1,2,3]
 				on_node = false
 				motion = Vector2(h_vel * MAX_SPEED,0)
+				for i in range(4):
+					get_child(i).order = order[i]
+					get_child(i).on_node = false
 			if h_vel == -1 and directions[3]:
 				order = [3,2,1,0]
 				on_node = false
 				motion = Vector2(h_vel * MAX_SPEED,0)
+				for i in range(4):
+					get_child(i).order = order[i]
+					get_child(i).on_node = false
 		if v_vel != 0:
 			if v_vel == 1 and directions[2]:
 				order = [2,0,3,1]
 				on_node = false
 				motion = Vector2(0,v_vel * MAX_SPEED)
+				for i in range(4):
+					get_child(i).order = order[i]
+					get_child(i).on_node = false
 			if v_vel == -1 and directions[0]:
 				order = [1,3,0,2]
 				on_node = false
 				motion = Vector2(0,v_vel * MAX_SPEED)
+				for i in range(4):
+					get_child(i).order = order[i]
+					get_child(i).on_node = false
 		
-		for i in range(4):
-			get_child(i).order = order[i]
-			get_child(i).on_node = false
+		
+		
 		
 		waiting = true
 	if go_back:

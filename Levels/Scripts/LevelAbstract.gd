@@ -18,12 +18,17 @@ var switch_restriction = 0
 
 # para el selector	
 var completed = false
-export var int_level=0
+export var int_level=1
 
-#func _ready():
-	#var lenght = len(Globals.levels_status)
-	#if lenght <= int_level:
-	#	Globals.levels_status.append(false)
+func _ready():
+	print(Globals.levels_status)
+	var lenght = len(Globals.levels_status)
+	if lenght < int_level:
+		for i in range(lenght,int_level):
+			#print(i)
+			Globals.levels_status+=[false]
+	print(Globals.levels_status)
+			
 ##################
 
 
@@ -126,7 +131,9 @@ func level(n_players, next_level):
 	
 	if ready == n_players:
 		yield(get_tree().create_timer(3.0), "timeout")
+		completed=Globals.levels_status[int_level-1]
 		if not completed :
 			Globals.current_points+=1
-			completed=true
-		get_tree().change_scene(next_level)
+			Globals.levels_status[int_level-1]=true
+		#get_tree().change_scene(next_level)
+		get_tree().change_scene("res://MapInterface/Map.tscn")

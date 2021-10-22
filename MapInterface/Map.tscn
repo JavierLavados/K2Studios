@@ -101,7 +101,7 @@ __meta__ = {
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 505.485, 317.498 )
+position = Vector2( 512, 320 )
 scale = Vector2( 2, 2 )
 z_index = -20
 texture = ExtResource( 4 )
@@ -130,17 +130,13 @@ position = Vector2( 864, 288 )
 level_proyect_dir = "res://Levels/Level0.tscn"
 level_number = 3
 left = true
-down = true
 
 [node name="MapPointer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 156.224, 286.112 )
 
 [node name="BlockIcon" parent="." instance=ExtResource( 5 )]
-position = Vector2( 480, 192 )
-
-[node name="BlockIcon2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 672, 288 )
-required = 5
+required = 3
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
