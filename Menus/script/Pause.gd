@@ -1,65 +1,55 @@
 extends Control
 
 func _ready():
-	$Sprite/VBoxContainer/Continue.grab_focus()
+	$Sprite/VBoxContainer/Resume.grab_focus()
 	
-
 func _input(event):
 	if event.is_action_pressed("Pause"):
 		var new_paused_state = not get_tree().paused
 		get_tree().paused = new_paused_state
 		visible = new_paused_state
 
-
-func _on_Continue_pressed():
+func _on_Resume_pressed():
 	if get_tree().paused == true:
 		get_tree().paused = false
 		visible = false
-
 
 func _on_Restart_pressed():
 	if get_tree().paused == true:
 		get_tree().paused = false
 		visible = false
 		get_tree().reload_current_scene()
-	
 
-func _on_Map_pressed():
+func _on_LevelSel_pressed():
 	if get_tree().paused == true:	
 		get_tree().paused = false
 		var actual_dir = "res://MapInterface/Map.tscn"
 		get_tree().change_scene(actual_dir)
 		
-func _on_Opcions_pressed():
-	var actual_dir = "res://Menus/Options.tscn"
-	get_tree().change_scene(actual_dir)
+func _on_Settings_pressed():
+	print("ACA ACTIVO SETTINGS")
+	#var actual_dir = "res://Menus/Settings.tscn"
+	#get_tree().change_scene(actual_dir)
 
-
-func _on_Salir_pressed():
+func _on_TitleScr_pressed():
 	if get_tree().paused == true:	
 		get_tree().paused = false
 		var actual_dir = "res://Menus/Initial.tscn"
 		get_tree().change_scene(actual_dir)
 
 
-func _on_Continue_mouse_entered():
-	$Sprite/VBoxContainer/Continue.grab_focus()
+func _on_Resume_mouse_entered():
+	$Sprite/VBoxContainer/Resume.grab_focus()
 
 func _on_Restart_mouse_entered():
 	$Sprite/VBoxContainer/Restart.grab_focus()
 
-func _on_Map_mouse_entered():
-	$Sprite/VBoxContainer/Map.grab_focus()
+func _on_LevelSel_mouse_entered():
+	$Sprite/VBoxContainer/LevelSel.grab_focus()
 
+func _on_Settings_mouse_entered():
+	$Sprite/VBoxContainer/Settings.grab_focus()
 
-func _on_Opcions_mouse_entered():
-	$Sprite/VBoxContainer/Opcions.grab_focus()
-
-func _on_Salir_mouse_entered():
-	$Sprite/VBoxContainer/Salir.grab_focus()
-
-
-
-
-
+func _on_TitleScr_mouse_entered():
+	$Sprite/VBoxContainer/TitleScr.grab_focus()
 

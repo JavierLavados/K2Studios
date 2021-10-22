@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Menus/script/Pause.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/PauseBar.png" type="Texture" id=2]
-[ext_resource path="res://Menus/button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/RestartHover.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/RestartNormal.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/ResumePressed.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/SettingsHover.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/TitleScrPressed.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/LevelSelNormal.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/LevelSelHover.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/SettingsPressed.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/SettingsNormal.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/TitleScrNormal.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/TitleScrHover.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/LevelSelPressed.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/ResumeNormal.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/ResumeHover.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Buttons/PauseMenu/RestartPressed.png" type="Texture" id=17]
 
 [node name="Pausa" type="Control"]
 pause_mode = 2
@@ -19,43 +33,55 @@ scale = Vector2( 1.98438, 1.98438 )
 z_index = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Sprite"]
-margin_left = -84.6612
-margin_top = -52.4093
-margin_right = 115.339
-margin_bottom = 33.5907
+margin_left = -76.5982
+margin_top = -88.6927
+margin_right = 115.402
+margin_bottom = 87.3073
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Continue" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
-margin_right = 200.0
-focus_neighbour_top = NodePath("../Salir")
-
-[node name="Restart" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 18.0
-margin_right = 200.0
+[node name="Resume" type="TextureButton" parent="Sprite/VBoxContainer"]
+margin_right = 192.0
 margin_bottom = 32.0
-text = "Restart"
+focus_neighbour_top = NodePath("../TitleScr")
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 16 )
 
-[node name="Map" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Restart" type="TextureButton" parent="Sprite/VBoxContainer"]
 margin_top = 36.0
-margin_right = 200.0
-margin_bottom = 50.0
-text = "Map"
-
-[node name="Opcions" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 54.0
-margin_right = 200.0
+margin_right = 192.0
 margin_bottom = 68.0
-text = "Opcions"
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 3 )
 
-[node name="Salir" parent="Sprite/VBoxContainer" instance=ExtResource( 3 )]
+[node name="LevelSel" type="TextureButton" parent="Sprite/VBoxContainer"]
 margin_top = 72.0
-margin_right = 200.0
-margin_bottom = 86.0
-focus_neighbour_bottom = NodePath("../Continue")
-text = "Salir"
+margin_right = 192.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 9 )
+
+[node name="Settings" type="TextureButton" parent="Sprite/VBoxContainer"]
+margin_top = 108.0
+margin_right = 192.0
+margin_bottom = 140.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 6 )
+
+[node name="TitleScr" type="TextureButton" parent="Sprite/VBoxContainer"]
+margin_top = 144.0
+margin_right = 192.0
+margin_bottom = 176.0
+focus_neighbour_bottom = NodePath("../Resume")
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 13 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 512, 576 )
@@ -69,13 +95,13 @@ scale = Vector2( 2, 2 )
 z_index = 10
 texture = ExtResource( 2 )
 
-[connection signal="mouse_entered" from="Sprite/VBoxContainer/Continue" to="." method="_on_Continue_mouse_entered"]
-[connection signal="pressed" from="Sprite/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Resume" to="." method="_on_Resume_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="mouse_entered" from="Sprite/VBoxContainer/Restart" to="." method="_on_Restart_mouse_entered"]
 [connection signal="pressed" from="Sprite/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
-[connection signal="mouse_entered" from="Sprite/VBoxContainer/Map" to="." method="_on_Map_mouse_entered"]
-[connection signal="pressed" from="Sprite/VBoxContainer/Map" to="." method="_on_Map_pressed"]
-[connection signal="mouse_entered" from="Sprite/VBoxContainer/Opcions" to="." method="_on_Opcions_mouse_entered"]
-[connection signal="pressed" from="Sprite/VBoxContainer/Opcions" to="." method="_on_Opcions_pressed"]
-[connection signal="mouse_entered" from="Sprite/VBoxContainer/Salir" to="." method="_on_Salir_mouse_entered"]
-[connection signal="pressed" from="Sprite/VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/LevelSel" to="." method="_on_LevelSel_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/LevelSel" to="." method="_on_LevelSel_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/Settings" to="." method="_on_Settings_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="mouse_entered" from="Sprite/VBoxContainer/TitleScr" to="." method="_on_TitleScr_mouse_entered"]
+[connection signal="pressed" from="Sprite/VBoxContainer/TitleScr" to="." method="_on_TitleScr_pressed"]

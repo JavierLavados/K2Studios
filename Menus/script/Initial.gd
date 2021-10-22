@@ -9,7 +9,7 @@ func _on_Play_pressed():
 	get_tree().change_scene(actual_dir)
 		
 func _on_Settings_pressed():
-	var actual_dir = "res://Menus/Options.tscn"
+	var actual_dir = "res://Menus/Settings.tscn"
 	get_tree().change_scene(actual_dir)
 		
 		

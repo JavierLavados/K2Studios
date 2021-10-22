@@ -5,6 +5,6 @@ var next = "res://MapInterface/Map.tscn"
 
 func _ready():
 	setUp(n_players)
-#Mochi mochi	
+
 func _physics_process(delta):
 	level(n_players, next)
