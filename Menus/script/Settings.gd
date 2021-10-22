@@ -5,12 +5,14 @@ onready var controllerOp2 = $Sprite/ColorRect/Sprite2
 onready var SelectionOp1 = $Sprite/ColorRect2/Sprite
 onready var SelectionOp2 = $Sprite/ColorRect2/Sprite2
 
+
 var standard = true
 var arrows = true
 
-
+func _ready():
+	$Sprite/ColorRect/button1.grab_focus()
+	
 func _on_button1_pressed():
-	print("cambioooooooooooooooo")
 	if standard == true:
 		standard=false
 		controllerOp1.visible=false
@@ -52,7 +54,6 @@ func _on_button4_pressed():
 		SelectionOp1.visible=true
 		SelectionOp2.visible=false
 
-
-func _on_Button_pressed():
+func _on_botton_pressed():
 	visible=false
 	get_parent().get_node("Pausa").visible=true
