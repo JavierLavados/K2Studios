@@ -129,7 +129,7 @@ down = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 864, 288 )
-level_proyect_dir = "res://Levels/Level0.tscn"
+level_proyect_dir = "res://Levels/Level3.tscn"
 level_number = 3
 left = true
 

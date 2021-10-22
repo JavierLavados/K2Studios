@@ -42,6 +42,8 @@ var rot
 var invisiWallL
 var invisiWallR
 
+var Air = preload("res://WIP/Air.tscn")
+
 var default_texture
 var boots_texture
 
@@ -168,6 +170,10 @@ func calc_motion(n, forward, backward, top, btm):
 			jumping = true
 			air_jump_used = true
 			controllable = true
+			
+			var air = Air.instance()
+			get_parent().add_child(air) 
+			air.global_position = global_position
 
 			# Creacion paredes invisibles
 			if not is_instance_valid(invisiWallL):

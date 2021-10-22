@@ -31,7 +31,8 @@ func _process(delta):
 func _on_ClimbArea_body_entered(body):
 	if body.name == player_name:
 		body.on_ladder += 1
-		add_collision_exception_with(body)
+		if body.climbing:
+			add_collision_exception_with(body)
 
 func _on_ClimbArea_body_exited(body):
 	if body.name == player_name:
