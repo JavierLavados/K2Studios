@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MapTiles.png-63377e51e6c1151b4f3cf93469216f03.stex"
+path="res://.import/MapTiles.png-7cf42b8668a64ee198871676796370d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapTiles.png"
-dest_files=[ "res://.import/MapTiles.png-63377e51e6c1151b4f3cf93469216f03.stex" ]
+source_file="res://Sprites/MapTiles.png"
+dest_files=[ "res://.import/MapTiles.png-7cf42b8668a64ee198871676796370d1.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

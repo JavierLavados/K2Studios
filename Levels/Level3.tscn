@@ -1,14 +1,19 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=2]
+[ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Clouds/CloudDown.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/Scripts/Level3.gd" type="Script" id=10]
+[ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=12]
+[ext_resource path="res://Clouds/CloudLeft.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Clouds/CloudRight.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -498,7 +503,7 @@ script = ExtResource( 10 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 8 )]
-position = Vector2( 720, 432 )
+position = Vector2( 376, 296 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
@@ -513,7 +518,7 @@ position = Vector2( 336, 176 )
 [node name="PlayerLeft" parent="." groups=[
 "Players",
 ] instance=ExtResource( 7 )]
-position = Vector2( 240, 336 )
+position = Vector2( 240, 144 )
 
 [node name="Interface" parent="." instance=ExtResource( 4 )]
 
@@ -534,4 +539,55 @@ scale = Vector2( 2, 2 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131080, 13, 0, 131081, 4, 0, 131082, 13, 0, 131083, 13, 0, 131084, 13, 0, 131085, 4, 0, 131086, 13, 0, 131087, 13, 0, 131088, 13, 0, 131089, 4, 0, 131091, 5, 0, 131093, 8, 0, 131094, 7, 0, 131095, 10, 0, 196616, 7, 0, 196618, 1, 0, 196619, 10, 0, 196620, 1, 0, 196622, 1, 0, 196623, 7, 0, 196624, 7, 0, 196630, 16, 0, 196631, 1, 0, 262152, 9, 0, 262153, 7, 0, 262154, 8, 0, 262155, 8, 0, 262156, 7, 0, 262157, 8, 0, 262158, 10, 0, 262159, 19, 0, 262160, 19, 0, 262161, 9, 0, 262164, 16, 0, 262165, 7, 0, 262166, 1, 0, 262167, 8, 0, 327693, 1, 0, 327694, 17, 0, 327695, 19, 0, 327702, 5, 0, 393229, 10, 0, 393230, 19, 0, 393231, 19, 0, 393235, 5, 0, 393237, 8, 0, 393238, 7, 0, 393239, 9, 0, 458765, 19, 0, 458766, 19, 0, 458767, 18, 0, 524301, 19, 0, 524302, 10, 0, 524303, 19, 0, 589832, 4, 0, 589833, 13, 0, 589834, 4, 0, 589837, 9, 0, 589838, 7, 0, 589839, 10, 0, 655369, 1, 0, 655371, 4, 0, 655372, 13, 0, 655373, 1, 0, 655374, 8, 0, 655375, 8, 0, 720904, 8, 0, 720905, 7, 0, 720906, 8, 0, 720908, 8, 0, 720909, 10, 0, 720910, 1, 0, 720911, 7, 0, 786441, 9, 0, 786442, 7, 0, 786443, 1, 0, 786444, 7, 0, 786445, 8, 0, 786446, 10, 0, 917507, 4, 0, 917508, 13, 0, 917509, 13, 0, 917511, 1, 0, 917512, 6, 0, 917515, 19, 0, 917517, 18, 0, 917521, 16, 0, 917523, 18, 0, 917525, 19, 0, 917526, 17, 0, 917527, 19, 0, 917529, 5, 0, 917531, 2, 0, 983048, 15, 0, 983051, 17, 0, 983053, 10, 0, 983057, 16, 0, 983061, 18, 0, 983063, 10, 0, 983065, 16, 0, 1048579, 1, 0, 1048580, 13, 0, 1048581, 4, 0, 1048584, 15, 0, 1048587, 9, 0, 1048589, 1, 0, 1048591, 20, 0, 1048592, 9, 0, 1048593, 1, 0, 1048595, 4, 0, 1048597, 9, 0, 1048599, 7, 0, 1048601, 5, 0, 1048603, 10, 0, 1114120, 15, 0, 1114123, 3, 0, 1114125, 3, 0, 1114127, 10, 0, 1114129, 16, 0, 1114133, 3, 0, 1114135, 3, 0, 1114139, 17, 0, 1179651, 13, 0, 1179652, 13, 0, 1179653, 2, 0, 1179656, 15, 0, 1179660, 14, 0, 1179663, 5, 0, 1179665, 1, 0, 1179667, 1, 0, 1179670, 14, 0, 1179673, 16, 0, 1179674, 10, 0, 1179675, 19, 0 )
+tile_data = PoolIntArray( 131080, 13, 0, 131081, 4, 0, 131082, 13, 0, 131083, 13, 0, 131084, 13, 0, 131085, 4, 0, 131086, 13, 0, 131087, 13, 0, 131088, 13, 0, 131089, 4, 0, 131091, 5, 0, 131093, 8, 0, 131094, 7, 0, 131095, 10, 0, 196616, 7, 0, 196618, 1, 0, 196619, 10, 0, 196620, 1, 0, 196622, 1, 0, 196623, 7, 0, 196624, 7, 0, 196630, 16, 0, 196631, 1, 0, 262152, 9, 0, 262153, 7, 0, 262154, 8, 0, 262155, 8, 0, 262156, 7, 0, 262157, 8, 0, 262158, 10, 0, 262159, 19, 0, 262160, 19, 0, 262161, 9, 0, 262164, 16, 0, 262165, 7, 0, 262166, 1, 0, 262167, 8, 0, 327693, 1, 0, 327694, 17, 0, 327695, 19, 0, 327702, 5, 0, 393229, 10, 0, 393230, 19, 0, 393231, 19, 0, 393235, 5, 0, 393237, 8, 0, 393238, 7, 0, 393239, 9, 0, 458765, 19, 0, 458766, 19, 0, 458767, 18, 0, 524301, 19, 0, 524302, 10, 0, 524303, 19, 0, 589832, 4, 0, 589833, 13, 0, 589834, 4, 0, 589837, 9, 0, 589838, 7, 0, 589839, 10, 0, 655369, 1, 0, 655371, 4, 0, 655372, 13, 0, 655373, 1, 0, 655374, 8, 0, 655375, 8, 0, 720904, 8, 0, 720905, 7, 0, 720906, 8, 0, 720908, 8, 0, 720909, 10, 0, 720910, 1, 0, 720911, 7, 0, 786441, 9, 0, 786442, 7, 0, 786443, 1, 0, 786444, 7, 0, 786445, 8, 0, 786446, 10, 0, 917509, 4, 0, 917510, 13, 0, 917511, 13, 0, 917513, 7, 0, 917514, 6, 0, 917517, 19, 0, 917519, 18, 0, 917523, 16, 0, 917525, 18, 0, 917527, 19, 0, 917528, 17, 0, 917529, 19, 0, 983050, 15, 0, 983053, 17, 0, 983055, 10, 0, 983059, 16, 0, 983063, 18, 0, 983065, 10, 0, 1048581, 1, 0, 1048582, 13, 0, 1048583, 4, 0, 1048586, 15, 0, 1048589, 9, 0, 1048591, 8, 0, 1048593, 20, 0, 1048594, 9, 0, 1048595, 2, 0, 1048597, 4, 0, 1048599, 9, 0, 1048601, 8, 0, 1114122, 15, 0, 1114125, 3, 0, 1114127, 3, 0, 1114129, 10, 0, 1114131, 16, 0, 1114135, 3, 0, 1114137, 3, 0, 1179653, 13, 0, 1179654, 13, 0, 1179655, 8, 0, 1179658, 15, 0, 1179662, 14, 0, 1179665, 5, 0, 1179667, 8, 0, 1179669, 2, 0, 1179672, 14, 0 )
+
+[node name="CloudUp" parent="." instance=ExtResource( 3 )]
+position = Vector2( 208, 272 )
+
+[node name="CloudDown" parent="." instance=ExtResource( 5 )]
+position = Vector2( 848, 336 )
+
+[node name="CloudDown" parent="CloudDown" instance=ExtResource( 5 )]
+position = Vector2( -32, -32 )
+
+[node name="CloudDown2" parent="CloudDown" instance=ExtResource( 5 )]
+position = Vector2( 32, 32 )
+
+[node name="CloudDown2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 176, 80 )
+
+[node name="CloudDown" parent="CloudDown2" instance=ExtResource( 5 )]
+position = Vector2( -32, 0 )
+
+[node name="CloudDown2" parent="CloudDown2" instance=ExtResource( 5 )]
+position = Vector2( 32, 0 )
+
+[node name="DoubleJump2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 816, 208 )
+
+[node name="CloudUp2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 80, 208 )
+
+[node name="CloudUp3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144, 240 )
+
+[node name="CloudRight" parent="." instance=ExtResource( 14 )]
+position = Vector2( 752, 336 )
+
+[node name="CloudRight2" parent="CloudRight" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+
+[node name="CloudRight3" parent="CloudRight" instance=ExtResource( 14 )]
+position = Vector2( 32, 32 )
+
+[node name="CloudLeft2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 272, 208 )
+
+[node name="CloudLeft3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 272, 240 )
+
+[node name="CloudLeft" parent="." instance=ExtResource( 13 )]
+position = Vector2( 240, 400 )
+
+[node name="CloudLeft4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 208, 432 )

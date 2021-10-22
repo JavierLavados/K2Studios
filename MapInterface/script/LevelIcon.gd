@@ -1,7 +1,10 @@
 extends Node2D
 
+onready var sprite = $Sprite
+
 #export var required = 1
 export var level_proyect_dir = ''
+export var level_number = 1
 
 export var left = false
 export var right = false
@@ -12,7 +15,9 @@ export var down = false
 #var disabled = true
 var body_inside = false
 
-#func _ready():
+func _ready():
+	
+	sprite.frame = level_number - 1 + 3
 	#if required<= Globals.current_points:
 	#	disabled = false
 	#else:
