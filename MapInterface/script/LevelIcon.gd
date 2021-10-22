@@ -27,6 +27,7 @@ func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:
 		#if not disabled and level_proyect_dir != '':
 		if level_proyect_dir != '':
+			Globals.current_level=level_number
 			get_tree().change_scene(level_proyect_dir)
 		
 		

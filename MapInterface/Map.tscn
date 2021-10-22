@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=4]
 [ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/MapTiles.png" type="Texture" id=6]
+[ext_resource path="res://MapInterface/Map.gd" type="Script" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "MapTiles.png 0"
@@ -94,6 +95,7 @@
 5/z_index = 0
 
 [node name="Map" type="Node2D"]
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -106,7 +108,7 @@ scale = Vector2( 2, 2 )
 z_index = -20
 texture = ExtResource( 4 )
 
-[node name="LevelIcon" parent="." instance=ExtResource( 2 )]
+[node name="LevelIcon1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160, 288 )
 level_proyect_dir = "res://Levels/Level1Demo.tscn"
 right = true

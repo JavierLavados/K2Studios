@@ -1,7 +1,7 @@
 extends "res://Levels/Scripts/LevelAbstract.gd"
 
 var n_players = 1
-var next = "res://Levels/Level2.tscn"
+var next = "res://MapInterface/Map.tscn"
 
 func _ready():
 	setUp(n_players)

@@ -135,5 +135,4 @@ func level(n_players, next_level):
 		if not completed :
 			Globals.current_points+=1
 			Globals.levels_status[int_level-1]=true
-		#get_tree().change_scene(next_level)
-		get_tree().change_scene("res://MapInterface/Map.tscn")
+		get_tree().change_scene(next_level)

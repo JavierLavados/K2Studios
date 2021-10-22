@@ -4,33 +4,40 @@ extends Node
 var current_points= 0 setget current_points_changed
 var current_world = 1
 var levels_status = [] setget levels_status_changed
-
+var current_level = 1 setget current_level_changed
 
 # Json del juego
 var data_game = {
 	'current_points': current_points,
-	'levels_status' : levels_status
+	'levels_status' : levels_status,
+	'current_level': current_level 
 }
 
 # Lo primero que hace es cargar el juego
 func _ready():
 	load_game()
 
+
 # Funcion que cambia el actual nivel
 func current_points_changed(points):
 	current_points=points
-	data_game['current_points']=current_points
-	data_game['levels_status']=levels_status
 	save_game()
 	
 func levels_status_changed(status):
 	levels_status=status
-	data_game['current_points']=current_points
-	data_game['levels_status']=levels_status
 	save_game()
 	
+func current_level_changed(level):
+	current_level=level
+	save_game()	
+
 # Salva el juego
 func save_game():
+	
+	data_game['current_points']=current_points
+	data_game['levels_status']=levels_status
+	data_game['current_level']=current_level
+	
 	var file = File.new()
 	file.open('res://data.save',File.WRITE)
 	file.store_line(to_json(data_game))
@@ -48,6 +55,7 @@ func load_game():
 		var dataJson = parse_json(file.get_line())
 		current_points=dataJson['current_points']
 		levels_status=dataJson['levels_status']
+		current_level=dataJson['current_level']
 	file.close()
 	
 		
