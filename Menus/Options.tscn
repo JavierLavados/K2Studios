@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/BgWorld2.png" type="Texture" id=1]
-[ext_resource path="res://BasuraJavo/RM.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/gravity-jojo.png" type="Texture" id=2]
 [ext_resource path="res://Menus/button.tscn" type="PackedScene" id=3]
 
 [node name="Options" type="Control"]
@@ -108,8 +108,8 @@ __meta__ = {
 }
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 802.214, 324.586 )
-scale = Vector2( 0.841164, 0.848214 )
+position = Vector2( 816, 344 )
+scale = Vector2( 0.412435, 0.415892 )
 texture = ExtResource( 2 )
 
 [node name="CL" parent="." instance=ExtResource( 3 )]
