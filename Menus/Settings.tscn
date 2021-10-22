@@ -18,20 +18,23 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 511.541, 318.751 )
+position = Vector2( 511.541, 317.491 )
 scale = Vector2( 2, 2 )
+z_index = 10
 texture = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 91.0
-margin_top = 145.74
-margin_right = 606.0
-margin_bottom = 261.74
+[node name="ColorRect" type="ColorRect" parent="Sprite"]
+margin_left = -227.848
+margin_top = -93.3011
+margin_right = 304.152
+margin_bottom = 14.6989
+rect_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="Sprite/ColorRect"]
 margin_left = 20.1731
 margin_top = 46.709
 margin_right = 92.1731
@@ -44,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="button1" parent="ColorRect" instance=ExtResource( 3 )]
+[node name="button1" parent="Sprite/ColorRect" instance=ExtResource( 3 )]
 margin_left = 161.403
 margin_top = 35.4935
 margin_right = 224.403
@@ -52,7 +55,7 @@ margin_bottom = 78.4935
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "<-"
 
-[node name="button2" parent="ColorRect" instance=ExtResource( 3 )]
+[node name="button2" parent="Sprite/ColorRect" instance=ExtResource( 3 )]
 margin_left = 445.213
 margin_top = 31.5638
 margin_right = 508.213
@@ -60,25 +63,26 @@ margin_bottom = 74.5638
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "->"
 
-[node name="Sprite" type="Sprite" parent="ColorRect"]
+[node name="Sprite" type="Sprite" parent="Sprite/ColorRect"]
 position = Vector2( 332.375, 56.0632 )
 texture = ExtResource( 6 )
 
-[node name="Sprite2" type="Sprite" parent="ColorRect"]
+[node name="Sprite2" type="Sprite" parent="Sprite/ColorRect"]
 visible = false
 position = Vector2( 332.375, 56.0632 )
 texture = ExtResource( 8 )
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 90.2599
-margin_top = 349.0
-margin_right = 606.26
-margin_bottom = 465.0
+[node name="ColorRect2" type="ColorRect" parent="Sprite"]
+margin_left = -225.74
+margin_top = 10.4051
+margin_right = 290.26
+margin_bottom = 126.405
+rect_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect2"]
+[node name="Label" type="Label" parent="Sprite/ColorRect2"]
 margin_left = 40.0898
 margin_top = 40.7545
 margin_right = 112.09
@@ -90,7 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="button3" parent="ColorRect2" instance=ExtResource( 3 )]
+[node name="button3" parent="Sprite/ColorRect2" instance=ExtResource( 3 )]
 margin_left = 458.344
 margin_top = 33.6652
 margin_right = 504.344
@@ -98,7 +102,7 @@ margin_bottom = 76.6652
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "->"
 
-[node name="button4" parent="ColorRect2" instance=ExtResource( 3 )]
+[node name="button4" parent="Sprite/ColorRect2" instance=ExtResource( 3 )]
 margin_left = 176.968
 margin_top = 32.9955
 margin_right = 224.968
@@ -106,21 +110,32 @@ margin_bottom = 75.9955
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "<-"
 
-[node name="Sprite" type="Sprite" parent="ColorRect2"]
+[node name="Sprite" type="Sprite" parent="Sprite/ColorRect2"]
 position = Vector2( 347.058, 57.3981 )
 texture = ExtResource( 7 )
 
-[node name="Sprite2" type="Sprite" parent="ColorRect2"]
+[node name="Sprite2" type="Sprite" parent="Sprite/ColorRect2"]
 visible = false
 position = Vector2( 347.058, 57.3981 )
 texture = ExtResource( 5 )
 
-[node name="Jojo" type="Sprite" parent="."]
-position = Vector2( 816, 344 )
-scale = Vector2( 0.412435, 0.415892 )
+[node name="Jojo" type="Sprite" parent="Sprite"]
+position = Vector2( 140.26, 8.84473 )
+scale = Vector2( 0.206217, 0.207946 )
 texture = ExtResource( 1 )
 
-[connection signal="pressed" from="ColorRect/button1" to="." method="_on_button1_pressed"]
-[connection signal="pressed" from="ColorRect/button2" to="." method="_on_button2_pressed"]
-[connection signal="pressed" from="ColorRect2/button3" to="." method="_on_button3_pressed"]
-[connection signal="pressed" from="ColorRect2/button4" to="." method="_on_button4_pressed"]
+[node name="Button" type="Button" parent="Sprite"]
+margin_left = -232.37
+margin_top = -141.63
+margin_right = -169.37
+margin_bottom = -121.63
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Sprite/ColorRect/button1" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="Sprite/ColorRect/button2" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="Sprite/ColorRect2/button3" to="." method="_on_button3_pressed"]
+[connection signal="pressed" from="Sprite/ColorRect2/button4" to="." method="_on_button4_pressed"]
+[connection signal="pressed" from="Sprite/Button" to="." method="_on_Button_pressed"]

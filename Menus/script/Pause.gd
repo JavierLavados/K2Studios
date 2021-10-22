@@ -4,10 +4,17 @@ func _ready():
 	$Sprite/VBoxContainer/Resume.grab_focus()
 	
 func _input(event):
-	if event.is_action_pressed("Pause"):
-		var new_paused_state = not get_tree().paused
-		get_tree().paused = new_paused_state
-		visible = new_paused_state
+	if event.is_action_pressed("Esc"):
+		var conf_status = get_parent().get_node("Setting").visible
+		if not conf_status:
+			var new_paused_state = not get_tree().paused
+			get_tree().paused = new_paused_state
+			visible = new_paused_state
+		elif conf_status:
+			get_parent().get_node("Setting").visible=false
+			visible=true
+			
+			
 
 func _on_Resume_pressed():
 	if get_tree().paused == true:
@@ -27,9 +34,11 @@ func _on_LevelSel_pressed():
 		get_tree().change_scene(actual_dir)
 		
 func _on_Settings_pressed():
-	print("ACA ACTIVO SETTINGS")
-	#var actual_dir = "res://Menus/Settings.tscn"
-	#get_tree().change_scene(actual_dir)
+	if get_tree().paused == true:	
+		visible=false
+		get_parent().get_node("Setting").visible=true
+	
+	
 
 func _on_TitleScr_pressed():
 	if get_tree().paused == true:	
