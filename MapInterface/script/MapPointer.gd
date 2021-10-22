@@ -11,9 +11,10 @@ var positions = []
 var gap = 10
 var order = [0,1,2,3]
 var waiting = false
+var directions = null
 
 func _physics_process(delta):
-	
+	#print(directions)
 	#print(waiting)
 	
 	if len(positions) == (gap*3)+1:
@@ -23,20 +24,30 @@ func _physics_process(delta):
 	var h_vel = Input.get_action_strength("right") - Input.get_action_strength("left")
 	var v_vel = Input.get_action_strength("down") - Input.get_action_strength("up")
 	
+	
 	if (h_vel != 0 or v_vel != 0) and on_node and not waiting:
-		on_node = false
-		motion.x = h_vel * MAX_SPEED
-		motion.y = v_vel * MAX_SPEED
+		#on_node = false
+		#motion.x = h_vel * MAX_SPEED
+		#motion.y = v_vel * MAX_SPEED
+		
 		if h_vel != 0:
-			if h_vel == 1:
+			if h_vel == 1 and directions[1]:
 				order = [0,1,2,3]
-			else:
+				on_node = false
+				motion = Vector2(h_vel * MAX_SPEED,0)
+			if h_vel == -1 and directions[3]:
 				order = [3,2,1,0]
+				on_node = false
+				motion = Vector2(h_vel * MAX_SPEED,0)
 		if v_vel != 0:
-			if v_vel == 1:
+			if v_vel == 1 and directions[2]:
 				order = [2,0,3,1]
-			else:
+				on_node = false
+				motion = Vector2(0,v_vel * MAX_SPEED)
+			if v_vel == -1 and directions[0]:
 				order = [1,3,0,2]
+				on_node = false
+				motion = Vector2(0,v_vel * MAX_SPEED)
 		
 		for i in range(4):
 			get_child(i).order = order[i]

@@ -6,11 +6,14 @@
 [ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=4]
 
 [node name="Map" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 513.888, 320 )
+position = Vector2( 505.485, 317.498 )
 scale = Vector2( 2, 2 )
 z_index = -20
 texture = ExtResource( 4 )
@@ -18,21 +21,29 @@ texture = ExtResource( 4 )
 [node name="LevelIcon" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160, 288 )
 level_proyect_dir = "res://Levels/Level1.tscn"
+right = true
+up = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352, 288 )
 required = 2
 level_proyect_dir = "res://Levels/Level2.tscn"
+left = true
+up = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 353.189, 122.163 )
+position = Vector2( 352, 160 )
 required = 3
 level_proyect_dir = "res://Levels/Level3.tscn"
+left = true
+down = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 161.189, 130.487 )
+position = Vector2( 160, 160 )
 required = 4
 level_proyect_dir = "res://Levels/Level4.tscn"
+right = true
+down = true
 
 [node name="MapPointer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 288 )
+position = Vector2( 156.224, 286.112 )
