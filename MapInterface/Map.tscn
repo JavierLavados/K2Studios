@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=4]
+[ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=5]
 
 [node name="Map" type="Node2D"]
 __meta__ = {
@@ -20,30 +21,35 @@ texture = ExtResource( 4 )
 
 [node name="LevelIcon" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160, 288 )
-level_proyect_dir = "res://Levels/Level1.tscn"
+level_proyect_dir = "res://Levels/Level1Demo.tscn"
 right = true
-up = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 352, 288 )
-required = 2
-level_proyect_dir = "res://Levels/Level2.tscn"
+position = Vector2( 480, 288 )
+level_proyect_dir = "res://Levels/Level2Demo.tscn"
 left = true
+right = true
 up = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 352, 160 )
-required = 3
-level_proyect_dir = "res://Levels/Level3.tscn"
-left = true
+position = Vector2( 480, 96 )
+level_proyect_dir = "res://Levels/Level6.tscn"
 down = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160, 160 )
-required = 4
-level_proyect_dir = "res://Levels/Level4.tscn"
-right = true
+position = Vector2( 864, 288 )
+level_proyect_dir = "res://Levels/Level0.tscn"
+left = true
 down = true
 
 [node name="MapPointer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 156.224, 286.112 )
+
+[node name="BlockIcon" parent="." instance=ExtResource( 5 )]
+position = Vector2( 480, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="BlockIcon2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 704, 288 )
+scale = Vector2( 3, 3 )
+required = 5

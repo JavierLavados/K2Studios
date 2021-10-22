@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=1]
 [ext_resource path="res://Menus/script/Initial.gd" type="Script" id=2]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Logo.png" type="Texture" id=4]
 [ext_resource path="res://WIP/Tiles.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Menus/button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Buttons/PlayNormal.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Buttons/SettingsNormal.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Buttons/PlayHover.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Buttons/PlayPressed.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Buttons/SettingsHover.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Buttons/SettingsPressed.png" type="Texture" id=12]
 
 [node name="Initial" type="Control"]
 margin_right = 1023.0
@@ -33,29 +38,34 @@ texture = ExtResource( 4 )
 tile_data = PoolIntArray( 196611, 4, 0, 196612, 13, 0, 262146, 13, 0, 262148, 2, 0, 262149, 10, 0, 262171, 16, 0, 262172, 8, 0, 327681, 4, 0, 327682, 8, 0, 327683, 1, 0, 327707, 5, 0, 327709, 10, 0, 393218, 7, 0, 393221, 9, 0, 393222, 8, 0, 393244, 16, 0, 393245, 8, 0, 458758, 10, 0, 458780, 5, 0, 589827, 19, 0, 589828, 19, 0, 589829, 20, 0, 589849, 18, 0, 589850, 19, 0, 655362, 19, 0, 655363, 19, 0, 655364, 19, 0, 655385, 19, 0, 720898, 18, 0, 720899, 19, 0, 851974, 6, 0, 851995, 1, 0, 851996, 10, 0, 917509, 9, 0, 917510, 15, 0, 917530, 2, 0, 917531, 7, 0, 917532, 3, 0, 917533, 8, 0, 983045, 6, 0, 983065, 14, 0, 983066, 8, 0, 983067, 3, 0, 983069, 14, 0, 1048581, 2, 0, 1048582, 8, 0, 1048583, 15, 0, 1048602, 14, 0, 1114118, 7, 0, 1114119, 6, 0, 1114134, 19, 0, 1114135, 19, 0, 1179669, 19, 0, 1179670, 17, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 417.055
-margin_top = 412.081
-margin_right = 517.055
-margin_bottom = 426.081
+margin_left = 322.303
+margin_top = 356.927
+margin_right = 514.303
+margin_bottom = 456.927
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Play" parent="VBoxContainer" instance=ExtResource( 6 )]
-margin_right = 100.0
-focus_neighbour_top = NodePath("../Salir")
-text = "Play"
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+margin_right = 192.0
+margin_bottom = 48.0
+focus_neighbour_top = NodePath("../Settings")
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
 
-[node name="Salir" parent="VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 18.0
-margin_right = 100.0
-margin_bottom = 32.0
+[node name="Settings" type="TextureButton" parent="VBoxContainer"]
+margin_top = 52.0
+margin_right = 192.0
+margin_bottom = 100.0
 focus_neighbour_bottom = NodePath("../Play")
-text = "Exit"
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
 
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Salir" to="." method="_on_Salir_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Settings" to="." method="_on_Settings_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]

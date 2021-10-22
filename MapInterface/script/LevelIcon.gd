@@ -1,6 +1,6 @@
 extends Node2D
 
-export var required = 1
+#export var required = 1
 export var level_proyect_dir = ''
 
 export var left = false
@@ -9,18 +9,19 @@ export var up = false
 export var down = false
 
 
-var disabled = true
+#var disabled = true
 var body_inside = false
 
-func _ready():
-	if required<= Globals.current_points:
-		disabled = false
-	else:
-		disabled = true
+#func _ready():
+	#if required<= Globals.current_points:
+	#	disabled = false
+	#else:
+		#disabled = true
 		
 func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:
-		if not disabled and level_proyect_dir != '':
+		#if not disabled and level_proyect_dir != '':
+		if level_proyect_dir != '':
 			get_tree().change_scene(level_proyect_dir)
 		
 		

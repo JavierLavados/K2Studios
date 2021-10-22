@@ -13,6 +13,8 @@ var order = [0,1,2,3]
 var waiting = false
 var directions = null
 
+var go_back = false
+
 func _physics_process(delta):
 	#print(directions)
 	#print(waiting)
@@ -54,7 +56,11 @@ func _physics_process(delta):
 			get_child(i).on_node = false
 		
 		waiting = true
-	
+	if go_back:
+		motion.x=-motion.x
+		motion.y=-motion.y
+		go_back=false
+		
 	move_and_slide(motion)
 	
 	if on_node:

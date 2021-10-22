@@ -1,9 +1,9 @@
 extends Node
 
 # cuando current_pointscambia llama a current_points_changed
-var current_points= 1 setget current_points_changed
+var current_points= 0 setget current_points_changed
 var current_world = 1
-
+var levels_status = []
 
 
 # Json del juego

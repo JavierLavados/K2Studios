@@ -521,7 +521,7 @@ script = ExtResource( 14 )
 [node name="PlayerUp" parent="." groups=[
 "Players",
 ] instance=ExtResource( 12 )]
-position = Vector2( 152, 232 )
+position = Vector2( 860.85, 263.148 )
 
 [node name="PlayerRight" parent="." groups=[
 "Players",
