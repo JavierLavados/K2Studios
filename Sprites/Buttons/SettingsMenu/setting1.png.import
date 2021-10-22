@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex"
+path="res://.import/setting1.png-e0345b3a995ddf6afb20f0bfade9c9be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Backgrounds/BGWorld1.png"
-dest_files=[ "res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex" ]
+source_file="res://Sprites/Buttons/SettingsMenu/setting1.png"
+dest_files=[ "res://.import/setting1.png-e0345b3a995ddf6afb20f0bfade9c9be.stex" ]
 
 [params]
 
