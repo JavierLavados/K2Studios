@@ -1,26 +1,19 @@
 extends Node2D
 
-export var numbers_of_nivels= 4
+export var level_total = 4
 
-onready var players = $MapPointer
-var positions=[]
-var nivels=[]
+onready var pointer = $MapPointer
 
 func _ready():
-	for i in range(1,numbers_of_nivels+1):
-		var levelIcon = get_node("LevelIcon"+str(i))
-		nivels.append(levelIcon.level_number)
-		positions.append(levelIcon.global_position)
-		
-	#var current_level=Globals.current_level
-	#print(players.global_position)
-	#for i in range(0,4):
-#		if nivels[i]==current_level:
-		#	print(nivels[i])
-		#	var pos = positions[i]
-		#	players.global_position=pos
-		#	break
-#	print(players.global_position)
+	
+	var icons = get_tree().get_nodes_in_group("LevelIcons")
+	var current_level = Globals.current_level
+
+	for i in range(level_total):
+		if icons[i].level_number == current_level:
+			pointer.current_node = icons[i]
+			break
+	#print(pointer.node_pos)
 
 			
 			
