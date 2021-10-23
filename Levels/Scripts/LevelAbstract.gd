@@ -11,17 +11,22 @@ var diff_lever = false
 var lever_restriction = [0,0,0,0]
 var buttons = [0,0,0,0]
 var ready = 0
-var alt_select = false
+
+var alt_select 
+var cherry_controls
+
 var blocks
 var clouds
 var switch_restriction = 0
 
 # para el selector	
-var completed = false
+var completed 
 export var int_level=1
 
 func _ready():
-	#print(Globals.levels_status)
+	cherry_controls = Globals.current_settings[0]
+	alt_select = Globals.current_settings[1]
+	
 	var length = len(Globals.levels_status)
 	if length < int_level:
 		for i in range(length,int_level):
@@ -80,6 +85,10 @@ func setUp(n_players, world = 0, init_lever=4):
 	clouds = get_tree().get_nodes_in_group("Clouds")
 
 func level(n_players, next_level):
+	var prev_cherry_controls =  cherry_controls
+	
+	cherry_controls = Globals.current_settings[0]
+	alt_select = Globals.current_settings[1]
 
 	if Input.is_action_pressed("reset"):
 		gameOver()
@@ -122,13 +131,19 @@ func level(n_players, next_level):
 	
 	interface.active = current
 			
-	if Input.is_action_just_pressed("change_controls"):
+			
+	if prev_cherry_controls!=cherry_controls:
 		for p in players:
 			p.cherry_controls = !p.cherry_controls
 		interface.cherry_controls = !interface.cherry_controls
 		
-	if Input.is_action_just_pressed("change_select"):
-		alt_select = !alt_select
+	#if Input.is_action_just_pressed("change_controls"):
+		#for p in players:
+		#	p.cherry_controls = !p.cherry_controls
+		#interface.cherry_controls = !interface.cherry_controls
+		
+	#if Input.is_action_just_pressed("change_select"):
+		#alt_select = !alt_select
 	
 	if ready == n_players:
 		yield(get_tree().create_timer(3.0), "timeout")

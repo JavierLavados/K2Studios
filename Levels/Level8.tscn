@@ -979,7 +979,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 14 )
-level_int = 9
 
 [node name="PlayerUp" parent="." groups=[
 "Players",
