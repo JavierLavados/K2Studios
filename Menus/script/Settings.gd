@@ -54,4 +54,9 @@ func _on_button4_pressed():
 
 func _on_Back_pressed():
 	visible = false
-	get_parent().get_node("Pausa").visible = true
+	if get_parent().name == "Interface":
+		get_parent().get_node("Pausa").visible = true
+	else:
+		var actual_dir = "res://Menus/Initial.tscn"
+		get_tree().change_scene(actual_dir)
+		

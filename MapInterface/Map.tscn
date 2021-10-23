@@ -109,12 +109,12 @@ z_index = -20
 texture = ExtResource( 4 )
 
 [node name="LevelIcon1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160, 288 )
+position = Vector2( 192, 416 )
 level_proyect_dir = "res://Levels/Level1Demo.tscn"
 right = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 480, 288 )
+position = Vector2( 512, 416 )
 level_proyect_dir = "res://Levels/Level2Demo.tscn"
 level_number = 2
 left = true
@@ -122,28 +122,28 @@ right = true
 up = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 480, 96 )
+position = Vector2( 512, 224 )
 level_proyect_dir = "res://Levels/Level6.tscn"
 level_number = 3
 down = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 864, 288 )
+position = Vector2( 832, 416 )
 level_proyect_dir = "res://Levels/Level3.tscn"
 level_number = 3
 left = true
 
 [node name="MapPointer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 156.224, 286.112 )
+position = Vector2( 192, 416 )
 
 [node name="BlockIcon" parent="." instance=ExtResource( 5 )]
-position = Vector2( 672, 288 )
+position = Vector2( 672, 416 )
 required = 3
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 z_index = -3
 tile_set = SubResource( 1 )
-cell_size = Vector2( 32, 32 )
+cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131079, 3, 0, 196615, 3, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0 )
+tile_data = PoolIntArray( 524303, 3, 0, 655375, 3, 0, 786439, 1, 0, 786441, 1, 0, 786443, 1, 0, 786445, 1, 0, 786449, 1, 0, 786451, 1, 0, 786453, 1, 0, 786455, 1, 0 )

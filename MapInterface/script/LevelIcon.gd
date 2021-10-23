@@ -11,6 +11,8 @@ export var right = false
 export var up = false
 export var down = false
 
+var directions = []
+
 
 #var disabled = true
 var body_inside = false
@@ -18,6 +20,7 @@ var body_inside = false
 func _ready():
 	
 	sprite.frame = level_number - 1 + 3
+	directions = [up,right,down,left]
 	#if required<= Globals.current_points:
 	#	disabled = false
 	#else:
@@ -37,11 +40,11 @@ func _on_Area2D_body_entered(body):
 	body.on_node = true
 	if body.name == "MapPointer":
 		body.node_pos = global_position
-		body.directions=[up,right,down,left]
+		body.directions=directions
 
 func _on_Area2D_area_entered(area):
 	area.get_parent().on_node = true
 	
 func _on_Area2D_body_exited(body):
 	body_inside = false
-	body.directions=null
+	#body.directions = null
