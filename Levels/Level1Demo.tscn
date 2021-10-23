@@ -514,7 +514,7 @@ position = Vector2( 752, 528 )
 [node name="Interface" parent="." instance=ExtResource( 6 )]
 
 [node name="Tutorial1" type="Sprite" parent="Interface"]
-visible = false
+pause_mode = 2
 position = Vector2( 510.833, 322 )
 scale = Vector2( 3.40476, 3.40476 )
 z_index = 2
@@ -553,6 +553,7 @@ position = Vector2( 784, 336 )
 position = Vector2( 336, 80 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 4 )
 volume_db = -20.0
 autoplay = true
