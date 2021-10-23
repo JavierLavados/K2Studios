@@ -1,0 +1,1029 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Spikes/Scripts/SpikeDown.gd" type="Script" id=1]
+[ext_resource path="res://Spikes/Scripts/SpikeRight.gd" type="Script" id=2]
+[ext_resource path="res://Spikes/Scripts/SpikeUp.gd" type="Script" id=3]
+[ext_resource path="res://Spikes/Scripts/SpikeLeft.gd" type="Script" id=4]
+[ext_resource path="res://Spikes/SpikeRight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spikes/SpikeLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Spikes/SpikeUp.tscn" type="PackedScene" id=8]
+
+[node name="SpikesAllGroup" type="Node"]
+
+[node name="SpikeLeft" type="RigidBody2D" parent="." groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 1088, 16 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 32 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft2" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 312 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft3" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 288 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft4" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 256 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft5" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 224 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft6" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 192 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft7" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 160 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft8" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 128 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft9" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 96 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft10" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 64 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft11" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 440 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft12" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 408 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft13" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 376 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft14" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 344 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft15" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 472 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft16" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 504 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft17" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 632 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft18" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 600 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft19" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 568 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft20" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, 536 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft21" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, -32 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeLeft22" type="RigidBody2D" parent="SpikeLeft" groups=[
+"Spikes",
+] instance=ExtResource( 6 )]
+position = Vector2( 0, -64 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 4 )
+
+[node name="SpikeRight" type="RigidBody2D" parent="." groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( -64, 16 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight2" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 56 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 24 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight3" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 88 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight4" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 120 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight6" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 152 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight7" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 216 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight8" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 184 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight9" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 248 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight10" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 312 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight11" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 280 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight12" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 344 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight13" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 408 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight14" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 376 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight16" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 472 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight17" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 440 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight18" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 504 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight19" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 568 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight20" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 536 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight21" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 600 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight22" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, 632 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeRight5" type="RigidBody2D" parent="SpikeRight" groups=[
+"Spikes",
+] instance=ExtResource( 5 )]
+position = Vector2( 0, -32 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SpikeUp" type="RigidBody2D" parent="." groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( -16, 712 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 32, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp2" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 64, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp3" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 96, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp4" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 128, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp5" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 160, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp6" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 192, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp7" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 224, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp8" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 256, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp9" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 288, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp10" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 320, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp11" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 352, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp12" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 384, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp13" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 416, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp14" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 448, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp15" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 480, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp16" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 512, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp17" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 544, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp18" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 576, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp19" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 608, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp20" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 640, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp21" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 672, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp22" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 704, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp23" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 736, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp24" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 768, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp25" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 800, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp26" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 832, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp27" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 864, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp28" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 896, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp29" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 928, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp30" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 960, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp31" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 992, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp32" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 1024, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeUp33" type="RigidBody2D" parent="SpikeUp" groups=[
+"Spikes",
+] instance=ExtResource( 8 )]
+position = Vector2( 1056, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="SpikeDown" type="RigidBody2D" parent="." groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( -16, -72 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 32, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown2" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 64, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown3" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 96, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown4" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 128, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown5" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 160, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown6" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 192, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown7" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 224, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown8" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 256, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown9" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 288, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown10" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 320, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown11" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 352, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown12" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 384, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown13" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 416, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown14" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 448, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown15" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 480, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown16" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 512, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown17" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 544, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown18" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 576, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown19" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 608, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown20" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 640, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown21" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 672, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown22" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 704, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown23" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 736, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown24" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 768, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown25" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 800, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown26" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 832, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown27" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 864, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown28" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 896, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown29" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 928, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown30" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 960, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown31" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 992, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown32" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 1024, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="SpikeDown33" type="RigidBody2D" parent="SpikeDown" groups=[
+"Spikes",
+] instance=ExtResource( 7 )]
+position = Vector2( 1056, 0 )
+mode = 1
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 1 )
