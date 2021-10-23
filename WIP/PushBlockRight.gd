@@ -25,8 +25,6 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	
-	print(target_pos)
 
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL

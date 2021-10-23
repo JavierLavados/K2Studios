@@ -11,7 +11,5 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if visible:
 		body.go_back=true
-	else:
-		print("esta bien")
 	
 

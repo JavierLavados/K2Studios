@@ -21,13 +21,13 @@ var completed = false
 export var int_level=1
 
 func _ready():
-	print(Globals.levels_status)
-	var lenght = len(Globals.levels_status)
-	if lenght < int_level:
-		for i in range(lenght,int_level):
+	#print(Globals.levels_status)
+	var length = len(Globals.levels_status)
+	if length < int_level:
+		for i in range(length,int_level):
 			#print(i)
-			Globals.levels_status+=[false]
-	print(Globals.levels_status)
+			Globals.levels_status += [false]
+	#print(Globals.levels_status)
 			
 ##################
 
@@ -62,8 +62,6 @@ func setUp(n_players, world = 0, init_lever=4):
 	for i in range(n_players):
 		players.append(get_child(i))
 		ids.append(get_child(i).id)
-	#interface = get_child(n_players)
-	#background = get_child(n_players+1)
 	
 	for p in players:
 		p.default_texture = p.textures[world]
@@ -89,20 +87,23 @@ func level(n_players, next_level):
 	if switch_restriction == 0:
 		
 		if alt_select:
-			if Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and 1 in ids:
+			if Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and len(ids) > 1:
 				var prev = current
 				players[current].awake = false
-				current = (current + 1)%4
+				for i in range(3):
+					if (current + i + 1)%4 in ids:
+						current = (current + i + 1)%4
+						break
 				players[current].awake = true
 				activateBlocks(prev, current)
 			
-			if Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and 3 in ids:
+			if Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and len(ids) > 1:
 				var prev = current
 				players[current].awake = false
-				if current == 0:
-					current = 3
-				else:
-					current -= 1
+				for i in range(3):
+					if (current - i + 3)%4 in ids:
+						current = (current - i + 3)%4
+						break
 				players[current].awake = true
 				activateBlocks(prev, current)
 		
