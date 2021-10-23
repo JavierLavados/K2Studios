@@ -665,3 +665,6 @@ position = Vector2( 656, 112 )
 
 [node name="PushBlockRight" parent="." instance=ExtResource( 32 )]
 position = Vector2( 48, 400 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

@@ -666,3 +666,6 @@ position = Vector2( 368, 80 )
 
 [node name="LeverRoulette" parent="." instance=ExtResource( 31 )]
 position = Vector2( 480, 320 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

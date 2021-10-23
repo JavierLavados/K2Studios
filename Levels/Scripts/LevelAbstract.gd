@@ -2,6 +2,7 @@ extends Node2D
 
 onready var interface = $Interface
 onready var background =$Background
+onready var timer = $Timer
 
 var current
 var players = []
@@ -33,6 +34,9 @@ func _ready():
 			#print(i)
 			Globals.levels_status += [false]
 	#print(Globals.levels_status)
+	
+	timer.set_paused(true)
+	timer.one_shot = true
 			
 ##################
 
@@ -146,9 +150,12 @@ func level(n_players, next_level):
 		#alt_select = !alt_select
 	
 	if ready == n_players:
-		yield(get_tree().create_timer(3.0), "timeout")
-		completed=Globals.levels_status[int_level-1]
-		if not completed :
-			Globals.current_points+=1
-			Globals.levels_status[int_level-1]=true
-		get_tree().change_scene(next_level)
+		if timer.is_paused():
+			timer.start(3.0)
+			timer.set_paused(false)	
+		if timer.time_left <= 0:
+			completed = Globals.levels_status[int_level-1]
+			if not completed :
+				Globals.current_points+=1
+				Globals.levels_status[int_level-1]=true
+			get_tree().change_scene(next_level)

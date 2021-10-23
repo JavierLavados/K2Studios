@@ -551,3 +551,6 @@ position = Vector2( 592, 240 )
 
 [node name="PortalLeft" parent="." instance=ExtResource( 14 )]
 position = Vector2( 528, 528 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

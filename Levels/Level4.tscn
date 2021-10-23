@@ -510,7 +510,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 14 )
-level_int = 5
 
 [node name="PlayerUp" parent="." groups=[
 "Players",
@@ -729,3 +728,6 @@ position = Vector2( 0, -32 )
 
 [node name="SpikeRightB" parent="SpkRightG1" instance=ExtResource( 24 )]
 position = Vector2( 0, 32 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
