@@ -1,9 +1,12 @@
 extends Node2D
 
 var exists = true
+var movement
 
 func _process(delta):
-	position.y += delta * 200
+	if movement:
+		position.x -= movement.x * 300 * delta
+		position.y -= movement.y * 300 * delta
 	if not exists:
 		queue_free()
 

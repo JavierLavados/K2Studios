@@ -174,6 +174,8 @@ func calc_motion(n, forward, backward, top, btm):
 			var air = Air.instance()
 			get_parent().add_child(air) 
 			air.global_position = global_position
+			air.rotation_degrees = rot
+			air.movement = n
 
 			# Creacion paredes invisibles
 			if not is_instance_valid(invisiWallL):
