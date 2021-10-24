@@ -4,6 +4,7 @@ onready var PCSettings = $Sprite/ColorRect/Sprite
 onready var SCSettings = $Sprite/ColorRect2/Sprite
 onready var PCText = $Sprite/ColorRect
 onready var SCText = $Sprite/ColorRect2
+onready var background = $Background
 
 var standard 
 var arrows 
@@ -25,6 +26,11 @@ func _ready():
 	if arrows:
 		SCSettings.frame = 1
 		SCText.frame = SCSettings.frame
+		
+	if get_parent().name == "Interface":
+		background.visible = false
+	else:
+		background.visible = true
 		
 	
 func _on_button1_pressed():
