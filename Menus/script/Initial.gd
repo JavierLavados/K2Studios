@@ -3,6 +3,10 @@ extends Control
 
 func _ready():
 	$VBoxContainer/Play.grab_focus()
+	
+func _input(event):
+	if event.is_action_pressed("Esc"):
+		get_tree().quit()
 
 func _on_Play_pressed():
 	var actual_dir = "res://MapInterface/Map.tscn"
