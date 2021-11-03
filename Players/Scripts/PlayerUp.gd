@@ -6,10 +6,11 @@ var id = 0
 var wall = preload("res://InvisiWalls/InvisiWallUp.tscn")
 
 var w1 = "res://Sprites/GuySprites/UpGuy/UpAll.png"
-var w2 = "res://Sprites/GuySprites/UpGuy/UpWorld2.png"
-var w3 = "res://Sprites/GuySprites/UpGuy/UpHell.png"
+var w2 = "res://Sprites/GuySprites/UpGuy/UpAllW2.png"
+var w3 = "res://Sprites/GuySprites/UpGuy/UpAllW3.png"
+var w6 = "res://Sprites/GuySprites/UpGuy/UpAllW6.png"
 var boots = "res://Sprites/GuySprites/UpGuy/UpBoots.png"
-var textures = [w1, w2, w3, boots]
+var textures = [w1, w2, w3, w6, boots]
 
 func _ready():
 	initialize(NORMAL, wall)

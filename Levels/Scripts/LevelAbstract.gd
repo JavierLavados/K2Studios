@@ -76,7 +76,10 @@ func setUp(n_players, world = 0, init_lever=4):
 		p.default_texture = p.textures[world]
 		p.boots_texture = p.textures[len(p.textures)-1]
 		
-	interface.sprite.texture = load(interface.textures[world])
+	interface.sprite.texture = load(interface.textures[0])
+	
+	if world <= len(interface.textures) - 1:
+		interface.sprite.texture = load(interface.textures[world])
 	
 	players[0].awake = true
 	current = ids[0]

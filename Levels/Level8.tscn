@@ -6,12 +6,12 @@
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level8.gd" type="Script" id=7]
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/Scripts/Level0.gd" type="Script" id=14]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
 
@@ -978,7 +978,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 39/z_index = 0
 
 [node name="World" type="Node2D"]
-script = ExtResource( 14 )
+script = ExtResource( 7 )
 
 [node name="PlayerUp" parent="." groups=[
 "Players",
@@ -1035,3 +1035,5 @@ position = Vector2( 784, 176 )
 
 [node name="PortalRight" parent="." instance=ExtResource( 8 )]
 position = Vector2( 144, 528 )
+
+[node name="Timer" type="Timer" parent="."]
