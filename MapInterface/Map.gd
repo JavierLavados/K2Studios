@@ -15,8 +15,19 @@ func _ready():
 			break
 	#print(pointer.node_pos)
 
-			
-			
-			
-	
-		
+func _on_Next_body_entered(body):
+	Globals.current_level = 1
+	Globals.current_world=Globals.current_world+1
+	yield(get_tree().create_timer(0.6), "timeout")
+	var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
+	var actual_dir = format_dir%str(Globals.current_world)
+	get_tree().change_scene(actual_dir)
+
+
+func _on_Back_body_entered(body):
+	if Globals.current_world>1:
+		Globals.current_level = 4
+		Globals.current_world=Globals.current_world-1
+		var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
+		var actual_dir = format_dir%str(Globals.current_world)
+		get_tree().change_scene(actual_dir)
