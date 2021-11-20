@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex"
+path="res://.import/WorldLabels.png-238d798e3bc6a94095514a64e82e4219.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Backgrounds/BGWorld1.png"
-dest_files=[ "res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex" ]
+source_file="res://Sprites/WorldLabels.png"
+dest_files=[ "res://.import/WorldLabels.png-238d798e3bc6a94095514a64e82e4219.stex" ]
 
 [params]
 

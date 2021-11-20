@@ -1119,24 +1119,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="World" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="PlayerUp" parent="." groups=[
-"Players",
-] instance=ExtResource( 12 )]
+[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 12 )]
 position = Vector2( 464, 464 )
 
-[node name="PlayerRight" parent="." groups=[
-"Players",
-] instance=ExtResource( 13 )]
+[node name="PlayerRight" parent="." groups=["Players"] instance=ExtResource( 13 )]
 position = Vector2( 688, 208 )
 
-[node name="PlayerDown" parent="." groups=[
-"Players",
-] instance=ExtResource( 10 )]
+[node name="PlayerDown" parent="." groups=["Players"] instance=ExtResource( 10 )]
 position = Vector2( 112, 432 )
 
-[node name="PlayerLeft" parent="." groups=[
-"Players",
-] instance=ExtResource( 11 )]
+[node name="PlayerLeft" parent="." groups=["Players"] instance=ExtResource( 11 )]
 position = Vector2( 624, 496 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]

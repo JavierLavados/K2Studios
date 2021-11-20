@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex"
+path="res://.import/ButtonAll.png-77a152238143b8528115a07c75871417.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Backgrounds/BGWorld1.png"
-dest_files=[ "res://.import/BGWorld1.png-44391b8e12aca8f65272f69576f70eba.stex" ]
+source_file="res://Sprites/ButtonAll.png"
+dest_files=[ "res://.import/ButtonAll.png-77a152238143b8528115a07c75871417.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
