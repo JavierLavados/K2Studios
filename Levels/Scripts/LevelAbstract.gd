@@ -32,8 +32,8 @@ func _ready():
 	#print(length)
 	#print(Globals.current_world)
 	#print(int_level+4*Globals.current_world)
-	if length < int_level +4*(Globals.current_world-1):
-		for i in range(length,int_level+4*(Globals.current_world-1)):
+	if length < int_level:
+		for i in range(length,int_level):
 			#print(i)
 			Globals.levels_status += [false]
 	#print(Globals.levels_status)
@@ -160,8 +160,8 @@ func level(n_players, next_level):
 			timer.start(3.0)
 			timer.set_paused(false)	
 		if timer.time_left <= 0:
-			completed = Globals.levels_status[int_level+4*(Globals.current_world-1)-1]
+			completed = Globals.levels_status[int_level-1]
 			if not completed :
 				Globals.current_points+=1
-				Globals.levels_status[int_level+4*(Globals.current_world-1)-1]=true
-			get_tree().change_scene(next_level)
+				Globals.levels_status[int_level-1]=true
+			get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")

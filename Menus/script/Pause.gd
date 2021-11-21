@@ -30,9 +30,9 @@ func _on_Restart_pressed():
 func _on_LevelSel_pressed():
 	if get_tree().paused == true:	
 		get_tree().paused = false
-		var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
-		var actual_dir = format_dir%str(Globals.current_world)
-		get_tree().change_scene(actual_dir)
+		#var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
+		#var actual_dir = format_dir%str(Globals.current_world)
+		get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
 		
 func _on_Settings_pressed():
 	if get_tree().paused == true:	

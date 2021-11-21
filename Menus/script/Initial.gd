@@ -9,9 +9,9 @@ func _input(event):
 		get_tree().quit()
 
 func _on_Play_pressed():
-	var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
-	var actual_dir = format_dir%str(Globals.current_world)
-	get_tree().change_scene(actual_dir)
+	#var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
+	#var actual_dir = format_dir%str(Globals.current_world)
+	get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
 		
 func _on_Settings_pressed():
 	var actual_dir = "res://Menus/Settings.tscn"

@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://MapInterface/maps/WorldMaps.gd" type="Script" id=1]
-[ext_resource path="res://MapInterface/maps/MapWorld2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://MapInterface/maps/MapWorld1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://MapInterface/maps/MapWorld3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MapInterface/WorldMaps/Scripts/WorldMaps.gd" type="Script" id=1]
+[ext_resource path="res://MapInterface/WorldMaps/MapWorld1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MapInterface/WorldMaps/MapWorld2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 325 )
@@ -12,20 +11,12 @@ extents = Vector2( 8, 325 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="MapPointer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 192, 414 )
+[node name="MapPointer" parent="." instance=ExtResource( 5 )]
+position = Vector2( 128, 352 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
-
-[node name="Map" parent="." instance=ExtResource( 3 )]
-
-[node name="Map2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1024, 0 )
-
-[node name="Map3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2048, 0 )
 
 [node name="Transition1-2" type="Area2D" parent="."]
 
@@ -38,6 +29,11 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2-3"]
 position = Vector2( 2048, 312 )
 shape = SubResource( 1 )
+
+[node name="Map1" parent="." instance=ExtResource( 2 )]
+
+[node name="Map2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1024, 0 )
 
 [connection signal="body_entered" from="Transition1-2" to="." method="_on_Transition12_body_entered"]
 [connection signal="body_entered" from="Transition2-3" to="." method="_on_Transition23_body_entered"]

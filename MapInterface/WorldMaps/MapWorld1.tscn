@@ -1,21 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://WIP/MapTilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/WorldLabels.png" type="Texture" id=2]
-[ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=6]
-[ext_resource path="res://MapInterface/Map.gd" type="Script" id=7]
 
 [sub_resource type="StreamTexture" id=2]
 load_path = "res://.import/BGworld1.png-5c0d6597ecee0723edba1f8e50a6e3a9.stex"
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32, 32 )
-
 [node name="Map" type="Node2D"]
-script = ExtResource( 7 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -30,19 +24,19 @@ texture = SubResource( 2 )
 
 [node name="LevelIcon1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 352 )
-level_proyect_dir = "res://Levels/Level1Demo.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-1.tscn"
 right = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 352 )
-level_proyect_dir = "res://Levels/Level2Demo.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-2.tscn"
 level_number = 2
 left = true
 right = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 352 )
-level_proyect_dir = "res://Levels/Level6.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-3.tscn"
 level_number = 3
 left = true
 right = true
@@ -51,20 +45,20 @@ down = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 544 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-9.tscn"
 level_number = 9
 left = true
 
 [node name="LevelIcon5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 352 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-10.tscn"
 level_number = 10
 left = true
 right = true
 
 [node name="LevelIcon6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 544 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-5.tscn"
 level_number = 5
 left = true
 right = true
@@ -72,7 +66,7 @@ up = true
 
 [node name="LevelIcon7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 160 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-4.tscn"
 level_number = 4
 left = true
 right = true
@@ -80,24 +74,21 @@ down = true
 
 [node name="LevelIcon8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 160 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-6.tscn"
 level_number = 6
 right = true
 
 [node name="LevelIcon9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 160 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-8.tscn"
 level_number = 8
 left = true
 
 [node name="LevelIcon10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 544 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-7.tscn"
 level_number = 7
 right = true
-
-[node name="MapPointer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 128, 352 )
 
 [node name="BlockIcon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 704, 352 )
@@ -111,15 +102,3 @@ position = Vector2( 512, 64 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 5
-
-[node name="Next" type="Area2D" parent="."]
-position = Vector2( 1016, 336 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
-position = Vector2( 40, 16 )
-shape = SubResource( 3 )
-
-[connection signal="body_entered" from="Next" to="." method="_on_Next_body_entered"]
