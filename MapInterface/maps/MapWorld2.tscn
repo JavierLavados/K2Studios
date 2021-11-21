@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/MapTiles.png" type="Texture" id=6]
-[ext_resource path="res://MapInterface/Map.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/World1Text.png" type="Texture" id=8]
 
 [sub_resource type="StreamTexture" id=2]
@@ -97,14 +95,7 @@ load_path = "res://.import/BgWorld2.png-0816abb8c777832325aad3022541a5a6.stex"
 5/shapes = [  ]
 5/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 31.5, 33 )
-
 [node name="Map" type="Node2D"]
-script = ExtResource( 7 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -144,9 +135,6 @@ level_number = 4
 left = true
 right = true
 
-[node name="MapPointer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 416 )
-
 [node name="BlockIcon" parent="." instance=ExtResource( 5 )]
 position = Vector2( 672, 416 )
 required = 3
@@ -163,24 +151,3 @@ tile_data = PoolIntArray( 524303, 3, 0, 655375, 3, 0, 786432, 1, 0, 786433, 1, 0
 position = Vector2( 512, 96 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
-
-[node name="Back" type="Area2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
-position = Vector2( -32, 416 )
-shape = SubResource( 3 )
-
-[node name="Next" type="Area2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Next"]
-position = Vector2( 1056.5, 415 )
-shape = SubResource( 4 )
-
-[connection signal="body_entered" from="Back" to="." method="_on_Back_body_entered"]
-[connection signal="body_entered" from="Next" to="." method="_on_Next_body_entered"]

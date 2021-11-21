@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilesetWorld4.png-d8bb2813a4e9771da6b30fd6f750b1d5.stex"
+path="res://.import/LevelIcons.png-940674d26bd78a57b7c54809cf16e1a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TilesetWorld4.png"
-dest_files=[ "res://.import/TilesetWorld4.png-d8bb2813a4e9771da6b30fd6f750b1d5.stex" ]
+source_file="res://Sprites/LevelIcons.png"
+dest_files=[ "res://.import/LevelIcons.png-940674d26bd78a57b7c54809cf16e1a3.stex" ]
 
 [params]
 

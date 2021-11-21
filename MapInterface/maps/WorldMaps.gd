@@ -8,15 +8,30 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Camera2D.set_position(Vector2(512+1024*(Globals.current_world-1),320))
+
+func _on_Transition12_body_entered(body):
+	
+	var pos = $MapPointer.get_position()
+	#print(pos)
+	if pos.x<1024:
+		Globals.current_world=Globals.current_world+1
+		#print($Camera2D.get_position())
+		$Camera2D.set_position(Vector2(512+1024,320))
+	else:
+		Globals.current_world=Globals.current_world-1
+		#print($Camera2D.get_position())
+		$Camera2D.set_position(Vector2(512,320))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-
-func _on_Area2D_body_exited(body):
-	$Camera2D.set_position(Vector2(512*3,320))
-	print("sali")
+func _on_Transition23_body_entered(body):
+	var pos = $MapPointer.get_position()
+	#print(pos)
+	if pos.x<2048:
+		Globals.current_world=Globals.current_world+1
+		#print($Camera2D.get_position())
+		$Camera2D.set_position(Vector2(512+2048,320))
+	else:
+		Globals.current_world=Globals.current_world-1
+		#print($Camera2D.get_position())
+		$Camera2D.set_position(Vector2(512+1024,320))

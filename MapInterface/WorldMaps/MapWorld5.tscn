@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/Backgrounds/BGWorld4.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/WorldLabels.png" type="Texture" id=2]
+[ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MapInterface/Map.gd" type="Script" id=7]
+[ext_resource path="res://WIP/MapTilemap.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 32 )
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 512, 320 )
+scale = Vector2( 2, 2 )
+z_index = -20
+texture = ExtResource( 1 )
+
+[node name="LevelIcon1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 704, 160 )
+level_proyect_dir = "res://Levels/Level1Demo.tscn"
+level_number = 47
+right = true
+down = true
+
+[node name="LevelIcon2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 320, 352 )
+level_proyect_dir = "res://Levels/Level2Demo.tscn"
+level_number = 44
+up = true
+down = true
+
+[node name="LevelIcon3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 512, 544 )
+level_proyect_dir = "res://Levels/Level6.tscn"
+level_number = 45
+right = true
+up = true
+
+[node name="LevelIcon4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 512, 352 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 46
+up = true
+down = true
+
+[node name="LevelIcon5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128, 352 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 41
+left = true
+up = true
+down = true
+
+[node name="LevelIcon6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 320, 160 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 43
+right = true
+down = true
+
+[node name="LevelIcon7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 704, 352 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 48
+up = true
+down = true
+
+[node name="LevelIcon8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128, 544 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 42
+up = true
+
+[node name="LevelIcon9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 896, 544 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 49
+right = true
+up = true
+
+[node name="LevelIcon10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 896, 352 )
+level_proyect_dir = "res://Levels/Level3.tscn"
+level_number = 50
+left = true
+down = true
+
+[node name="MapPointer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, 352 )
+
+[node name="BlockIcon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 704, 544 )
+required = 3
+
+[node name="Title" type="Sprite" parent="."]
+position = Vector2( 512, 64 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+vframes = 5
+frame = 4
+
+[node name="MapTilemap" parent="." instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 262147, 74, 0, 262149, 69, 0, 262151, 69, 0, 262159, 74, 0, 262161, 69, 0, 262163, 69, 0, 393219, 73, 0, 393225, 73, 0, 393231, 73, 0, 393237, 73, 0, 524291, 73, 0, 524297, 73, 0, 524303, 73, 0, 524309, 73, 0, 720895, 69, 0, 655361, 69, 0, 655389, 69, 0, 655391, 69, 0, 786435, 73, 0, 786441, 73, 0, 786447, 73, 0, 786453, 73, 0, 786459, 73, 0, 917507, 73, 0, 917513, 73, 0, 917519, 73, 0, 917525, 73, 0, 917531, 73, 0, 1048585, 82, 0, 1048587, 69, 0, 1048589, 69, 0, 1048597, 82, 0, 1048599, 69, 0, 1048601, 69, 0, 1245201, 52, 0 )
+
+[node name="Back" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+position = Vector2( -32, 352 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Back" to="." method="_on_Back_body_entered"]

@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilesetWorld4.png-d8bb2813a4e9771da6b30fd6f750b1d5.stex"
+path="res://.import/ButtonAll.png-77a152238143b8528115a07c75871417.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TilesetWorld4.png"
-dest_files=[ "res://.import/TilesetWorld4.png-d8bb2813a4e9771da6b30fd6f750b1d5.stex" ]
+source_file="res://Sprites/ButtonAll.png"
+dest_files=[ "res://.import/ButtonAll.png-77a152238143b8528115a07c75871417.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

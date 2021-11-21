@@ -9,9 +9,7 @@ extents = Vector2( 8, 16 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
-[node name="LadderUp" type="Node2D" groups=[
-"Ladders",
-]]
+[node name="LadderUp" type="Node2D" groups=["Ladders"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

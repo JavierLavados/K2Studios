@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilesetWorld4.png-d8bb2813a4e9771da6b30fd6f750b1d5.stex"
+path="res://.import/WorldLabels.png-238d798e3bc6a94095514a64e82e4219.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TilesetWorld4.png"
-dest_files=[ "res://.import/TilesetWorld4.png-d8bb2813a4e9771da6b30fd6f750b1d5.stex" ]
+source_file="res://Sprites/WorldLabels.png"
+dest_files=[ "res://.import/WorldLabels.png-238d798e3bc6a94095514a64e82e4219.stex" ]
 
 [params]
 
