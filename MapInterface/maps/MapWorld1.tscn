@@ -116,12 +116,12 @@ texture = SubResource( 2 )
 
 [node name="LevelIcon1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 416 )
-level_proyect_dir = "res://Levels/Level1Demo.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-1.tscn"
 right = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 416 )
-level_proyect_dir = "res://Levels/Level2Demo.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-2.tscn"
 level_number = 2
 left = true
 right = true
@@ -129,13 +129,13 @@ up = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 224 )
-level_proyect_dir = "res://Levels/Level6.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-3.tscn"
 level_number = 3
 down = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 832, 416 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World1/Level1-4.tscn"
 level_number = 4
 left = true
 right = true

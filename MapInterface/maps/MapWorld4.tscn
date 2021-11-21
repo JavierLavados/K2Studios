@@ -8,8 +8,8 @@
 [ext_resource path="res://MapInterface/Map.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/World1Text.png" type="Texture" id=8]
 
-[sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/BgWorld2.png-0816abb8c777832325aad3022541a5a6.stex"
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/BGWorld4.png-6a5458a6a23fcce548775967164bed54.stex"
 
 [sub_resource type="TileSet" id=1]
 0/name = "MapTiles.png 0"
@@ -115,7 +115,7 @@ __meta__ = {
 position = Vector2( 512, 320 )
 scale = Vector2( 2, 2 )
 z_index = -20
-texture = SubResource( 2 )
+texture = SubResource( 5 )
 
 [node name="LevelIcon1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 416 )
