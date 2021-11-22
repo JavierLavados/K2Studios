@@ -15,7 +15,7 @@
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/Scripts/Level0.gd" type="Script" id=14]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/TilesetW1.png" type="Texture" id=16]
 [ext_resource path="res://Ladders/Up/LadderUp.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Ladders/Up/LadderExitUp.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Ladders/Up/LadderEnterUp.tscn" type="PackedScene" id=19]
@@ -34,6 +34,7 @@
 [ext_resource path="res://WIP/PushBlockRight.tscn" type="PackedScene" id=32]
 [ext_resource path="res://WIP/PushBlockDown.tscn" type="PackedScene" id=33]
 [ext_resource path="res://WIP/PushBlockLeft.tscn" type="PackedScene" id=34]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

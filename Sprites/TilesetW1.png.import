@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SelectorTransparent.png-f988534ab70e9d0ce79bb65577198b57.stex"
+path="res://.import/TilesetW1.png-1a568436cb56bd9bcf01af0710279155.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SelectorTransparent.png"
-dest_files=[ "res://.import/SelectorTransparent.png-f988534ab70e9d0ce79bb65577198b57.stex" ]
+source_file="res://Sprites/TilesetW1.png"
+dest_files=[ "res://.import/TilesetW1.png-1a568436cb56bd9bcf01af0710279155.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
