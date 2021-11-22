@@ -1,6 +1,6 @@
 [gd_scene load_steps=95 format=2]
 
-[ext_resource path="res://Sprites/SelectorTransparent.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/SelectorW1.png" type="Texture" id=1]
 [ext_resource path="res://GUI/Interface.gd" type="Script" id=2]
 [ext_resource path="res://Menus/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menus/Settings.tscn" type="PackedScene" id=4]
@@ -588,6 +588,7 @@ z_index = 1
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 17
+frame = 64
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 5.0

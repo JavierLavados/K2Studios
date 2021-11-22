@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://MapInterface/WorldMaps/Scripts/WorldMaps.gd" type="Script" id=1]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld1.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld4.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Notalot60.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://WIP/BackgroundWorldMap.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 326.5 )
@@ -15,6 +16,8 @@ extents = Vector2( 8, 326.5 )
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -26,27 +29,29 @@ position = Vector2( 128, 352 )
 position = Vector2( 512, 320 )
 current = true
 
-[node name="Transition1-2" type="Area2D" parent="."]
+[node name="Background" parent="." instance=ExtResource( 9 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition1-2"]
+[node name="Transition1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition1"]
 position = Vector2( 1024, 315 )
 shape = SubResource( 1 )
 
-[node name="Transition2-3" type="Area2D" parent="."]
+[node name="Transition2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2-3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2"]
 position = Vector2( 2048, 313.5 )
 shape = SubResource( 1 )
 
-[node name="Transition3-4" type="Area2D" parent="."]
+[node name="Transition3" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition3-4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition3"]
 position = Vector2( 3072, 320 )
 shape = SubResource( 1 )
 
-[node name="Transition4-5" type="Area2D" parent="."]
+[node name="Transition4" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition4-5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition4"]
 position = Vector2( 4096, 320 )
 shape = SubResource( 1 )
 
@@ -76,7 +81,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="body_entered" from="Transition1-2" to="." method="_on_Transition12_body_entered"]
-[connection signal="body_entered" from="Transition2-3" to="." method="_on_Transition23_body_entered"]
-[connection signal="body_entered" from="Transition3-4" to="." method="_on_Transition34_body_entered"]
-[connection signal="body_entered" from="Transition4-5" to="." method="_on_Transition45_body_entered"]
+[node name="Transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition"]
+position = Vector2( 1112, 184 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Transition1" to="." method="_on_Transition1_body_entered"]
+[connection signal="body_entered" from="Transition2" to="." method="_on_Transition2_body_entered"]
+[connection signal="body_entered" from="Transition3" to="." method="_on_Transition3_body_entered"]
+[connection signal="body_entered" from="Transition4" to="." method="_on_Transition4_body_entered"]
+[connection signal="body_entered" from="Transition" to="." method="_on_Transition_body_entered"]

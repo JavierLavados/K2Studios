@@ -1,19 +1,6 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=43 format=2]
 
-[ext_resource path="res://Sprites/TilesetWorld3.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Backgrounds/BgW4.png" type="Texture" id=2]
-[ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Level8.gd" type="Script" id=7]
-[ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=13]
-[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=15]
-[ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Sprites/TilesetW4.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -977,55 +964,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 39/z_index = 0
 
-[node name="World" type="Node2D"]
-script = ExtResource( 7 )
-
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 12 )]
-position = Vector2( 208, 176 )
-
-[node name="PlayerRight" parent="." groups=["Players"] instance=ExtResource( 13 )]
-position = Vector2( 720, 272 )
-
-[node name="PlayerDown" parent="." groups=["Players"] instance=ExtResource( 10 )]
-position = Vector2( 432, 464 )
-
-[node name="PlayerLeft" parent="." groups=["Players"] instance=ExtResource( 11 )]
-position = Vector2( 240, 432 )
-
-[node name="Interface" parent="." instance=ExtResource( 6 )]
-
-[node name="Background" parent="." instance=ExtResource( 15 )]
-
-[node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 512, 320 )
-scale = Vector2( 2, 2 )
-z_index = -20
-texture = ExtResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 320 )
-current = true
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMapW4" type="TileMap"]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 41 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131074, 0, 0, 196610, 27, 0, 262146, 37, 0, 262154, 25, 0, 262169, 27, 0, 327681, 18, 0, 327683, 28, 0, 327689, 25, 0, 327690, 24, 0, 327700, 29, 0, 327705, 28, 0, 327706, 27, 0, 393218, 28, 0, 393219, 36, 0, 393220, 28, 0, 393221, 11, 0, 393222, 24, 0, 393223, 15, 0, 393224, 25, 0, 393225, 24, 0, 393226, 25, 0, 393227, 17, 0, 393231, 24, 0, 393232, 12, 0, 393233, 33, 0, 393234, 13, 0, 393235, 24, 0, 393236, 25, 0, 393237, 24, 0, 393241, 27, 0, 458754, 27, 0, 458756, 27, 0, 458760, 24, 0, 458761, 25, 0, 458762, 24, 0, 458767, 25, 0, 458768, 38, 0, 458770, 24, 0, 458771, 38, 0, 458773, 25, 0, 524290, 28, 0, 524291, 16, 0, 524303, 24, 0, 524304, 25, 0, 524305, 24, 0, 524306, 9, 0, 524307, 33, 0, 524308, 15, 0, 524309, 24, 0, 524314, 28, 0, 589850, 27, 0, 589851, 28, 0, 655362, 28, 0, 655386, 28, 0, 720898, 27, 0, 720907, 7, 0, 720908, 24, 0, 786434, 28, 0, 786435, 27, 0, 786444, 27, 0, 786445, 24, 0, 786449, 24, 0, 786450, 19, 0, 786452, 24, 0, 786453, 11, 0, 786454, 13, 0, 851970, 26, 0, 851976, 24, 0, 851980, 24, 0, 851981, 27, 0, 851982, 24, 0, 851990, 21, 0, 851991, 29, 0, 917512, 25, 0, 917513, 6, 0, 917526, 35, 0, 917528, 25, 0, 917529, 24, 0, 917530, 20, 0, 983043, 28, 0, 983048, 24, 0, 983064, 24, 0, 983065, 25, 0, 983066, 24, 0, 983067, 20, 0, 1048579, 27, 0, 1048584, 1, 0, 1114115, 28, 0, 1114116, 33, 0, 1114117, 34, 0, 1114118, 27, 0, 1114119, 33, 0, 1114120, 10, 0 )
-
-[node name="DoubleJump" parent="." instance=ExtResource( 21 )]
-position = Vector2( 368, 144 )
-
-[node name="PortalDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 176, 240 )
-
-[node name="PortalUp" parent="." instance=ExtResource( 3 )]
-position = Vector2( 784, 400 )
-
-[node name="PortalLeft" parent="." instance=ExtResource( 5 )]
-position = Vector2( 784, 176 )
-
-[node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 144, 528 )
-
-[node name="Timer" type="Timer" parent="."]

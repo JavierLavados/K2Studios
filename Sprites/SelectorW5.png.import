@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilesetWorld5.png-4b1095af8cec9c307bd04f03bf59d09a.stex"
+path="res://.import/SelectorW5.png-7f3fa9bc53a1934323026f2ab84f287f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TilesetWorld5.png"
-dest_files=[ "res://.import/TilesetWorld5.png-4b1095af8cec9c307bd04f03bf59d09a.stex" ]
+source_file="res://Sprites/SelectorW5.png"
+dest_files=[ "res://.import/SelectorW5.png-7f3fa9bc53a1934323026f2ab84f287f.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

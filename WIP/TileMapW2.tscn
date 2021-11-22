@@ -1,19 +1,6 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Sprites/Backgrounds/BgW2.png" type="Texture" id=1]
-[ext_resource path="res://Levels/Scripts/Level7.gd" type="Script" id=2]
-[ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=13]
-[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sprites/TilesetWorld5.png" type="Texture" id=16]
-[ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Sprites/TilesetW2.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -89,7 +76,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=25]
 0/name = "TilesetWorld5.png 0"
-0/texture = ExtResource( 16 )
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 32, 0, 16, 16 )
@@ -110,7 +97,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 1/name = "TilesetWorld5.png 1"
-1/texture = ExtResource( 16 )
+1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 16, 16 )
@@ -131,7 +118,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 1/z_index = 0
 2/name = "TilesetWorld5.png 2"
-2/texture = ExtResource( 16 )
+2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 16, 0, 16, 16 )
@@ -152,7 +139,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 2/z_index = 0
 3/name = "TilesetWorld5.png 3"
-3/texture = ExtResource( 16 )
+3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 48, 16, 16 )
@@ -173,7 +160,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 3/z_index = 0
 4/name = "TilesetWorld5.png 4"
-4/texture = ExtResource( 16 )
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 48, 0, 16, 16 )
@@ -194,7 +181,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 4/z_index = 0
 5/name = "TilesetWorld5.png 5"
-5/texture = ExtResource( 16 )
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 16, 16, 16 )
@@ -215,7 +202,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 5/z_index = 0
 6/name = "TilesetWorld5.png 6"
-6/texture = ExtResource( 16 )
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 16, 16, 16, 16 )
@@ -236,7 +223,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 6/z_index = 0
 7/name = "TilesetWorld5.png 7"
-7/texture = ExtResource( 16 )
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 192, 0, 32, 32 )
@@ -257,7 +244,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 7/z_index = 0
 8/name = "TilesetWorld5.png 8"
-8/texture = ExtResource( 16 )
+8/texture = ExtResource( 1 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 224, 0, 16, 32 )
@@ -278,7 +265,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 8/z_index = 0
 9/name = "TilesetWorld5.png 9"
-9/texture = ExtResource( 16 )
+9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 208, 32, 16, 16 )
@@ -299,7 +286,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 9/z_index = 0
 10/name = "TilesetWorld5.png 10"
-10/texture = ExtResource( 16 )
+10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 192, 48, 32, 16 )
@@ -320,7 +307,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 10/z_index = 0
 11/name = "TilesetWorld5.png 11"
-11/texture = ExtResource( 16 )
+11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 48, 16, 16, 16 )
@@ -341,7 +328,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 11/z_index = 0
 12/name = "TilesetWorld5.png 12"
-12/texture = ExtResource( 16 )
+12/texture = ExtResource( 1 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 32, 16, 16, 16 )
@@ -362,7 +349,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 12/z_index = 0
 13/name = "TilesetWorld5.png 13"
-13/texture = ExtResource( 16 )
+13/texture = ExtResource( 1 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 0, 32, 16, 16 )
@@ -383,7 +370,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 13/z_index = 0
 14/name = "TilesetWorld5.png 14"
-14/texture = ExtResource( 16 )
+14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 16, 32, 16, 16 )
@@ -404,7 +391,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 14/z_index = 0
 15/name = "TilesetWorld5.png 15"
-15/texture = ExtResource( 16 )
+15/texture = ExtResource( 1 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 32, 32, 16, 16 )
@@ -425,7 +412,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 15/z_index = 0
 16/name = "TilesetWorld5.png 16"
-16/texture = ExtResource( 16 )
+16/texture = ExtResource( 1 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 48, 32, 16, 16 )
@@ -446,7 +433,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 16/z_index = 0
 17/name = "TilesetWorld5.png 17"
-17/texture = ExtResource( 16 )
+17/texture = ExtResource( 1 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 16, 48, 16, 16 )
@@ -467,7 +454,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 17/z_index = 0
 18/name = "TilesetWorld5.png 18"
-18/texture = ExtResource( 16 )
+18/texture = ExtResource( 1 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 32, 48, 16, 16 )
@@ -488,7 +475,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 18/z_index = 0
 19/name = "TilesetWorld5.png 19"
-19/texture = ExtResource( 16 )
+19/texture = ExtResource( 1 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 48, 48, 16, 16 )
@@ -509,7 +496,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 19/z_index = 0
 20/name = "TilesetWorld5.png 20"
-20/texture = ExtResource( 16 )
+20/texture = ExtResource( 1 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 64, 0, 16, 32 )
@@ -530,7 +517,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 20/z_index = 0
 21/name = "TilesetWorld5.png 21"
-21/texture = ExtResource( 16 )
+21/texture = ExtResource( 1 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 80, 0, 16, 32 )
@@ -551,7 +538,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 21/z_index = 0
 22/name = "TilesetWorld5.png 22"
-22/texture = ExtResource( 16 )
+22/texture = ExtResource( 1 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 96, 0, 32, 16 )
@@ -572,7 +559,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 22/z_index = 0
 23/name = "TilesetWorld5.png 23"
-23/texture = ExtResource( 16 )
+23/texture = ExtResource( 1 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 96, 16, 32, 16 )
@@ -593,55 +580,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 23/z_index = 0
 
-[node name="World" type="Node2D"]
-script = ExtResource( 2 )
-
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 12 )]
-position = Vector2( 240, 240 )
-
-[node name="PlayerRight" parent="." groups=["Players"] instance=ExtResource( 13 )]
-position = Vector2( 464, 400 )
-
-[node name="PlayerDown" parent="." groups=["Players"] instance=ExtResource( 10 )]
-position = Vector2( 656, 528 )
-
-[node name="PlayerLeft" parent="." groups=["Players"] instance=ExtResource( 11 )]
-position = Vector2( 624, 200 )
-
-[node name="Interface" parent="." instance=ExtResource( 6 )]
-
-[node name="Background" parent="." instance=ExtResource( 15 )]
-
-[node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 512, 320 )
-scale = Vector2( 2, 2 )
-z_index = -20
-texture = ExtResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 320 )
-current = true
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMapW2" type="TileMap"]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 25 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65551, 11, 0, 65552, 18, 0, 65553, 15, 0, 131077, 22, 0, 131079, 17, 0, 131080, 12, 0, 131086, 18, 0, 131087, 6, 0, 131088, 12, 0, 131089, 20, 0, 196612, 22, 0, 196614, 17, 0, 196615, 11, 0, 196622, 12, 0, 196623, 20, 0, 196624, 15, 0, 262149, 22, 0, 262151, 14, 0, 262164, 2, 0, 327700, 1, 0, 327701, 2, 0, 393236, 4, 0, 393237, 1, 0, 393241, 21, 0, 458772, 1, 0, 458773, 1, 0, 458776, 21, 0, 524292, 13, 0, 524293, 5, 0, 524294, 11, 0, 524295, 9, 0, 524296, 10, 0, 524298, 9, 0, 524299, 7, 0, 524308, 0, 0, 524309, 9, 0, 524313, 5, 0, 589828, 3, 0, 589829, 13, 0, 589830, 20, 0, 589845, 8, 0, 589848, 3, 0, 589849, 13, 0, 589850, 21, 0, 655384, 13, 0, 655385, 6, 0, 720907, 22, 0, 720909, 19, 0, 720917, 9, 0, 720918, 10, 0, 720920, 9, 0, 720921, 3, 0, 786444, 19, 0, 786445, 5, 0, 851979, 22, 0, 851981, 16, 0, 851984, 17, 0, 917507, 2, 0, 917508, 0, 0, 917509, 1, 0, 917510, 9, 0, 917511, 10, 0, 917513, 9, 0, 917514, 10, 0, 917516, 9, 0, 917519, 14, 0, 917520, 11, 0, 917523, 15, 0, 917524, 12, 0, 917525, 18, 0, 983043, 9, 0, 983044, 4, 0, 983045, 2, 0, 983046, 0, 0, 983049, 8, 0, 983058, 18, 0, 983059, 11, 0, 983060, 11, 0, 983061, 15, 0, 1048579, 8, 0, 1114121, 9, 0, 1179651, 9, 0 )
-
-[node name="DoubleJump" parent="." instance=ExtResource( 21 )]
-position = Vector2( 368, 208 )
-
-[node name="PortalDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 360, 672 )
-
-[node name="PortalUp" parent="." instance=ExtResource( 3 )]
-position = Vector2( 424, 680 )
-
-[node name="PortalLeft" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 688 )
-
-[node name="PortalRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 472, 672 )
-
-[node name="Timer" type="Timer" parent="."]

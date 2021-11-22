@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RotatorAll.png-308813dddea74b524d99d25362951273.stex"
+path="res://.import/SelectorW2.png-ff27b4296c448dbe28beafd392c080e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/RotatorAll.png"
-dest_files=[ "res://.import/RotatorAll.png-308813dddea74b524d99d25362951273.stex" ]
+source_file="res://Sprites/SelectorW2.png"
+dest_files=[ "res://.import/SelectorW2.png-ff27b4296c448dbe28beafd392c080e1.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

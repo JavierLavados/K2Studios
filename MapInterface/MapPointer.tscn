@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://MapInterface/script/MapPointer.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/TilesetW1.png" type="Texture" id=2]
 [ext_resource path="res://MapInterface/PlayerUpMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapInterface/PlayerRightMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MapInterface/PlayerLeftMap.tscn" type="PackedScene" id=5]
