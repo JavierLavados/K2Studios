@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MapInterface/WorldMaps/Scripts/WorldMaps.gd" type="Script" id=1]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MapInterface/WorldMaps/MapWorld3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MapInterface/WorldMaps/MapWorld5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MapInterface/WorldMaps/MapWorld4.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 325 )
+extents = Vector2( 8, 326.5 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,13 +30,36 @@ shape = SubResource( 1 )
 [node name="Transition2-3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2-3"]
-position = Vector2( 2048, 312 )
+position = Vector2( 2048, 313.5 )
 shape = SubResource( 1 )
 
-[node name="Map1" parent="." instance=ExtResource( 2 )]
+[node name="Transition3-4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition3-4"]
+position = Vector2( 3072, 320 )
+shape = SubResource( 1 )
+
+[node name="Transition4-5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition4-5"]
+position = Vector2( 4096, 320 )
+shape = SubResource( 1 )
+
+[node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="Map2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1024, 0 )
 
+[node name="Map3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2048, 0 )
+
+[node name="Map4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3072, 0 )
+
+[node name="Map5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4096, 0 )
+
 [connection signal="body_entered" from="Transition1-2" to="." method="_on_Transition12_body_entered"]
 [connection signal="body_entered" from="Transition2-3" to="." method="_on_Transition23_body_entered"]
+[connection signal="body_entered" from="Transition3-4" to="." method="_on_Transition34_body_entered"]
+[connection signal="body_entered" from="Transition4-5" to="." method="_on_Transition45_body_entered"]
