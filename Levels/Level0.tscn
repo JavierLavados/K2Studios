@@ -1,7 +1,7 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Clouds/CloudRight.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Backgrounds/BgW1.png" type="Texture" id=2]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=5]
@@ -32,6 +32,8 @@
 [ext_resource path="res://Ladders/Left/LadderLeft.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Ladders/Left/LadderEnterLeft.tscn" type="PackedScene" id=31]
 [ext_resource path="res://WIP/PushBlockRight.tscn" type="PackedScene" id=32]
+[ext_resource path="res://WIP/PushBlockDown.tscn" type="PackedScene" id=33]
+[ext_resource path="res://WIP/PushBlockLeft.tscn" type="PackedScene" id=34]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -523,13 +525,13 @@ int_level = 4
 position = Vector2( 860.85, 263.148 )
 
 [node name="PlayerRight" parent="." groups=["Players"] instance=ExtResource( 13 )]
-position = Vector2( 56, 352 )
+position = Vector2( 72, 352 )
 
 [node name="PlayerDown" parent="." groups=["Players"] instance=ExtResource( 10 )]
-position = Vector2( 456, 304 )
+position = Vector2( 440, 528 )
 
 [node name="PlayerLeft" parent="." groups=["Players"] instance=ExtResource( 11 )]
-position = Vector2( 72, 232 )
+position = Vector2( 968, 536 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
 
@@ -569,7 +571,7 @@ position = Vector2( 304, 488 )
 position = Vector2( 144, 176 )
 
 [node name="PushBlock" parent="." instance=ExtResource( 20 )]
-position = Vector2( 80, 592 )
+position = Vector2( 144, 592 )
 
 [node name="CloudUp" parent="." instance=ExtResource( 22 )]
 position = Vector2( 240, 272 )
@@ -660,3 +662,9 @@ position = Vector2( 48, 400 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="PushBlockDown" parent="." instance=ExtResource( 33 )]
+position = Vector2( 400, 528 )
+
+[node name="PushBlockLeft" parent="." instance=ExtResource( 34 )]
+position = Vector2( 976, 464 )

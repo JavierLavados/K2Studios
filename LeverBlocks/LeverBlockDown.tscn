@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/InvisiBlockAll.png" type="Texture" id=1]
 [ext_resource path="res://LeverBlocks/Scripts/LeverBlockDown.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -17,8 +17,7 @@ scale = Vector2( 2, 2 )
 z_index = -1
 texture = ExtResource( 1 )
 hframes = 8
-vframes = 7
-frame = 34
+vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

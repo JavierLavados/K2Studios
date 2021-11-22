@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Sprites/Backgrounds/BGWorld6.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Backgrounds/BgW3.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/WorldLabels.png" type="Texture" id=2]
+[ext_resource path="res://MapInterface/PointIcon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=6]
@@ -90,7 +91,7 @@ level_number = 30
 left = true
 right = true
 
-[node name="BlockIcon" parent="." instance=ExtResource( 4 )]
+[node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
 position = Vector2( 320, 352 )
 required = 3
 
@@ -103,3 +104,23 @@ frame = 2
 
 [node name="MapTilemap" parent="." instance=ExtResource( 8 )]
 tile_data = PoolIntArray( 262149, 35, 0, 262151, 35, 0, 262153, 43, 0, 262155, 35, 0, 262157, 35, 0, 262161, 35, 0, 262163, 35, 0, 262165, 43, 0, 262167, 35, 0, 262169, 35, 0, 393219, 39, 0, 524291, 39, 0, 720895, 35, 0, 655361, 35, 0, 655365, 35, 0, 655367, 35, 0, 655369, 43, 0, 655371, 35, 0, 655373, 35, 0, 655377, 35, 0, 655379, 35, 0, 655383, 35, 0, 655385, 35, 0, 655389, 35, 0, 655391, 35, 0, 786435, 39, 0, 917507, 39, 0, 1048581, 35, 0, 1048583, 35, 0, 1048585, 43, 0, 1048587, 35, 0, 1048589, 35, 0, 1048593, 35, 0, 1048595, 35, 0, 1048597, 43, 0, 1048599, 35, 0, 1048601, 35, 0 )
+
+[node name="PointIcon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 320, 160 )
+left = true
+right = true
+
+[node name="PointIcon2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 160 )
+left = true
+right = true
+
+[node name="PointIcon3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 320, 544 )
+left = true
+right = true
+
+[node name="PointIcon4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 544 )
+left = true
+right = true

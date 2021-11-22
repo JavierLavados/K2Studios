@@ -9,10 +9,11 @@
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/TilesetWorld1.png" type="Texture" id=8]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Backgrounds/BgW1.png" type="Texture" id=10]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=15]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

@@ -2,11 +2,12 @@
 
 [ext_resource path="res://Levels/World2/Script/Level2-2.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Backgrounds/BgWorld5.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Backgrounds/BgW2.png" type="Texture" id=3]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://WIP/Tiles.tscn" type="PackedScene" id=16]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )

@@ -100,12 +100,11 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 5
 
+[node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
+position = Vector2( 704, 352 )
+required = 3
+
 [node name="PointIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 704, 352 )
 left = true
 right = true
-required = 3
-
-[node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
-position = Vector2( 704, 352 )
-required = 3

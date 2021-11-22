@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Backgrounds/BgW1.png" type="Texture" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/World1/Scripts/Level1-2.gd" type="Script" id=3]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=4]

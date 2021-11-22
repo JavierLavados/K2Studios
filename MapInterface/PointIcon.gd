@@ -6,7 +6,6 @@ export var up = false
 export var down = false
 
 var directions = []
-export var required = 1
 
 #var disabled = true
 var body_inside = false
@@ -14,11 +13,7 @@ var body_inside = false
 func _ready():
 
 	directions = [up,right,down,left]
-	if required<= Globals.current_points:
-		visible = true
-	else:
-		visible = false
-		
+
 
 func _on_Area2D_body_entered(body):
 	body_inside = true

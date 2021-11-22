@@ -3,11 +3,11 @@ extends RigidBody2D
 onready var coll = $CollisionShape2D
 onready var sprite = $Sprite
 
-func rotatorBlock(on_spr, off_spr):
+func rotatorBlock(id):
 	if get_parent().moving == true:
 		coll.disabled = true
-		sprite.frame = off_spr
+		sprite.frame = (8*(Globals.current_world-1)) + (id*2+1)
 	else:
 		coll.disabled = false
-		sprite.frame = on_spr
+		sprite.frame = (8*(Globals.current_world-1)) + (id*2)
 		sprite.rotation_degrees = -get_parent().rotation_degrees

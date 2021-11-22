@@ -3,7 +3,7 @@ extends "res://LeverBlocks/Scripts/LeverBlockAbs.gd"
 var id = 2
 
 func _physics_process(delta):
-	leverBlock(id, 26, 34)
+	leverBlock(id)
 
 func _on_Area2D_body_entered(body):
 	if body in players:
