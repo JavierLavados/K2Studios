@@ -7,7 +7,7 @@ var activated = false
 
 var current
 
-func lever(switch1, switch2, number, active_frame, sleeping_frame):
+func lever(switch1, switch2, number):
 	current = get_parent().current
 
 	if current == number and get_parent().lever_restriction[number] == 0:
@@ -25,6 +25,6 @@ func lever(switch1, switch2, number, active_frame, sleeping_frame):
 		activated = false
 		
 	if activated:
-		sprite.frame = active_frame
+		sprite.frame = (8*(Globals.current_world-1)) + (number*2+1)
 	else:
-		sprite.frame = sleeping_frame
+		sprite.frame = (8*(Globals.current_world-1)) + (number*2)

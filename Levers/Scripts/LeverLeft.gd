@@ -9,5 +9,5 @@ func _on_LeverLeft_body_exited(body):
 	
 
 func _physics_process(delta):
-	lever("left","right",3,51,50)
+	lever("left","right",3)
 

@@ -8,4 +8,4 @@ func _on_LeverDown_body_exited(body):
 	inside = false
 	
 func _physics_process(delta):
-	lever("up","down",2,49,48)
+	lever("up","down",2)

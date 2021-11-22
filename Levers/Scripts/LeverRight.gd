@@ -8,4 +8,4 @@ func _on_LeverRight_body_exited(body):
 	inside = false
 
 func _physics_process(delta):
-	lever("left","right",1,43,42)
+	lever("left","right",1)
