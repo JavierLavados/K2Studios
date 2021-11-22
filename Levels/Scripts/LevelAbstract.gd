@@ -94,7 +94,7 @@ func setUp(n_players, world = 0, init_lever=4):
 			
 	clouds = get_tree().get_nodes_in_group("Clouds")
 
-func level(n_players, next_level):
+func level(n_players):
 	var prev_cherry_controls =  cherry_controls
 	
 	cherry_controls = Globals.current_settings[0]

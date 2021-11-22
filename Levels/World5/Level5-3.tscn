@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/World2/Script/Level2-3.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Backgrounds/BgWorld5.png" type="Texture" id=3]
+[ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://WIP/Tiles.tscn" type="PackedScene" id=16]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+int_level = 43
+
+[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 5 )]
+position = Vector2( 411.471, 360.314 )
+
+[node name="Background" parent="." instance=ExtResource( 12 )]
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 511.109, 320.891 )
+scale = Vector2( 2, 2 )
+z_index = -20
+texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 320 )
+current = true
+
+[node name="TileMap" parent="." instance=ExtResource( 16 )]
+tile_data = PoolIntArray( 524292, 17, 0, 524312, 17, 0, 589828, 17, 0, 589848, 17, 0, 655364, 17, 0, 655384, 17, 0, 720900, 17, 0, 720920, 17, 0, 786436, 17, 0, 786437, 13, 0, 786438, 13, 0, 786439, 13, 0, 786440, 13, 0, 786441, 13, 0, 786442, 13, 0, 786443, 13, 0, 786444, 13, 0, 786445, 13, 0, 786446, 13, 0, 786447, 13, 0, 786448, 13, 0, 786449, 13, 0, 786450, 13, 0, 786451, 13, 0, 786452, 13, 0, 786453, 13, 0, 786454, 13, 0, 786455, 13, 0, 786456, 17, 0 )
+
+[node name="PortalUp" parent="." instance=ExtResource( 13 )]
+position = Vector2( 240, 368 )
+
+[node name="Interface" parent="." instance=ExtResource( 2 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
