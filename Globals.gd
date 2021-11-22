@@ -16,7 +16,6 @@ var data_game = {
 	'current_world': current_world
 	
 }
-
 # Lo primero que hace es cargar el juego
 func _ready():
 	load_game()
@@ -73,5 +72,7 @@ func load_game():
 		current_settings=dataJson['current_settings']
 		current_world=dataJson['current_world']
 	file.close()
+	
+	
 	
 		

@@ -21,10 +21,9 @@ func _ready():
 	
 	sprite.frame = level_number - 1
 	directions = [up,right,down,left]
-	#if required<= Globals.current_points:
-	#	disabled = false
-	#else:
-		#disabled = true
+	var status = Globals.levels_status[level_number-1]
+	if status:
+		sprite.frame+=50
 		
 func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:

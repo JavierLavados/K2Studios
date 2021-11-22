@@ -28,16 +28,6 @@ func _ready():
 	cherry_controls = Globals.current_settings[0]
 	alt_select = Globals.current_settings[1]
 	
-	var length = len(Globals.levels_status)
-	#print(length)
-	#print(Globals.current_world)
-	#print(int_level+4*Globals.current_world)
-	if length < int_level:
-		for i in range(length,int_level):
-			#print(i)
-			Globals.levels_status += [false]
-	#print(Globals.levels_status)
-	
 	timer.set_paused(true)
 	timer.one_shot = true
 			

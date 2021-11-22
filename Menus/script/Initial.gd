@@ -3,6 +3,9 @@ extends Control
 
 func _ready():
 	$VBoxContainer/Play.grab_focus()
+	if len(Globals.levels_status)==0:
+		for i in range(50):
+			Globals.levels_status+=[false]
 	
 func _input(event):
 	if event.is_action_pressed("Esc"):
