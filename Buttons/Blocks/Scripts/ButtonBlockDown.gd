@@ -4,4 +4,4 @@ var on_spr = 26
 var id = 2
 
 func _process(delta):
-	buttonBlock(id, on_spr)
+	buttonBlock(id)

@@ -5,14 +5,11 @@ var cherry_controls = false
 var id = 2
 var wall = preload("res://InvisiWalls/InvisiWallDown.tscn")
 
-var w1 = "res://Sprites/GuySprites/DownGuy/DownAll.png"
-var w2 = "res://Sprites/GuySprites/DownGuy/DownAllW2.png"
-var w3 = "res://Sprites/GuySprites/DownGuy/DownAllW3.png"
-var w6 = "res://Sprites/GuySprites/DownGuy/DownAllW6.png"
-var boots = "res://Sprites/GuySprites/DownGuy/DownBoots.png"
-var textures = [w1, w2, w3, w6, boots]
+var texture = "res://Sprites/GuySprites/DownGuy/Down"
 
 func _ready():
+	default_texture = texture + "W" + str(Globals.current_world) + ".png"
+	boots_texture = texture + "Boots.png"
 	initialize(NORMAL, wall)
 	
 func _physics_process(delta):

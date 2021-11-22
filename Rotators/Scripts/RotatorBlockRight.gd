@@ -2,9 +2,10 @@ extends "res://Rotators/Scripts/RotatorBlockAbs.gd"
 
 var on = 25
 var off = 33
+var id = 1
 
 func _physics_process(delta):
-	rotatorBlock(on, off)
+	rotatorBlock(id)
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Players"):

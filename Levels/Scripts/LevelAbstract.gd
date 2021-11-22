@@ -74,10 +74,6 @@ func setUp(n_players, world = 0, init_lever=4):
 	for i in range(n_players):
 		players.append(get_child(i))
 		ids.append(get_child(i).id)
-	
-	for p in players:
-		p.default_texture = p.textures[world]
-		p.boots_texture = p.textures[len(p.textures)-1]
 		
 	interface.sprite.texture = load(interface.textures[0])
 	
