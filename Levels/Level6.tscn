@@ -29,7 +29,7 @@
 [ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Buttons/Blocks/ButtonBlockDown.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Buttons/ButtonDown.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Sprites/Backgrounds/BGWorld1.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Backgrounds/BgW1.png" type="Texture" id=30]
 [ext_resource path="res://Rotators/LeverRoulette.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=32]
 

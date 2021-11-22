@@ -12,6 +12,9 @@ var on_detector = false
 var on_stairs = false
 var increase = 0
 
+func _ready():
+	sprite.frame =  (8*(Globals.current_world-1)) + (id*2)
+
 func _process(delta):
 	
 	if on_detector:

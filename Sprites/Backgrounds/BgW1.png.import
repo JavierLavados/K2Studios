@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BgWorld3.png-cf7d8444ef77d9cc3fbe0fa9ed6d3fdc.stex"
+path="res://.import/BgW1.png-2eeeabbc4aa32dbfebef60609cbe499e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Backgrounds/BgWorld3.png"
-dest_files=[ "res://.import/BgWorld3.png-cf7d8444ef77d9cc3fbe0fa9ed6d3fdc.stex" ]
+source_file="res://Sprites/Backgrounds/BgW1.png"
+dest_files=[ "res://.import/BgW1.png-2eeeabbc4aa32dbfebef60609cbe499e.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

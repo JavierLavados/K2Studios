@@ -5,6 +5,9 @@ onready var sprite = $Sprite
 var id = 2
 var player_name = "PlayerDown"
 
+func _ready():
+	sprite.frame =  (8*(Globals.current_world-1)) + (id*2+1)
+
 func _on_Ladder_body_entered(body):
 	if body.name == player_name:
 		body.on_ladder += 1
