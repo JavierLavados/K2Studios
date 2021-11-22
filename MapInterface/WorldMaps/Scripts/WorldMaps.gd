@@ -15,6 +15,9 @@ func _ready():
 		if icons[i].level_number == current_level:
 			pointer.current_node = icons[i]
 			break
+func _input(event):
+	if event.is_action_pressed("Esc"):
+		get_tree().change_scene("res://Menus/Initial.tscn")
 
 func _on_Transition12_body_entered(body):
 	
