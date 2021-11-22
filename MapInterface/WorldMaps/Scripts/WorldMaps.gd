@@ -1,10 +1,11 @@
 extends Node2D
 
 
-var level_total = 20
+var level_total = 50
 onready var pointer = $MapPointer
 
 func _ready():
+	$Label.text=str(Globals.current_points)
 	$Camera2D.set_position(Vector2(512+1024*(Globals.current_world-1),320))
 	
 	var icons = get_tree().get_nodes_in_group("LevelIcons")

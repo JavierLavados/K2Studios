@@ -90,6 +90,7 @@ right = true
 position = Vector2( 896, 352 )
 level_proyect_dir = "res://Levels/World2/Level2-10.tscn"
 level_number = 20
+left = true
 right = true
 down = true
 
