@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PortalUp.png-1e98e10ef4c72e55e1a2a6ef7b5878c7.stex"
+path="res://.import/PortalLeftW4.png-e746398e5bdfc66fab9d726502582017.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Portals/PortalUp.png"
-dest_files=[ "res://.import/PortalUp.png-1e98e10ef4c72e55e1a2a6ef7b5878c7.stex" ]
+source_file="res://Sprites/Portals/PortalLeftW4.png"
+dest_files=[ "res://.import/PortalLeftW4.png-e746398e5bdfc66fab9d726502582017.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

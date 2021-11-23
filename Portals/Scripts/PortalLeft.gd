@@ -6,6 +6,8 @@ var key1 = "left"
 var key2 = "right"
 
 func _ready():
+	var t = "res://Sprites/Portals/PortalLeftW" + str(Globals.current_world) + ".png"
+	sprite.texture = load(t)
 	sprite.rotation_degrees = rot
 
 func _physics_process(delta):

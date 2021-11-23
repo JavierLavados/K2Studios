@@ -23,7 +23,7 @@ func _ready():
 	directions = [up,right,down,left]
 	var status = Globals.levels_status[level_number-1]
 	if status:
-		sprite.frame+=50
+		sprite.frame += 50
 		
 func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:
