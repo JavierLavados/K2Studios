@@ -15,73 +15,65 @@ __meta__ = {
 position = Vector2( 320, 352 )
 level_proyect_dir = "res://Levels/World2/Level2-2.tscn"
 level_number = 12
-left = true
-right = true
-up = true
+leftIncomplete = true
+leftComplete = true
+rightComplete = true
+upComplete = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 352 )
 level_proyect_dir = "res://Levels/World2/Level2-4.tscn"
 level_number = 14
-left = true
-right = true
+leftIncomplete = true
+leftComplete = true
+rightComplete = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 160 )
 level_proyect_dir = "res://Levels/World2/Level2-5.tscn"
 level_number = 15
-left = true
-right = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 352 )
 level_proyect_dir = "res://Levels/World2/Level2-6.tscn"
 level_number = 16
-left = true
-up = true
+leftIncomplete = true
+leftComplete = true
+upComplete = true
 
 [node name="LevelIcon5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 352 )
 level_proyect_dir = "res://Levels/World2/Level2-1.tscn"
 level_number = 11
-left = true
-right = true
-down = true
+leftIncomplete = true
+leftComplete = true
+rightComplete = true
 
 [node name="LevelIcon6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 160 )
 level_proyect_dir = "res://Levels/World2/Level2-3.tscn"
 level_number = 13
-right = true
-down = true
+leftIncomplete = true
 
 [node name="LevelIcon7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 160 )
 level_proyect_dir = "res://Levels/World2/Level2-7.tscn"
 level_number = 17
-left = true
-down = true
 
 [node name="LevelIcon8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 544 )
 level_proyect_dir = "res://Levels/World2/Level2-8.tscn"
 level_number = 18
-left = true
-right = true
 
 [node name="LevelIcon9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 544 )
 level_proyect_dir = "res://Levels/World2/Level2-9.tscn"
 level_number = 19
-left = true
-right = true
 
 [node name="LevelIcon10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 352 )
 level_proyect_dir = "res://Levels/World2/Level2-10.tscn"
 level_number = 20
-right = true
-down = true
 
 [node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
 position = Vector2( 128, 544 )

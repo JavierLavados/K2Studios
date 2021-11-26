@@ -6,10 +6,15 @@ onready var sprite = $Sprite
 export var level_proyect_dir = ''
 export var level_number = 1
 
-export var left = false
-export var right = false
-export var up = false
-export var down = false
+export var leftIncomplete = false
+export var rightIncomplete = false
+export var upIncomplete = false
+export var downIncomplete = false
+
+export var leftComplete = false
+export var rightComplete = false
+export var upComplete = false
+export var downComplete = false
 
 var directions = []
 
@@ -20,10 +25,13 @@ var body_inside = false
 func _ready():
 	
 	sprite.frame = level_number - 1
-	directions = [up,right,down,left]
+	
 	var status = Globals.levels_status[level_number-1]
 	if status:
 		sprite.frame += 50
+		directions = [upComplete,rightComplete,downComplete,leftComplete]
+	else:
+		directions = [upIncomplete,rightIncomplete,downIncomplete,leftIncomplete]
 		
 func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:

@@ -14,11 +14,11 @@
 script = ExtResource( 3 )
 int_level = 2
 
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 5 )]
-position = Vector2( 720, 80 )
+[node name="PlayerUp" parent="." instance=ExtResource( 5 )]
+position = Vector2( 654.313, 264.347 )
 
 [node name="PlayerRight" parent="." instance=ExtResource( 4 )]
-position = Vector2( 752, 528 )
+position = Vector2( 305.966, 258.896 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
 

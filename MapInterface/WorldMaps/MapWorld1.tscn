@@ -14,70 +14,79 @@ __meta__ = {
 [node name="LevelIcon1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 352 )
 level_proyect_dir = "res://Levels/World1/Level1-1.tscn"
-right = true
+rightComplete = true
 
 [node name="LevelIcon2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 352 )
 level_proyect_dir = "res://Levels/World1/Level1-2.tscn"
 level_number = 2
-left = true
-right = true
+leftIncomplete = true
+leftComplete = true
+rightComplete = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 352 )
 level_proyect_dir = "res://Levels/World1/Level1-3.tscn"
 level_number = 3
-left = true
-right = true
-up = true
-down = true
+leftIncomplete = true
+leftComplete = true
+rightComplete = true
+upComplete = true
+downComplete = true
 
 [node name="LevelIcon4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 544 )
 level_proyect_dir = "res://Levels/World1/Level1-9.tscn"
 level_number = 9
-left = true
+leftIncomplete = true
+leftComplete = true
 
 [node name="LevelIcon5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 352 )
 level_proyect_dir = "res://Levels/World1/Level1-10.tscn"
 level_number = 10
-left = true
-right = true
+leftIncomplete = true
+leftComplete = true
+rightComplete = true
 
 [node name="LevelIcon6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 544 )
 level_proyect_dir = "res://Levels/World1/Level1-5.tscn"
 level_number = 5
-left = true
-right = true
-up = true
+upIncomplete = true
+leftComplete = true
+rightComplete = true
+upComplete = true
 
 [node name="LevelIcon7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 160 )
 level_proyect_dir = "res://Levels/World1/Level1-4.tscn"
 level_number = 4
-left = true
-right = true
-down = true
+downIncomplete = true
+leftComplete = true
+rightComplete = true
+downComplete = true
 
 [node name="LevelIcon8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 160 )
 level_proyect_dir = "res://Levels/World1/Level1-6.tscn"
 level_number = 6
-right = true
+rightIncomplete = true
+rightComplete = true
 
 [node name="LevelIcon9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 160 )
 level_proyect_dir = "res://Levels/World1/Level1-8.tscn"
 level_number = 8
-left = true
+leftIncomplete = true
+leftComplete = true
 
 [node name="LevelIcon10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 544 )
 level_proyect_dir = "res://Levels/World1/Level1-7.tscn"
 level_number = 7
-right = true
+rightIncomplete = true
+rightComplete = true
 
 [node name="MapTilemap" parent="." instance=ExtResource( 1 )]
 tile_data = PoolIntArray( 262155, 1, 0, 262157, 1, 0, 262161, 1, 0, 262163, 1, 0, 393231, 5, 0, 524303, 5, 0, 655365, 1, 0, 655367, 1, 0, 655371, 1, 0, 655373, 1, 0, 655377, 1, 0, 655379, 1, 0, 655381, 9, 0, 655383, 1, 0, 655385, 1, 0, 655389, 1, 0, 655390, 1, 0, 786447, 5, 0, 917519, 5, 0, 1048587, 1, 0, 1048589, 1, 0, 1048593, 1, 0, 1048595, 1, 0 )
