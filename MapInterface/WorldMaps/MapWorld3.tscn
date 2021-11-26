@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://WIP/MapPath.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/WorldLabels.png" type="Texture" id=2]
 [ext_resource path="res://MapInterface/PointIcon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=4]
@@ -11,75 +12,56 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="LevelIcon1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 128, 160 )
-level_proyect_dir = "res://Levels/Level1Demo.tscn"
-level_number = 22
-right = true
-down = true
-
-[node name="LevelIcon2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 352 )
-level_proyect_dir = "res://Levels/Level2Demo.tscn"
-level_number = 28
-left = true
-right = true
-
-[node name="LevelIcon3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 896, 160 )
-level_proyect_dir = "res://Levels/Level6.tscn"
-level_number = 26
-left = true
-
-[node name="LevelIcon4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 704, 352 )
-level_proyect_dir = "res://Levels/Level3.tscn"
-level_number = 29
-left = true
-right = true
-
-[node name="LevelIcon5" parent="." instance=ExtResource( 6 )]
+[node name="Level21" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 352 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World3/Level3-1.tscn"
 level_number = 21
 left = true
-right = true
-up = true
-down = true
 
-[node name="LevelIcon6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 160 )
-level_proyect_dir = "res://Levels/Level3.tscn"
-level_number = 24
-left = true
-right = true
+[node name="Level22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128, 160 )
+level_proyect_dir = "res://Levels/World3/Level3-2.tscn"
+level_number = 22
 
-[node name="LevelIcon7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 896, 544 )
-level_proyect_dir = "res://Levels/Level3.tscn"
-level_number = 27
-left = true
-
-[node name="LevelIcon8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 536 )
-level_proyect_dir = "res://Levels/Level3.tscn"
-level_number = 25
-left = true
-right = true
-
-[node name="LevelIcon9" parent="." instance=ExtResource( 6 )]
+[node name="Level23" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 544 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World3/Level3-3.tscn"
 level_number = 23
-right = true
-up = true
 
-[node name="LevelIcon10" parent="." instance=ExtResource( 6 )]
+[node name="Level24" parent="." instance=ExtResource( 6 )]
+position = Vector2( 512, 160 )
+level_proyect_dir = "res://Levels/World3/Level3-4.tscn"
+level_number = 24
+
+[node name="Level25" parent="." instance=ExtResource( 6 )]
+position = Vector2( 512, 536 )
+level_proyect_dir = "res://Levels/World3/Level3-5.tscn"
+level_number = 25
+
+[node name="Level26" parent="." instance=ExtResource( 6 )]
+position = Vector2( 896, 160 )
+level_proyect_dir = "res://Levels/World3/Level3-6.tscn"
+level_number = 26
+
+[node name="Level27" parent="." instance=ExtResource( 6 )]
+position = Vector2( 896, 544 )
+level_proyect_dir = "res://Levels/World3/Level3-7.tscn"
+level_number = 27
+
+[node name="Level28" parent="." instance=ExtResource( 6 )]
+position = Vector2( 512, 352 )
+level_proyect_dir = "res://Levels/World3/Level3-8.tscn"
+level_number = 28
+
+[node name="Level29" parent="." instance=ExtResource( 6 )]
+position = Vector2( 704, 352 )
+level_proyect_dir = "res://Levels/World3/Level3-9.tscn"
+level_number = 29
+
+[node name="Level30" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 352 )
-level_proyect_dir = "res://Levels/Level3.tscn"
+level_proyect_dir = "res://Levels/World3/Level3-10.tscn"
 level_number = 30
-left = true
-right = true
 
 [node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
 position = Vector2( 320, 352 )
@@ -93,7 +75,7 @@ vframes = 5
 frame = 2
 
 [node name="MapTilemap" parent="." instance=ExtResource( 8 )]
-tile_data = PoolIntArray( 262149, 35, 0, 262151, 35, 0, 262153, 43, 0, 262155, 35, 0, 262157, 35, 0, 262161, 35, 0, 262163, 35, 0, 262165, 43, 0, 262167, 35, 0, 262169, 35, 0, 393219, 39, 0, 524291, 39, 0, 655360, 35, 0, 655361, 35, 0, 655365, 35, 0, 655367, 35, 0, 655369, 43, 0, 655371, 35, 0, 655373, 35, 0, 655377, 35, 0, 655379, 35, 0, 655383, 35, 0, 655385, 35, 0, 655389, 35, 0, 655390, 35, 0, 786435, 39, 0, 917507, 39, 0, 1048581, 35, 0, 1048583, 35, 0, 1048585, 43, 0, 1048587, 35, 0, 1048589, 35, 0, 1048593, 35, 0, 1048595, 35, 0, 1048597, 43, 0, 1048599, 35, 0, 1048601, 35, 0 )
+tile_data = PoolIntArray( 655360, 35, 0, 655361, 35, 0 )
 
 [node name="PointIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320, 160 )
@@ -119,3 +101,68 @@ right = true
 position = Vector2( 320, 352 )
 left = true
 right = true
+
+[node name="MapPath21-22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 256 )
+vertical = true
+adjacent = [ 21, 22 ]
+directions = [ "U", "D" ]
+
+[node name="MapPath21-23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 448 )
+vertical = true
+adjacent = [ 21, 23 ]
+directions = [ "D", "U" ]
+
+[node name="MapPath21-28A" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 352 )
+adjacent = [ 21, 28 ]
+
+[node name="MapPath21-28B" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 352 )
+adjacent = [ 21, 28 ]
+
+[node name="MapPath22-24A" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 160 )
+adjacent = [ 22, 24 ]
+
+[node name="MapPath22-24B" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 160 )
+adjacent = [ 22, 24 ]
+
+[node name="MapPath24-26A" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 160 )
+adjacent = [ 24, 26 ]
+
+[node name="MapPath24-26B" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 160 )
+adjacent = [ 24, 26 ]
+
+[node name="MapPath23-25A" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 544 )
+adjacent = [ 23, 25 ]
+
+[node name="MapPath23-25B" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 544 )
+adjacent = [ 23, 25 ]
+
+[node name="MapPath25-27A" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 544 )
+adjacent = [ 25, 27 ]
+
+[node name="MapPath25-27B" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 544 )
+adjacent = [ 25, 27 ]
+
+[node name="MapPath28-29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 352 )
+adjacent = [ 28, 29 ]
+
+[node name="MapPath29-30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 352 )
+adjacent = [ 29, 30 ]
+
+[node name="MapPath30-W4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 352 )
+adjacent = [ 30, null ]
+directions = [ "R", null ]
