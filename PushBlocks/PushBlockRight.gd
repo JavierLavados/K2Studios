@@ -57,7 +57,7 @@ func _physics_process(delta):
 		else:
 			can_switch = true
 			coll.shape.extents.y = 16
-		#position.y = int(position.y)
+		position.y = int(position.y)
 			
 	if prev_switch != can_switch:
 		if can_switch:
@@ -74,32 +74,28 @@ func _on_AreaLeft_body_entered(body):
 	if body.name == "PlayerRight":
 		pusher = body
 		on_left = true
-	else:
-		if body.is_in_group("Players"):
-			counter += 1
 
 func _on_AreaLeft_body_exited(body):
 	if body.name == "PlayerRight":
 		on_left = false
-	else:
-		if body.is_in_group("Players"):
-			counter -= 1
-
+		
 func _on_AreaRight_body_entered(body):
 	if body.name == "PlayerRight":
 		pusher = body
 		on_right = true
-	else:
-		if body.is_in_group("Players"):
-			counter += 1
 
 func _on_AreaRight_body_exited(body):
 	if body.name == "PlayerRight":
 		on_right = false
-	else:
-		if body.is_in_group("Players"):
-			counter -= 1
 
 func _on_AreaDown_body_entered(body):
 	if body.is_in_group("PlayerRight"):
 		body.move_and_slide(motion)
+
+func _on_AreaAll_body_entered(body):
+	if body.is_in_group("Players") and body.name != "PlayerRight":
+		counter += 1
+
+func _on_AreaAll_body_exited(body):
+	if body.is_in_group("Players") and body.name != "PlayerRight":
+		counter -= 1

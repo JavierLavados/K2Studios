@@ -72,6 +72,7 @@ func setUp(n_players, init_lever=4):
 	for block in blocks:
 		if block.id != current:
 			block.set_physics_process(false)
+			block.counter = 1
 			
 	clouds = get_tree().get_nodes_in_group("Clouds")
 

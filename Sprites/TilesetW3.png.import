@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PushBlockAll.png-e9e94996ff6649deac27bd31eafea40f.stex"
+path="res://.import/TilesetW3.png-531efdf313d282d9f86ec1856ca30a49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PushBlockAll.png"
-dest_files=[ "res://.import/PushBlockAll.png-e9e94996ff6649deac27bd31eafea40f.stex" ]
+source_file="res://Sprites/TilesetW3.png"
+dest_files=[ "res://.import/TilesetW3.png-531efdf313d282d9f86ec1856ca30a49.stex" ]
 
 [params]
 

@@ -19,7 +19,7 @@
 [ext_resource path="res://Ladders/Up/LadderUp.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Ladders/Up/LadderExitUp.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Ladders/Up/LadderEnterUp.tscn" type="PackedScene" id=19]
-[ext_resource path="res://WIP/PushBlock.tscn" type="PackedScene" id=20]
+[ext_resource path="res://PushBlocks/PushBlockUp.tscn" type="PackedScene" id=20]
 [ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Ladders/Down/LadderEnterDown.tscn" type="PackedScene" id=23]
@@ -31,9 +31,9 @@
 [ext_resource path="res://Ladders/Left/LadderExitLeft.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Ladders/Left/LadderLeft.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Ladders/Left/LadderEnterLeft.tscn" type="PackedScene" id=31]
-[ext_resource path="res://WIP/PushBlockRight.tscn" type="PackedScene" id=32]
-[ext_resource path="res://WIP/PushBlockDown.tscn" type="PackedScene" id=33]
-[ext_resource path="res://WIP/PushBlockLeft.tscn" type="PackedScene" id=34]
+[ext_resource path="res://PushBlocks/PushBlockRight.tscn" type="PackedScene" id=32]
+[ext_resource path="res://PushBlocks/PushBlockDown.tscn" type="PackedScene" id=33]
+[ext_resource path="res://PushBlocks/PushBlockLeft.tscn" type="PackedScene" id=34]
 
 
 [sub_resource type="ConvexPolygonShape2D" id=1]

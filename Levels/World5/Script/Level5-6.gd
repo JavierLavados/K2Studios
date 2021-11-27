@@ -6,4 +6,4 @@ func _ready():
 	setUp(n_players)
 	
 func _physics_process(delta):
-	level(n_players
+	level(n_players)

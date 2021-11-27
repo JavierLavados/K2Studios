@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Levels/World2/Script/Level2-5.gd" type="Script" id=1]
+[ext_resource path="res://Levels/World5/Script/Level5-5.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Backgrounds/BgW2.png" type="Texture" id=3]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
@@ -8,12 +8,11 @@
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://WIP/TileMapW1.tscn" type="PackedScene" id=16]
 
-
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 int_level = 45
 
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 5 )]
+[node name="PlayerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 411.471, 360.314 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
