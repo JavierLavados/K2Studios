@@ -1,41 +1,159 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/World2/Script/Level2-8.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Backgrounds/BgW2.png" type="Texture" id=3]
+[ext_resource path="res://WIP/TileMapW2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ladders/Left/LadderExitLeft.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ladders/Left/LadderLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ladders/Left/LadderEnterLeft.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=11]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
-[ext_resource path="res://WIP/TileMapW1.tscn" type="PackedScene" id=16]
-
+[ext_resource path="res://Buttons/ButtonUp.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Buttons/ButtonLeft.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Ladders/Right/LadderEnterRight.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Buttons/Blocks/ButtonBlockUp.tscn" type="PackedScene" id=17]
+[ext_resource path="res://PushBlocks/PushBlockRight.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Buttons/Blocks/ButtonBlockLeft.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Ladders/Right/LadderExitRight.tscn" type="PackedScene" id=20]
+[ext_resource path="res://PushBlocks/PushBlockUp.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Ladders/Right/LadderRight.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Buttons/ButtonRight.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=24]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 int_level = 18
 
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 5 )]
-position = Vector2( 411.471, 360.314 )
+[node name="PlayerUp" parent="." instance=ExtResource( 5 )]
+position = Vector2( 272, 72 )
+
+[node name="PlayerRight" parent="." instance=ExtResource( 10 )]
+position = Vector2( 912, 368 )
+
+[node name="PlayerLeft" parent="." instance=ExtResource( 11 )]
+position = Vector2( 520, 424 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
-
-[node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 511.109, 320.891 )
-scale = Vector2( 2, 2 )
-z_index = -20
-texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
 
-[node name="TileMap" parent="." instance=ExtResource( 16 )]
-tile_data = PoolIntArray( 524292, 17, 0, 524312, 17, 0, 589828, 17, 0, 589848, 17, 0, 655364, 17, 0, 655384, 17, 0, 720900, 17, 0, 720920, 17, 0, 786436, 17, 0, 786437, 13, 0, 786438, 13, 0, 786439, 13, 0, 786440, 13, 0, 786441, 13, 0, 786442, 13, 0, 786443, 13, 0, 786444, 13, 0, 786445, 13, 0, 786446, 13, 0, 786447, 13, 0, 786448, 13, 0, 786449, 13, 0, 786450, 13, 0, 786451, 13, 0, 786452, 13, 0, 786453, 13, 0, 786454, 13, 0, 786455, 13, 0, 786456, 17, 0 )
+[node name="TileMapW2" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 65553, 11, 0, 65557, 11, 0, 131089, 11, 0, 196612, 11, 0, 196613, 11, 0, 196614, 11, 0, 196615, 11, 0, 196616, 11, 0, 196617, 11, 0, 196618, 11, 0, 196625, 11, 0, 196629, 11, 0, 262148, 11, 0, 262156, 11, 0, 262161, 11, 0, 262165, 11, 0, 327684, 11, 0, 327694, 11, 0, 327695, 11, 0, 327696, 11, 0, 327697, 11, 0, 327701, 11, 0, 393220, 11, 0, 458756, 11, 0, 524292, 11, 0, 524293, 11, 0, 524294, 11, 0, 524295, 11, 0, 524296, 11, 0, 524297, 11, 0, 524298, 11, 0, 524315, 11, 0, 589834, 11, 0, 589843, 11, 0, 589845, 11, 0, 589847, 11, 0, 589848, 11, 0, 589849, 11, 0, 589850, 11, 0, 589851, 11, 0, 655370, 11, 0, 655383, 11, 0, 655387, 11, 0, 720906, 11, 0, 720907, 11, 0, 720908, 5, 0, 720909, 5, 0, 720910, 5, 0, 720911, 5, 0, 720912, 5, 0, 720913, 5, 0, 720919, 11, 0, 720923, 11, 0, 786442, 11, 0, 786446, 11, 0, 786449, 6, 0, 786455, 11, 0, 786459, 11, 0, 851982, 11, 0, 851985, 6, 0, 851991, 11, 0, 851995, 11, 0, 917514, 11, 0, 917518, 11, 0, 917521, 6, 0, 917531, 11, 0, 983050, 11, 0, 983057, 11, 0, 983063, 11, 0, 983067, 11, 0, 1048586, 11, 0, 1048591, 11, 0, 1048599, 11, 0, 1048603, 11, 0, 1114122, 11, 0, 1114135, 11, 0, 1114139, 11, 0, 1179658, 11, 0, 1179664, 11, 0, 1179671, 11, 0, 1179675, 11, 0 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 13 )]
-position = Vector2( 272, 368 )
+position = Vector2( 272, 240 )
 priority = 4.0
 
 [node name="Interface" parent="." instance=ExtResource( 2 )]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="LadderExitLeft" parent="." instance=ExtResource( 4 )]
+position = Vector2( 336, 432 )
+
+[node name="LadderLeft" parent="." instance=ExtResource( 6 )]
+position = Vector2( 368, 432 )
+
+[node name="LadderLeft2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 400, 432 )
+
+[node name="LadderEnterLeft" parent="." instance=ExtResource( 7 )]
+position = Vector2( 432, 432 )
+
+[node name="PortalLeft" parent="." instance=ExtResource( 8 )]
+position = Vector2( 304, 560 )
+
+[node name="PortalRight" parent="." instance=ExtResource( 9 )]
+position = Vector2( 368, 560 )
+
+[node name="PushBlockRight" parent="." instance=ExtResource( 18 )]
+position = Vector2( 592, 144 )
+
+[node name="PushBlockUp" parent="." instance=ExtResource( 21 )]
+position = Vector2( 496, 144 )
+
+[node name="ButtonUp" parent="." instance=ExtResource( 14 )]
+position = Vector2( 816, 272 )
+
+[node name="ButtonLeft" parent="." instance=ExtResource( 15 )]
+position = Vector2( 304, 368 )
+
+[node name="LadderEnterRight" parent="." instance=ExtResource( 16 )]
+position = Vector2( 592, 80 )
+
+[node name="LadderEnterRight2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 592, 464 )
+
+[node name="LadderRight" parent="." instance=ExtResource( 22 )]
+position = Vector2( 624, 80 )
+
+[node name="LadderRight2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 656, 80 )
+
+[node name="LadderRight3" parent="." instance=ExtResource( 22 )]
+position = Vector2( 720, 464 )
+
+[node name="LadderRight4" parent="." instance=ExtResource( 22 )]
+position = Vector2( 688, 464 )
+
+[node name="LadderRight5" parent="." instance=ExtResource( 22 )]
+position = Vector2( 656, 464 )
+
+[node name="LadderRight6" parent="." instance=ExtResource( 22 )]
+position = Vector2( 624, 464 )
+
+[node name="LadderExitRight" parent="." instance=ExtResource( 20 )]
+position = Vector2( 688, 80 )
+
+[node name="LadderExitRight2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 752, 464 )
+
+[node name="ButtonRight2" parent="." instance=ExtResource( 23 )]
+position = Vector2( 784, 528 )
+
+[node name="ButtonBlockRight" parent="." instance=ExtResource( 24 )]
+position = Vector2( 656, 368 )
+
+[node name="ButtonBlockRight2" parent="ButtonBlockRight" instance=ExtResource( 24 )]
+position = Vector2( -32, 0 )
+
+[node name="ButtonBlockRight3" parent="ButtonBlockRight" instance=ExtResource( 24 )]
+position = Vector2( 32, 0 )
+
+[node name="ButtonBlockRight4" parent="ButtonBlockRight" instance=ExtResource( 24 )]
+position = Vector2( -64, 0 )
+
+[node name="ButtonBlockRight5" parent="ButtonBlockRight" instance=ExtResource( 24 )]
+position = Vector2( 64, 0 )
+
+[node name="ButtonBlockUp4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 880, 240 )
+
+[node name="ButtonBlockUp" parent="." instance=ExtResource( 17 )]
+position = Vector2( 560, 528 )
+
+[node name="ButtonBlockUp2" parent="ButtonBlockUp" instance=ExtResource( 17 )]
+position = Vector2( 0, 32 )
+
+[node name="ButtonBlockUp3" parent="ButtonBlockUp" instance=ExtResource( 17 )]
+position = Vector2( 0, 64 )
+
+[node name="ButtonBlockLeft" parent="." instance=ExtResource( 19 )]
+position = Vector2( 560, 272 )
+
+[node name="ButtonBlockLeft2" parent="ButtonBlockLeft" instance=ExtResource( 19 )]
+position = Vector2( 0, -32 )
+
+[node name="ButtonBlockLeft3" parent="ButtonBlockLeft" instance=ExtResource( 19 )]
+position = Vector2( 0, 32 )
+
+[node name="ButtonBlockLeft4" parent="ButtonBlockLeft" instance=ExtResource( 19 )]
+position = Vector2( 0, -64 )

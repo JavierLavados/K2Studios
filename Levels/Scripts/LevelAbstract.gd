@@ -4,12 +4,13 @@ onready var interface = $Interface
 onready var background =$Background
 onready var timer = $Timer
 
-var current
+var current #Almacena el id del jugador actual
 var players = []
 var ids = []
 var lever
 var diff_lever = false
 var lever_restriction = [0,0,0,0]
+var button_restriction = [0,0,0,0]
 var buttons = [0,0,0,0]
 var ready = 0
 
@@ -45,9 +46,9 @@ func activateBlocks(prev, new):
 			block.counter -= 1
 
 func wakeUp(prev, new):
-	players[current].awake = false
+	players[ids.find(current)].awake = false
 	current = new
-	players[current].awake = true
+	players[ids.find(current)].awake = true
 	for cloud in clouds:
 		if cloud.respawn_restriction == 0:
 			cloud.disabled = false
@@ -61,6 +62,7 @@ func setUp(n_players, init_lever=4):
 	lever = init_lever
 	if lever != 4:
 		diff_lever = true
+		
 	for i in range(n_players):
 		players.append(get_child(i))
 		ids.append(get_child(i).id)
@@ -78,6 +80,7 @@ func setUp(n_players, init_lever=4):
 
 func level(n_players):
 	var prev_cherry_controls =  cherry_controls
+	var c_index = ids.find(current)
 	
 	cherry_controls = Globals.current_settings[0]
 	alt_select = Globals.current_settings[1]
@@ -88,37 +91,37 @@ func level(n_players):
 	if switch_restriction == 0:
 		
 		if alt_select:
-			if Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and len(ids) > 1:
+			if Input.is_action_just_pressed("ui_right") and players[c_index].is_on_floor() and len(ids) > 1:
 				var prev = current
-				players[current].awake = false
+				players[ids.find(current)].awake = false
 				for i in range(3):
 					if (current + i + 1)%4 in ids:
 						current = (current + i + 1)%4
 						break
-				players[current].awake = true
+				players[ids.find(current)].awake = true
 				activateBlocks(prev, current)
 			
-			if Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and len(ids) > 1:
+			if Input.is_action_just_pressed("ui_left") and players[c_index].is_on_floor() and len(ids) > 1:
 				var prev = current
-				players[current].awake = false
+				players[ids.find(current)].awake = false
 				for i in range(3):
 					if (current - i + 3)%4 in ids:
 						current = (current - i + 3)%4
 						break
-				players[current].awake = true
+				players[ids.find(current)].awake = true
 				activateBlocks(prev, current)
 		
 		else:
-			if current != 0 and Input.is_action_just_pressed("ui_up") and players[current].is_on_floor() and 0 in ids:
+			if current != 0 and Input.is_action_just_pressed("ui_up") and players[c_index].is_on_floor() and 0 in ids:
 				wakeUp(current,0)
 
-			if current != 1 and  Input.is_action_just_pressed("ui_right") and players[current].is_on_floor() and 1 in ids:
+			if current != 1 and  Input.is_action_just_pressed("ui_right") and players[c_index].is_on_floor() and 1 in ids:
 				wakeUp(current,1)
 				
-			if current != 2 and  Input.is_action_just_pressed("ui_down") and players[current].is_on_floor() and 2 in ids:
+			if current != 2 and  Input.is_action_just_pressed("ui_down") and players[c_index].is_on_floor() and 2 in ids:
 				wakeUp(current,2)
 				
-			if current != 3 and Input.is_action_just_pressed("ui_left") and players[current].is_on_floor() and 3 in ids:
+			if current != 3 and Input.is_action_just_pressed("ui_left") and players[c_index].is_on_floor() and 3 in ids:
 				wakeUp(current,3)
 	
 	interface.active = current

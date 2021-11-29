@@ -18,6 +18,9 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+auto_jump = null
+see_controllable = null
+teleport = null
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
@@ -27,6 +30,7 @@ vframes = 16
 frame = 42
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.1 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 

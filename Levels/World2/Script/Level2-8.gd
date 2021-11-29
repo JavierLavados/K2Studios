@@ -1,6 +1,6 @@
 extends "res://Levels/Scripts/LevelAbstract.gd"
 
-var n_players = 1
+var n_players = 3
 var next = "res://MapInterface/Maps/MapWorld2.tscn"
 
 func _ready():

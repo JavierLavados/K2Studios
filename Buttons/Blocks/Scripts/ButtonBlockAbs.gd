@@ -8,5 +8,6 @@ func buttonBlock(id):
 		coll.disabled = true
 		sprite.frame = (8*(Globals.current_world-1)) + (id*2+1)
 	else:
-		coll.disabled = false
-		sprite.frame = (8*(Globals.current_world-1)) + (id*2)
+		if get_tree().root.get_child(1).button_restriction[id] == 0:
+			coll.disabled = false
+			sprite.frame = (8*(Globals.current_world-1)) + (id*2)

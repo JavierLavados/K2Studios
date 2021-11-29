@@ -4,6 +4,7 @@ const gravity = 25
 const NORMAL = Vector2(0,1)
 const MAX_SPEED = 96
 
+onready var sprite = $Sprite
 onready var ray = $RayCast2D
 onready var coll = $CollisionShape2D
 
@@ -16,6 +17,9 @@ var counter = 0
 var can_switch = true
 
 var pusher
+
+func _ready():
+	sprite.frame = (4*(Globals.current_world-1)) + id
 
 func _process(delta):
 	if counter > 0:

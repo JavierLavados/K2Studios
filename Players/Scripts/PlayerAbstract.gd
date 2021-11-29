@@ -55,7 +55,6 @@ func initialize(n, wall):
 		add_collision_exception_with(player)
 	rot = -rad2deg(n.angle_to(Vector2(0,-1)))
 	sprite.rotation_degrees = rot
-	collision.rotation_degrees = rot
 	InvisiWall = wall
 	
 func modify_sprite(n, forward, backward):
@@ -105,7 +104,21 @@ func modify_sprite(n, forward, backward):
 			
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
-
+	
+	collision.rotation_degrees = rot
+	if awake:
+		collision.shape.extents.y = 7.8
+		if n.x == 0:
+			collision.position.y = -0.1*n.y
+		else:
+			collision.position.x = -0.1*n.x
+	else:
+		collision.shape.extents.y = 6
+		if n.x == 0:
+			collision.position.y = -4*n.y 
+		else:
+			collision.position.x = -4*n.x 
+				
 	# Calculo para colision con puas 
 	# (generalizar para otros elementos peligrosos)
 	for i in get_slide_count():
