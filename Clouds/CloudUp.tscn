@@ -11,9 +11,7 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
-[node name="CloudUp" type="RigidBody2D" groups=[
-"Clouds",
-]]
+[node name="CloudUp" type="RigidBody2D" groups=["Clouds"]]
 mode = 1
 script = ExtResource( 2 )
 

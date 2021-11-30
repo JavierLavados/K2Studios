@@ -1,28 +1,27 @@
 [gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Levels/World1/Scripts/Level1-5.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/World1/Scripts/Level1-4.gd" type="Script" id=3]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://WIP/TileMapW1.tscn" type="PackedScene" id=16]
 
 [node name="World" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 int_level = 5
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 411.471, 360.314 )
+position = Vector2( 400, 368 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
 
 [node name="TileMap" parent="." instance=ExtResource( 16 )]
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 720910, 15, 0, 720911, 15, 0, 720912, 15, 0, 720913, 15, 0, 720914, 15, 0, 786439, 15, 0, 786440, 15, 0, 786441, 15, 0, 786442, 15, 0, 786443, 15, 0, 786444, 15, 0, 786445, 15, 0, 786446, 15, 0, 786447, 15, 0, 786448, 15, 0, 786449, 15, 0 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 13 )]
 position = Vector2( 272, 368 )

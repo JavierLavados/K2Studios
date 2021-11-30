@@ -16,6 +16,9 @@ var id = 1
 var counter = 0
 var can_switch = true
 
+var added = false
+var subst = false
+
 var pusher
 
 func _ready():
@@ -39,9 +42,15 @@ func _physics_process(delta):
 		
 	if pusher:
 		if (on_left and Input.get_action_strength("down") == 1) or (on_right and Input.get_action_strength("up") == 1):
-			pusher.pushing = true
+			if not added:
+				pusher.pushing = true
+				added = true
+				subst = false
 		else:
-			pusher.pushing = false
+			if not subst:
+				pusher.pushing = false
+				subst = true
+				added = false
 		
 	var prev_switch = can_switch
 	
