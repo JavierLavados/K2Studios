@@ -37,7 +37,7 @@ script = ExtResource( 1 )
 int_level = 18
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 272, 72 )
+position = Vector2( 240, 80 )
 
 [node name="PlayerRight" parent="." instance=ExtResource( 10 )]
 position = Vector2( 912, 336 )
