@@ -4,6 +4,8 @@ onready var coll = $CollisionShape2D
 onready var sprite = $Sprite
 onready var playback = $CloudTree.get("parameters/playback")
 
+export var h_osc = false
+
 var id = Vector2(0,-1)
 var disabled = false
 var respawn_restriction = 0
@@ -20,7 +22,10 @@ func _process(delta):
 	
 	accum += delta
 
-	sprite.position.y = sin(r*accum)
+	if h_osc:
+		sprite.position.x = sin(r*accum)
+	else:
+		sprite.position.y = sin(r*accum)
 	
 	if disabled:
 		coll.set_deferred("disabled",true)
