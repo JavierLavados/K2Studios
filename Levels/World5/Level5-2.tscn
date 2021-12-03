@@ -1,39 +1,227 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/World5/Script/Level5-2.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Backgrounds/BgW2.png" type="Texture" id=3]
+[ext_resource path="res://WIP/TileMapW5.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ladders/Up/LadderExitUp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ladders/Up/LadderUp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buttons/ButtonDown.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buttons/ButtonUp.tscn" type="PackedScene" id=11]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
-[ext_resource path="res://WIP/TileMapW1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Buttons/Blocks/ButtonBlockDown.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Ladders/Up/LadderEnterUp.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Buttons/Blocks/ButtonBlockUp.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Buttons/ButtonRight.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Ladders/Down/LadderDown.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Ladders/Down/LadderExitDown.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Ladders/Down/LadderEnterDown.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=26]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 int_level = 42
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 411.471, 360.314 )
+position = Vector2( 464, 304 )
+
+[node name="PlayerRight" parent="." instance=ExtResource( 25 )]
+position = Vector2( 560, 400 )
+
+[node name="PlayerDown" parent="." instance=ExtResource( 7 )]
+position = Vector2( 688, 368 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
-
-[node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 511.109, 320.891 )
-scale = Vector2( 2, 2 )
-z_index = -20
-texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
 
-[node name="TileMap" parent="." instance=ExtResource( 16 )]
-tile_data = PoolIntArray( 524292, 17, 0, 524312, 17, 0, 589828, 17, 0, 589848, 17, 0, 655364, 17, 0, 655384, 17, 0, 720900, 17, 0, 720920, 17, 0, 786436, 17, 0, 786437, 13, 0, 786438, 13, 0, 786439, 13, 0, 786440, 13, 0, 786441, 13, 0, 786442, 13, 0, 786443, 13, 0, 786444, 13, 0, 786445, 13, 0, 786446, 13, 0, 786447, 13, 0, 786448, 13, 0, 786449, 13, 0, 786450, 13, 0, 786451, 13, 0, 786452, 13, 0, 786453, 13, 0, 786454, 13, 0, 786455, 13, 0, 786456, 17, 0 )
+[node name="TileMapW5" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 196609, 1, 0, 196620, 1, 0, 262145, 1, 0, 262156, 1, 0, 262161, 1, 0, 327681, 1, 0, 327692, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393227, 1, 0, 393228, 1, 0, 393232, 1, 0, 393236, 1, 0, 393240, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 720900, 1, 0, 720912, 1, 0, 786436, 1, 0, 786448, 1, 0, 851972, 1, 0, 851984, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917516, 1, 0, 917517, 1, 0, 917519, 1, 0, 917520, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 1048596, 1, 0, 1179660, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 13 )]
-position = Vector2( 208, 368 )
+position = Vector2( 240, 432 )
+
+[node name="PortalDown" parent="." instance=ExtResource( 6 )]
+position = Vector2( 80, 112 )
 
 [node name="Interface" parent="." instance=ExtResource( 2 )]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="DoubleJump" parent="." instance=ExtResource( 4 )]
+position = Vector2( 592, 336 )
+
+[node name="DoubleJump2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 720, 144 )
+
+[node name="ButtonUp2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 720, 304 )
+
+[node name="ButtonDown2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 208, 496 )
+
+[node name="ButtonDown3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 176, 240 )
+
+[node name="ButtonBlockRight" parent="." instance=ExtResource( 17 )]
+position = Vector2( 720, 208 )
+
+[node name="ButtonBlockRight2" parent="ButtonBlockRight" instance=ExtResource( 17 )]
+position = Vector2( 32, 0 )
+
+[node name="ButtonBlockRight3" parent="ButtonBlockRight" instance=ExtResource( 17 )]
+position = Vector2( -32, 0 )
+
+[node name="ButtonBlockRight2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 592, 400 )
+
+[node name="ButtonBlockRight2" parent="ButtonBlockRight2" instance=ExtResource( 17 )]
+position = Vector2( 32, -32 )
+
+[node name="ButtonBlockRight3" parent="ButtonBlockRight2" instance=ExtResource( 17 )]
+position = Vector2( -32, 32 )
+
+[node name="ButtonBlockRight3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 336, 464 )
+
+[node name="ButtonBlockRight2" parent="ButtonBlockRight3" instance=ExtResource( 17 )]
+position = Vector2( 32, 0 )
+
+[node name="ButtonBlockRight3" parent="ButtonBlockRight3" instance=ExtResource( 17 )]
+position = Vector2( -32, 0 )
+
+[node name="ButtonBlockRight4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 272, 272 )
+
+[node name="ButtonBlockRight2" parent="ButtonBlockRight4" instance=ExtResource( 17 )]
+position = Vector2( 0, 32 )
+
+[node name="ButtonBlockRight3" parent="ButtonBlockRight4" instance=ExtResource( 17 )]
+position = Vector2( 0, -32 )
+
+[node name="ButtonBlockDown" parent="." instance=ExtResource( 14 )]
+position = Vector2( 592, 272 )
+
+[node name="ButtonBlockDown2" parent="ButtonBlockDown" instance=ExtResource( 14 )]
+position = Vector2( -32, 32 )
+
+[node name="ButtonBlockDown3" parent="ButtonBlockDown" instance=ExtResource( 14 )]
+position = Vector2( 32, -32 )
+
+[node name="ButtonBlockDown5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 848, 272 )
+
+[node name="ButtonBlockDown2" parent="ButtonBlockDown5" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+
+[node name="ButtonBlockDown3" parent="ButtonBlockDown5" instance=ExtResource( 14 )]
+position = Vector2( 32, 32 )
+
+[node name="ButtonBlockDown4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 656, 144 )
+
+[node name="ButtonBlockDown2" parent="ButtonBlockDown4" instance=ExtResource( 14 )]
+position = Vector2( 0, 32 )
+
+[node name="ButtonBlockDown3" parent="ButtonBlockDown4" instance=ExtResource( 14 )]
+position = Vector2( 0, -32 )
+
+[node name="ButtonBlockDown3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 464, 592 )
+
+[node name="ButtonBlockDown2" parent="ButtonBlockDown3" instance=ExtResource( 14 )]
+position = Vector2( -32, 0 )
+
+[node name="ButtonBlockDown3" parent="ButtonBlockDown3" instance=ExtResource( 14 )]
+position = Vector2( 32, 0 )
+
+[node name="ButtonBlockUp2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 720, 80 )
+
+[node name="ButtonBlockUp2" parent="ButtonBlockUp2" instance=ExtResource( 16 )]
+position = Vector2( -32, 0 )
+
+[node name="ButtonBlockUp3" parent="ButtonBlockUp2" instance=ExtResource( 16 )]
+position = Vector2( 32, 0 )
+
+[node name="ButtonBlockUp4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 208, 112 )
+
+[node name="ButtonBlockUp2" parent="ButtonBlockUp4" instance=ExtResource( 16 )]
+position = Vector2( -32, 0 )
+
+[node name="ButtonBlockUp3" parent="ButtonBlockUp4" instance=ExtResource( 16 )]
+position = Vector2( 32, 0 )
+
+[node name="ButtonBlockUp4" parent="ButtonBlockUp4" instance=ExtResource( 16 )]
+position = Vector2( 64, 0 )
+
+[node name="ButtonBlockUp5" parent="ButtonBlockUp4" instance=ExtResource( 16 )]
+position = Vector2( -64, 0 )
+
+[node name="LadderEnterUp" parent="." instance=ExtResource( 15 )]
+position = Vector2( 464, 560 )
+
+[node name="LadderEnterUp2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 816, 432 )
+
+[node name="LadderExitUp" parent="." instance=ExtResource( 8 )]
+position = Vector2( 464, 464 )
+
+[node name="LadderExitUp2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 816, 336 )
+
+[node name="LadderUp" parent="." instance=ExtResource( 9 )]
+position = Vector2( 464, 496 )
+
+[node name="LadderUp3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 816, 368 )
+
+[node name="LadderUp2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 464, 528 )
+
+[node name="LadderUp4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 816, 400 )
+
+[node name="PortalRight" parent="." instance=ExtResource( 26 )]
+position = Vector2( 176, 400 )
+
+[node name="ButtonRight" parent="." instance=ExtResource( 18 )]
+position = Vector2( 432, 144 )
+
+[node name="LadderDown" parent="." instance=ExtResource( 21 )]
+position = Vector2( 336, 176 )
+
+[node name="LadderDown2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 336, 144 )
+
+[node name="LadderExitDown" parent="." instance=ExtResource( 22 )]
+position = Vector2( 336, 208 )
+
+[node name="LadderEnterDown" parent="." instance=ExtResource( 24 )]
+position = Vector2( 336, 112 )
+
+[node name="SpikeDown" parent="." instance=ExtResource( 19 )]
+position = Vector2( 208, 80 )
+
+[node name="SpikeDown2" parent="SpikeDown" instance=ExtResource( 19 )]
+position = Vector2( -32, 0 )
+
+[node name="SpikeDown3" parent="SpikeDown" instance=ExtResource( 19 )]
+position = Vector2( 32, 0 )
+
+[node name="SpikeDown4" parent="SpikeDown" instance=ExtResource( 19 )]
+position = Vector2( 64, 0 )
+
+[node name="SpikeDown5" parent="SpikeDown" instance=ExtResource( 19 )]
+position = Vector2( -64, 0 )
