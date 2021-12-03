@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Levels/World2/Script/Level2-2.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Ladders/Right/LadderEnterRight.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Ladders/Right/LadderExitRight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=16]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -111,3 +112,5 @@ position = Vector2( 560, 80 )
 
 [node name="LadderRight3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 528, 80 )
+
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 16 )]
