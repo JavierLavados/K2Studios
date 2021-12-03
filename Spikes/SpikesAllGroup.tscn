@@ -8,7 +8,7 @@
 [node name="SpikesAllGroup" type="Node"]
 
 [node name="SpikeLeft" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1088, 16 )
+position = Vector2( 1048, 16 )
 
 [node name="SpikeLeft" parent="SpikeLeft" instance=ExtResource( 6 )]
 position = Vector2( 0, 32 )
@@ -77,7 +77,7 @@ position = Vector2( 0, -32 )
 position = Vector2( 0, -64 )
 
 [node name="SpikeRight" parent="." instance=ExtResource( 5 )]
-position = Vector2( -64, 16 )
+position = Vector2( -24, 16 )
 
 [node name="SpikeRight2" parent="SpikeRight" instance=ExtResource( 5 )]
 position = Vector2( 0, 56 )
@@ -143,7 +143,7 @@ position = Vector2( 0, 632 )
 position = Vector2( 0, -32 )
 
 [node name="SpikeUp" parent="." instance=ExtResource( 8 )]
-position = Vector2( -16, 712 )
+position = Vector2( -16, 672 )
 
 [node name="SpikeUp" parent="SpikeUp" instance=ExtResource( 8 )]
 position = Vector2( 32, 0 )
@@ -245,7 +245,7 @@ position = Vector2( 1024, 0 )
 position = Vector2( 1056, 0 )
 
 [node name="SpikeDown" parent="." instance=ExtResource( 7 )]
-position = Vector2( -16, -72 )
+position = Vector2( -8, -32 )
 
 [node name="SpikeDown" parent="SpikeDown" instance=ExtResource( 7 )]
 position = Vector2( 32, 0 )
