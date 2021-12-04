@@ -3,7 +3,7 @@
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/World4/Script/Level4-1.gd" type="Script" id=3]
-[ext_resource path="res://WIP/TileMapW4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tilemaps/TileMapW4.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Spikes/SpikeUp.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Spikes/SpikeLeft.tscn" type="PackedScene" id=7]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Buttons/ButtonDown.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Buttons/Blocks/ButtonBlockDown.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=31]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )

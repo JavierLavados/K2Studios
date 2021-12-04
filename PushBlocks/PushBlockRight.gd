@@ -6,6 +6,8 @@ const MAX_SPEED = 96
 
 onready var sprite = $Sprite
 onready var ray = $RayCast2D
+onready var left = $RayLeft
+onready var right = $RayRight
 onready var coll = $CollisionShape2D
 
 var on_left = false
@@ -15,10 +17,13 @@ var target_pos = 0
 var id = 1
 var counter = 0
 var can_switch = true
+var freeze = false
 
 var added = false
 var subst = false
 
+var midpoint = false
+var in_midpoint = false
 var pusher
 
 func _ready():
@@ -35,9 +40,9 @@ func _physics_process(delta):
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL
 
-	if on_left and Input.get_action_strength("down") == 1 and ray.is_colliding():
+	if on_left and Input.get_action_strength("down") == 1 and ray.is_colliding() and !right.is_colliding():
 		target_pos = 1
-	if on_right and Input.get_action_strength("up") == 1 and ray.is_colliding():
+	if on_right and Input.get_action_strength("up") == 1 and ray.is_colliding() and !left.is_colliding():
 		target_pos = -1
 		
 	if pusher:
@@ -53,7 +58,9 @@ func _physics_process(delta):
 				added = false
 		
 	var prev_switch = can_switch
+	var prev_freeze = freeze
 	
+	# Si la caja se esta moviendo, disminuir el hitbox
 	if target_pos != 0:
 		can_switch = false
 		motion.y = target_pos * 48
@@ -63,13 +70,20 @@ func _physics_process(delta):
 		motion.y = 0
 		coll.shape.extents.x = 16
 		coll.position.x = 0
-		if !ray.is_colliding():
-			can_switch = false
-			coll.shape.extents.y = 14
-		else:
-			can_switch = true
-			coll.shape.extents.y = 16
-		position.y = int(position.y)
+	
+	# Si la caja esta flotando, disminuir el hitbox
+	if !ray.is_colliding():
+		can_switch = false
+		coll.shape.extents.y = 14
+		if midpoint:
+			freeze = true
+	else:
+		coll.shape.extents.y = 16
+		
+	# Si la caja esta en el suelo y sin moverse, resetear variables
+	if ray.is_colliding() and target_pos == 0:
+		can_switch = true
+		freeze = false
 			
 	if prev_switch != can_switch:
 		if can_switch:
@@ -102,7 +116,7 @@ func _on_AreaRight_body_exited(body):
 
 func _on_AreaDown_body_entered(body):
 	if body.is_in_group("PlayerRight"):
-		body.move_and_slide(motion)
+		get_parent().gameOver()
 
 func _on_AreaAll_body_entered(body):
 	if body.is_in_group("Players") and body.name != "PlayerRight":

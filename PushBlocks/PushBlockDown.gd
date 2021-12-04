@@ -6,6 +6,8 @@ const MAX_SPEED = 96
 
 onready var sprite = $Sprite
 onready var ray = $RayCast2D
+onready var left = $RayLeft
+onready var right = $RayRight
 onready var coll = $CollisionShape2D
 
 var on_left = false
@@ -15,10 +17,13 @@ var target_pos = 0
 var id = 2
 var counter = 0
 var can_switch = true
+var freeze = false
 
 var added = false
 var subst = false
 
+var midpoint = false
+var in_midpoint = false
 var pusher
 
 func _ready():
@@ -29,17 +34,15 @@ func _process(delta):
 		set_physics_process(false)
 	else:
 		set_physics_process(true)
-		
-	print(counter)
 
 func _physics_process(delta):
 
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL
 
-	if on_left and Input.get_action_strength("left") == 1 and ray.is_colliding():
+	if on_left and Input.get_action_strength("left") == 1 and ray.is_colliding() and !right.is_colliding():
 		target_pos = 1
-	if on_right and Input.get_action_strength("right") == 1 and ray.is_colliding():
+	if on_right and Input.get_action_strength("right") == 1 and ray.is_colliding() and !left.is_colliding():
 		target_pos = -1
 		
 	if pusher:
@@ -55,7 +58,9 @@ func _physics_process(delta):
 				added = false
 		
 	var prev_switch = can_switch
+	var prev_freeze = freeze
 	
+	# Si la caja se esta moviendo, disminuir el hitbox
 	if target_pos != 0:
 		can_switch = false
 		motion.x = -target_pos * 48
@@ -65,24 +70,67 @@ func _physics_process(delta):
 		motion.x = 0
 		coll.shape.extents.y = 16
 		coll.position.y = 0
-		if !ray.is_colliding():
-			can_switch = false
-			coll.shape.extents.x = 14
-		else:
-			can_switch = true
-			coll.shape.extents.x = 16
-		position.x = int(position.x)
+		
+	# Si la caja esta flotando, disminuir el hitbox
+	if !ray.is_colliding():
+		can_switch = false
+		coll.shape.extents.x = 14
+		if midpoint:
+			freeze = true
+	else:
+		coll.shape.extents.x = 16
+
+	# Si la caja esta en el suelo y sin moverse, resetear variables
+	if ray.is_colliding() and target_pos == 0:
+		can_switch = true
+		freeze = false
+	
+	# Chequeo punto medio
+	if target_pos != 0 and not midpoint:
+		if int(position.x)%32 >= 29 or int(position.x)%32 <= 1:
+			midpoint = true
 			
+	if int(position.x)%32 >= 30 or int(position.x)%32 <= 0:
+		in_midpoint = true
+	else:
+		in_midpoint = false
+		
+	# Restricciones de cambio de personaje y de movimiento
 	if prev_switch != can_switch:
 		if can_switch:
 			get_parent().switch_restriction -= 1
 		else:
 			get_parent().switch_restriction += 1
+	
+	if prev_freeze != freeze:
+		if freeze:
+			get_parent().freeze_players += 1
+		else:
+			get_parent().freeze_players -= 1
 		
+	# Movimiento final
 	move_and_slide(motion)
 	
-	if int(position.x)%32 == 16:
-		target_pos = 0
+	print(int(position.x)%32)
+	
+	# Calculo de fin de movimiento
+	if target_pos != 0 and midpoint:
+		if right.is_colliding() and target_pos == 1:
+			if int(position.x)%32 == 16:  
+				target_pos = 0
+				position.x = int(position.x)
+		else:
+			if int(position.x)%32 == 15:  
+				target_pos = 0
+				position.x = int(position.x)
+	
+	if in_midpoint:
+		if (left.is_colliding() and target_pos == -1) or (right.is_colliding() and target_pos == 1):
+			target_pos = 0
+			position.x = int(position.x)
+	
+	if ray.is_colliding() and target_pos == 0:
+		midpoint = false
 
 func _on_AreaLeft_body_entered(body):
 	if body.name == "PlayerDown":
@@ -104,7 +152,7 @@ func _on_AreaRight_body_exited(body):
 
 func _on_AreaDown_body_entered(body):
 	if body.is_in_group("Players"):
-		body.move_and_slide(motion)
+		get_parent().gameOver()
 
 func _on_AreaAll_body_entered(body):
 	if body.is_in_group("Players") and body.name != "PlayerDown":

@@ -6,16 +6,17 @@
 [ext_resource path="res://Levers/LeverRight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levers/LeverUp.tscn" type="PackedScene" id=6]
-[ext_resource path="res://WIP/TileMapW2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tilemaps/TileMapW2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://LeverBlocks/LeverBlockRight.tscn" type="PackedScene" id=9]
-[ext_resource path="res://LeverBlocks/LeverBlockUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levers/LeverBlocks/LeverBlockRight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levers/LeverBlocks/LeverBlockUp.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Ladders/Right/LadderRight.tscn" type="PackedScene" id=11]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Ladders/Right/LadderEnterRight.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Ladders/Right/LadderExitRight.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=16]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )

@@ -1,9 +1,9 @@
-extends "res://LeverBlocks/Scripts/LeverBlockAbs.gd"
+extends "res://Levers/LeverBlocks/Scripts/LeverBlockAbs.gd"
 
-var id = 0
+var id = 1
 
 func _physics_process(delta):
-	leverBlock(0)
+	leverBlock(1)
 
 func _on_Area2D_body_entered(body):
 	if body in players:

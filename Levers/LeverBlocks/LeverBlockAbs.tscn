@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/InvisiBlockAll.png" type="Texture" id=1]
-[ext_resource path="res://LeverBlocks/Scripts/LeverBlockAbs.gd" type="Script" id=2]
+[ext_resource path="res://Levers/LeverBlocks/Scripts/LeverBlockAbs.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )

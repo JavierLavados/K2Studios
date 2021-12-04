@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/World3/Script/Level3-2.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=6]
-[ext_resource path="res://WIP/TileMapW3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tilemaps/TileMapW3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Clouds/CloudRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://WIP/Signpost.tscn" type="PackedScene" id=10]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 
@@ -82,3 +83,10 @@ position = Vector2( 0, 32 )
 position = Vector2( 0, -32 )
 
 [node name="SpikesAllGroup" parent="." instance=ExtResource( 9 )]
+
+[node name="Signpost" parent="." instance=ExtResource( 10 )]
+position = Vector2( 304, 208 )
+
+[node name="Signpost2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 592, 176 )
+id = 1

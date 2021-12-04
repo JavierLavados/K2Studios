@@ -20,6 +20,7 @@ var cherry_controls
 var blocks
 var clouds
 var switch_restriction = 0
+var freeze_players = 0
 
 # para el selector	
 var completed 
@@ -88,8 +89,15 @@ func level(n_players):
 	if Input.is_action_pressed("reset"):
 		gameOver()
 		
-	if switch_restriction == 0:
+	if freeze_players:
+		for p in players:
+			p.freeze = true
+	else:
+		for p in players:
+			p.freeze = false
 		
+	if switch_restriction == 0:
+
 		if alt_select:
 			if Input.is_action_just_pressed("ui_right") and players[c_index].is_on_floor() and len(ids) > 1:
 				var prev = current
@@ -125,7 +133,6 @@ func level(n_players):
 				wakeUp(current,3)
 	
 	interface.active = current
-			
 			
 	if prev_cherry_controls!=cherry_controls:
 		for p in players:

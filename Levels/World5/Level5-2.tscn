@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Levels/World5/Script/Level5-2.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://WIP/TileMapW5.tscn" type="PackedScene" id=3]
-[ext_resource path="res://WIP/DoubleJump.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tilemaps/TileMapW5.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Powerups/DoubleJump.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=7]

@@ -37,12 +37,13 @@ var doubleJump = false
 var pushing = false
 var align = 0
 var exit = false
+var freeze = false
 
 var rot
 var invisiWallL
 var invisiWallR
 
-var Air = preload("res://WIP/Air.tscn")
+var Air = preload("res://Powerups/Air.tscn")
 
 var default_texture
 var boots_texture
@@ -55,6 +56,7 @@ func initialize(n, wall):
 		add_collision_exception_with(player)
 	rot = -rad2deg(n.angle_to(Vector2(0,-1)))
 	sprite.rotation_degrees = rot
+	sprite.texture = load(default_texture)
 	InvisiWall = wall
 	
 func modify_sprite(n, forward, backward):
@@ -296,7 +298,7 @@ func calc_motion(n, forward, backward, top, btm):
 				motion.x = target_vel * AIR_SPEED_2
 			else:
 				motion.x = target_vel * AIR_SPEED
-		if not awake:
+		if freeze or not awake:
 			motion.x = 0
 		if align != 0:
 			motion.x = align * 32
@@ -308,7 +310,7 @@ func calc_motion(n, forward, backward, top, btm):
 				motion.y = target_vel * AIR_SPEED_2
 			else:
 				motion.y = target_vel * AIR_SPEED
-		if not awake:
+		if freeze or not awake:
 			motion.y = 0
 		if align != 0:
 			motion.y = align * 32

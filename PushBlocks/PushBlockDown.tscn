@@ -53,6 +53,14 @@ shape = SubResource( 4 )
 enabled = true
 cast_to = Vector2( 0, -32 )
 
+[node name="RayLeft" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 24, 0 )
+
+[node name="RayRight" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -24, 0 )
+
 [node name="AreaAll" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAll"]
