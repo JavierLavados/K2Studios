@@ -258,7 +258,7 @@ func calc_motion(n, forward, backward, top, btm):
 		if align != 0 and tile_pos == 0:
 			align = 0
 		
-		if on_floor and detector_pos and vertical_vel != 0:
+		if on_floor and detector_pos and vertical_vel == detector_pos[1]:
 			if tile_pos != 0:
 				if align == 0:
 					if n.x == 0:
@@ -274,6 +274,8 @@ func calc_motion(n, forward, backward, top, btm):
 						
 			else:
 				if vertical_vel == detector_pos[1]:
+					if target_vel != 0:
+						target_vel = 0
 					if n.x == 0:
 						motion.y = vertical_vel * CLIMB_SPEED
 					else:
