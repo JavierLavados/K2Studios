@@ -84,17 +84,46 @@ func _physics_process(delta):
 	if ray.is_colliding() and target_pos == 0:
 		can_switch = true
 		freeze = false
+		
+	# Chequeo punto medio
+	if target_pos != 0 and not midpoint:
+		if int(position.y)%32 >= 30 or int(position.y)%32 <= 2:
+			midpoint = true
 			
+	if int(position.y)%32 >= 31 or int(position.y)%32 <= 1:
+		in_midpoint = true
+	else:
+		in_midpoint = false
+			
+	# Restricciones de cambio de personaje y de movimiento
 	if prev_switch != can_switch:
 		if can_switch:
 			get_parent().switch_restriction -= 1
 		else:
 			get_parent().switch_restriction += 1
-		
+	
+	if prev_freeze != freeze:
+		if freeze:
+			get_parent().freeze_players += 1
+		else:
+			get_parent().freeze_players -= 1
+	
+	# Movimiento final
 	move_and_slide(motion)
 	
-	if int(position.y)%32 == 16:
-		target_pos = 0
+	# Calculo de fin de movimiento
+	if target_pos != 0 and midpoint:
+		if int(round(position.y))%32 == 16:  
+			target_pos = 0
+			position.y = int(round(position.y))
+	
+	if in_midpoint:
+		if (left.is_colliding() and target_pos == -1) or (right.is_colliding() and target_pos == 1):
+			target_pos = 0
+			position.y = int(round(position.y))
+	
+	if ray.is_colliding() and target_pos == 0:
+		midpoint = false
 
 func _on_AreaLeft_body_entered(body):
 	if body.name == "PlayerRight":
@@ -115,7 +144,7 @@ func _on_AreaRight_body_exited(body):
 		on_right = false
 
 func _on_AreaDown_body_entered(body):
-	if body.is_in_group("PlayerRight"):
+	if body.is_in_group("Players"):
 		get_parent().gameOver()
 
 func _on_AreaAll_body_entered(body):

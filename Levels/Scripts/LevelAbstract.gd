@@ -40,7 +40,8 @@ func activateBlocks(prev, new):
 	for block in blocks:
 		if block.id != current:
 			# Rectifica la posicion del bloque
-			block.position.x = int(block.position.x)
+			block.position.x = int(round(block.position.x))
+			block.position.y = int(round(block.position.y))
 		if block.id == prev:
 			block.counter += 1
 		if block.id == new:

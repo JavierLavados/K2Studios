@@ -51,7 +51,15 @@ shape = SubResource( 4 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 32, 0 )
+cast_to = Vector2( 24, 0 )
+
+[node name="RayLeft" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 24 )
+
+[node name="RayRight" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -24 )
 
 [node name="AreaAll" type="Area2D" parent="."]
 

@@ -1,6 +1,6 @@
 extends "res://Levels/Scripts/LevelAbstract.gd"
 
-var n_players = 2
+var n_players = 4
 
 func _ready():
 	setUp(n_players)

@@ -87,10 +87,10 @@ func _physics_process(delta):
 	
 	# Chequeo punto medio
 	if target_pos != 0 and not midpoint:
-		if int(position.x)%32 >= 29 or int(position.x)%32 <= 1:
+		if int(position.x)%32 >= 30 or int(position.x)%32 <= 2:
 			midpoint = true
 	
-	if int(position.x)%32 >= 30 or int(position.x)%32 <= 0:
+	if int(position.x)%32 >= 31 or int(position.x)%32 <= 1:
 		in_midpoint = true
 	else:
 		in_midpoint = false
@@ -113,19 +113,14 @@ func _physics_process(delta):
 	
 	# Calculo de fin de movimiento
 	if target_pos != 0 and midpoint:
-		if left.is_colliding() and target_pos == -1:
-			if int(position.x)%32 == 16:  
-				target_pos = 0
-				position.x = int(position.x)
-		else:
-			if int(position.x)%32 == 15:  
-				target_pos = 0
-				position.x = int(position.x)
+		if int(round(position.x))%32 == 16:  
+			target_pos = 0
+			position.x = int(round(position.x))
 	
 	if in_midpoint:
 		if (left.is_colliding() and target_pos == -1) or (right.is_colliding() and target_pos == 1):
 			target_pos = 0
-			position.x = int(position.x)
+			position.x = int(round(position.x))
 	
 	if ray.is_colliding() and target_pos == 0:
 		midpoint = false
