@@ -17,7 +17,6 @@
 [ext_resource path="res://Ladders/Right/LadderExitRight.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=16]
 
-
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 int_level = 12
@@ -26,7 +25,7 @@ int_level = 12
 position = Vector2( 144, 240 )
 
 [node name="PlayerRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 624, 400 )
+position = Vector2( 720, 400 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
 
@@ -35,13 +34,13 @@ position = Vector2( 512, 320 )
 current = true
 
 [node name="TileMapW2" parent="." instance=ExtResource( 7 )]
-tile_data = PoolIntArray( 65550, 5, 0, 65554, 16, 0, 131085, 5, 0, 131086, 19, 0, 196621, 16, 0, 196622, 11, 0, 196626, 12, 0, 262157, 12, 0, 262158, 11, 0, 262162, 16, 0, 327694, 16, 0, 327698, 19, 0, 524291, 17, 0, 524292, 5, 0, 524293, 11, 0, 589826, 6, 0, 589827, 5, 0, 589828, 14, 0, 589829, 12, 0, 589830, 17, 0, 589831, 5, 0, 589835, 9, 0, 589836, 10, 0, 589838, 10, 0, 589840, 9, 0, 589841, 7, 0, 655364, 20, 0, 655365, 5, 0, 655366, 11, 0, 655367, 14, 0, 655375, 4, 0, 655376, 1, 0, 720902, 14, 0, 720903, 6, 0, 720913, 1, 0, 720914, 0, 0, 786439, 17, 0, 786450, 1, 0, 851975, 12, 0, 851979, 11, 0, 851986, 4, 0, 917515, 18, 0, 917529, 9, 0, 983051, 15, 0, 983052, 6, 0, 983065, 8, 0, 1048587, 20, 0, 1048588, 5, 0, 1048589, 12, 0, 1048590, 18, 0, 1048598, 4, 0, 1048599, 7, 0, 1114124, 18, 0, 1114125, 15, 0, 1114126, 6, 0, 1114127, 20, 0, 1114128, 15, 0, 1114129, 9, 0, 1114130, 10, 0, 1114132, 9, 0, 1114133, 0, 0, 1114134, 1, 0, 1114137, 9, 0, 1179661, 12, 0, 1179662, 18, 0 )
+tile_data = PoolIntArray( 65553, 16, 0, 65557, 16, 0, 131088, 12, 0, 131089, 19, 0, 196624, 16, 0, 196625, 11, 0, 196629, 11, 0, 262159, 11, 0, 262160, 6, 0, 262161, 16, 0, 262165, 16, 0, 327694, 16, 0, 327695, 5, 0, 327696, 19, 0, 327697, 11, 0, 327701, 19, 0, 524291, 17, 0, 524292, 5, 0, 524293, 11, 0, 589826, 6, 0, 589827, 5, 0, 589828, 14, 0, 589829, 12, 0, 589830, 17, 0, 589831, 5, 0, 589835, 9, 0, 589836, 10, 0, 589838, 9, 0, 589839, 10, 0, 589841, 9, 0, 589842, 2, 0, 589843, 7, 0, 589845, 0, 0, 655364, 20, 0, 655365, 5, 0, 655366, 11, 0, 655367, 14, 0, 655378, 4, 0, 655381, 9, 0, 720902, 14, 0, 720903, 6, 0, 720916, 1, 0, 720917, 8, 0, 786439, 17, 0, 851975, 12, 0, 851979, 11, 0, 851989, 9, 0, 851990, 10, 0, 851992, 9, 0, 851994, 9, 0, 851995, 10, 0, 851997, 9, 0, 917515, 18, 0, 917533, 8, 0, 983051, 15, 0, 983052, 6, 0, 1048587, 20, 0, 1048588, 5, 0, 1048589, 12, 0, 1048590, 18, 0, 1048605, 9, 0, 1114124, 18, 0, 1114125, 15, 0, 1114126, 6, 0, 1114127, 20, 0, 1114128, 15, 0, 1114129, 9, 0, 1114130, 10, 0, 1114132, 9, 0, 1114133, 11, 0, 1114134, 3, 0, 1114138, 4, 0, 1114139, 7, 0, 1114141, 1, 0, 1179661, 12, 0, 1179662, 18, 0, 1179667, 22, 0, 1179669, 13, 0, 1179670, 5, 0, 1179671, 13, 0, 1179672, 5, 0, 1179677, 0, 0 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 13 )]
-position = Vector2( 752, 496 )
+position = Vector2( 880, 528 )
 
 [node name="PortalRight" parent="." instance=ExtResource( 3 )]
-position = Vector2( 624, 144 )
+position = Vector2( 720, 144 )
 
 [node name="Interface" parent="." instance=ExtResource( 2 )]
 
@@ -49,13 +48,13 @@ position = Vector2( 624, 144 )
 wait_time = 3.0
 
 [node name="LeverRight" parent="." instance=ExtResource( 4 )]
-position = Vector2( 624, 336 )
+position = Vector2( 720, 336 )
 
 [node name="LeverRight2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 496, 144 )
+position = Vector2( 592, 144 )
 
 [node name="LeverUp" parent="." instance=ExtResource( 6 )]
-position = Vector2( 528, 272 )
+position = Vector2( 624, 272 )
 
 [node name="LeverBlockRight" parent="." instance=ExtResource( 9 )]
 position = Vector2( 304, 304 )
@@ -76,7 +75,7 @@ position = Vector2( 0, -32 )
 position = Vector2( 0, 32 )
 
 [node name="LeverBlockUp2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 592, 496 )
+position = Vector2( 688, 496 )
 
 [node name="LeverBlockUp2" parent="LeverBlockUp2" instance=ExtResource( 10 )]
 position = Vector2( 0, -32 )
@@ -85,7 +84,7 @@ position = Vector2( 0, -32 )
 position = Vector2( 0, 32 )
 
 [node name="LeverBlockUp" parent="." instance=ExtResource( 10 )]
-position = Vector2( 592, 240 )
+position = Vector2( 688, 240 )
 
 [node name="LeverBlockUp2" parent="LeverBlockUp" instance=ExtResource( 10 )]
 position = Vector2( 0, -32 )
@@ -103,15 +102,15 @@ position = Vector2( 32, 0 )
 position = Vector2( -32, 0 )
 
 [node name="LadderEnterRight" parent="." instance=ExtResource( 14 )]
-position = Vector2( 496, 80 )
-
-[node name="LadderExitRight" parent="." instance=ExtResource( 15 )]
 position = Vector2( 592, 80 )
 
+[node name="LadderExitRight" parent="." instance=ExtResource( 15 )]
+position = Vector2( 688, 80 )
+
 [node name="LadderRight" parent="." instance=ExtResource( 11 )]
-position = Vector2( 560, 80 )
+position = Vector2( 656, 80 )
 
 [node name="LadderRight3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 528, 80 )
+position = Vector2( 624, 80 )
 
 [node name="SpikesAllGroup" parent="." instance=ExtResource( 16 )]

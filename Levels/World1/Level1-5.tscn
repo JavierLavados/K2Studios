@@ -23,32 +23,31 @@ script = ExtResource( 1 )
 int_level = 5
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 528, 272 )
+position = Vector2( 368, 432 )
 
 [node name="PlayerRight" parent="." instance=ExtResource( 10 )]
-position = Vector2( 784, 208 )
+position = Vector2( 304, 272 )
 
 [node name="PlayerDown" parent="." instance=ExtResource( 4 )]
-position = Vector2( 528, 336 )
+position = Vector2( 528, 208 )
 
 [node name="PlayerLeft" parent="." instance=ExtResource( 9 )]
-position = Vector2( 240, 432 )
+position = Vector2( 720, 240 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
 
 [node name="TileMap" parent="." instance=ExtResource( 16 )]
-tile_data = PoolIntArray( 131095, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196631, 1, 0, 262152, 1, 0, 262167, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 0, 327703, 1, 0, 393224, 1, 0, 393239, 1, 0, 458760, 1, 0, 458775, 1, 0, 524296, 1, 0, 524311, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 655368, 1, 0, 655383, 1, 0, 720904, 1, 0, 720919, 1, 0, 786440, 1, 0, 786455, 1, 0, 851976, 1, 0, 851991, 1, 0, 917507, 1, 0, 917508, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 1, 0, 917517, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983062, 1, 0, 983070, 1, 0, 1048583, 1, 0, 1048598, 1, 0, 1114119, 1, 0 )
+tile_data = PoolIntArray( 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 0, 327703, 1, 0, 393224, 1, 0, 393239, 1, 0, 458760, 1, 0, 458775, 1, 0, 524296, 1, 0, 524311, 1, 0, 589832, 7, 0, 589847, 7, 0, 655368, 1, 0, 655383, 1, 0, 720904, 1, 0, 720919, 1, 0, 786440, 1, 0, 786455, 1, 0, 851976, 1, 0, 851991, 1, 0, 917512, 7, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 1, 0, 917517, 1, 0, 917518, 7, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 13 )]
-position = Vector2( 656, 432 )
+position = Vector2( 624, 432 )
 
 [node name="PortalDown" parent="." instance=ExtResource( 6 )]
-position = Vector2( 976, 432 )
+position = Vector2( 432, 208 )
 
 [node name="Interface" parent="." instance=ExtResource( 2 )]
 
@@ -65,10 +64,10 @@ position = Vector2( 400, 144 )
 position = Vector2( 528, 496 )
 
 [node name="PortalRight" parent="." instance=ExtResource( 11 )]
-position = Vector2( 720, 432 )
+position = Vector2( 304, 368 )
 
 [node name="PortalLeft" parent="." instance=ExtResource( 14 )]
-position = Vector2( 912, 432 )
+position = Vector2( 720, 368 )
 
 [node name="PushBlockRight" parent="." instance=ExtResource( 15 )]
 position = Vector2( 784, 368 )
