@@ -21,7 +21,7 @@
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 5 )]
+[node name="PlayerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 239.528, 207.079 )
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
