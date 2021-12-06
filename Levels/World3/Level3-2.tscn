@@ -86,7 +86,3 @@ position = Vector2( 0, -32 )
 
 [node name="Signpost" parent="." instance=ExtResource( 10 )]
 position = Vector2( 304, 208 )
-
-[node name="Signpost2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 592, 176 )
-id = 1

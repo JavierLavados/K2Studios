@@ -22,7 +22,7 @@ func _ready():
 	sprite.frame = level_number - 1
 	status = Globals.levels_status[level_number-1]
 	if status:
-		sprite.frame += 50
+		sprite.frame += 12
 		
 	directions = [up,right,down,left]
 

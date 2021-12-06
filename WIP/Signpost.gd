@@ -4,12 +4,14 @@ onready var sprite = $Sprite
 onready var coll = $CollisionShape2D
 onready var pos = $Position2D
 onready var arrow = $Position2D/ArrowKey
-
+onready var tutorial = $Tutorial
 export var id = 0
+export var message = "res://Sprites/Backgrounds/BgW6.png"
 
 var inside = null
 
 func _ready():
+	$Tutorial.texture=load(message)
 	$Tutorial.position = Vector2(512-position.x,320-position.y)
 	
 	sprite.frame = (4*(Globals.current_world-1)) + id
@@ -71,12 +73,3 @@ func _on_Signpost_body_exited(body):
 	if body.is_in_group("Players"):
 		if body.id == id:
 			inside = null
-
-
-
-
-func _on_Exit_pressed():
-	$Tutorial.visible=false
-	get_parent().freeze_players=0
-	get_parent().switch_restriction=0
-	
