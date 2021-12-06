@@ -1,9 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tilemaps/MapPath.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/WorldLabels.png" type="Texture" id=2]
-[ext_resource path="res://MapInterface/PointIcon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://MapInterface/BlockIcon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MapInterface/LevelIcon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilemaps/MapTilemap.tscn" type="PackedScene" id=8]
 
@@ -13,59 +10,10 @@ __meta__ = {
 }
 
 [node name="Level41" parent="." instance=ExtResource( 6 )]
-position = Vector2( 128, 352 )
+position = Vector2( 480, 352 )
 level_proyect_dir = "res://Levels/World5/Level5-1.tscn"
-level_number = 41
+level_number = 12
 left = true
-
-[node name="Level42" parent="." instance=ExtResource( 6 )]
-position = Vector2( 128, 544 )
-level_proyect_dir = "res://Levels/World5/Level5-2.tscn"
-level_number = 42
-
-[node name="Level43" parent="." instance=ExtResource( 6 )]
-position = Vector2( 320, 160 )
-level_proyect_dir = "res://Levels/World5/Level5-3.tscn"
-level_number = 43
-
-[node name="Level44" parent="." instance=ExtResource( 6 )]
-position = Vector2( 320, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-4.tscn"
-level_number = 44
-
-[node name="Level45" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 544 )
-level_proyect_dir = "res://Levels/World5/Level5-5.tscn"
-level_number = 45
-
-[node name="Level46" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-6.tscn"
-level_number = 46
-
-[node name="Level47" parent="." instance=ExtResource( 6 )]
-position = Vector2( 704, 160 )
-level_proyect_dir = "res://Levels/World5/Level5-7.tscn"
-level_number = 47
-
-[node name="Level48" parent="." instance=ExtResource( 6 )]
-position = Vector2( 704, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-8.tscn"
-level_number = 48
-
-[node name="Level49" parent="." instance=ExtResource( 6 )]
-position = Vector2( 896, 544 )
-level_proyect_dir = "res://Levels/World5/Level5-9.tscn"
-level_number = 49
-
-[node name="Level50" parent="." instance=ExtResource( 6 )]
-position = Vector2( 896, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-10.tscn"
-level_number = 50
-
-[node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
-position = Vector2( 704, 544 )
-required = 3
 
 [node name="Title" type="Sprite" parent="."]
 position = Vector2( 512, 64 )
@@ -75,98 +23,4 @@ vframes = 5
 frame = 4
 
 [node name="MapTilemap" parent="." instance=ExtResource( 8 )]
-tile_data = PoolIntArray( 655360, 69, 0, 655361, 69, 0 )
-
-[node name="PointIcon" parent="." instance=ExtResource( 3 )]
-position = Vector2( 128, 160 )
-right = true
-down = true
-
-[node name="PointIcon2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 320, 544 )
-right = true
-up = true
-
-[node name="PointIcon3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 512, 160 )
-right = true
-down = true
-
-[node name="PointIcon4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 704, 544 )
-right = true
-up = true
-
-[node name="MapPath41-42" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 448 )
-vertical = true
-adjacent = [ 41, 42 ]
-directions = [ "D", "U" ]
-
-[node name="MapPath41-43A" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 256 )
-vertical = true
-adjacent = [ 41, 43 ]
-directions = [ "U", "L" ]
-
-[node name="MapPath41-43B" parent="." instance=ExtResource( 1 )]
-position = Vector2( 224, 160 )
-adjacent = [ 41, 43 ]
-directions = [ "U", "L" ]
-
-[node name="MapPath43-44" parent="." instance=ExtResource( 1 )]
-position = Vector2( 320, 256 )
-vertical = true
-adjacent = [ 43, 44 ]
-directions = [ "D", "U" ]
-
-[node name="MapPath44-45A" parent="." instance=ExtResource( 1 )]
-position = Vector2( 320, 448 )
-vertical = true
-adjacent = [ 44, 45 ]
-directions = [ "D", "L" ]
-
-[node name="MapPath44-45B" parent="." instance=ExtResource( 1 )]
-position = Vector2( 416, 544 )
-adjacent = [ 44, 45 ]
-directions = [ "D", "L" ]
-
-[node name="MapPath45-46" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 448 )
-vertical = true
-adjacent = [ 45, 46 ]
-directions = [ "U", "D" ]
-
-[node name="MapPath46-47A" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 256 )
-vertical = true
-adjacent = [ 46, 47 ]
-directions = [ "U", "L" ]
-
-[node name="MapPath46-47B" parent="." instance=ExtResource( 1 )]
-position = Vector2( 608, 160 )
-adjacent = [ 46, 47 ]
-directions = [ "U", "L" ]
-
-[node name="MapPath47-48" parent="." instance=ExtResource( 1 )]
-position = Vector2( 704, 256 )
-vertical = true
-adjacent = [ 47, 48 ]
-directions = [ "D", "U" ]
-
-[node name="MapPath48-49A" parent="." instance=ExtResource( 1 )]
-position = Vector2( 704, 448 )
-vertical = true
-adjacent = [ 48, 49 ]
-directions = [ "D", "L" ]
-
-[node name="MapPath48-49B" parent="." instance=ExtResource( 1 )]
-position = Vector2( 800, 544 )
-adjacent = [ 48, 49 ]
-directions = [ "D", "L" ]
-
-[node name="MapPath49-50" parent="." instance=ExtResource( 1 )]
-position = Vector2( 896, 448 )
-vertical = true
-adjacent = [ 49, 50 ]
-directions = [ "U", "D" ]
+tile_data = PoolIntArray( 655360, 69, 0, 655361, 69, 0, 655363, 69, 0, 655364, 69, 0, 655365, 69, 0, 655366, 69, 0, 655368, 69, 0, 655369, 69, 0, 655370, 69, 0, 655371, 69, 0, 655372, 69, 0 )

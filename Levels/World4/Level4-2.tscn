@@ -21,10 +21,9 @@
 [ext_resource path="res://Rotators/RotatorBlockRight.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=20]
 
-
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
-int_level = 32
+int_level = 10
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 688, 144 )

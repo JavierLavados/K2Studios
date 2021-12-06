@@ -3,7 +3,7 @@ extends Node2D
 onready var pointer = $MapPointer
 onready var background = $Background
 
-var level_total = 50
+var level_total = 12
 
 func _ready():
 	$Label.text = str(Globals.current_points)

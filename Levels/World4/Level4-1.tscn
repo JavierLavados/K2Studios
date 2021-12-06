@@ -32,10 +32,9 @@
 [ext_resource path="res://Buttons/Blocks/ButtonBlockDown.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=31]
 
-
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
-int_level = 31
+int_level = 11
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 368, 176 )

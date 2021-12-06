@@ -70,6 +70,7 @@ position = Vector2( 3072, 0 )
 position = Vector2( 4096, 0 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 832.0
 margin_top = 40.0
 margin_right = 896.0
@@ -82,6 +83,7 @@ __meta__ = {
 }
 
 [node name="Transition" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition"]
 position = Vector2( 1112, 184 )
