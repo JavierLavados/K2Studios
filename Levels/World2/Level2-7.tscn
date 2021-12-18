@@ -8,12 +8,11 @@
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tilemaps/TileMapW1.tscn" type="PackedScene" id=16]
 
-
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 int_level = 17
 
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 5 )]
+[node name="PlayerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 411.471, 360.314 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
