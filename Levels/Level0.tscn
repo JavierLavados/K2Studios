@@ -35,7 +35,6 @@
 [ext_resource path="res://PushBlocks/PushBlockDown.tscn" type="PackedScene" id=33]
 [ext_resource path="res://PushBlocks/PushBlockLeft.tscn" type="PackedScene" id=34]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
@@ -522,16 +521,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 script = ExtResource( 14 )
 int_level = 4
 
-[node name="PlayerUp" parent="." groups=["Players"] instance=ExtResource( 12 )]
+[node name="PlayerUp" parent="." instance=ExtResource( 12 )]
 position = Vector2( 860.85, 263.148 )
 
-[node name="PlayerRight" parent="." groups=["Players"] instance=ExtResource( 13 )]
+[node name="PlayerRight" parent="." instance=ExtResource( 13 )]
 position = Vector2( 72, 352 )
 
-[node name="PlayerDown" parent="." groups=["Players"] instance=ExtResource( 10 )]
+[node name="PlayerDown" parent="." instance=ExtResource( 10 )]
 position = Vector2( 440, 528 )
 
-[node name="PlayerLeft" parent="." groups=["Players"] instance=ExtResource( 11 )]
+[node name="PlayerLeft" parent="." instance=ExtResource( 11 )]
 position = Vector2( 968, 536 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]

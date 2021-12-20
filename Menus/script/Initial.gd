@@ -6,6 +6,9 @@ func _ready():
 	if len(Globals.levels_status)==0:
 		for i in range(50):
 			Globals.levels_status+=[false]
+	if len(Globals.path_status)==0:
+		for i in range(66):
+			Globals.path_status+=[false]
 	
 func _input(event):
 	if event.is_action_pressed("Esc"):

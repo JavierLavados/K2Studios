@@ -107,62 +107,77 @@ position = Vector2( 128, 256 )
 vertical = true
 adjacent = [ 21, 22 ]
 directions = [ "U", "D" ]
+id = 26
 
 [node name="MapPath21-23" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 448 )
 vertical = true
 adjacent = [ 21, 23 ]
 directions = [ "D", "U" ]
+id = 27
 
 [node name="MapPath21-28A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 352 )
 adjacent = [ 21, 28 ]
+id = 28
 
 [node name="MapPath21-28B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 352 )
 adjacent = [ 21, 28 ]
+id = 29
 
 [node name="MapPath22-24A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 160 )
 adjacent = [ 22, 24 ]
+id = 30
 
 [node name="MapPath22-24B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 160 )
 adjacent = [ 22, 24 ]
+id = 31
 
 [node name="MapPath24-26A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 160 )
 adjacent = [ 24, 26 ]
+id = 32
 
 [node name="MapPath24-26B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 800, 160 )
 adjacent = [ 24, 26 ]
+id = 33
 
 [node name="MapPath23-25A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 544 )
 adjacent = [ 23, 25 ]
+id = 34
 
 [node name="MapPath23-25B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 544 )
 adjacent = [ 23, 25 ]
+id = 35
 
 [node name="MapPath25-27A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 544 )
 adjacent = [ 25, 27 ]
+id = 36
 
 [node name="MapPath25-27B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 800, 544 )
 adjacent = [ 25, 27 ]
+id = 37
 
 [node name="MapPath28-29" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 352 )
 adjacent = [ 28, 29 ]
+id = 38
 
 [node name="MapPath29-30" parent="." instance=ExtResource( 1 )]
 position = Vector2( 800, 352 )
 adjacent = [ 29, 30 ]
+id = 39
 
 [node name="MapPath30-W4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 992, 352 )
 adjacent = [ 30, null ]
 directions = [ "R", null ]
+id = 40

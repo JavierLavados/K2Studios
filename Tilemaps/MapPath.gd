@@ -9,6 +9,9 @@ export var directions = ["R","L"]
 var active = 0
 var expand = false
 
+var status_path
+export var id = 0
+
 var adjacent_nodes = []
 
 func _ready():
@@ -46,12 +49,15 @@ func _ready():
 	else:
 		sprite.visible = false
 	
-	if active < len(adjacent):
+	status_path=Globals.path_status[id-1]
+	if active < len(adjacent) and status_path==false and active>0:
 		expand = true
+		Globals.path_status[id-1]=true
 		if vertical:
 			sprite.scale.y = 0
 		else:
 			sprite.scale.x = 0
+	
 
 func _process(delta):
 	if expand:

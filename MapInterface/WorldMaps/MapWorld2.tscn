@@ -95,66 +95,80 @@ tile_data = PoolIntArray( 655360, 18, 0, 655361, 18, 0 )
 [node name="MapPath11-12" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 352 )
 adjacent = [ 11, 12 ]
+id = 12
 
 [node name="MapPath12-13" parent="." instance=ExtResource( 1 )]
 position = Vector2( 320, 256 )
 vertical = true
 adjacent = [ 12, 13 ]
 directions = [ "U", "D" ]
+id = 13
 
 [node name="MapPath12-14" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 352 )
 adjacent = [ 12, 14 ]
+id = 14
 
 [node name="MapPath14-16" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 352 )
 adjacent = [ 14, 16 ]
+id = 15
 
 [node name="MapPath15-17" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 160 )
 adjacent = [ 15, 17 ]
+id = 16
 
 [node name="MapPath13-15" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 160 )
 adjacent = [ 13, 15 ]
+id = 17
 
 [node name="MapPath16-17" parent="." instance=ExtResource( 1 )]
 position = Vector2( 704, 256 )
 vertical = true
 adjacent = [ 16, 17 ]
 directions = [ "U", "D" ]
+id = 18
 
 [node name="MapPath11-18A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 448 )
 vertical = true
 adjacent = [ 11, 18 ]
 directions = [ "D", "L" ]
+id = 19
 
 [node name="MapPath11-18B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 544 )
 adjacent = [ 11, 18 ]
 directions = [ "D", "L" ]
+id = 20
 
 [node name="MapPath18-19A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 544 )
 adjacent = [ 18, 19 ]
+id = 21
 
 [node name="MapPath18-19B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 544 )
 adjacent = [ 18, 19 ]
+id = 22
 
 [node name="MapPath19-20A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 800, 544 )
 adjacent = [ 19, 20 ]
 directions = [ "R", "D" ]
+id = 23
 
 [node name="MapPath19-20B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 896, 448 )
 vertical = true
 adjacent = [ 19, 20 ]
 directions = [ "R", "D" ]
+id = 24
 
 [node name="MapPath20-W3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 992, 352 )
 adjacent = [ 20, null ]
 directions = [ "R", null ]
+id = 25

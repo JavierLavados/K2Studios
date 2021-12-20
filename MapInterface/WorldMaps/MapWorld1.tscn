@@ -81,50 +81,61 @@ right = true
 [node name="MapPath1-2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 224, 352 )
 adjacent = [ 1, 2 ]
+id = 1
 
 [node name="MapPath2-3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 416, 352 )
 adjacent = [ 2, 3 ]
+id = 2
 
 [node name="MapPath3-4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 512, 256 )
 vertical = true
 adjacent = [ 3, 4 ]
 directions = [ "U", "D" ]
+id = 3
 
 [node name="MapPath3-5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 512, 448 )
 vertical = true
 adjacent = [ 3, 5 ]
 directions = [ "D", "U" ]
+id = 4
 
 [node name="MapPath4-6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 416, 160 )
 adjacent = [ 4, 6 ]
 directions = [ "L", "R" ]
+id = 5
 
 [node name="MapPath4-8" parent="." instance=ExtResource( 5 )]
 position = Vector2( 608, 160 )
 adjacent = [ 4, 8 ]
+id = 6
 
 [node name="MapPath5-7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 416, 544 )
 adjacent = [ 5, 7 ]
 directions = [ "L", "R" ]
+id = 7
 
 [node name="MapPath5-9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 608, 544 )
 adjacent = [ 5, 9 ]
+id = 8
 
 [node name="MapPath3-10A" parent="." instance=ExtResource( 5 )]
 position = Vector2( 608, 352 )
 adjacent = [ 3, 10 ]
+id = 9
 
 [node name="MapPath3-10B" parent="." instance=ExtResource( 5 )]
 position = Vector2( 800, 352 )
 adjacent = [ 3, 10 ]
+id = 10
 
 [node name="MapPath10-W2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 992, 352 )
 adjacent = [ 10, null ]
 directions = [ "R", null ]
+id = 11
