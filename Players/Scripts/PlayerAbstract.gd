@@ -42,6 +42,7 @@ var freeze = false
 var rot
 var invisiWallL
 var invisiWallR
+var id
 
 var Air = preload("res://Powerups/Air.tscn")
 
@@ -150,11 +151,12 @@ func calc_motion(n, forward, backward, top, btm):
 	var vertical_vel = Input.get_action_strength(btm) - Input.get_action_strength(top)
 
 	# Movimiento vertical (salto)
+	var on_edge = !ray.is_colliding() and on_floor
+	
 	if Input.is_action_just_pressed("ui_accept") and awake and not climbing:
 		
 		# Posicionamiento de paredes invisibles
 		var relative_pos = Vector2(int(global_position.x)%32-15,int(global_position.y)%32-15)
-		var on_edge = !ray.is_colliding() and on_floor
 		
 		var l_val = 95
 		var r_val = 97
@@ -244,6 +246,9 @@ func calc_motion(n, forward, backward, top, btm):
 			$Sprite.modulate = Color.white
 
 	# Calculo variables de escalera
+	if id == 0:
+		print(on_floor and detector_pos)
+		
 	if awake:
 		
 		var tile_pos
@@ -257,17 +262,26 @@ func calc_motion(n, forward, backward, top, btm):
 			
 		if align != 0 and tile_pos == 0:
 			align = 0
-		
-		if on_floor and detector_pos and vertical_vel == detector_pos[1]:
+			
+		var same_height = false
+		if detector_pos:
+			if n.x == 0:
+				if position.y-5 < detector_pos[0][1] and position.y+5 > detector_pos[0][1]:
+					same_height = true
+			else:
+				if position.x-5 < detector_pos[0][0] and position.x+5 > detector_pos[0][0]: 
+					same_height = true
+			
+		if on_floor and same_height and vertical_vel == detector_pos[1]:
 			if tile_pos != 0:
 				if align == 0:
 					if n.x == 0:
-						if position.x < detector_pos[0]:
+						if position.x < detector_pos[0][0]:
 							align = 1
 						else:
 							align = -1
 					else:
-						if position.y < detector_pos[0]:
+						if position.y < detector_pos[0][1]:
 							align = 1
 						else:
 							align = -1
@@ -276,7 +290,7 @@ func calc_motion(n, forward, backward, top, btm):
 				if vertical_vel == detector_pos[1]:
 					if target_vel != 0:
 						target_vel = 0
-					if n.x == 0:
+					if n.x == 0: 
 						motion.y = vertical_vel * CLIMB_SPEED
 					else:
 						motion.x = vertical_vel * CLIMB_SPEED

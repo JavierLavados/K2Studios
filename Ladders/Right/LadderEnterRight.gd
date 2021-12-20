@@ -11,7 +11,7 @@ func _ready():
 func _on_Ladder_body_entered(body):
 	if body.name == player_name:
 		body.on_ladder += 1
-		body.detector_pos = [int(global_position.y),1,true]
+		body.detector_pos = [global_position,1,true]
 
 func _on_Ladder_body_exited(body):
 	if body.name == player_name:

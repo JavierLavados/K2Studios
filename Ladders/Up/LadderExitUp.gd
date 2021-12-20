@@ -44,7 +44,7 @@ func _on_ClimbArea_body_exited(body):
 
 func _on_Detector_body_entered(body):
 	if body.name == player_name:
-		body.detector_pos = [int(global_position.x),1,false]
+		body.detector_pos = [Vector2(global_position.x,global_position.y-32),1,false]
 		on_detector = body
 
 func _on_Detector_body_exited(body):

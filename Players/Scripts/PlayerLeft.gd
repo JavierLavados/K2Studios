@@ -2,12 +2,12 @@ extends "res://Players/Scripts/PlayerAbstract.gd"
 
 const NORMAL = Vector2(-1,0)
 var cherry_controls = false
-var id = 3
 var wall = preload("res://InvisiWalls/InvisiWallLeft.tscn")
 
 var texture = "res://Sprites/GuySprites/LeftGuy/Left"
 
 func _ready():
+	id = 3
 	default_texture = texture + "W" + str(Globals.current_world) + ".png"
 	boots_texture = texture + "Boots.png"
 	initialize(NORMAL, wall)
