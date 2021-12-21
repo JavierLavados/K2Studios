@@ -30,18 +30,12 @@ int_level = 5
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 400, 368 )
-auto_jump = false
-see_controllable = false
-teleport = false
 
 [node name="PlayerRight" parent="." instance=ExtResource( 10 )]
 position = Vector2( 944, 528 )
 
 [node name="PlayerLeft" parent="." instance=ExtResource( 9 )]
 position = Vector2( 336, 432 )
-auto_jump = false
-see_controllable = false
-teleport = false
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
 

@@ -8,6 +8,7 @@ onready var sprite = $Sprite
 onready var ray = $RayCast2D
 onready var left = $RayLeft
 onready var right = $RayRight
+onready var ray_up = $RayUp
 onready var coll = $CollisionShape2D
 
 var on_left = false
@@ -30,7 +31,14 @@ func _ready():
 	sprite.frame = (4*(Globals.current_world-1)) + id
 
 func _process(delta):
-	if counter > 0:
+	
+	var block_on_top = false
+	var coll = ray_up.get_collider()
+	if coll:
+		if coll.is_in_group("Blocks"):
+			block_on_top = true
+			
+	if counter > 0 or block_on_top:
 		set_physics_process(false)
 	else:
 		set_physics_process(true)
@@ -40,9 +48,9 @@ func _physics_process(delta):
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL
 
-	if on_left and Input.get_action_strength("right") == 1 and ray.is_colliding() and !right.is_colliding():
+	if on_left and Input.get_action_strength("right") == 1 and ray.is_colliding() and !right.is_colliding() and pusher.floored:
 		target_pos = 1
-	if on_right and Input.get_action_strength("left") == 1 and ray.is_colliding() and !left.is_colliding():
+	if on_right and Input.get_action_strength("left") == 1 and ray.is_colliding() and !left.is_colliding() and pusher.floored:
 		target_pos = -1
 		
 	if pusher:

@@ -43,6 +43,7 @@ var rot
 var invisiWallL
 var invisiWallR
 var id
+var floored
 
 var Air = preload("res://Powerups/Air.tscn")
 
@@ -133,6 +134,7 @@ func calc_motion(n, forward, backward, top, btm):
 					
 	# Reseteo de variables al estar en el piso
 	var on_floor = is_on_floor()
+	floored = on_floor
 	
 	if on_floor:
 		jumping = false
@@ -245,10 +247,7 @@ func calc_motion(n, forward, backward, top, btm):
 		if see_controllable:
 			$Sprite.modulate = Color.white
 
-	# Calculo variables de escalera
-	if id == 0:
-		print(on_floor and detector_pos)
-		
+	# Calculo variables de escalera		
 	if awake:
 		
 		var tile_pos
