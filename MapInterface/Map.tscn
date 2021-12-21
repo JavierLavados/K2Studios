@@ -118,9 +118,9 @@ right = true
 position = Vector2( 512, 416 )
 level_proyect_dir = "res://Levels/Level2Demo.tscn"
 level_number = 2
-left = true
-right = true
 up = true
+right = true
+left = true
 
 [node name="LevelIcon3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 224 )

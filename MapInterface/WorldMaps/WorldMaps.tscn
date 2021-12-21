@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://MapInterface/WorldMaps/Scripts/WorldMaps.gd" type="Script" id=1]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld1.tscn" type="PackedScene" id=2]
@@ -7,15 +7,11 @@
 [ext_resource path="res://MapInterface/MapPointer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld4.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Fonts/Notalot60.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://BasuraJavo/num.jpg" type="Texture" id=8]
 [ext_resource path="res://WIP/BackgroundWorldMap.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 326.5 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 40
-font_data = ExtResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -69,23 +65,23 @@ position = Vector2( 3072, 0 )
 [node name="Map5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4096, 0 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 832.0
-margin_top = 40.0
-margin_right = 896.0
-margin_bottom = 88.0
-custom_colors/font_color = Color( 0.458824, 0.0509804, 0.952941, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition"]
 position = Vector2( 1112, 184 )
 shape = SubResource( 3 )
+
+[node name="Decena" type="Sprite" parent="."]
+position = Vector2( 800, 72 )
+texture = ExtResource( 8 )
+hframes = 5
+vframes = 2
+
+[node name="Unidad" type="Sprite" parent="."]
+position = Vector2( 864, 72 )
+texture = ExtResource( 8 )
+hframes = 5
+vframes = 2
 
 [connection signal="body_entered" from="Transition1" to="." method="_on_Transition1_body_entered"]
 [connection signal="body_entered" from="Transition2" to="." method="_on_Transition2_body_entered"]
