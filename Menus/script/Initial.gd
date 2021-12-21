@@ -20,8 +20,7 @@ func _on_Play_pressed():
 	get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
 		
 func _on_Settings_pressed():
-	var actual_dir = "res://Menus/Settings.tscn"
-	get_tree().change_scene(actual_dir)
+	get_tree().change_scene("res://Menus/Settings.tscn")
 
 func _on_Play_mouse_entered():
 	$VBoxContainer/Play.grab_focus()
@@ -30,6 +29,15 @@ func _on_Play_mouse_entered():
 func _on_Settings_mouse_entered():
 	$VBoxContainer/Settings.grab_focus()
 	
+func _on_Credits_pressed():
+	get_tree().change_scene("res://Menus/Credits.tscn")
+
+func _on_Credits_mouse_entered():
+	$VBoxContainer/Credits.grab_focus()
 
 
+func _on_Exit_pressed():
+	get_tree().quit()
 
+func _on_Exit_mouse_entered():
+	$VBoxContainer/Exit.grab_focus()

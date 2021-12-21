@@ -30,7 +30,7 @@ centered = false
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 512, 160 )
+position = Vector2( 504, 120 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
@@ -38,11 +38,11 @@ texture = ExtResource( 4 )
 tile_data = PoolIntArray( 196611, 4, 0, 196612, 13, 0, 262146, 13, 0, 262148, 2, 0, 262149, 10, 0, 262171, 16, 0, 262172, 8, 0, 327681, 4, 0, 327682, 8, 0, 327683, 1, 0, 327707, 5, 0, 327709, 10, 0, 393218, 7, 0, 393221, 9, 0, 393222, 8, 0, 393244, 16, 0, 393245, 8, 0, 458758, 10, 0, 458780, 5, 0, 589827, 19, 0, 589828, 19, 0, 589829, 20, 0, 589849, 18, 0, 589850, 19, 0, 655362, 19, 0, 655363, 19, 0, 655364, 19, 0, 655385, 19, 0, 720898, 18, 0, 720899, 19, 0, 851974, 6, 0, 851995, 1, 0, 851996, 10, 0, 917509, 9, 0, 917510, 15, 0, 917530, 2, 0, 917531, 7, 0, 917532, 3, 0, 917533, 8, 0, 983045, 6, 0, 983065, 14, 0, 983066, 8, 0, 983067, 3, 0, 983069, 14, 0, 1048581, 2, 0, 1048582, 8, 0, 1048583, 15, 0, 1048602, 14, 0, 1114118, 7, 0, 1114119, 6, 0, 1114134, 19, 0, 1114135, 19, 0, 1179669, 19, 0, 1179670, 17, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 320.0
-margin_top = 312.0
-margin_right = 512.0
-margin_bottom = 412.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 368.0
+margin_top = 256.0
+margin_right = 560.0
+margin_bottom = 460.0
+rect_scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -65,7 +65,29 @@ texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 11 )
 
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 192.0
+margin_bottom = 152.0
+focus_neighbour_bottom = NodePath("../Play")
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
+
+[node name="Exit" type="TextureButton" parent="VBoxContainer"]
+margin_top = 156.0
+margin_right = 192.0
+margin_bottom = 204.0
+focus_neighbour_bottom = NodePath("../Play")
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
+
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Settings" to="." method="_on_Settings_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Credits" to="." method="_on_Credits_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Exit" to="." method="_on_Exit_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
