@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/World2/Script/Level2-4.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Levers/LeverUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levers/LeverBlocks/LeverBlockUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=9]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 
@@ -14,7 +17,16 @@ script = ExtResource( 1 )
 int_level = 14
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 411.471, 360.314 )
+position = Vector2( 400, 368 )
+
+[node name="PlayerRight" parent="." instance=ExtResource( 7 )]
+position = Vector2( 416, 320 )
+
+[node name="PlayerDown" parent="." instance=ExtResource( 9 )]
+position = Vector2( 336, 312 )
+
+[node name="PlayerLeft" parent="." instance=ExtResource( 8 )]
+position = Vector2( 264, 256 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
 
@@ -23,6 +35,7 @@ position = Vector2( 512, 320 )
 current = true
 
 [node name="TileMapW2" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 786439, 5, 0, 786440, 5, 0, 786441, 5, 0, 786442, 5, 0, 786443, 5, 0, 786444, 5, 0, 786445, 5, 0, 786446, 5, 0, 786447, 5, 0, 786448, 5, 0, 786449, 5, 0, 786450, 5, 0 )
 
 [node name="PortalUp" parent="." instance=ExtResource( 13 )]
 position = Vector2( 272, 368 )

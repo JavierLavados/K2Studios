@@ -106,6 +106,7 @@ func modify_sprite(n, forward, backward):
 		else:
 			playback.travel("ClimbIdle")
 			
+
 # FUNCION PRINCIPAL
 func calc_motion(n, forward, backward, top, btm):
 	

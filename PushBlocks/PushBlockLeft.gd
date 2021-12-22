@@ -26,6 +26,8 @@ var subst = false
 var midpoint = false
 var in_midpoint = false
 var pusher
+var coll_left = 0
+var coll_right = 0
 
 func _ready():
 	sprite.frame = (4*(Globals.current_world-1)) + id
@@ -35,7 +37,7 @@ func _process(delta):
 	var block_on_top = false
 	var on_top = ray_up.get_collider()
 	if on_top:
-		if on_top.is_in_group("Blocks"):
+		if on_top.is_in_group("Blocks") and on_top.id == id:
 			block_on_top = true
 			
 	if counter > 0 or block_on_top:
@@ -49,10 +51,12 @@ func _physics_process(delta):
 	if motion.dot(NORMAL) > -300:
 		motion += -gravity * NORMAL
 
-	if on_left and Input.get_action_strength("up") == 1 and ray.is_colliding() and !right.is_colliding() and pusher.floored:
-		target_pos = 1
-	if on_right and Input.get_action_strength("down") == 1 and ray.is_colliding() and !left.is_colliding() and pusher.floored:
-		target_pos = -1
+	if on_left and Input.get_action_strength("up") == 1 and ray.is_colliding() and !right.is_colliding():
+		if pusher.floored and coll_right == 0:
+			target_pos = 1
+	if on_right and Input.get_action_strength("down") == 1 and ray.is_colliding() and !left.is_colliding():
+		if pusher.floored and coll_left == 0:
+			target_pos = -1
 		
 	if pusher:
 		if (on_left and Input.get_action_strength("up") == 1) or (on_right and Input.get_action_strength("down") == 1):
@@ -163,3 +167,19 @@ func _on_AreaAll_body_entered(body):
 func _on_AreaAll_body_exited(body):
 	if body.is_in_group("Players") and body.name != "PlayerLeft":
 		counter -= 1
+
+func _on_CollisionLeft_body_entered(body):
+	if body.is_in_group("Players") and body.name != "PlayerLeft":
+		coll_left += 1
+
+func _on_CollisionLeft_body_exited(body):
+	if body.is_in_group("Players") and body.name != "PlayerLeft":
+		coll_left -= 1
+
+func _on_CollisionRight_body_entered(body):
+	if body.is_in_group("Players") and body.name != "PlayerLeft":
+		coll_right += 1
+
+func _on_CollisionRight_body_exited(body):
+	if body.is_in_group("Players") and body.name != "PlayerLeft":
+		coll_right -= 1
