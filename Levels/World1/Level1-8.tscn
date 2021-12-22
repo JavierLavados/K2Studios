@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://PushBlocks/PushBlockDown.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Ladders/Right/LadderRight.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Ladders/Right/LadderExitRight.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Ladders/Right/LadderEnterRight.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=27]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
@@ -146,3 +147,5 @@ position = Vector2( -64, 0 )
 
 [node name="LadderRight4" parent="LadderExitRight" instance=ExtResource( 24 )]
 position = Vector2( -32, 0 )
+
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 27 )]
