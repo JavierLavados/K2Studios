@@ -33,12 +33,13 @@ func _ready():
 func _process(delta):
 	
 	var block_on_top = false
-	var coll = ray_up.get_collider()
-	if coll:
-		if coll.is_in_group("Blocks"):
+	var on_top = ray_up.get_collider()
+	if on_top:
+		if on_top.is_in_group("Blocks"):
 			block_on_top = true
 			
 	if counter > 0 or block_on_top:
+		coll.shape.extents.x = 16
 		set_physics_process(false)
 	else:
 		set_physics_process(true)
@@ -86,7 +87,7 @@ func _physics_process(delta):
 		if midpoint:
 			freeze = true
 	else:
-		coll.shape.extents.x = 16
+		coll.shape.extents.x = 15.8
 
 	# Si la caja esta en el suelo y sin moverse, resetear variables
 	if ray.is_colliding() and target_pos == 0:
