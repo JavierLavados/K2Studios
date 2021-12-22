@@ -65,7 +65,7 @@ level_number = 20
 
 [node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
 position = Vector2( 128, 544 )
-required = 3
+required = 12
 
 [node name="PointIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128, 544 )
