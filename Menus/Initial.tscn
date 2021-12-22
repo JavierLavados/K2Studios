@@ -1,16 +1,22 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/BgW1.png" type="Texture" id=1]
 [ext_resource path="res://Menus/script/Initial.gd" type="Script" id=2]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/LogoNuevo.png" type="Texture" id=4]
 [ext_resource path="res://Tilemaps/TileMapW1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/Buttons/ExitHover.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Buttons/PlayNormal.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Buttons/SettingsNormal.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Buttons/PlayHover.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Buttons/PlayPressed.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Buttons/SettingsHover.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Buttons/SettingsPressed.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Buttons/CreditsHover.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Buttons/CreditsNormal.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Buttons/CreditsPressed.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Buttons/ExitNormal.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Buttons/ExitPressed.png" type="Texture" id=17]
 
 [node name="Initial" type="Control"]
 margin_right = 1023.0
@@ -30,7 +36,7 @@ centered = false
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 504, 120 )
+position = Vector2( 512, 160 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
@@ -39,9 +45,9 @@ tile_data = PoolIntArray( 196611, 4, 0, 196612, 13, 0, 262146, 13, 0, 262148, 2,
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 368.0
-margin_top = 256.0
+margin_top = 320.0
 margin_right = 560.0
-margin_bottom = 460.0
+margin_bottom = 476.0
 rect_scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_group_": true,
@@ -59,29 +65,29 @@ texture_hover = ExtResource( 9 )
 [node name="Settings" type="TextureButton" parent="VBoxContainer"]
 margin_top = 52.0
 margin_right = 192.0
-margin_bottom = 100.0
+margin_bottom = 84.0
 focus_neighbour_bottom = NodePath("../Play")
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 11 )
 
 [node name="Credits" type="TextureButton" parent="VBoxContainer"]
-margin_top = 104.0
+margin_top = 88.0
 margin_right = 192.0
-margin_bottom = 152.0
+margin_bottom = 120.0
 focus_neighbour_bottom = NodePath("../Play")
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 12 )
-texture_hover = ExtResource( 11 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 13 )
 
 [node name="Exit" type="TextureButton" parent="VBoxContainer"]
-margin_top = 156.0
+margin_top = 124.0
 margin_right = 192.0
-margin_bottom = 204.0
+margin_bottom = 156.0
 focus_neighbour_bottom = NodePath("../Play")
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 12 )
-texture_hover = ExtResource( 11 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 6 )
 
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
