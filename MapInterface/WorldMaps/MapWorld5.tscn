@@ -65,7 +65,8 @@ level_number = 50
 
 [node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
 position = Vector2( 704, 544 )
-required = 3
+required = 40
+world = 5
 
 [node name="Title" type="Sprite" parent="."]
 position = Vector2( 512, 64 )

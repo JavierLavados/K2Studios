@@ -1,92 +1,72 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Levels/World3/Script/Level3-2.gd" type="Script" id=1]
-[ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/World3/Script/Level3-1.gd" type="Script" id=1]
+[ext_resource path="res://Clouds/CloudDown.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Players/PlayerDown.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilemaps/TileMapW3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Clouds/CloudRight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=9]
-[ext_resource path="res://WIP/Signpost.tscn" type="PackedScene" id=10]
-[ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=11]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 int_level = 22
 
 [node name="PlayerUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 112, 208 )
+position = Vector2( 144, 272 )
 
-[node name="PlayerRight" parent="." instance=ExtResource( 3 )]
-position = Vector2( 560, 112 )
+[node name="PlayerDown" parent="." instance=ExtResource( 6 )]
+position = Vector2( 400, 560 )
 
-[node name="Background" parent="." instance=ExtResource( 12 )]
+[node name="Background" parent="." instance=ExtResource( 4 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )
 current = true
 
 [node name="TileMapW3" parent="." instance=ExtResource( 7 )]
-tile_data = PoolIntArray( 131088, 15, 0, 196624, 15, 0, 262160, 15, 0, 327696, 15, 0, 327697, 15, 0, 393232, 16, 0, 393239, 15, 0, 393240, 19, 0, 458754, 17, 0, 458756, 15, 0, 458761, 18, 0, 458766, 11, 0, 458767, 13, 0, 458773, 15, 0, 458774, 15, 0, 458775, 15, 0, 524292, 15, 0, 524293, 15, 0, 524303, 3, 0, 524304, 9, 0, 524305, 4, 0, 589833, 15, 0, 589834, 15, 0, 589839, 11, 0, 589840, 5, 0, 655369, 15, 0, 655376, 13, 0, 720899, 18, 0, 786456, 13, 0, 851971, 15, 0, 851972, 15, 0, 851990, 9, 0, 917507, 15, 0, 917508, 15, 0, 917515, 13, 0, 917516, 2, 0, 917517, 11, 0, 917518, 9, 0, 917519, 5, 0, 917520, 9, 0, 917521, 11, 0, 917522, 4, 0, 917523, 11, 0, 917524, 13, 0, 983044, 15, 0, 983052, 9, 0, 983053, 13, 0, 983054, 4, 0, 983055, 11, 0, 983056, 3, 0, 983057, 6, 0, 983058, 9, 0, 983059, 1, 0, 1048580, 15, 0, 1048589, 9, 0, 1048591, 0, 0, 1048601, 2, 0, 1048602, 9, 0, 1048603, 13, 0, 1048604, 11, 0, 1048605, 4, 0, 1114138, 11, 0, 1114139, 5, 0, 1114140, 0, 0 )
+tile_data = PoolIntArray( 131086, 13, 0, 131087, 9, 0, 131088, 6, 0, 131089, 11, 0, 196620, 11, 0, 196621, 1, 0, 196622, 9, 0, 196623, 11, 0, 196624, 13, 0, 196625, 4, 0, 196626, 11, 0, 262155, 3, 0, 262156, 9, 0, 262157, 11, 0, 262158, 13, 0, 524308, 15, 0, 524309, 19, 0, 589827, 17, 0, 589829, 15, 0, 589836, 9, 0, 589837, 13, 0, 589838, 11, 0, 589839, 6, 0, 589843, 15, 0, 589844, 15, 0, 655365, 15, 0, 655366, 15, 0, 655367, 15, 0, 655371, 0, 0, 655372, 11, 0, 655373, 5, 0, 655374, 9, 0, 983054, 11, 0, 983055, 13, 0, 983056, 7, 0, 983057, 11, 0, 983058, 1, 0, 983059, 9, 0, 983060, 13, 0, 983064, 15, 0, 983065, 15, 0, 983066, 15, 0, 983067, 19, 0, 1048587, 9, 0, 1048588, 11, 0, 1048589, 13, 0, 1048590, 6, 0, 1048591, 11, 0, 1048592, 0, 0, 1048593, 13, 0, 1048601, 15, 0, 1048602, 15, 0 )
 
-[node name="PortalUp" parent="." instance=ExtResource( 13 )]
-position = Vector2( 880, 496 )
+[node name="PortalUp" parent="." instance=ExtResource( 10 )]
+position = Vector2( 880, 464 )
 
-[node name="PortalRight" parent="." instance=ExtResource( 4 )]
-position = Vector2( 176, 496 )
+[node name="PortalDown" parent="." instance=ExtResource( 8 )]
+position = Vector2( 400, 176 )
 
-[node name="Interface" parent="." instance=ExtResource( 2 )]
+[node name="Interface" parent="." instance=ExtResource( 9 )]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="CloudUp" parent="." instance=ExtResource( 6 )]
-position = Vector2( 240, 272 )
+[node name="CloudUp" parent="." instance=ExtResource( 11 )]
+position = Vector2( 304, 336 )
 
-[node name="CloudUp2" parent="CloudUp" instance=ExtResource( 6 )]
+[node name="CloudUp2" parent="CloudUp" instance=ExtResource( 11 )]
 position = Vector2( -32, 0 )
 
-[node name="CloudUp3" parent="CloudUp" instance=ExtResource( 6 )]
+[node name="CloudUp3" parent="CloudUp" instance=ExtResource( 11 )]
 position = Vector2( 32, 0 )
 
-[node name="CloudUp2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 624, 240 )
+[node name="CloudUp2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 720, 496 )
 
-[node name="CloudUp2" parent="CloudUp2" instance=ExtResource( 6 )]
-position = Vector2( 32, 0 )
-
-[node name="CloudUp3" parent="CloudUp2" instance=ExtResource( 6 )]
+[node name="CloudUp2" parent="CloudUp2" instance=ExtResource( 11 )]
 position = Vector2( -32, 0 )
 
-[node name="CloudRight" parent="." instance=ExtResource( 8 )]
-position = Vector2( 400, 240 )
-h_osc = false
-
-[node name="CloudRight" parent="CloudRight" instance=ExtResource( 8 )]
+[node name="CloudUp3" parent="CloudUp2" instance=ExtResource( 11 )]
 position = Vector2( 32, 0 )
-h_osc = false
 
-[node name="CloudRight2" parent="CloudRight" instance=ExtResource( 8 )]
+[node name="CloudDown" parent="." instance=ExtResource( 2 )]
+position = Vector2( 560, 304 )
+
+[node name="CloudDown2" parent="CloudDown" instance=ExtResource( 2 )]
 position = Vector2( -32, 0 )
-h_osc = false
 
-[node name="CloudRight2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 528, 400 )
+[node name="CloudDown3" parent="CloudDown" instance=ExtResource( 2 )]
+position = Vector2( 32, 0 )
 
-[node name="CloudRight" parent="CloudRight2" instance=ExtResource( 8 )]
-position = Vector2( 0, 32 )
-
-[node name="CloudRight2" parent="CloudRight2" instance=ExtResource( 8 )]
-position = Vector2( 0, -32 )
-
-[node name="SpikesAllGroup" parent="." instance=ExtResource( 9 )]
-
-[node name="Signpost" parent="." instance=ExtResource( 10 )]
-position = Vector2( 304, 208 )
-
-[node name="Signpost2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 592, 176 )
-id = 1
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 3 )]

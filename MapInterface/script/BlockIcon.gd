@@ -1,26 +1,56 @@
 extends Node2D
 
 export var required = 1
-#var bloqued
+export var world = 1
+
+onready var sprite = $Sprite
+onready var bubble = $Sprite2
+onready var dec = $Sprite2/Decena
+onready var uni = $Sprite2/Unidad
+onready var animationPlayer = $AnimationPlayer
+
+var accum = 0
+var cleared = false
+var deleted = false
+
+var texture = "res://Sprites/StopBlocks/StopBlockW"
+
 func _ready():
-	var decima = required/10+(Globals.current_world-1)*10
-	var unidad = required%10+(Globals.current_world-1)*10
-	if decima == 0:
-		$Sprite2/Decima.visible=false
-		$Sprite2/Unidad.frame=unidad
-		$Sprite2/Unidad.position.x=0
-	if decima !=0:
-		$Sprite2/Decima.frame=decima
-		$Sprite2/Unidad.frame=unidad
-
-	if required<= Globals.current_points:
-		#bloqued = false
-		visible = false
-	else:
-		#bloqued = true
-		visible = true
-func _on_Area2D_body_entered(body):
-	if visible:
-		body.go_back=true
+	var t = texture + str(world) + ".png"
+	sprite.texture = load(t)
 	
+	var decena = required/10
+	var unidad = required%10
+	if decena == 0:
+		dec.visible = false
+		uni.frame = unidad
+		uni.position.x = 0
+	else:
+		dec.frame = decena
+		uni.frame = unidad
+		if decena == 1:
+			uni.position.x -= 2
+		if unidad == 1:
+			dec.position.x += 2
+		
+	if required <= Globals.current_points:
+		animationPlayer.play("Glowing")
+		cleared = true
+	else:
+		animationPlayer.play("Idle")
+	
+	if cleared:
+		bubble.visible = false
 
+func _process(delta):	
+	accum += delta
+	bubble.position.y = -64 + sin(5*accum)
+
+func _on_Area2D_body_entered(body):
+	if !cleared:
+		body.go_back = true
+
+func _on_BigArea_body_entered(body):
+	if cleared and not deleted:
+		animationPlayer.play("Vanish")
+		deleted = true

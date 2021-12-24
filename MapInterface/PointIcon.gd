@@ -13,12 +13,12 @@ var directions = []
 var body_inside = false
 
 func _ready():
-	sprite.frame = (3*Globals.current_world)-1
+	sprite.frame = Globals.current_world-1
 	directions = [up,right,down,left]
 
 
 func _process(delta):
-	sprite.frame = (3*Globals.current_world)-1
+	sprite.frame = Globals.current_world-1
 
 
 func _on_Area2D_body_entered(body):

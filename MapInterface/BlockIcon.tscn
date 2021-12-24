@@ -1,11 +1,79 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Sprites/MapTiles2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/StopBlocks/StopBlockW1.png" type="Texture" id=1]
 [ext_resource path="res://MapInterface/script/BlockIcon.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Numbers.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/StopBlocks/Bubble.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/StopBlocks/BubbleNumbers.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 24 )
+extents = Vector2( 32, 32 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Glowing"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 4, 3, 2, 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Vanish"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14 ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 96, 96 )
 
 [node name="BlockIcon" type="Node2D"]
 script = ExtResource( 2 )
@@ -14,28 +82,41 @@ script = ExtResource( 2 )
 scale = Vector2( 2, 2 )
 z_index = 5
 texture = ExtResource( 1 )
-hframes = 15
-vframes = 8
-frame = 48
+hframes = 4
+vframes = 4
+frame = 1
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 0, -32 )
-
-[node name="Decima" type="Sprite" parent="Sprite2"]
-position = Vector2( -8, 0 )
+position = Vector2( 0, -64 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
+
+[node name="Decena" type="Sprite" parent="Sprite2"]
+position = Vector2( -7, -3 )
+texture = ExtResource( 4 )
 hframes = 10
-vframes = 5
 
 [node name="Unidad" type="Sprite" parent="Sprite2"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 3 )
+position = Vector2( 7, -3 )
+texture = ExtResource( 4 )
 hframes = 10
-vframes = 5
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 3.0
+anims/Glowing = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/Vanish = SubResource( 5 )
+
+[node name="BigArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BigArea"]
+shape = SubResource( 6 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="BigArea" to="." method="_on_BigArea_body_entered"]
