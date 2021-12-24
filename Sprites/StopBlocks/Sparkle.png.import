@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ExitHover.png-28d0a276031713bb423705561e1ab942.stex"
+path="res://.import/Sparkle.png-61d8085bcc5a8d330979b24ac9e7f73a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Buttons/ExitHover.png"
-dest_files=[ "res://.import/ExitHover.png-28d0a276031713bb423705561e1ab942.stex" ]
+source_file="res://Sprites/StopBlocks/Sparkle.png"
+dest_files=[ "res://.import/Sparkle.png-61d8085bcc5a8d330979b24ac9e7f73a.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
