@@ -56,7 +56,7 @@ Jose Trivino
 
 MUSIC
 
-Aaaaaaaaaaaaa"
+Tomas Rivera"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -67,6 +67,7 @@ margin_left = 32.0
 margin_top = 24.0
 margin_right = 80.0
 margin_bottom = 64.0
+rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 5 )
