@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/BgW1.png" type="Texture" id=1]
 [ext_resource path="res://Menus/script/Initial.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Sprites/Buttons/CreditsPressed.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Buttons/ExitNormal.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/Buttons/ExitPressed.png" type="Texture" id=17]
+[ext_resource path="res://WIP/Transition1.tscn" type="PackedScene" id=18]
 
 [node name="Initial" type="Control"]
 margin_right = 1023.0
@@ -92,6 +93,8 @@ focus_neighbour_bottom = NodePath("../Play")
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 6 )
+
+[node name="Transition1" parent="." instance=ExtResource( 18 )]
 
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
