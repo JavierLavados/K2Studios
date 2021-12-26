@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var exists = true
 
-onready var world = get_node("/root/World")
+onready var world = get_node("/root/SceneSwitcher/newRoot/World")
 
 func setUp(id):
 	var players = world.players

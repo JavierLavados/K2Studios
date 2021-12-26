@@ -3,7 +3,7 @@ extends Node2D
 onready var sprite = $Sprite
 
 #export var required = 1
-export var level_proyect_dir = 'res://Levels/World1/Level1-1.tscn'
+#export var level_proyect_dir = 'res://Levels/World1/Level1-1.tscn'
 export var level_number = 1
 
 export var up = false
@@ -29,9 +29,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:
 		#if not disabled and level_proyect_dir != '':
-		if level_proyect_dir != '':
-			Globals.current_level=level_number
-			get_tree().change_scene(level_proyect_dir)
+		#if level_proyect_dir != '':
+		Globals.current_level=level_number
+		LevelManager.change_scene(level_number+3)
+		#get_tree().change_scene(level_proyect_dir)
 		
 		
 

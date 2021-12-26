@@ -32,7 +32,8 @@ func _on_LevelSel_pressed():
 		get_tree().paused = false
 		#var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
 		#var actual_dir = format_dir%str(Globals.current_world)
-		get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
+		#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
+		LevelManager.change_scene_no_sfx(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
 		
 func _on_Settings_pressed():
 	if get_tree().paused == true:	
@@ -44,8 +45,9 @@ func _on_Settings_pressed():
 func _on_TitleScr_pressed():
 	if get_tree().paused == true:	
 		get_tree().paused = false
-		var actual_dir = "res://Menus/Initial.tscn"
-		get_tree().change_scene(actual_dir)
+		#var actual_dir = "res://Menus/Initial.tscn"
+		#get_tree().change_scene(actual_dir)
+		LevelManager.change_scene_no_sfx(0) #res://Menus/Initial.tscn
 
 
 func _on_Resume_mouse_entered():
