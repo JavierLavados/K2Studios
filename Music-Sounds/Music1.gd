@@ -1,13 +1,12 @@
 extends AudioStreamPlayer
 
-var musicaFondo = load("res://Music-Sounds/music.mp3")
+export var music = ""
+
 
 
 func _ready():
-	pass 
-
-
-func play_music():
-	#$Music.stream = musicaFondo
-	if not $Music.playing:
-		$Music.play()
+	var musicaFondo = load(music)
+	set_stream(musicaFondo)
+	set_volume_db(-20)
+	if not self.playing:
+		play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Players/PlayerLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Spikes/SpikeUp.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Music-Sounds/Music1.tscn" type="PackedScene" id=24]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
@@ -112,3 +113,6 @@ position = Vector2( 752, 368 )
 
 [node name="SpikeDown2" parent="." instance=ExtResource( 23 )]
 position = Vector2( 720, 368 )
+
+[node name="Music" parent="." instance=ExtResource( 24 )]
+music = "res://Music-Sounds/Tunes/music.mp3"

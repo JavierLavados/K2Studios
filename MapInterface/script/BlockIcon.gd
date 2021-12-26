@@ -42,7 +42,7 @@ func _ready():
 		cleared = true
 	else:
 		animationPlayer.play("Idle")
-		print("Idle")
+		#print("Idle")
 	
 	if cleared:
 		bubble.visible = false

@@ -67,6 +67,7 @@ level_number = 20
 position = Vector2( 128, 544 )
 required = 12
 world = 2
+id = 2
 
 [node name="PointIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128, 544 )

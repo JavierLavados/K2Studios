@@ -4,7 +4,7 @@ onready var interface = $Interface
 onready var background =$Background
 onready var timer = $Timer
 
-#onready var music = get_node("/root/Music1")
+#var music
 
 var current #Almacena el id del jugador actual
 var players = []
@@ -62,7 +62,9 @@ func wakeUp(prev, new):
 func gameOver():
 	get_tree().reload_current_scene()
 
-func setUp(n_players, init_lever=4):
+func setUp(n_players, init_lever=4,music=null):
+	#music=get_node(music)
+	#music.play_music()
 	
 	lever = init_lever
 	if lever != 4:

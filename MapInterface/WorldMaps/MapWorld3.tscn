@@ -67,6 +67,7 @@ level_number = 30
 position = Vector2( 320, 352 )
 required = 20
 world = 3
+id = 3
 
 [node name="Title" type="Sprite" parent="."]
 position = Vector2( 512, 64 )
