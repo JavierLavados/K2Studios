@@ -77,4 +77,4 @@ position = Vector2( 272, 336 )
 
 [node name="Signpost" parent="." instance=ExtResource( 10 )]
 position = Vector2( 432, 208 )
-message = "res://Tutorials/tuto1-1.png"
+message = "res://Tutorials/tuto1-1w.png"

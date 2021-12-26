@@ -4,6 +4,8 @@ onready var interface = $Interface
 onready var background =$Background
 onready var timer = $Timer
 
+#onready var music = get_node("/root/Music1")
+
 var current #Almacena el id del jugador actual
 var players = []
 var ids = []
@@ -32,6 +34,7 @@ func _ready():
 	
 	timer.set_paused(true)
 	timer.one_shot = true
+	#music.play_music()
 			
 ##################
 

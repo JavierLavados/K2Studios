@@ -2,6 +2,7 @@ extends CanvasLayer
 
 onready var animPlayer = $AnimationPlayer
 
+
 func change_scene_loc(path):
 	layer = 1
 	# blur in
