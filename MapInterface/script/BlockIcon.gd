@@ -2,6 +2,7 @@ extends Node2D
 
 export var required = 1
 export var world = 1
+export var id = 1
 
 onready var sprite = $Sprite
 onready var bubble = $Sprite2
@@ -33,11 +34,15 @@ func _ready():
 		if unidad == 1:
 			dec.position.x += 2
 		
+	if  Globals.block_status[id-1]:
+		visible=false
+		
 	if required <= Globals.current_points:
 		animationPlayer.play("Glowing")
 		cleared = true
 	else:
 		animationPlayer.play("Idle")
+		print("Idle")
 	
 	if cleared:
 		bubble.visible = false
@@ -54,3 +59,4 @@ func _on_BigArea_body_entered(body):
 	if cleared and not deleted:
 		animationPlayer.play("Vanish")
 		deleted = true
+		Globals.block_status[id-1]=true

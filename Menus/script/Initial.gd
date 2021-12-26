@@ -10,20 +10,23 @@ func _ready():
 	if len(Globals.path_status)==0:
 		for i in range(66):
 			Globals.path_status+=[false]
+	if len(Globals.block_status)==0:
+		for i in range(10):
+			Globals.block_status+=[false]
 	
-func _input(event):
-	if event.is_action_pressed("Esc"):
-		TRANSITION.quit_scene()
+#func _input(event):
+	#if event.is_action_pressed("Esc"):
+		#TRANSITION.quit_scene()
 
 func _on_Play_pressed():
-	#var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
-	#var actual_dir = format_dir%str(Globals.current_world)
-	#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
-	TRANSITION.change_scene_loc("res://MapInterface/WorldMaps/WorldMaps.tscn")
+	var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
+	var actual_dir = format_dir%str(Globals.current_world)
+	get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
+	#TRANSITION.change_scene_loc("res://MapInterface/WorldMaps/WorldMaps.tscn")
 		
 func _on_Settings_pressed():
-	#get_tree().change_scene("res://Menus/Settings.tscn")
-	TRANSITION.change_scene_loc("res://Menus/Settings.tscn")
+	get_tree().change_scene("res://Menus/Settings.tscn")
+	#TRANSITION.change_scene_loc("res://Menus/Settings.tscn")
 
 func _on_Play_mouse_entered():
 	$VBoxContainer/Play.grab_focus()
@@ -33,8 +36,8 @@ func _on_Settings_mouse_entered():
 	$VBoxContainer/Settings.grab_focus()
 	
 func _on_Credits_pressed():
-	#get_tree().change_scene("res://Menus/Credits.tscn")
-	TRANSITION.change_scene_loc("res://Menus/Credits.tscn")
+	get_tree().change_scene("res://Menus/Credits.tscn")
+	#TRANSITION.change_scene_loc("res://Menus/Credits.tscn")
 
 func _on_Credits_mouse_entered():
 	$VBoxContainer/Credits.grab_focus()
