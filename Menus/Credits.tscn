@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fonts/pixelmix.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=3]
@@ -6,10 +6,9 @@
 [ext_resource path="res://Sprites/Buttons/SettingsMenu/BackHover.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Buttons/SettingsMenu/BackNormal.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Buttons/SettingsMenu/BackPressed.png" type="Texture" id=7]
-[ext_resource path="res://WIP/Transition1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="StreamTexture" id=3]
-flags = 4
+flags = 5
 load_path = "res://.import/gravity-jojo-2.png-04c8aaa06931f17d835f16904f93fb27.stex"
 
 [sub_resource type="DynamicFont" id=1]
@@ -78,7 +77,5 @@ texture_hover = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Transition1" parent="." instance=ExtResource( 8 )]
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

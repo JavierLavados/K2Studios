@@ -11,17 +11,19 @@ config_version=4
 [application]
 
 config/name="Gravity Guys"
-run/main_scene="res://Menus/Intro.tscn"
+run/main_scene="res://Menus/SceneSwitcher.tscn"
 config/icon="res://Sprites/icon.png"
 
 [autoload]
 
 Globals="*res://Globals.gd"
+LevelManager="*res://Menus/LevelManager.tscn"
 
 [display]
 
 window/size/height=640
 window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [global]
 

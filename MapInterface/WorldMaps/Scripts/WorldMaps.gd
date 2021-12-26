@@ -27,7 +27,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Esc"):
-		get_tree().change_scene("res://Menus/Initial.tscn")
+		#get_tree().change_scene("res://Menus/Initial.tscn")
+		LevelManager.change_scene_no_sfx(0) #res://Menus/Initial.tscn
 
 func transition():
 	var pos = $MapPointer.get_position()

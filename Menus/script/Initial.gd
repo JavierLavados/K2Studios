@@ -1,6 +1,5 @@
 extends Control
 
-#onready var TRANSITION = get_node("Transition1")
 
 func _ready():
 	$VBoxContainer/Play.grab_focus()
@@ -20,12 +19,13 @@ func _input(event):
 		#TRANSITION.quit_scene()
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
-	#TRANSITION.change_scene_loc("res://MapInterface/WorldMaps/WorldMaps.tscn")
+	#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
+	LevelManager.change_scene(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
 		
 func _on_Settings_pressed():
-	get_tree().change_scene("res://Menus/Settings.tscn")
-	#TRANSITION.change_scene_loc("res://Menus/Settings.tscn")
+	#get_tree().change_scene("res://Menus/Settings.tscn")
+	LevelManager.change_scene_no_sfx(1) #res://Menus/Settings.tscn
+	
 
 func _on_Play_mouse_entered():
 	$VBoxContainer/Play.grab_focus()
@@ -35,8 +35,8 @@ func _on_Settings_mouse_entered():
 	$VBoxContainer/Settings.grab_focus()
 	
 func _on_Credits_pressed():
-	get_tree().change_scene("res://Menus/Credits.tscn")
-	#TRANSITION.change_scene_loc("res://Menus/Credits.tscn")
+	#get_tree().change_scene("res://Menus/Credits.tscn")
+	LevelManager.change_scene_no_sfx(2) #res://Menus/Credits.tscn
 
 func _on_Credits_mouse_entered():
 	$VBoxContainer/Credits.grab_focus()

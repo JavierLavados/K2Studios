@@ -5,5 +5,5 @@ func _ready():
 	pass 
 
 func _on_TextureButton_pressed():
-	var actual_dir = "res://Menus/Initial.tscn"
-	get_tree().change_scene(actual_dir)
+	
+	LevelManager.change_scene_no_sfx(0) #res://Menus/Initial.tscn

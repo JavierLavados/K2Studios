@@ -64,5 +64,5 @@ func _on_Back_pressed():
 		get_parent().get_node("Pausa").visible = true
 	else:
 		var actual_dir = "res://Menus/Initial.tscn"
-		get_tree().change_scene(actual_dir)
+		LevelManager.change_scene_no_sfx(0) #res://Menus/Initial.tscn
 		

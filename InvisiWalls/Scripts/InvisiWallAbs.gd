@@ -2,9 +2,11 @@ extends StaticBody2D
 
 var exists = true
 
+onready var world = get_node("/root/World")
+
 func setUp(id):
-	var players = get_tree().root.get_child(1).players
-	var ids = get_tree().root.get_child(1).ids
+	var players = world.players
+	var ids = world.ids
 	for i in range(len(players)):
 		if ids[i] != id:
 			add_collision_exception_with(players[i])
