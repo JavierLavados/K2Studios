@@ -1,6 +1,6 @@
 extends Control
 
-onready var TRANSITION = get_node("Transition1")
+#onready var TRANSITION = get_node("Transition1")
 
 func _ready():
 	$VBoxContainer/Play.grab_focus()
@@ -14,13 +14,12 @@ func _ready():
 		for i in range(10):
 			Globals.block_status+=[false]
 	
-#func _input(event):
-	#if event.is_action_pressed("Esc"):
+func _input(event):
+	if event.is_action_pressed("Esc"):
+		get_tree().quit()
 		#TRANSITION.quit_scene()
 
 func _on_Play_pressed():
-	var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
-	var actual_dir = format_dir%str(Globals.current_world)
 	get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
 	#TRANSITION.change_scene_loc("res://MapInterface/WorldMaps/WorldMaps.tscn")
 		
