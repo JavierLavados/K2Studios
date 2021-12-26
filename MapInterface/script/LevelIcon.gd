@@ -3,7 +3,7 @@ extends Node2D
 onready var sprite = $Sprite
 
 #export var required = 1
-export var level_proyect_dir = ''
+export var level_proyect_dir = 'res://Levels/World1/Level1-1.tscn'
 export var level_number = 1
 
 export var up = false
