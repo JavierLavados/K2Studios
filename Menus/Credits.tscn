@@ -1,13 +1,16 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/pixelmix.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Sprites/gravity-jojo.png" type="Texture" id=2]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menus/script/Credits.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Buttons/SettingsMenu/BackHover.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Buttons/SettingsMenu/BackNormal.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Buttons/SettingsMenu/BackPressed.png" type="Texture" id=7]
 [ext_resource path="res://WIP/Transition1.tscn" type="PackedScene" id=8]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/gravity-jojo-2.png-04c8aaa06931f17d835f16904f93fb27.stex"
 
 [sub_resource type="DynamicFont" id=1]
 size = 121
@@ -24,9 +27,9 @@ script = ExtResource( 4 )
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Rm" type="Sprite" parent="."]
-position = Vector2( 139.152, 454.405 )
-scale = Vector2( 0.256088, 0.256088 )
-texture = ExtResource( 2 )
+position = Vector2( 185.924, 392.751 )
+scale = Vector2( -0.34104, 0.34104 )
+texture = SubResource( 3 )
 
 [node name="Labels" type="Node" parent="."]
 
@@ -44,10 +47,10 @@ __meta__ = {
 [node name="Label2" type="Label" parent="Labels"]
 anchor_right = 0.031
 anchor_bottom = 0.012
-margin_left = 224.0
-margin_top = 216.0
-margin_right = 767.256
-margin_bottom = 420.32
+margin_left = 386.0
+margin_top = 224.0
+margin_right = 929.256
+margin_bottom = 600.32
 custom_fonts/font = SubResource( 2 )
 text = "ART AND GAME DESIGN
 
