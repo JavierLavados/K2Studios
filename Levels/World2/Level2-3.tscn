@@ -24,7 +24,7 @@
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Levels/World2/Script/Level2-1.gd" type="Script" id=23]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 23 )
 int_level = 13
 

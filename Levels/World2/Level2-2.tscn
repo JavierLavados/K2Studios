@@ -23,7 +23,7 @@
 [ext_resource path="res://Portals/PortalLeft.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Levels/World2/Script/Level2-3.gd" type="Script" id=22]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 22 )
 int_level = 12
 

@@ -8,7 +8,7 @@
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tilemaps/TileMapW1.tscn" type="PackedScene" id=16]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 1 )
 int_level = 50
 

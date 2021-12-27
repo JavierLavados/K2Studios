@@ -13,7 +13,7 @@
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 1 )
 int_level = 21
 

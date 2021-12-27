@@ -20,7 +20,7 @@
 [ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Levels/World1/Scripts/Level1-3.gd" type="Script" id=19]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 19 )
 int_level = 4
 

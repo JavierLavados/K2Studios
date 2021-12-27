@@ -32,8 +32,7 @@
 [ext_resource path="res://Buttons/Blocks/ButtonBlockDown.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=31]
 
-
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 3 )
 int_level = 31
 

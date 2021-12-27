@@ -31,7 +31,7 @@
 [ext_resource path="res://Ladders/Down/LadderEnterDown.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Ladders/Down/LadderExitDown.tscn" type="PackedScene" id=30]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 1 )
 int_level = 14
 

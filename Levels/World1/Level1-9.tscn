@@ -27,7 +27,7 @@
 [ext_resource path="res://Ladders/Down/LadderDown.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=26]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 z_index = 9
 script = ExtResource( 3 )
 int_level = 9

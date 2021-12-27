@@ -25,7 +25,7 @@
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=26]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 1 )
 int_level = 42
 

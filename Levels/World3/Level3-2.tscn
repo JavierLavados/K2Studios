@@ -12,7 +12,7 @@
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Clouds/CloudUp.tscn" type="PackedScene" id=11]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 1 )
 int_level = 22
 

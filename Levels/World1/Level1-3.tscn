@@ -17,7 +17,7 @@
 [ext_resource path="res://Ladders/Up/LadderUp.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=19]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 3 )
 int_level = 3
 

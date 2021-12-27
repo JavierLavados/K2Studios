@@ -29,7 +29,7 @@
 [ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=28]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 3 )
 int_level = 6
 
