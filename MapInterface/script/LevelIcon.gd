@@ -44,9 +44,10 @@ func _on_Area2D_body_entered(body):
 		body.node_pos = global_position
 		body.directions=directions
 
-#func _on_Area2D_area_entered(area):
-#	area.get_parent().on_node = true
-	
 func _on_Area2D_body_exited(body):
 	body_inside = false
 	#body.directions = null
+
+func _on_Area2D_area_entered(area):
+	if area.get_parent().is_in_group("MapPlayers"):
+		area.get_parent().on_node = true

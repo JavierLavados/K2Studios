@@ -9,7 +9,7 @@ extents = Vector2( 16, 16 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
-[node name="PlayerUpMap" type="KinematicBody2D"]
+[node name="PlayerUpMap" type="KinematicBody2D" groups=["MapPlayers"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
