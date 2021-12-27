@@ -6,4 +6,4 @@
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
-paths = [ ExtResource( 2 ), ExtResource( 3 ) ]
+paths = [ ExtResource( 3 ), ExtResource( 2 ) ]

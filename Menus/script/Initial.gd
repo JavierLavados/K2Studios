@@ -13,9 +13,9 @@ func _ready():
 		for i in range(10):
 			Globals.block_status+=[false]
 	
-func _input(event):
-	if event.is_action_pressed("Esc"):
-		get_tree().quit()
+#func _input(event):
+	#if event.is_action_pressed("Esc"):
+	#	get_tree().quit()
 
 func _on_Play_pressed():
 	#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
