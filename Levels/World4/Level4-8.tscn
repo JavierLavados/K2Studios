@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/World4/Script/Level4-8.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Backgrounds/BgW2.png" type="Texture" id=3]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Portals/PortalUp.tscn" type="PackedScene" id=13]
@@ -38,3 +39,5 @@ priority = 4.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 4 )]
