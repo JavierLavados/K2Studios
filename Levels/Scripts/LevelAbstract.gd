@@ -57,8 +57,9 @@ func wakeUp(prev, new):
 	current = new
 	players[ids.find(current)].awake = true
 	for cloud in clouds:
-		if cloud.respawn_restriction == 0:
-			cloud.disabled = false
+		if is_instance_valid(cloud):
+			if cloud.respawn_restriction == 0:
+				cloud.disabled = false
 	activateBlocks(prev, new)
 	
 func gameOver():

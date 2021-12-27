@@ -9,12 +9,12 @@ onready var world = get_node("/root/SceneSwitcher/newRoot/World")
 var lever
 
 func leverBlock(number):
-	
-	lever = world.lever
-		
-	if lever == number:
-		sprite.frame = (8*(Globals.current_world-1)) + (number*2)
-		coll.disabled = false
-	else:
-		sprite.frame = (8*(Globals.current_world-1)) + (number*2+1)
-		coll.disabled = true
+	if is_instance_valid(world):
+		lever = world.lever
+			
+		if lever == number:
+			sprite.frame = (8*(Globals.current_world-1)) + (number*2)
+			coll.disabled = false
+		else:
+			sprite.frame = (8*(Globals.current_world-1)) + (number*2+1)
+			coll.disabled = true
