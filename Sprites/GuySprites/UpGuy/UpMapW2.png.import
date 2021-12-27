@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DownMap.png-2f56b5f9bd9388d621310c807d79987f.stex"
+path="res://.import/UpMapW2.png-74aa3659c19bebf7bf7e0c60c6fb57ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GuySprites/DownGuy/DownMap.png"
-dest_files=[ "res://.import/DownMap.png-2f56b5f9bd9388d621310c807d79987f.stex" ]
+source_file="res://Sprites/GuySprites/UpGuy/UpMapW2.png"
+dest_files=[ "res://.import/UpMapW2.png-74aa3659c19bebf7bf7e0c60c6fb57ba.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
