@@ -14,53 +14,43 @@ __meta__ = {
 
 [node name="Level41" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-1.tscn"
 level_number = 41
 left = true
 
 [node name="Level42" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 544 )
-level_proyect_dir = "res://Levels/World5/Level5-2.tscn"
 level_number = 42
 
 [node name="Level43" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 160 )
-level_proyect_dir = "res://Levels/World5/Level5-3.tscn"
 level_number = 43
 
 [node name="Level44" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-4.tscn"
 level_number = 44
 
 [node name="Level45" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 544 )
-level_proyect_dir = "res://Levels/World5/Level5-5.tscn"
 level_number = 45
 
 [node name="Level46" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-6.tscn"
 level_number = 46
 
 [node name="Level47" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 160 )
-level_proyect_dir = "res://Levels/World5/Level5-7.tscn"
 level_number = 47
 
 [node name="Level48" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-8.tscn"
 level_number = 48
 
 [node name="Level49" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 544 )
-level_proyect_dir = "res://Levels/World5/Level5-9.tscn"
 level_number = 49
 
 [node name="Level50" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 352 )
-level_proyect_dir = "res://Levels/World5/Level5-10.tscn"
 level_number = 50
 
 [node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]

@@ -35,7 +35,7 @@ func _ready():
 	if active > 0:
 		sprite.visible = true
 
-		for i in range(2):
+		for i in range(len(directions)):
 			var j = 0
 			match directions[i]:
 				"U":

@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 onready var sprite = $Sprite
 onready var coll = $CollisionShape2D
 onready var players = get_tree().get_nodes_in_group("Players")

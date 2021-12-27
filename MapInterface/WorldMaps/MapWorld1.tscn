@@ -126,6 +126,6 @@ id = 10
 
 [node name="MapPath10-W2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 992, 352 )
-adjacent = [ 10, null ]
-directions = [ "R", null ]
+adjacent = [ 10 ]
+directions = [ "R" ]
 id = 11

@@ -14,53 +14,43 @@ __meta__ = {
 
 [node name="Level31" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 352 )
-level_proyect_dir = "res://Levels/World4/Level4-1.tscn"
 level_number = 31
 left = true
 
 [node name="Level32" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 352 )
-level_proyect_dir = "res://Levels/World4/Level4-2.tscn"
 level_number = 32
 
 [node name="Level33" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 160 )
-level_proyect_dir = "res://Levels/World4/Level4-3.tscn"
 level_number = 33
 
 [node name="Level34" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 544 )
-level_proyect_dir = "res://Levels/World4/Level4-4.tscn"
 level_number = 34
 
 [node name="Level35" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 160 )
-level_proyect_dir = "res://Levels/World4/Level4-5.tscn"
 level_number = 35
 
 [node name="Level36" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 544 )
-level_proyect_dir = "res://Levels/World4/Level4-6.tscn"
 level_number = 36
 
 [node name="Level37" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 352 )
-level_proyect_dir = "res://Levels/World4/Level4-7.tscn"
 level_number = 37
 
 [node name="Level38" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 160 )
-level_proyect_dir = "res://Levels/World4/Level4-8.tscn"
 level_number = 38
 
 [node name="Level39" parent="." instance=ExtResource( 6 )]
 position = Vector2( 704, 544 )
-level_proyect_dir = "res://Levels/World4/Level4-9.tscn"
 level_number = 39
 
 [node name="Level40" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 352 )
-level_proyect_dir = "res://Levels/World4/Level4-10.tscn"
 level_number = 40
 
 [node name="BlockIcon" parent="." groups=["BlockIcons"] instance=ExtResource( 4 )]
@@ -160,6 +150,6 @@ id = 52
 
 [node name="MapPath40-W5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 992, 352 )
-adjacent = [ 40, null ]
-directions = [ "R", null ]
+adjacent = [ 40 ]
+directions = [ "R" ]
 id = 53
