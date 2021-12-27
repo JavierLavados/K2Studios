@@ -2,8 +2,11 @@ extends StaticBody2D
 
 var exists = true
 
-onready var world = get_node("/root/SceneSwitcher/newRoot/World")
-
+onready var world
+func _ready():
+	var niveles = get_tree().get_nodes_in_group("Niveles")
+	if niveles.size()>0:
+		world=niveles[0]
 func setUp(id):
 	var players = world.players
 	var ids = world.ids

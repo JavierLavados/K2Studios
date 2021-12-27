@@ -25,7 +25,7 @@ func _on_Restart_pressed():
 	if get_tree().paused == true:
 		get_tree().paused = false
 		visible = false
-		get_tree().reload_current_scene()
+		LevelManager.change_scene_no_sfx(Globals.current_level+3)
 
 func _on_LevelSel_pressed():
 	if get_tree().paused == true:	
