@@ -17,7 +17,7 @@ func _ready():
 	r = rand_range(4,7)
 
 func _process(delta):
-	
+
 	accum += delta
 
 	if h_osc:

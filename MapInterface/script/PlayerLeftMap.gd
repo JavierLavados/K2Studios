@@ -8,11 +8,18 @@ var positions
 var gap
 var on_node = true
 
+var texture = "res://Sprites/GuySprites/LeftGuy/LeftMapW"
+
 func _ready():
+	var t = texture + str(Globals.current_world) + ".png"
+	sprite.texture = load(t)
+	
 	pointer = get_parent()
 	gap = pointer.gap
 
 func _physics_process(delta):
+	var t = texture + str(Globals.current_world) + ".png"
+	sprite.texture = load(t)
 	
 	if on_node:
 		sprite.frame = 0
