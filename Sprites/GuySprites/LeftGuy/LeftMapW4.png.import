@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RightMap.png-c7d98826385b9e5fd9597478ee916e9b.stex"
+path="res://.import/LeftMapW4.png-5f1fc27dc5b138a4b2f95183af4ddd9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GuySprites/RightGuy/RightMap.png"
-dest_files=[ "res://.import/RightMap.png-c7d98826385b9e5fd9597478ee916e9b.stex" ]
+source_file="res://Sprites/GuySprites/LeftGuy/LeftMapW4.png"
+dest_files=[ "res://.import/LeftMapW4.png-5f1fc27dc5b138a4b2f95183af4ddd9b.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
