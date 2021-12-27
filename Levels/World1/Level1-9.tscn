@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Portals/PortalDown.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -26,7 +26,6 @@
 [ext_resource path="res://Ladders/Down/LadderExitDown.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Ladders/Down/LadderDown.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Music-Sounds/Music1.tscn" type="PackedScene" id=27]
 
 [node name="World" type="Node2D"]
 z_index = 9
@@ -162,6 +161,3 @@ position = Vector2( 0, -64 )
 position = Vector2( 0, -32 )
 
 [node name="SpikesAllGroup" parent="." instance=ExtResource( 26 )]
-
-[node name="Music" parent="." instance=ExtResource( 27 )]
-music = "res://Music-Sounds/Tunes/music.mp3"

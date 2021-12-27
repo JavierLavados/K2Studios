@@ -42,14 +42,15 @@ func _ready():
 
 func activateBlocks(prev, new):
 	for block in blocks:
-		if block.id != current:
-			# Rectifica la posicion del bloque
-			block.position.x = int(round(block.position.x))
-			block.position.y = int(round(block.position.y))
-		if block.id == prev:
-			block.counter += 1
-		if block.id == new:
-			block.counter -= 1
+		if is_instance_valid(block):
+			if block.id != current:
+				# Rectifica la posicion del bloque
+				block.position.x = int(round(block.position.x))
+				block.position.y = int(round(block.position.y))
+			if block.id == prev:
+				block.counter += 1
+			if block.id == new:
+				block.counter -= 1
 
 func wakeUp(prev, new):
 	players[ids.find(current)].awake = false
@@ -61,7 +62,7 @@ func wakeUp(prev, new):
 	activateBlocks(prev, new)
 	
 func gameOver():
-	get_tree().reload_current_scene()
+	LevelManager.change_scene_no_sfx(Globals.current_level+3)
 
 func setUp(n_players, init_lever=4,music=null):
 	#music=get_node(music)

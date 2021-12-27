@@ -20,7 +20,6 @@ extents = Vector2( 8, 326.5 )
 script = ExtResource( 1 )
 
 [node name="MapPointer" parent="." instance=ExtResource( 5 )]
-position = Vector2( 128, 352 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 320 )

@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Spikes/SpikeUp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/World1/Scripts/Level1-4.gd" type="Script" id=3]
 [ext_resource path="res://Players/PlayerRight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Players/PlayerUp.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Music-Sounds/Music1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ladders/Up/LadderExitUp.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Ladders/Up/LadderEnterUp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=10]
@@ -109,6 +108,3 @@ position = Vector2( 720, 176 )
 position = Vector2( 464, 528 )
 
 [node name="SpikesAllGroup" parent="." instance=ExtResource( 19 )]
-
-[node name="Music" parent="." instance=ExtResource( 6 )]
-music = "res://Music-Sounds/Tunes/music.mp3"

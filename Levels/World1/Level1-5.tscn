@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/World1/Scripts/Level1-5.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -24,7 +24,6 @@
 [ext_resource path="res://Ladders/Up/LadderExitUp.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Spikes/SpikeRight.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Music-Sounds/Music1.tscn" type="PackedScene" id=25]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -138,6 +137,3 @@ position = Vector2( 0, 32 )
 position = Vector2( 0, -32 )
 
 [node name="SpikesAllGroup" parent="." instance=ExtResource( 24 )]
-
-[node name="Music" parent="." instance=ExtResource( 25 )]
-music = "res://Music-Sounds/Tunes/music.mp3"

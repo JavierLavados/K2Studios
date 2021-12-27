@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Torero.mp3-2b851f5296e965052c57774ee8de5ae0.mp3str"
+
+[deps]
+
+source_file="res://Music-Sounds/Torero.mp3"
+dest_files=[ "res://.import/Torero.mp3-2b851f5296e965052c57774ee8de5ae0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
