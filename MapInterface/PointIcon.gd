@@ -28,10 +28,10 @@ func _on_Area2D_body_entered(body):
 		body.node_pos = global_position
 		body.directions=directions
  
-func _on_Area2D_area_entered(area):
+#func _on_Area2D_area_entered(area):
 	#print(area)
-	if not area.get_parent().is_in_group("BlockIcons"):
-		area.get_parent().on_node = true
+	#if not area.get_parent().is_in_group("BlockIcons"):
+	#	area.get_parent().on_node = true
 	
 func _on_Area2D_body_exited(body):
 	body_inside = false

@@ -13,15 +13,13 @@ func _ready():
 	MusicManager.scene = self
 
 
-func change_scene(scene:Node):	
-	newRoot.get_child(0).queue_free()
-	newRoot.add_child(scene)
-
 func change_music(scene:Node):
-	print("caca")
 	music.get_child(0).queue_free()
 	music.add_child(scene)
 
+func change_scene(scene:Node):	
+	newRoot.get_child(0).queue_free()
+	newRoot.add_child(scene)
 
 func change_scene_loc(scene:Node):
 	transition.layer = 1
