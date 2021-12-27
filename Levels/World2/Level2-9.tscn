@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://WIP/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=2]
@@ -31,9 +31,10 @@
 [ext_resource path="res://Buttons/ButtonRight.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Ladders/Left/LadderEnterLeft.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Portals/PortalRight.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Levels/World2/Script/Level2-9.gd" type="Script" id=32]
 
 [node name="World" type="Node2D" groups=["Niveles"]]
-script = ExtResource( 1 )
+script = ExtResource( 32 )
 
 [node name="PlayerUp" parent="." instance=ExtResource( 7 )]
 position = Vector2( 336, 80 )
