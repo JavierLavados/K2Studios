@@ -2,8 +2,7 @@
 
 [ext_resource path="res://Menus/script/intro.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Backgrounds/j3studio.png" type="Texture" id=2]
-[ext_resource path="res://Music-Sounds/intro.wav" type="AudioStream" id=3]
-
+[ext_resource path="res://Music-Sounds/Tunes/intro.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade in"

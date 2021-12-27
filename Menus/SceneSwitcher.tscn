@@ -12,3 +12,9 @@ script = ExtResource( 1 )
 [node name="Initial" parent="newRoot" instance=ExtResource( 3 )]
 
 [node name="Transition1" parent="." instance=ExtResource( 2 )]
+
+[node name="music" type="Node" parent="."]
+
+[node name="theme" type="AudioStreamPlayer" parent="music"]
+volume_db = -20.0
+autoplay = true

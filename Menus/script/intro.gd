@@ -9,3 +9,4 @@ func _ready():
 	yield(get_tree().create_timer(2), "timeout")
 	
 	LevelManager.change_scene_no_sfx(0) #res://Menus/Initial.tscn
+	MusicManager.change_music(0)

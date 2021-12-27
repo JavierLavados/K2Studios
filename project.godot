@@ -18,6 +18,7 @@ config/icon="res://Sprites/icon.png"
 
 Globals="*res://Globals.gd"
 LevelManager="*res://Menus/LevelManager.tscn"
+MusicManager="*res://Menus/MusicManager.tscn"
 
 [display]
 

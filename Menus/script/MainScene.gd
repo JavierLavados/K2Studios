@@ -3,19 +3,24 @@ extends Node
 onready var newRoot = $newRoot
 onready var transition = $Transition1
 onready var animPlayer = transition.animPlayer
+onready var music = $music
 
 onready var tween : Tween = transition.tween
 
 func _ready():
 	
 	LevelManager.scene = self
+	MusicManager.scene = self
 
 
 func change_scene(scene:Node):	
 	newRoot.get_child(0).queue_free()
 	newRoot.add_child(scene)
 
-
+func change_music(scene:Node):
+	print("caca")
+	music.get_child(0).queue_free()
+	music.add_child(scene)
 
 
 func change_scene_loc(scene:Node):

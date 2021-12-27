@@ -32,6 +32,7 @@ func _input(event):
 		#if level_proyect_dir != '':
 		Globals.current_level=level_number
 		LevelManager.change_scene(level_number+3)
+		MusicManager.change_music(1)
 		#get_tree().change_scene(level_proyect_dir)
 		
 		

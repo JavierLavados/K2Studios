@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MapMusic.mp3-78d96a172c636a1ede6fe62b7a7f71cc.mp3str"
+
+[deps]
+
+source_file="res://Music-Sounds/Tunes/MapMusic.mp3"
+dest_files=[ "res://.import/MapMusic.mp3-78d96a172c636a1ede6fe62b7a7f71cc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
