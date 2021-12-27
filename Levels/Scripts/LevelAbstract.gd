@@ -63,7 +63,7 @@ func wakeUp(prev, new):
 	activateBlocks(prev, new)
 	
 func gameOver():
-	LevelManager.change_scene_no_sfx(Globals.current_level+3)
+	LevelManager.change_scene_no_sfx(int(Globals.current_level+3))
 
 func setUp(n_players, init_lever=4,music=null):
 	#music=get_node(music)

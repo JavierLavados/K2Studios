@@ -34,6 +34,7 @@
 
 [node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 31 )
+int_level = 18
 
 [node name="PlayerUp" parent="." instance=ExtResource( 28 )]
 position = Vector2( 80, 144 )

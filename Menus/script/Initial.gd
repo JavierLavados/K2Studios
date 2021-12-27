@@ -10,7 +10,7 @@ func _ready():
 		for i in range(66):
 			Globals.path_status+=[false]
 	if len(Globals.block_status)==0:
-		for i in range(10):
+		for i in range(5):
 			Globals.block_status+=[false]
 	
 #func _input(event):
