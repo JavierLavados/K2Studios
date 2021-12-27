@@ -22,6 +22,7 @@ func change_scene_loc(scene:Node):
 	transition.layer = 1
 	# blur in
 	tween.interpolate_property(transition.we, "environment:dof_blur_near_amount", 0, 1, 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+	#tween.interpolate_property(transition.cr, "color", Color(0,0,0,0), Color(0,0,0,1), 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	tween.start()
 	yield(tween, "tween_completed")
 	
@@ -31,6 +32,7 @@ func change_scene_loc(scene:Node):
 	change_scene(scene)
 	# blur out
 	tween.interpolate_property(transition.we, "environment:dof_blur_near_amount", 1, 0, 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+	#tween.interpolate_property(transition.cr, "color", Color(0,0,0,1), Color(0,0,0,0), 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	tween.start()
 	yield(tween, "tween_completed")
 	
@@ -38,16 +40,7 @@ func change_scene_loc(scene:Node):
 	#yield(animPlayer, "animation_finished")
 	transition.layer = -1
 	
-func quit_scene():
-	transition.layer = 1
-	# blur in
-	animPlayer.play("blur_in")
-	yield(animPlayer, "animation_finished")
-	# cambio de escena
-	get_tree().quit()
-	animPlayer.play_backwards("blur_out")
-	yield(animPlayer, "animation_finished")
-	transition.layer = -1
+
 	
 	
 	

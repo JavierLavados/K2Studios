@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tuto2-1a.png-413d78486709b68d6d232bf9dc9aba23.stex"
+path="res://.import/marco-tutos.png-e54f5c3ce4603e26ebd5b0bcd24b51ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tutorials/tuto2-1a.png"
-dest_files=[ "res://.import/tuto2-1a.png-413d78486709b68d6d232bf9dc9aba23.stex" ]
+source_file="res://Tutorials/marco-tutos.png"
+dest_files=[ "res://.import/marco-tutos.png-e54f5c3ce4603e26ebd5b0bcd24b51ec.stex" ]
 
 [params]
 

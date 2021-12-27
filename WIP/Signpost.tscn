@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Signposts.png" type="Texture" id=1]
 [ext_resource path="res://WIP/Signpost.gd" type="Script" id=2]
 [ext_resource path="res://WIP/ArrowKey.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Backgrounds/BgW6.png" type="Texture" id=4]
+[ext_resource path="res://Tutorials/tuto1-1w.png" type="Texture" id=4]
+[ext_resource path="res://Tutorials/marco-tutos.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
@@ -16,7 +17,14 @@ script = ExtResource( 2 )
 visible = false
 position = Vector2( -0.594555, -0.891897 )
 scale = Vector2( 2, 2 )
+z_index = 10
 texture = ExtResource( 4 )
+
+[node name="Marco" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+z_index = 9
+texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )

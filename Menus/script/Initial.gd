@@ -16,11 +16,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("Esc"):
 		get_tree().quit()
-		#TRANSITION.quit_scene()
 
 func _on_Play_pressed():
 	#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
-	LevelManager.change_scene(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
+	LevelManager.change_scene_no_sfx(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
 		
 func _on_Settings_pressed():
 	#get_tree().change_scene("res://Menus/Settings.tscn")

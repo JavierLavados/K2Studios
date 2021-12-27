@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Levels/World3/Script/Level3-4.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Buttons/Blocks/ButtonBlockDown.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Spikes/SpikeRight.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=23]
 
 [node name="World" type="Node2D" groups=["Niveles"]]
 script = ExtResource( 1 )
@@ -236,3 +237,5 @@ position = Vector2( -32, 0 )
 
 [node name="SpikeDown2" parent="SpikeDown" instance=ExtResource( 22 )]
 position = Vector2( 32, 0 )
+
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 23 )]

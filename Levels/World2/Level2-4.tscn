@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Levels/World2/Script/Level2-7.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Spikes/SpikeRight.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Spikes/SpikeLeft.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Levers/LeverLeft.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Levers/LeverRight.tscn" type="PackedScene" id=22]
 
 [node name="World" type="Node2D" groups=["Niveles"]]
@@ -253,3 +254,5 @@ position = Vector2( 32, 32 )
 
 [node name="SpikeRight3" parent="SpikeRight2" instance=ExtResource( 18 )]
 position = Vector2( -32, -32 )
+
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 21 )]

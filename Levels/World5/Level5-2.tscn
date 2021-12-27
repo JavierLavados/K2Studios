@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/World5/Script/Level5-2.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Interface.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Buttons/Blocks/ButtonBlockRight.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Buttons/ButtonRight.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Spikes/SpikeDown.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Spikes/SpikesAllGroup.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Ladders/Down/LadderDown.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Ladders/Down/LadderExitDown.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Ladders/Down/LadderEnterDown.tscn" type="PackedScene" id=24]
@@ -243,3 +244,5 @@ position = Vector2( -32, 0 )
 
 [node name="SpikeDown4" parent="SpikeDown2" instance=ExtResource( 19 )]
 position = Vector2( 32, 0 )
+
+[node name="SpikesAllGroup" parent="." instance=ExtResource( 20 )]

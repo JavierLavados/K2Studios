@@ -13,6 +13,7 @@ var inside = null
 func _ready():
 	$Tutorial.texture=load(message)
 	$Tutorial.position = Vector2(512-position.x,320-position.y)
+	$Marco.position = Vector2(512-position.x,320-position.y)
 	
 	sprite.frame = (4*(Globals.current_world-1)) + id
 	
@@ -43,21 +44,25 @@ func _process(delta):
 						get_parent().freeze_players=(get_parent().freeze_players+1)%2
 						get_parent().switch_restriction=(get_parent().switch_restriction+1)%2
 						$Tutorial.visible=!$Tutorial.visible
+						$Marco.visible=!$Marco.visible
 				1:
 					if Input.is_action_just_pressed("right"):
 						get_parent().freeze_players=(get_parent().freeze_players+1)%2
 						get_parent().switch_restriction=(get_parent().switch_restriction+1)%2
 						$Tutorial.visible=!$Tutorial.visible
+						$Marco.visible=!$Marco.visible
 				2:
 					if Input.is_action_just_pressed("down"):
 						get_parent().freeze_players=(get_parent().freeze_players+1)%2
 						get_parent().switch_restriction=(get_parent().switch_restriction+1)%2
 						$Tutorial.visible=!$Tutorial.visible
+						$Marco.visible=!$Marco.visible
 				3:
 					if Input.is_action_just_pressed("left"):
 						get_parent().freeze_players=(get_parent().freeze_players+1)%2
 						get_parent().switch_restriction=(get_parent().switch_restriction+1)%2
 						$Tutorial.visible=!$Tutorial.visible
+						$Marco.visible=!$Marco.visible
 				
 	else:
 		arrow.visible = false

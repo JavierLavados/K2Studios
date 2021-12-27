@@ -33,7 +33,7 @@ func _on_LevelSel_pressed():
 		#var format_dir = "res://MapInterface/maps/MapWorld%s.tscn"
 		#var actual_dir = format_dir%str(Globals.current_world)
 		#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
-		LevelManager.change_scene_no_sfx(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
+		LevelManager.change_scene(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
 		
 func _on_Settings_pressed():
 	if get_tree().paused == true:	
