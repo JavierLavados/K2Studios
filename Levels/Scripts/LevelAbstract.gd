@@ -167,3 +167,4 @@ func level(n_players):
 				Globals.current_points+=1
 				Globals.levels_status[int_level-1]=true
 			LevelManager.change_scene_no_sfx(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
+			MusicManager.change_music(0)
