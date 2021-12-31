@@ -64,7 +64,7 @@ func wakeUp(prev, new):
 	
 func gameOver():
 	LevelManager.change_scene_no_sfx(int(Globals.current_level+3))
-	MusicManager.change_music(0)
+	MusicManager.change_music(1)
 
 func setUp(n_players, init_lever=4,music=null):
 	#music=get_node(music)
