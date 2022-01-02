@@ -121,13 +121,3 @@ func _physics_process(delta):
 	if go_back:
 		marker.global_position = target_node
 		go_back = false 
-	#	motion.x = -motion.x
-	#	motion.y = -motion.y
-	#	go_back = false
-	
-	#if pending_leave <= 0:
-	#	move_and_slide(motion)
-
-	#if on_node:
-	#	global_position = level_pos
-	#	dir = null

@@ -52,10 +52,16 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if !cleared:
-		body.get_parent().go_back = true
+		if body.is_in_group("Markers"):
+			body.get_parent().go_back = true
 
 func _on_BigArea_body_entered(body):
 	if cleared and not deleted:
 		animationPlayer.play("Vanish")
 		deleted = true
 		Globals.block_status[id-1]=true
+
+func _on_Area2D_area_entered(area):
+	if !cleared:
+		if area.get_parent().is_in_group("MapPlayers"):
+			area.get_parent().go_back = true
