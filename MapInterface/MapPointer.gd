@@ -71,7 +71,7 @@ func _physics_process(delta):
 			if v_vel == 1 and directions[2]:
 				current_dir = 2
 				last_dir = 2
-				order = [1,0,3,2]
+				order = [1,3,0,2]
 				pending_leave = 4
 				waiting = true
 				motion = Vector2(0,MAX_SPEED)
