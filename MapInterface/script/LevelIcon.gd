@@ -2,8 +2,6 @@ extends Node2D
 
 onready var sprite = $Sprite
 
-#export var required = 1
-#export var level_proyect_dir = 'res://Levels/World1/Level1-1.tscn'
 export var level_number = 1
 
 export var up = false
@@ -13,9 +11,9 @@ export var left = false
 
 var directions = []
 var status
+var chars = 0
 
-#var disabled = true
-var body_inside = false
+var body_inside = null
 
 func _ready():
 	
@@ -28,26 +26,25 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") and body_inside:
-		#if not disabled and level_proyect_dir != '':
-		#if level_proyect_dir != '':
-		Globals.current_level=level_number
-		LevelManager.change_scene(level_number+3)
-		MusicManager.change_music(1)
-		#get_tree().change_scene(level_proyect_dir)
-		
-		
+		if not body_inside.get_parent().waiting:
+			Globals.current_level = level_number
+			LevelManager.change_scene(level_number+3)
+			MusicManager.change_music(1)
 
 func _on_Area2D_body_entered(body):
-	body_inside = true
-	body.on_node = true
-	if body.name == "MapPointer":
-		body.node_pos = global_position
-		body.directions=directions
+	if body.is_in_group("Markers"):
+		body_inside = body
+		body.get_parent().current_node = self
 
 func _on_Area2D_body_exited(body):
-	body_inside = false
-	#body.directions = null
+	body_inside = null
 
 func _on_Area2D_area_entered(area):
 	if area.get_parent().is_in_group("MapPlayers"):
-		area.get_parent().on_node = true
+		if area.get_parent().leave == 2:
+			area.get_parent().leave = 3
+		chars += 1
+
+func _on_Area2D_area_exited(area):
+	if area.get_parent().is_in_group("MapPlayers"):
+		chars -= 1

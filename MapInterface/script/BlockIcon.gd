@@ -42,7 +42,6 @@ func _ready():
 		cleared = true
 	else:
 		animationPlayer.play("Idle")
-		#print("Idle")
 	
 	if cleared:
 		bubble.visible = false
@@ -53,7 +52,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if !cleared:
-		body.go_back = true
+		body.get_parent().go_back = true
 
 func _on_BigArea_body_entered(body):
 	if cleared and not deleted:

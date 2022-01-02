@@ -9,32 +9,30 @@ export var down = false
 
 var directions = []
 
-#var disabled = true
 var body_inside = false
+var chars = 0
 
 func _ready():
 	sprite.frame = Globals.current_world-1
 	directions = [up,right,down,left]
 
-
 func _process(delta):
 	sprite.frame = Globals.current_world-1
 
 func _on_Area2D_body_entered(body):
-	body_inside = true
-	body.on_node = true
-	if body.name == "MapPointer":
-		body.node_pos = global_position
-		body.directions=directions
- 
+	if body.is_in_group("Markers"):
+		body_inside = body
+		body.get_parent().current_node = self
+		
 func _on_Area2D_body_exited(body):
-	body_inside = false
-	#body.directions = null
-
+	body_inside = null
 
 func _on_Area2D_area_entered(area):
 	if area.get_parent().is_in_group("MapPlayers"):
-		area.get_parent().on_node = true
+		if area.get_parent().leave == 2:
+			area.get_parent().leave = 3
+		chars += 1
 
-
-		
+func _on_Area2D_area_exited(area):
+	if area.get_parent().is_in_group("MapPlayers"):
+		chars -= 1

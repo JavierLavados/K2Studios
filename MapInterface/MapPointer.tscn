@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://MapInterface/script/MapPointer.gd" type="Script" id=1]
+[ext_resource path="res://MapInterface/MapPointer.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/TilesetW1.png" type="Texture" id=2]
 [ext_resource path="res://MapInterface/PlayerUpMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MapInterface/PlayerRightMap.tscn" type="PackedScene" id=4]
@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[node name="MapPointer" type="KinematicBody2D"]
+[node name="MapPointer" type="Node2D"]
 z_index = 10
 script = ExtResource( 1 )
 
@@ -22,12 +22,16 @@ script = ExtResource( 1 )
 
 [node name="PlayerLeftMap" parent="." instance=ExtResource( 5 )]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="PositionMarker" type="KinematicBody2D" parent="." groups=["Markers"]]
+
+[node name="Sprite" type="Sprite" parent="PositionMarker"]
 visible = false
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PositionMarker"]
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]

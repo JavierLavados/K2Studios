@@ -30,7 +30,7 @@ position = Vector2( 512, 160 )
 level_number = 24
 
 [node name="Level25" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 536 )
+position = Vector2( 512, 544 )
 level_number = 25
 
 [node name="Level26" parent="." instance=ExtResource( 6 )]

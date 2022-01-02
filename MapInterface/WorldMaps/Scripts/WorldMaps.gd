@@ -31,7 +31,7 @@ func _input(event):
 		LevelManager.change_scene_no_sfx(0) #res://Menus/Initial.tscn
 
 func transition():
-	var pos = $MapPointer.get_position()
+	var pos = $MapPointer.marker.global_position
 	if int(pos.x)%1024>512:
 		Globals.current_level = Globals.current_world*10+1
 		Globals.current_world = Globals.current_world+1
@@ -40,9 +40,9 @@ func transition():
 		Globals.current_world = Globals.current_world-1
 	yield(get_tree().create_timer(0.1), "timeout")
 	background.position.x = 1024*(Globals.current_world-1)
-	$Counter/Decena.frame=(int(Globals.current_points)/10)+10*(int(Globals.current_world)-1)
-	$Counter/Unidad.frame=int(Globals.current_points)%10+10*(int(Globals.current_world)-1)
-	$Counter.frame=int(Globals.current_world)-1
+	$Counter/Decena.frame = (int(Globals.current_points)/10)+10*(int(Globals.current_world)-1)
+	$Counter/Unidad.frame = int(Globals.current_points)%10+10*(int(Globals.current_world)-1)
+	$Counter.frame = int(Globals.current_world)-1
 	$Counter.position.x = 1024*(Globals.current_world-1)+960
 	background.world = Globals.current_world
 	$Camera2D.set_position(Vector2(512+(Globals.current_world-1)*1024,320))
