@@ -19,7 +19,7 @@ func _ready():
 
 func _on_Play_pressed():
 	#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
-	LevelManager.change_scene_no_sfx(3) #res://MapInterface/WorldMaps/WorldMaps.tscn
+	LevelManager.change_scene_no_sfx(54) #res://MapInterface/WorldMaps/WorldMaps.tscn
 		
 func _on_Settings_pressed():
 	#get_tree().change_scene("res://Menus/Settings.tscn")

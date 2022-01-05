@@ -8,6 +8,8 @@ var current_level = 1 setget current_level_changed
 var current_settings =[false,false] setget current_settings_changed
 var path_status = [] setget path_status_changed
 var block_status = [] setget block_status_changed
+var n_save = 1
+var format_save = "res://Saves/data.save_%s"
 
 # Json del juego
 var data_game = {
@@ -64,15 +66,15 @@ func save_game():
 	data_game['block_status']=block_status
 	
 	var file = File.new()
-	file.open('res://data.save',File.WRITE)
+	file.open(format_save%n_save,File.WRITE)
 	file.store_line(to_json(data_game))
 	file.close()
 	
 # carga el juego
 func load_game():
 	var file = File.new()
-	if file.file_exists('res://data.save'):
-		file.open('res://data.save',File.READ)
+	if file.file_exists(format_save%n_save):
+		file.open(format_save%n_save,File.READ)
 	else:
 		return
 	
