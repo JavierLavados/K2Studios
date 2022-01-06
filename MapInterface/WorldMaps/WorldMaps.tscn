@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://MapInterface/WorldMaps/Scripts/WorldMaps.gd" type="Script" id=1]
 [ext_resource path="res://MapInterface/WorldMaps/MapWorld1.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sprites/Numbers.png" type="Texture" id=8]
 [ext_resource path="res://WIP/BackgroundWorldMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/Counters.png" type="Texture" id=10]
+[ext_resource path="res://MapInterface/WorldMaps/MapWorld6.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 326.5 )
@@ -50,6 +51,12 @@ shape = SubResource( 1 )
 position = Vector2( 4096, 320 )
 shape = SubResource( 1 )
 
+[node name="Transition5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition5"]
+position = Vector2( 5120, 328 )
+shape = SubResource( 1 )
+
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="Map2" parent="." instance=ExtResource( 3 )]
@@ -63,6 +70,9 @@ position = Vector2( 3072, 0 )
 
 [node name="Map5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4096, 0 )
+
+[node name="Map6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5120, 0 )
 
 [node name="Counter" type="Sprite" parent="."]
 position = Vector2( 960, 32 )
@@ -86,3 +96,4 @@ vframes = 5
 [connection signal="body_entered" from="Transition2" to="." method="_on_Transition2_body_entered"]
 [connection signal="body_entered" from="Transition3" to="." method="_on_Transition3_body_entered"]
 [connection signal="body_entered" from="Transition4" to="." method="_on_Transition4_body_entered"]
+[connection signal="body_entered" from="Transition5" to="." method="_on_Transition5_body_entered"]

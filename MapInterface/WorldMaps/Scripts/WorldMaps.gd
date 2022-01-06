@@ -58,3 +58,6 @@ func _on_Transition3_body_entered(body):
 
 func _on_Transition4_body_entered(body):
 	transition()
+	
+func _on_Transition5_body_entered(body):
+	transition()

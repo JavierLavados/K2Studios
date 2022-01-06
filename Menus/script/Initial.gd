@@ -4,13 +4,13 @@ extends Control
 func _ready():
 	$VBoxContainer/Play.grab_focus()
 	if len(Globals.levels_status)==0:
-		for i in range(50):
+		for i in range(60):
 			Globals.levels_status+=[false]
 	if len(Globals.path_status)==0:
-		for i in range(66):
+		for i in range(100):
 			Globals.path_status+=[false]
 	if len(Globals.block_status)==0:
-		for i in range(5):
+		for i in range(6):
 			Globals.block_status+=[false]
 	
 #func _input(event):
@@ -19,7 +19,7 @@ func _ready():
 
 func _on_Play_pressed():
 	#get_tree().change_scene("res://MapInterface/WorldMaps/WorldMaps.tscn")
-	LevelManager.change_scene_no_sfx(54) #res://MapInterface/WorldMaps/WorldMaps.tscn
+	LevelManager.change_scene_no_sfx(64) #res://MapInterface/WorldMaps/WorldMaps.tscn
 		
 func _on_Settings_pressed():
 	#get_tree().change_scene("res://Menus/Settings.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Menus/script/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://Menus/Credits.tscn" type="PackedScene" id=2]
@@ -56,10 +56,20 @@
 [ext_resource path="res://Levels/World3/Level3-10.tscn" type="PackedScene" id=54]
 [ext_resource path="res://Levels/World4/Level4-7.tscn" type="PackedScene" id=55]
 [ext_resource path="res://Menus/Save.tscn" type="PackedScene" id=56]
+[ext_resource path="res://Levels/World6/Level6-8.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Levels/World6/Level6-10.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Levels/World6/Level6-1.tscn" type="PackedScene" id=59]
+[ext_resource path="res://Levels/World6/Level6-2.tscn" type="PackedScene" id=60]
+[ext_resource path="res://Levels/World6/Level6-7.tscn" type="PackedScene" id=61]
+[ext_resource path="res://Levels/World6/Level6-9.tscn" type="PackedScene" id=62]
+[ext_resource path="res://Levels/World6/Level6-5.tscn" type="PackedScene" id=63]
+[ext_resource path="res://Levels/World6/Level6-3.tscn" type="PackedScene" id=64]
+[ext_resource path="res://Levels/World6/Level6-4.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Levels/World6/Level6-6.tscn" type="PackedScene" id=66]
 
 [node name="LevelManager" type="Node"]
 script = ExtResource( 1 )
-paths = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 51 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 52 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 54 ), ExtResource( 31 ), ExtResource( 44 ), ExtResource( 35 ), ExtResource( 45 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 55 ), ExtResource( 40 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 32 ), ExtResource( 43 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 30 ), ExtResource( 53 ), ExtResource( 56 ) ]
+paths = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 16 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 51 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 52 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 54 ), ExtResource( 31 ), ExtResource( 44 ), ExtResource( 35 ), ExtResource( 45 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 55 ), ExtResource( 40 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 32 ), ExtResource( 43 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 30 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 61 ), ExtResource( 57 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 56 ) ]
 
 [node name="Timer" type="Timer" parent="."]
 
