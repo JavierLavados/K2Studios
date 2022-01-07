@@ -9,12 +9,14 @@ var motion = Vector2(0,0)
 var go_back = false
 
 func setUp(texture):
+	
 	var t = texture + str(Globals.current_world) + ".png"
 	sprite.texture = load(t)
 	
 	pointer = get_parent()
 	
 func playerMap(texture, id, target):
+	
 	var t = texture + str(Globals.current_world) + ".png"
 	sprite.texture = load(t)
 	

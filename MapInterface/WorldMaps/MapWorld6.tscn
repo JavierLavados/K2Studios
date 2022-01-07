@@ -93,86 +93,86 @@ up = true
 [node name="MapPath41-42" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 448 )
 vertical = true
-adjacent = [ 41, 42 ]
+adjacent = [ 51, 52 ]
 directions = [ "D", "U" ]
 id = 67
 
 [node name="MapPath41-43A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 256 )
 vertical = true
-adjacent = [ 41, 43 ]
+adjacent = [ 51, 53 ]
 directions = [ "U", "L" ]
 id = 68
 
 [node name="MapPath41-43B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 160 )
-adjacent = [ 41, 43 ]
+adjacent = [ 51, 53 ]
 directions = [ "U", "L" ]
 id = 69
 
 [node name="MapPath43-44" parent="." instance=ExtResource( 1 )]
 position = Vector2( 320, 256 )
 vertical = true
-adjacent = [ 43, 44 ]
+adjacent = [ 53, 54 ]
 directions = [ "D", "U" ]
 id = 70
 
 [node name="MapPath44-45A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 320, 448 )
 vertical = true
-adjacent = [ 44, 45 ]
+adjacent = [ 54, 55 ]
 directions = [ "D", "L" ]
 id = 71
 
 [node name="MapPath44-45B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416, 544 )
-adjacent = [ 44, 45 ]
+adjacent = [ 54, 55 ]
 directions = [ "D", "L" ]
 id = 72
 
 [node name="MapPath45-46" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 448 )
 vertical = true
-adjacent = [ 45, 46 ]
+adjacent = [ 55, 56 ]
 directions = [ "U", "D" ]
 id = 73
 
 [node name="MapPath46-47A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 256 )
 vertical = true
-adjacent = [ 46, 47 ]
+adjacent = [ 56, 57 ]
 directions = [ "U", "L" ]
 id = 74
 
 [node name="MapPath46-47B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 160 )
-adjacent = [ 46, 47 ]
+adjacent = [ 56, 57 ]
 directions = [ "U", "L" ]
 id = 75
 
 [node name="MapPath47-48" parent="." instance=ExtResource( 1 )]
 position = Vector2( 704, 256 )
 vertical = true
-adjacent = [ 47, 48 ]
+adjacent = [ 57, 58 ]
 directions = [ "D", "U" ]
 id = 76
 
 [node name="MapPath48-49A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 704, 448 )
 vertical = true
-adjacent = [ 48, 49 ]
+adjacent = [ 58, 59 ]
 directions = [ "D", "L" ]
 id = 77
 
 [node name="MapPath48-49B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 800, 544 )
-adjacent = [ 48, 49 ]
+adjacent = [ 58, 59 ]
 directions = [ "D", "L" ]
 id = 78
 
 [node name="MapPath49-50" parent="." instance=ExtResource( 1 )]
 position = Vector2( 896, 448 )
 vertical = true
-adjacent = [ 49, 50 ]
+adjacent = [ 59, 60 ]
 directions = [ "U", "D" ]
 id = 79

@@ -21,8 +21,8 @@ func _ready():
 		sprite.scale.y *= 2
 	else:
 		sprite.scale.x *= 2
-		
-	sprite.frame += (Globals.current_world-1)*3
+	
+	sprite.frame += (Globals.current_world-1)*2
 	
 	for i in get_tree().get_nodes_in_group("LevelIcons"):
 		if i.level_number in adjacent:
@@ -69,12 +69,10 @@ func _process(delta):
 	
 	if sprite.scale.y >= 4 or sprite.scale.x >= 4:
 		expand = false
-		
-	sprite.frame = (Globals.current_world-1)*3
+	
+	sprite.frame = (Globals.current_world-1)*2
 	if vertical:
 		sprite.frame += 1
-	
-			
-	
+
 	
 

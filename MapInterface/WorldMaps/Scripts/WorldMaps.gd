@@ -4,7 +4,7 @@ onready var pointer = $MapPointer
 onready var background = $Background
 
 
-var level_total = 50
+var level_total = 60
 
 func _ready():
 

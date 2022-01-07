@@ -175,3 +175,9 @@ vertical = true
 adjacent = [ 49, 50 ]
 directions = [ "U", "D" ]
 id = 66
+
+[node name="MapPath50-W6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 352 )
+adjacent = [ 50 ]
+directions = [ "R" ]
+id = 66

@@ -17,10 +17,10 @@ var body_inside = null
 
 func _ready():
 	
-	sprite.frame = level_number - 1
+	sprite.frame = level_number-1
 	status = Globals.levels_status[level_number-1]
 	if status:
-		sprite.frame += 50
+		sprite.frame += 60
 		
 	directions = [up,right,down,left]
 
