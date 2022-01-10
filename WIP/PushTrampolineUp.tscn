@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/PushTrampolines.png" type="Texture" id=1]
+[ext_resource path="res://WIP/PushTrampolineUp.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 15 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 14, 4 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 18, 18 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 16 )
+
+[node name="PushTrampolineUp" type="KinematicBody2D" groups=["Blocks"]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+
+[node name="AreaLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
+position = Vector2( -16, 8 )
+shape = SubResource( 2 )
+
+[node name="AreaRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
+position = Vector2( 16, 8 )
+shape = SubResource( 3 )
+
+[node name="AreaDown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDown"]
+position = Vector2( 0, 16 )
+shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 24 )
+
+[node name="RayUp" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -24 )
+
+[node name="RayLeft" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -24, 0 )
+
+[node name="RayRight" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 24, 0 )
+
+[node name="AreaAll" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAll"]
+shape = SubResource( 5 )
+
+[node name="CollisionLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionLeft"]
+position = Vector2( -24, 0 )
+shape = SubResource( 6 )
+
+[node name="CollisionRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionRight"]
+position = Vector2( 24, 0 )
+shape = SubResource( 7 )
+
+[node name="TrampolineArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrampolineArea"]
+shape = SubResource( 8 )
+
+[connection signal="body_entered" from="AreaLeft" to="." method="_on_AreaLeft_body_entered"]
+[connection signal="body_exited" from="AreaLeft" to="." method="_on_AreaLeft_body_exited"]
+[connection signal="body_entered" from="AreaRight" to="." method="_on_AreaRight_body_entered"]
+[connection signal="body_exited" from="AreaRight" to="." method="_on_AreaRight_body_exited"]
+[connection signal="body_entered" from="AreaDown" to="." method="_on_AreaDown_body_entered"]
+[connection signal="body_entered" from="AreaAll" to="." method="_on_AreaAll_body_entered"]
+[connection signal="body_exited" from="AreaAll" to="." method="_on_AreaAll_body_exited"]
+[connection signal="body_entered" from="CollisionLeft" to="." method="_on_CollisionLeft_body_entered"]
+[connection signal="body_exited" from="CollisionLeft" to="." method="_on_CollisionLeft_body_exited"]
+[connection signal="body_entered" from="CollisionRight" to="." method="_on_CollisionRight_body_entered"]
+[connection signal="body_exited" from="CollisionRight" to="." method="_on_CollisionRight_body_exited"]
+[connection signal="body_entered" from="TrampolineArea" to="." method="_on_TrampolineArea_body_entered"]
+[connection signal="body_exited" from="TrampolineArea" to="." method="_on_TrampolineArea_body_exited"]

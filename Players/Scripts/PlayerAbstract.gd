@@ -6,6 +6,7 @@ const AIR_SPEED = 112
 const AIR_SPEED_2 = 144
 const JUMP_H = 375
 const JUMP_H_2 = 325
+const TRAMPOLINE_H = 750
 const CLIMB_SPEED = 96
 const gravity = 25
 
@@ -38,12 +39,14 @@ var pushing = false
 var align = 0
 var exit = false
 var freeze = false
+var trampoline = false
 
 var rot
 var invisiWallL
 var invisiWallR
 var id
 var floored
+var t_jump = false
 
 var Air = preload("res://Powerups/Air.tscn")
 
@@ -141,13 +144,20 @@ func calc_motion(n, forward, backward, top, btm):
 		jumping = false
 		controllable = true
 		air_jump_used = false
+		t_jump = false
 		if is_instance_valid(invisiWallL):
 			invisiWallL.queue_free()
 			invisiWallR.queue_free()
 	
 	# Aceleracion de gravedad hasta cierto punto
 	if motion.dot(n) > -JUMP_H and not climbing:
-		motion += -gravity * n
+		if not t_jump:
+			motion += -gravity * n
+		else:
+			if motion.y <= 0:
+				motion += -gravity * n
+			else:
+				motion += -10 * n
 		
 	# Inputs del teclado
 	var target_vel = Input.get_action_strength(forward) - Input.get_action_strength(backward)
@@ -155,7 +165,7 @@ func calc_motion(n, forward, backward, top, btm):
 
 	# Movimiento vertical (salto)
 	var on_edge = !ray.is_colliding() and on_floor
-	
+
 	if Input.is_action_just_pressed("ui_accept") and awake and not climbing:
 		
 		# Posicionamiento de paredes invisibles
@@ -208,7 +218,11 @@ func calc_motion(n, forward, backward, top, btm):
 
 		# Caso salto inicial
 		if on_floor:
-			motion = n * JUMP_H
+			if trampoline:
+				motion = n * TRAMPOLINE_H
+				t_jump = true
+			else:
+				motion = n * JUMP_H
 			jumping = true
 			
 			# Creacion paredes invisibles
@@ -218,7 +232,14 @@ func calc_motion(n, forward, backward, top, btm):
 			get_parent().add_child(invisiWallR) 
 			invisiWallL.global_position = left_pos.global_position
 			invisiWallR.global_position = right_pos.global_position
-			
+			if t_jump:
+				invisiWallL.scale.y *= 3
+				invisiWallR.scale.y *= 3
+				invisiWallL.global_position.x -= 64
+				invisiWallR.global_position.x += 64
+				invisiWallL.global_position.y += 16
+				invisiWallR.global_position.y += 16
+				
 	# AUTO JUMP PARA DEBUGGING
 	if was_on_floor and not on_floor and auto_jump:
 		motion = n * JUMP_H
@@ -232,6 +253,10 @@ func calc_motion(n, forward, backward, top, btm):
 	was_on_floor = on_floor
 	
 	# Caso salto con caida libre
+	#if t_jump:
+	#	if motion.dot(n) <= -TRAMPOLINE_H:
+	#		controllable = false
+	#else:
 	if motion.dot(n) <= -JUMP_H:
 		controllable = false
 		
